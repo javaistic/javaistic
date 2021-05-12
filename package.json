@@ -1,0 +1,44 @@
+{
+  "name": "javaistic",
+  "version": "1.0.0",
+  "description": "The official website for [Javaistic](https://github.com/uiuxarghya/javaistic).",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  },
+  "author": "Arghya Ghosh",
+  "license": "MIT",
+  "dependencies": {
+    "@reach/skip-nav": "^0.10.5",
+    "focus-visible": "^5.1.0",
+    "intersection-observer": "^0.10.0",
+    "markdown-to-jsx": "^6.11.4",
+    "next": "^10.0.7",
+    "nextra": "^0.4.3",
+    "nextra-theme-docs": "^1.1.4",
+    "prism-react-renderer": "^1.2.0",
+    "prismjs": "^1.23.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-intersection-observer": "^8.26.2"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.4.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uiuxarghya/javaistic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uiuxarghya/javaistic/issues"
+  },
+  "homepage": "https://javaistic.vercel.app/",
+  "keywords": [
+    "javaistic",
+    "java"
+  ]
+}
