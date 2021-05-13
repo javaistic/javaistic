@@ -53,6 +53,7 @@ export default {
         href="/favicon/safari-pinned-tab.svg"
         color="#000000"
       />
+      <meta name="google-site-verification" content="OMYBoUbVEYAJu6SsOajfrvkTJunKMieK9ZhAgOFHobM" />
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
