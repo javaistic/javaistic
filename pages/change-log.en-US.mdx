@@ -3,7 +3,7 @@ import { useSSG } from "nextra/ssg";
 
 export const getStaticProps = ({ params }) => {
   return (
-    fetch("https://api.github.com/repos/uiuxarghya/javaistic/releases")
+    fetch("https://api.github.com/repos/javaistic/javaistic/releases")
       .then((res) => res.json())
       // we keep the most recent 5 releases here
       .then((releases) => ({
@@ -39,17 +39,17 @@ Published on ${new Date(release.published_at).toDateString()}.\n\n${body}`;
 <p className="flex h-6">
   <img
     alt="stars"
-    src="https://badgen.net/github/release/uiuxarghya/javaistic/"
+    src="https://badgen.net/github/release/javaistic/javaistic/"
     className="inline-block mr-2"
   />
   <img
     alt="license"
-    src="https://badgen.net/github/license/uiuxarghya/javaistic"
+    src="https://badgen.net/github/license/javaistic/javaistic"
     className="inline-block mr-2"
   />
 </p>
 
-Please visit the [Javaistic release page](https://github.com/uiuxarghya/javaistic/releases)
+Please visit the [Javaistic release page](https://github.com/javaistic/javaistic/releases)
 for all history releases.
 
 <ReleasesRenderer />

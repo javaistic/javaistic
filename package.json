@@ -1,7 +1,7 @@
 {
   "name": "javaistic",
   "version": "1.0.0",
-  "description": "The official website for [Javaistic](https://github.com/uiuxarghya/javaistic).",
+  "description": "The official website for [Javaistic](https://github.com/javaistic/javaistic).",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -31,10 +31,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uiuxarghya/javaistic.git"
+    "url": "git+https://github.com/javaistic/javaistic.git"
   },
   "bugs": {
-    "url": "https://github.com/uiuxarghya/javaistic/issues"
+    "url": "https://github.com/javaistic/javaistic/issues"
   },
   "homepage": "https://javaistic.vercel.app/",
   "keywords": [
