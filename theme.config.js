@@ -78,7 +78,7 @@ export default {
         content="Javaistic is an Open Source Java learning website. Our Java tutorial will guide you to learn Java one step at a time."
       />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@uiuxarghya" />
+      <meta name="twitter:creator" content="@uiuxarghya" />
       <meta
         name="twitter:image"
         content="https://raw.githubusercontent.com/javaistic/javaistic/main/public/og.png"
