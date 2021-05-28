@@ -1,3 +1,4 @@
+import DocSearch from "components/docsearch";
 import { useRouter } from "next/router";
 
 const Logo = ({ height }) => (
@@ -26,7 +27,7 @@ export default {
   repository: "https://github.com/javaistic/javaistic",
   docsRepository: "https://github.com/javaistic/javaistic",
   titleSuffix: " – Javaistic",
-  search: true,
+  customSearch: <DocSearch/>,
   logo: () => {
     const { locale } = useRouter();
     return (
