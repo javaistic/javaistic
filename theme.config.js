@@ -1,5 +1,6 @@
 import DocSearch from "components/docsearch";
 import { useRouter } from "next/router";
+import Status from "components/status";
 
 const Logo = ({ height }) => (
   <svg height={height} viewBox="0 0 291 79" fill="none">
@@ -108,7 +109,7 @@ export default {
 
       default:
         return (
-          <a
+          <><a
             href="https://vercel.com/?utm_source=javaistic&utm_campaign=oss"
             target="_blank"
             rel="noopener"
@@ -118,7 +119,7 @@ export default {
             <span>
               <Vercel />
             </span>
-          </a>
+          </a><Status /></>
         );
     }
   },
