@@ -1,6 +1,9 @@
 {
     "name": "Javaistic",
     "short_name": "Javaistic",
+    "theme_color": "#3884FF",
+    "background_color": "#ffffff",
+    "display": "standalone",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -11,7 +14,7 @@
             "src": "/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
-        }
+        },
         {
             "src": "\/android-icon-36x36.png",
             "sizes": "36x36",
@@ -49,7 +52,4 @@
             "density": "4.0"
            }
           ]
-    "theme_color": "#3884FF",
-    "background_color": "#ffffff",
-    "display": "standalone"
 }
