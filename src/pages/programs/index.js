@@ -23,7 +23,7 @@ export default function ProgramsLandingPage() {
                   Start coding right now or go through Java code.
                 </p>
                 <a
-                  href="/programs/installation"
+                  href="/programs/introduction"
                   className="mt-auto bg-rose-900 bg-opacity-50 hover:bg-opacity-75 transition-colors duration-200 rounded-xl font-semibold py-2 px-4 inline-flex"
                 >
                   Start learning
