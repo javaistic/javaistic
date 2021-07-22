@@ -205,7 +205,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
         )}
         <div className="mt-12 border-t border-gray-200 pt-6 text-right">
           <Link
-            href={`https://github.com/javaistic/javaistic/edit/master/src/pages${router.pathname}.mdx`}
+            href={`https://github.com/javaistic/javaistic/edit/main/src/pages${router.pathname}.mdx`}
           >
             <a className="mt-10 text-sm hover:text-gray-900">Edit this page on GitHub</a>
           </Link>
