@@ -1,0 +1,15 @@
+[
+  { "source": "/docs/what-is-javaistic", "destination": "/", "permanent": false },
+  { "source": "/discord", "destination": "https://discord.gg/RkHJqvK9r8", "permanent": false },
+  {
+    "source": "/forum",
+    "destination": "https://github.com/javaistic/javaistic/discussions",
+    "permanent": false
+  },
+  {
+    "source": "/docs/slug",
+    "destination": "/docs/slug",
+    "permanent": false
+  },
+  { "source": "/community", "destination": "https://discord.gg/RkHJqvK9r8", "permanent": false }
+]
