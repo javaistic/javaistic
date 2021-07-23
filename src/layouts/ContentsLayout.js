@@ -5,7 +5,15 @@ import { SidebarContext, SidebarLayout } from '@/layouts/SidebarLayout'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { createContext, Fragment, isValidElement, useCallback, useContext, useEffect, useState } from 'react'
+import {
+  createContext,
+  Fragment,
+  isValidElement,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 
 export const ContentsContext = createContext()
 
@@ -210,6 +218,13 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
             <a className="mt-10 text-sm hover:text-gray-900">Edit this page on GitHub</a>
           </Link>
         </div>
+        <Link
+            href={`https://vercel.com/?utm_source=javaistic&utm_campaign=oss`}
+          >
+        <a className="text-sm mr-1">
+          Powered by <span className="text text-base font-bold text-black">▲Vercel</span>
+        </a>
+        </Link>
       </div>
       <div className="hidden xl:text-sm xl:block flex-none w-64 pl-8 mr-8">
         <div className="flex flex-col justify-between overflow-y-auto sticky max-h-(screen-18) pt-10 pb-6 top-18">

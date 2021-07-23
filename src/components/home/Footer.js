@@ -1,9 +1,10 @@
-import Link from 'next/link'
+import { Logo } from '@/components/Logo'
+import { Vercel } from '@/components/Vercel'
 import { documentationNav } from '@/navs/documentation'
 import { programsNav } from '@/navs/program'
 import clsx from 'clsx'
+import Link from 'next/link'
 import styles from './Footer.module.css'
-import { Logo } from '@/components/Logo'
 
 const footerNav = {
   'Getting started': {
@@ -70,6 +71,15 @@ export function Footer() {
         </ul>
         <div className="pt-10 sm:pt-12">
           <Logo className="w-auto h-10" />
+          <br className="mb-2" />
+          <div className="flex">
+            <a href="https://vercel.com/?utm_source=javaistic&utm_campaign=oss">
+              <p className="text text-sm text-gray-500 flex">
+                Powered by
+                <Vercel className="w-auto h-5 ml-1 flex" />
+              </p>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
