@@ -8,5 +8,6 @@ const pages = createPageList(
 export const documentationNav = {
   'Getting started': [
     pages['installation'],
+    pages['hello-world'],
   ],
 }
