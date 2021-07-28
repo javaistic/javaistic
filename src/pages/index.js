@@ -64,7 +64,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">
-            An Java Programming learning website packed with information and programs ranging from{' '}
+            A Java Programming learning website packed with information and programs ranging from{' '}
             <InlineCode>basics</InlineCode> , <InlineCode>arrays</InlineCode> ,{' '}
             <InlineCode>string programs</InlineCode> to <InlineCode>2D arrays</InlineCode> ,{' '}
             <InlineCode>recursion</InlineCode> , <InlineCode>matrices</InlineCode> and many more.
