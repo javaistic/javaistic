@@ -10,6 +10,7 @@ import Router from 'next/router'
 import { Fragment, useEffect, useState } from 'react'
 import '../css/fonts.css'
 import '../css/main.css'
+import * as ga from '../lib/ga'
 
 if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
   window.ResizeObserver = ResizeObserver
@@ -41,14 +42,15 @@ export default function App({ Component, pageProps, router }) {
 
   useEffect(() => {
     if (!navIsOpen) return
-    function handleRouteChange() {
+    function handleRouteChange(url) {
       setNavIsOpen(false)
+      ga.pageview(url)
     }
     Router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
       Router.events.off('routeChangeComplete', handleRouteChange)
     }
-  }, [navIsOpen])
+  }, [navIsOpen],[router.events])
 
   const Layout = Component.layoutProps?.Layout || Fragment
   const layoutProps = Component.layoutProps?.Layout
