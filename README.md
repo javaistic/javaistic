@@ -1,6 +1,6 @@
 # [Javaistic](https://javaistic.vercel.app/) ☕
 
-[![CI](https://github.com/javaistic/javaistic/actions/workflows/ci.yml/badge.svg)](https://github.com/javaistic/javaistic/actions/workflows/ci.yml)
+[![CI](https://github.com/javaistic/javaistic-v0/actions/workflows/ci.yml/badge.svg)](https://github.com/javaistic/javaistic/actions/workflows/ci.yml)
 
 <div align="center">
   
@@ -12,4 +12,4 @@
 
 ## Sponsers
 
-[![Powered By Vercel ](https://raw.githubusercontent.com/javaistic/javaistic/main/public/powered-by-vercel.svg)](https://vercel.com??utm_source=javaistic&utm_campaign=oss)
+[![Powered By Vercel ](https://raw.githubusercontent.com/javaistic/javaistic-v0/main/public/powered-by-vercel.svg)](https://vercel.com??utm_source=javaistic&utm_campaign=oss)
