@@ -10,5 +10,6 @@ export const documentationNav = {
     pages['installation'],
     pages['introduction'],
     pages['hello-world'],
+    pages['jvm-jre-jdk'],
   ],
 }
