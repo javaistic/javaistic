@@ -6,6 +6,7 @@ import { Search } from '@/components/Search'
 import { Testimonials } from '@/components/Testimonials'
 import Head from 'next/head'
 import NextLink from 'next/link'
+import Router from 'next/router'
 
 export default function Home() {
   return (
@@ -28,7 +29,14 @@ export default function Home() {
           <div className="border-b border-gray-200 py-4 flex items-center justify-between mb-16 sm:mb-20 sm:mx-0 sm:px-0">
             <div className="flex items-center">
               <NextLink href="/">
-                <Logo className="w-auto flex h-8 lg:h-10 sm:h-5" />
+                <a
+                  onContextMenu={(e) => {
+                    e.preventDefault()
+                    Router.push('/brand')
+                  }}
+                >
+                  <Logo className="w-auto flex h-8 lg:h-10 sm:h-5" />
+                </a>
               </NextLink>
             </div>
             <div className="flex items-center space-x-6 sm:space-x-10 ml-6 sm:ml-2">
@@ -92,10 +100,8 @@ export default function Home() {
           <figure>
             <blockquote>
               <Paragraph className="max-w-4xl mx-auto mb-6">
-                Let's us learn Java by learning concepts and practicing programs.<br/>{' '}
-                <Widont>
-                  I am sure you will fall in love with Java.
-                </Widont>
+                Let's us learn Java by learning concepts and practicing programs.
+                <br /> <Widont>I am sure you will fall in love with Java.</Widont>
               </Paragraph>
             </blockquote>
             <figcaption className="sm:text-xl font-medium flex flex-col items-center">
