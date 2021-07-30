@@ -12,8 +12,6 @@
 
 ## **[Site Status](https://javaistic.betteruptime.com/) [![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/8a3u.svg)](https://betteruptime.com/?utm_source=status_badge)**
 
-
-
 ![Stats](https://badgen.net/uptime-robot/status/m788498503-abfbb35c24db9355ed897d6d)
 ![Stats](https://badgen.net/uptime-robot/day/m788498503-abfbb35c24db9355ed897d6d)
 ![Stats](https://badgen.net/uptime-robot/week/m788498503-abfbb35c24db9355ed897d6d)
