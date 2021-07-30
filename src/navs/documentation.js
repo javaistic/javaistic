@@ -8,8 +8,11 @@ const pages = createPageList(
 export const documentationNav = {
   'Getting started': [
     pages['installation'],
+  ],
+  'Java Introduction': [
     pages['introduction'],
     pages['hello-world'],
     pages['jvm-jre-jdk'],
+    pages['variables-and-literals'],
   ],
 }
