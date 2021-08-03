@@ -75,7 +75,7 @@ export default function App({ Component, pageProps, router }) {
           name="twitter:image"
           content={`https://javaistic.vercel.app${twitterLargeCard}`}
         />
-        <meta key="twitter:creator" name="twitter:creator" content="@tailwindcss" />
+        <meta key="twitter:creator" name="twitter:creator" content="@javaistic" />
         <meta
           key="og:url"
           property="og:url"
