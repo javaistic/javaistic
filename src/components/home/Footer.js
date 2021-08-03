@@ -29,7 +29,7 @@ const footerNav = {
     className: 'row-span-2',
     items: [
       { title: 'Brand', href: '/brand' },
-      { title: 'Change Log', href: 'https://github.com/javaistic/javaistic/releases' },
+      { title: 'Changelog', href: 'https://javaistic-changelog.vercel.app/' },
       { title: 'Open Source', href: '/' },
       { title: 'Contact', href: 'mailto:javaistic@gmail.com' },
     ],
