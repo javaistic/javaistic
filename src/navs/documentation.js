@@ -15,5 +15,6 @@ export const documentationNav = {
     pages['jvm-jre-jdk'],
     pages['variables-and-literals'],
     pages['variables-primitive-data-types'],
+    pages['operators'],
   ],
 }
