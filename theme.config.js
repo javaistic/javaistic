@@ -26,8 +26,8 @@ const Vercel = ({ height = 20 }) => (
 );
 
 export default {
-  repository: "https://github.com/javaistic/javaistic",
-  docsRepository: "https://github.com/javaistic/javaistic",
+  repository: "https://github.com/javaistic/javaistic-v0",
+  docsRepository: "https://github.com/javaistic/javaistic-v0",
   titleSuffix: " – Javaistic",
   customSearch: <DocSearch />,
   logo: () => {
@@ -84,13 +84,13 @@ export default {
       <meta name="twitter:creator" content="@uiuxarghya" />
       <meta
         name="twitter:image"
-        content="https://raw.githubusercontent.com/javaistic/javaistic/main/public/og.png"
+        content="https://raw.githubusercontent.com/javaistic/javaistic-v0/main/public/og.png"
       />
       <meta name="og:title" content="Javaistic: Learn Java for free." />
       <meta name="og:url" content="https://javaistic.vercel.app" />
       <meta
         name="og:image"
-        content="https://raw.githubusercontent.com/javaistic/javaistic/main/public/og.png"
+        content="https://raw.githubusercontent.com/javaistic/javaistic-v0/main/public/og.png"
       />
       <meta name="apple-mobile-web-app-title" content="Javaistic" />
     </>

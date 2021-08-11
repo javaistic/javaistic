@@ -3,7 +3,7 @@ import { useSSG } from "nextra/ssg";
 
 export const getStaticProps = ({ params }) => {
   return (
-    fetch("https://api.github.com/repos/javaistic/javaistic/releases")
+    fetch("https://api.github.com/repos/javaistic/javaistic-v0/releases")
       .then((res) => res.json())
       // we keep the most recent 5 releases here
       .then((releases) => ({
