@@ -9,4 +9,8 @@ export const programsNav = {
   'Getting started': [
     pages['introduction'],
   ],
+  'Introduction': [
+    pages['print-an-integer'],
+  ],
+  
 }
