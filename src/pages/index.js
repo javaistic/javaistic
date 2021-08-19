@@ -13,6 +13,11 @@ export default function Home() {
     <div className="space-y-20 sm:space-y-32 md:space-y-40 lg:space-y-44 overflow-hidden">
       <Head>
         <meta
+          key="description"
+          name="description"
+          content="A Java programming learning website packed with information and programs ranging from basics , arrays , string programs to 2D arrays , recursion , matrices and many more."
+        />
+        <meta
           key="twitter:title"
           name="twitter:title"
           content="Javaistic - Learn Java programming very fast and easily with Javaistic."
@@ -89,11 +94,16 @@ export default function Home() {
               </a>
             </NextLink>
             <NextLink href="https://github.com/sponsors/javaistic">
-              <a className="w-full sm:w-auto flex-none bg-gray-50 hover:bg-gray-200 text-gray-900 font-semibold shadow-md leading-6 py-3 sm:px-6 border border-gray-300 rounded-xl flex items-center justify-center space-x-2 sm:space-x-4 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-300 focus:outline-none transition-colors duration-200" target="_blank" rel="noopener noreferrer">
+              <a
+                className="w-full sm:w-auto flex-none bg-gray-50 hover:bg-gray-200 text-gray-900 font-semibold shadow-md leading-6 py-3 sm:px-6 border border-gray-300 rounded-xl flex items-center justify-center space-x-2 sm:space-x-4 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-300 focus:outline-none transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span className="sr-only">(Sponsor Javaistic)</span>
                 <svg width="24" height="24" fill="none" stroke="#db61a2" strokeWidth={2.5}>
-                <path d="M18.7663 7.23375C18.3753 6.84262 17.9111 6.53234 17.4002 6.32065C16.8893 6.10896 16.3417 6 15.7887 6C15.2357 6 14.6881 6.10896 14.1772 6.32065C13.6663 6.53234 13.2021 6.84262 12.8112 7.23375L11.9998 8.04511L11.1884 7.23375C10.3987 6.44406 9.32768 6.00041 8.21089 6.00041C7.09409 6.00041 6.02303 6.44406 5.23334 7.23375C4.44365 8.02344 4 9.0945 4 10.2113C4 11.3281 4.44365 12.3991 5.23334 13.1888L6.0447 14.0002L11.9998 19.9553L17.9549 14.0002L18.7663 13.1888C19.1574 12.7979 19.4677 12.3337 19.6794 11.8228C19.891 11.3119 20 10.7643 20 10.2113C20 9.65828 19.891 9.11068 19.6794 8.59978C19.4677 8.08888 19.1574 7.6247 18.7663 7.23375V7.23375Z"/>
-                </svg>&nbsp;Sponsor
+                  <path d="M18.7663 7.23375C18.3753 6.84262 17.9111 6.53234 17.4002 6.32065C16.8893 6.10896 16.3417 6 15.7887 6C15.2357 6 14.6881 6.10896 14.1772 6.32065C13.6663 6.53234 13.2021 6.84262 12.8112 7.23375L11.9998 8.04511L11.1884 7.23375C10.3987 6.44406 9.32768 6.00041 8.21089 6.00041C7.09409 6.00041 6.02303 6.44406 5.23334 7.23375C4.44365 8.02344 4 9.0945 4 10.2113C4 11.3281 4.44365 12.3991 5.23334 13.1888L6.0447 14.0002L11.9998 19.9553L17.9549 14.0002L18.7663 13.1888C19.1574 12.7979 19.4677 12.3337 19.6794 11.8228C19.891 11.3119 20 10.7643 20 10.2113C20 9.65828 19.891 9.11068 19.6794 8.59978C19.4677 8.08888 19.1574 7.6247 18.7663 7.23375V7.23375Z" />
+                </svg>
+                &nbsp;Sponsor
               </a>
             </NextLink>
           </div>
