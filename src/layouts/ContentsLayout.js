@@ -218,12 +218,10 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
             <a className="mt-10 text-sm hover:text-gray-900">Edit this page on GitHub</a>
           </Link>
         </div>
-        <Link
-            href={`https://vercel.com/?utm_source=javaistic&utm_campaign=oss`}
-          >
-        <a className="text-sm mr-1">
-          Powered by <span className="text text-base font-bold text-black">▲Vercel</span>
-        </a>
+        <Link href={`https://vercel.com/?utm_source=javaistic&utm_campaign=oss`}>
+          <a className="text-sm mr-1">
+            Powered by <span className="text text-base font-bold text-black">▲Vercel</span>
+          </a>
         </Link>
       </div>
       <div className="hidden xl:text-sm xl:block flex-none w-64 pl-8 mr-8">
