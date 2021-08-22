@@ -22,7 +22,7 @@ const footerNav = {
       { title: 'Java Docs', href: '/docs' },
       { title: 'Java Programs', href: '/programs' },
       { title: 'About', href: '/' },
-      { title: 'Status', href: 'https://javaistic.betteruptime.com/'},
+      { title: 'Status', href: 'https://javaistic.betteruptime.com/' },
     ],
   },
   Others: {
@@ -74,7 +74,7 @@ export function Footer() {
           <Logo className="w-auto h-10" />
           <br className="mb-2" />
           <div className="flex">
-            <a href="https://vercel.com/?utm_source=javaistic&utm_campaign=oss" target="_blank" rel="noopener noreferrer">
+          <a href="https://vercel.com/?utm_source=javaistic&utm_campaign=oss" target="_blank" rel="noopener noreferrer">
               <p className="text text-sm text-gray-500 flex">
                 Powered by
                 <Vercel className="w-auto h-5 ml-1 flex" />
