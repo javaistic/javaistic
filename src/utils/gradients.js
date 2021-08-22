@@ -10,5 +10,5 @@ export const gradients = {
   green: ['from-lime-300 to-emerald-500', colors.lime[300], colors.emerald[500]],
   pink: ['from-pink-500 to-rose-500', colors.pink[500], colors.rose[500]],
   blue: ['from-sky-400 to-indigo-500', colors.sky[400], colors.indigo[500]],
-  black:['from-gray-600 to-black',colors.gray[600], colors.black],
+  black: ['from-gray-600 to-black', colors.gray[600], colors.black],
 }
