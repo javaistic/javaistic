@@ -1131,6 +1131,22 @@
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.4.tgz#19bf0f5af19149111c40d98bb0cf82119f5d9eeb"
   integrity sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==
 
+"@formspree/core@^2.6.1":
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/@formspree/core/-/core-2.6.2.tgz#a3b00214cdeb93feb9200dad3e2961b9cbc56ffe"
+  integrity sha512-cbaNhWQ4BFZWosh1Oa4pKD3CWAK3sn+nK3D1UQj6hO1O+AUH502OabKo5+ugC/P2+d4YZLadIY3mC11Ig4kEzA==
+  dependencies:
+    "@types/promise-polyfill" "^6.0.3"
+    fetch-ponyfill "^6.1.0"
+    promise-polyfill "^8.1.3"
+
+"@formspree/react@^2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@formspree/react/-/react-2.2.3.tgz#059dbbb89c740a7d1f6a1c2a46a8848ca5f24ad9"
+  integrity sha512-paiDNr0lsf3XwNiV8SrYQGXdSN471c9boFLesqxM01VimCgA0MwZbyo46cDxWO7ZML6FsuKUOvdjnRguSHFkow==
+  dependencies:
+    "@formspree/core" "^2.6.1"
+
 "@francoischalifour/autocomplete-core@^1.0.0-alpha.14":
   version "1.0.0-alpha.28"
   resolved "https://registry.yarnpkg.com/@francoischalifour/autocomplete-core/-/autocomplete-core-1.0.0-alpha.28.tgz#6b9d8491288e77f831e9b345d461623b0d3f5005"
@@ -1528,6 +1544,11 @@
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/@types/parse5/-/parse5-5.0.3.tgz#e7b5aebbac150f8b5fdd4a46e7f0bd8e65e19109"
   integrity sha512-kUNnecmtkunAoQ3CnjmMkzNU/gtxG8guhi+Fk2U/kOpIKjIMKnXGp4IJCgQJrXSgMsWYimYG4TGjz/UzbGEBTw==
+
+"@types/promise-polyfill@^6.0.3":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@types/promise-polyfill/-/promise-polyfill-6.0.4.tgz#c56670c70c601264c67191a85875fe2cf98a4cfd"
+  integrity sha512-GSCjjH6mDS8jgpT22rEOkZVqZcYj7i9AHJu4ntpvoohEpa0mLAKP/Kz3POMKqABaFsS4TyNHOeoyWpzycddcoQ==
 
 "@types/prop-types@*":
   version "15.7.4"
@@ -3239,6 +3260,13 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
+fetch-ponyfill@^6.1.0:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/fetch-ponyfill/-/fetch-ponyfill-6.1.1.tgz#dd8cdff0741a98bc89aeb85820302beb9bcc0bf4"
+  integrity sha512-rWLgTr5A44/XhvCQPYj0X9Tc+cjUaHofSM4lcwjc9MavD5lkjIhJ+h8JQlavPlTIgDpwhuRozaIykBvX9ItaSA==
+  dependencies:
+    node-fetch "~2.6.0"
+
 figures@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/figures/-/figures-3.2.0.tgz#625c18bd293c604dc4a8ddb2febf0c88341746af"
@@ -4451,7 +4479,7 @@ node-emoji@^1.8.1:
   dependencies:
     lodash.toarray "^4.4.0"
 
-node-fetch@2.6.1:
+node-fetch@2.6.1, node-fetch@~2.6.0:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
@@ -5018,6 +5046,11 @@ progress@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
+
+promise-polyfill@^8.1.3:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-8.2.0.tgz#367394726da7561457aba2133c9ceefbd6267da0"
+  integrity sha512-k/TC0mIcPVF6yHhUvwAp7cvL6I2fFV7TzF1DuGPI8mBh4QQazf36xCKEHKTZKRysEoTQoQdKyP25J8MPJp7j5g==
 
 prop-types@15.7.2, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"

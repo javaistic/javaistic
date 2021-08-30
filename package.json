@@ -16,6 +16,7 @@
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.2",
     "@docsearch/react": "^1.0.0-alpha.14",
+    "@formspree/react": "^2.2.3",
     "@juggle/resize-observer": "^3.2.0",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
