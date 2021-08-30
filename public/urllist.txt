@@ -1,0 +1,13 @@
+https://javaistic.vercel.app/
+https://javaistic.vercel.app/docs
+https://javaistic.vercel.app/docs/installation
+https://javaistic.vercel.app/programs/introduction
+https://javaistic.vercel.app/programs
+https://javaistic.vercel.app/brand
+https://javaistic.vercel.app/docs/introduction
+https://javaistic.vercel.app/docs/hello-world
+https://javaistic.vercel.app/docs/jvm-jre-jdk
+https://javaistic.vercel.app/docs/variables-and-literals
+https://javaistic.vercel.app/docs/variables-primitive-data-types
+https://javaistic.vercel.app/docs/operators
+https://javaistic.vercel.app/programs/print-an-integer
