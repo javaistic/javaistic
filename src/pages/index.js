@@ -95,7 +95,7 @@ export default function Home() {
             </NextLink>
             <NextLink href="https://github.com/sponsors/javaistic">
               <a
-                className="w-full sm:w-auto flex-none bg-gray-50 hover:bg-gray-200 text-gray-900 font-semibold shadow-md leading-6 py-3 sm:px-6 border border-gray-300 rounded-xl flex items-center justify-center space-x-2 sm:space-x-4 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-300 focus:outline-none transition-colors duration-200"
+                className="w-full sm:w-auto flex-none bg-gray-50 hover:bg-gray-200 text-gray-900 font-semibold shadow-md leading-6 py-3 sm:px-6 border border-gray-300 rounded-xl flex items-center justify-center focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-300 focus:outline-none transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
               >
