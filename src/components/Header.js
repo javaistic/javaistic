@@ -1,8 +1,8 @@
-import Link from 'next/link'
+import { Logo } from '@/components/Logo'
 import { Search } from '@/components/Search'
 import clsx from 'clsx'
+import Link from 'next/link'
 import Router from 'next/router'
-import { Logo } from '@/components/Logo'
 
 function BannerMarkMobile(props) {
   return (
