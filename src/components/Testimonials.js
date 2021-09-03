@@ -169,7 +169,7 @@ export function Testimonials() {
       type: 'tween',
       duration,
       ease: 'linear',
-      loop: Infinity,
+      repeatType: "loop"
     })
 
     return controls.stop
