@@ -16,11 +16,11 @@ export function Newsletter() {
   })
   if (state.succeeded) {
     return (
-      <div class="p-5 m-5 flex flex-wrap font-semibold hover:shadow-lg rounded-lg border border-green-400 bg-green-300 text-green-900 ">
-        <span class="mr-2">
+      <div className="p-5 m-5 flex flex-wrap font-semibold hover:shadow-lg rounded-lg border border-green-400 bg-green-300 text-green-900 ">
+        <span className="mr-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
+            className="h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
