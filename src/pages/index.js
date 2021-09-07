@@ -140,7 +140,6 @@ export default function Home() {
       </section>
       <Testimonials />
       <div className="max-w-screen-lg xl:max-w-screen-xl mx-auto space-y-20 sm:space-y-32 md:space-y-40 lg:space-y-44">
-        <Newsletter />
       </div>
       <Footer />
     </div>
