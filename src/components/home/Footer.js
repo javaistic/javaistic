@@ -9,9 +9,9 @@ import styles from './Footer.module.css'
 const GitHub = () => (
   <svg
     fill="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
     className="w-8 h-8 p-1 lg:p-0 sm:p-1"
     viewBox="0 0 35 35"
   >
@@ -22,9 +22,9 @@ const GitHub = () => (
 const Twitter = () => (
   <svg
     fill="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
     className="w-8 h-8 p-1 lg:p-0 sm:p-1"
     viewBox="0 0 24 24"
   >
@@ -100,20 +100,16 @@ export function Footer() {
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <Logo className="w-auto h-10" />
           </a>
-          <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+          <div className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:pr-4 sm:border-l-2 sm:border-r-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
             <div className="flex">
-              <a
-                href="https://github.com/uiuxarghya"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://github.com/uiuxarghya" target="_blank" rel="noopener noreferrer">
                 <p className="text text-base text-gray-500 flex">
-                 by&nbsp;<span className="text-base text-gray-800 font-bold ">@uiuxarghya</span>                
-                 </p>
+                  by&nbsp;<span className="text-base text-gray-800 font-bold">@uiuxarghya</span>
+                </p>
               </a>
             </div>
-          </p>
-          <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+          </div>
+          <div className="text-sm text-gray-500 sm:pl-4 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
             <div className="flex">
               <a
                 href="https://vercel.com/?utm_source=javaistic&utm_campaign=oss"
@@ -126,8 +122,8 @@ export function Footer() {
                 </p>
               </a>
             </div>
-          </p>
-          
+          </div>
+
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <a
               href="https://github.com/javaistic/javaistic"
