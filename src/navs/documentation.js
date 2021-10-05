@@ -16,5 +16,6 @@ export const documentationNav = {
     pages['variables-and-literals'],
     pages['variables-primitive-data-types'],
     pages['operators'],
+    pages['basic-input-output'],
   ],
 }
