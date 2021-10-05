@@ -39,3 +39,38 @@
   font-style: normal;
   src: url('../fonts/flow-circular.woff') format('woff');
 }
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Regular.woff2')
+      format('woff2'),
+    url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/ttf/JetBrainsMono-Regular.ttf')
+      format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+code {
+  font-family: 'JetBrains Mono';
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-indent: 0px;
+  text-align: start;
+  text-decoration-style: initial;
+  text-decoration-color: initial;
+  text-decoration-line: initial;
+  text-decoration-skip: initial;
+  text-decoration-spacing: initial;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-feature-settings: 'liga' on, 'calt' on;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: 'liga' on;
+}
