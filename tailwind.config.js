@@ -103,13 +103,19 @@ module.exports = {
             },
             code: {
               fontWeight: '400',
-              color: theme('colors.blue.700'),
+              color: theme('colors.gary.900'),
+              // backgroundColor: theme('colors.gray.800'),
+              padding: '2px 4px 2px 4px',
+              borderRadius: 6,
+              borderStyle: 'solid',
+              borderWidth: '2px',
+              borderColor: theme('colors.gray.400'),
             },
             'code::before': {
-              // content: 'none',
+              content: 'none',
             },
             'code::after': {
-              // content: 'none',
+              content: 'none',
             },
             pre: {
               backgroundColor: null,
@@ -144,7 +150,7 @@ module.exports = {
       }),
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-        mono: ['Menlo', ...defaultTheme.fontFamily.mono],
+        mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
         source: ['Source Sans Pro', ...defaultTheme.fontFamily.sans],
         'ubuntu-mono': ['Ubuntu Mono', ...defaultTheme.fontFamily.mono],
         system: defaultTheme.fontFamily.sans,
