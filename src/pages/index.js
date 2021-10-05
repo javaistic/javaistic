@@ -85,18 +85,18 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4 text-center mt-12 mb-28 ">
             <NextLink href="/docs">
-              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
+              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md hover:shadow-xl leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
                 Get started
               </a>
             </NextLink>
             <NextLink href="/">
-              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 text-white text-lg shadow-md hover:shadow-xl leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
                 Learn more
               </a>
             </NextLink>
             <NextLink href="https://github.com/sponsors/javaistic">
               <a
-                className="w-full sm:w-auto flex-none bg-gray-50 hover:bg-gray-200 text-gray-900 font-semibold shadow-md leading-6 py-3 sm:px-6 border border-gray-300 rounded-xl flex items-center justify-center focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-300 focus:outline-none transition-colors duration-200"
+                className="w-full sm:w-auto flex-none bg-gray-50 hover:bg-gray-100 text-md text-gray-900 font-semibold shadow-md hover:shadow-xl leading-6 py-3 sm:px-6 border-2 border-gray-300 rounded-xl flex items-center justify-center focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-300 focus:outline-none transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
               >
