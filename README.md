@@ -1,4 +1,4 @@
-# **[Javaistic](https://javaistic.vercel.app/?utm_source=github&utm_medium=readme-header&utm_campaign=javaistic) ![Stars](https://badgen.net/github/stars/javaistic/javaistic) ![Release](https://badgen.net/github/release/javaistic/javaistic)**
+# **[Javaistic](https://javaistic.vercel.app/?utm_source=github&utm_medium=readme-header&utm_campaign=javaistic) ![Stars](https://badgen.net/github/stars/javaistic/javaistic) ![Release](https://badgen.net/github/release/javaistic/javaistic) [![CodeQL](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml)**
 
 <div align="center">
 
