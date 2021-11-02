@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "The official website for Javaistic.",
   "private": true,
+  "main": "index.js",
+  "repository": "https://github.com/javaistic/javaistic.git",
+  "author": "Arghya Ghosh <71373838+uiuxarghya@users.noreply.github.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -56,11 +60,11 @@
     "webpack": "^5.61.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
     "@types/react": "^17.0.33",
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "@typescript-eslint/parser": "2.34.0",
     "babel-eslint": "10.x",
-    "@babel/core":"^7.16.0",
     "eslint": "6.x",
     "eslint-config-react-app": "^5.2.1",
     "eslint-plugin-flowtype": "4.x",
@@ -70,5 +74,5 @@
     "eslint-plugin-react-hooks": "2.x",
     "prettier": "^2.4.1",
     "typescript": "^4.4.4"
-  }
+  },
 }
