@@ -1,6 +1,6 @@
 {
   "name": "javaistic",
-  "version": "1.0.0",
+  "version": "1.4.0",
   "description": "The official website for Javaistic.",
   "private": true,
   "main": "index.js",
