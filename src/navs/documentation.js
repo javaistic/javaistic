@@ -18,5 +18,6 @@ export const documentationNav = {
     pages['operators'],
     pages['basic-input-output'],
     pages['expressions-statements-blocks'],
+    pages['comments'],
   ],
 }
