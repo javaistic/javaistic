@@ -97,7 +97,7 @@ export function Footer() {
           ))}
         </ul>
         <div className="container px-5 py-8 pb-8 mx-auto flex items-center sm:flex-row flex-col">
-          <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <a href="#" className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <Logo className="w-auto h-10" />
           </a>
           <div className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:pr-4 sm:border-l-2 sm:border-r-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
@@ -140,15 +140,15 @@ export function Footer() {
           </span>
         </div>
         <div className="container px-5 py-2 mb-0 mx-auto flex items-center sm:flex-row flex-col">
-          <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <p className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <p className="mt-2 text-sm text-gray-500">
               &copy; {new Date().getFullYear()} Javaistic. All rights reserved.
             </p>
-          </a>
-          <a className="flex pl-6 title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          </p>
+          <a href="#" className="flex pl-6 title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <p className="mt-2 text-sm text-gray-500">Privacy Policy</p>
           </a>
-          <a className="flex pl-6 title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <a href="#" className="flex pl-6 title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <p className="mt-2 text-sm text-gray-500">Terms &amp; Conditions</p>
           </a>
           <a
