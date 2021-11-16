@@ -57,7 +57,7 @@
     "tailwindcss": "^2.2.19",
     "tinytime": "^0.2.6",
     "unist-util-visit": "^2.0.3",
-    "webpack": "^5.64.0"
+    "webpack": "^5.64.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
