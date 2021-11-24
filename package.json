@@ -51,7 +51,7 @@
     "prismjs": "^1.25.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-intersection-observer": "^8.32.3",
+    "react-intersection-observer": "^8.32.4",
     "redent": "^3.0.0",
     "simple-functional-loader": "^1.2.1",
     "tailwindcss": "^2.2.19",
