@@ -191,9 +191,9 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
           <div className="mt-16 flex leading-6 font-medium">
             {prev && (
               <Link href={prev.href}>
-                <a className="flex mr-8 transition-colors duration-200 hover:text-gray-900">
+                <a className="flex mr-8 px-2 py-1 border-2 border-blue-500 rounded-md hover:shadow-md transition-colors duration-200 hover:text-gray-900">
                   <span aria-hidden="true" className="mr-2">
-                    ←
+                    &larr;
                   </span>
                   {prev.shortTitle || prev.title}
                 </a>
@@ -201,10 +201,10 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
             )}
             {next && (
               <Link href={next.href}>
-                <a className="flex text-right ml-auto transition-colors duration-200 hover:text-gray-900">
+                <a className="flex text-right ml-auto px-2 py-1 border-2 border-blue-500 rounded-md hover:shadow-md transition-colors duration-200 hover:text-gray-900">
                   {next.shortTitle || next.title}
                   <span aria-hidden="true" className="ml-2">
-                    →
+                    &rarr;
                   </span>
                 </a>
               </Link>
