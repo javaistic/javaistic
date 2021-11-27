@@ -140,11 +140,11 @@ export function Footer() {
           </span>
         </div>
         <div className="container px-5 py-2 mb-0 mx-auto flex items-center sm:flex-row flex-col">
-          <p className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <div className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <p className="mt-2 text-sm text-gray-500">
               &copy; {new Date().getFullYear()} Javaistic. All rights reserved.
             </p>
-          </p>
+          </div>
           <a href="#" className="flex pl-6 title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <p className="mt-2 text-sm text-gray-500">Privacy Policy</p>
           </a>
