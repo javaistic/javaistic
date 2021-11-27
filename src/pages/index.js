@@ -2,6 +2,7 @@ import { BigText, InlineCode, Paragraph, Widont } from '@/components/home/common
 import { Footer } from '@/components/home/Footer'
 import { Hero } from '@/components/home/Hero'
 import { Newsletter } from '@/components/home/Newsletter'
+import { OpenSource } from '@/components/home/OpenSource'
 import { Logo } from '@/components/Logo'
 import { Search } from '@/components/Search'
 import { Testimonials } from '@/components/Testimonials'
@@ -138,9 +139,9 @@ export default function Home() {
           </figure>
         </div>
       </section>
+      <OpenSource />
       <Testimonials />
-      <div className="max-w-screen-lg xl:max-w-screen-xl mx-auto space-y-20 sm:space-y-32 md:space-y-40 lg:space-y-44">
-      </div>
+      <div className="max-w-screen-lg xl:max-w-screen-xl mx-auto space-y-20 sm:space-y-32 md:space-y-40 lg:space-y-44"></div>
       <Footer />
     </div>
   )
