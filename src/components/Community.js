@@ -1,7 +1,7 @@
 export function Community() {
   return (
-    <ul className="grid sm:grid-cols-2 gap-6 xl:gap-8">
-      <li>
+    <ul className="grid sm:grid-cols-2 gap-4 xl:gap-4">
+      <li className="bg-gray-100 hover:bg-gray-200 px-4 py-4 rounded-xl transition ease-in-out duration-200" >
         <a
           href="https://github.com/javaistic/javaistic/discussions"
           className="flex items-start space-x-4"
@@ -20,7 +20,7 @@ export function Community() {
           </div>
         </a>
       </li>
-      <li>
+      <li className="bg-gray-100 hover:bg-indigo-100 px-4 py-4 rounded-xl transition ease-in-out duration-200">
         <a href="/discord" className="flex items-start space-x-4">
           <svg fill="currentColor" className="flex-none text-indigo-400 w-12 h-12">
             <rect width="48" height="48" rx="12" />
@@ -41,7 +41,7 @@ export function Community() {
           </div>
         </a>
       </li>
-      <li>
+      <li className="bg-gray-100 hover:bg-sky-100 px-4 py-4 rounded-xl transition ease-in-out duration-200">
         <a href="https://twitter.com/javaistic" className="flex items-start space-x-4">
           <svg fill="currentColor" className="flex-none text-sky-400 w-12 h-12">
             <rect width="48" height="48" rx="12" />
@@ -57,6 +57,6 @@ export function Community() {
           </div>
         </a>
       </li>
-      </ul>
+    </ul>
   )
 }
