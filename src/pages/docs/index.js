@@ -17,7 +17,7 @@ export default function DocsLandingPage() {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
         <section className="flex">
-          <div className="w-full relative text-white overflow-hidden rounded-3xl flex shadow-lg">
+          <div className="w-full relative text-white overflow-hidden rounded-xl flex shadow-lg">
             <div className={`w-full flex md:flex-col bg-gradient-to-br ${gradients.violet[0]}`}>
               <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
                 <h2 className="text-xl font-semibold mb-2 text-shadow">Read the docs</h2>
@@ -25,7 +25,7 @@ export default function DocsLandingPage() {
                   Learn how to get Java set up in your project.
                 </p>
                 <Link href="/docs/installation">
-                  <a className="mt-auto bg-violet-800 bg-opacity-50 hover:bg-opacity-75 transition-colors duration-200 rounded-xl font-semibold py-2 px-4 inline-flex">
+                  <a className="mt-auto bg-violet-800 bg-opacity-50 hover:bg-opacity-75 transition-colors duration-200 rounded-lg font-semibold py-2 px-4 inline-flex">
                     Start learning
                   </a>
                 </Link>
@@ -43,7 +43,7 @@ export default function DocsLandingPage() {
           </div>
         </section>
         <section className="flex">
-          <div className="w-full relative text-white overflow-hidden rounded-3xl flex shadow-lg">
+          <div className="w-full relative text-white overflow-hidden rounded-xl flex shadow-lg">
             <div className={`w-full flex md:flex-col bg-gradient-to-br ${gradients.pink[0]}`}>
               <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
                 <h2 className="text-xl font-semibold mb-2 text-shadow">Java Programs</h2>
@@ -52,7 +52,7 @@ export default function DocsLandingPage() {
                 </p>
                 <a
                   href="/programs"
-                  className="mt-auto bg-rose-900 bg-opacity-50 hover:bg-opacity-75 transition-colors duration-200 rounded-xl font-semibold py-2 px-4 inline-flex"
+                  className="mt-auto bg-rose-900 bg-opacity-50 hover:bg-opacity-75 transition-colors duration-200 rounded-lg font-semibold py-2 px-4 inline-flex"
                 >
                   Start coding
                 </a>
