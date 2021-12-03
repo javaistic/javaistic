@@ -86,18 +86,18 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4 text-center mt-12 mb-28 ">
             <NextLink href="/docs">
-              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md hover:shadow-xl leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
+              <button className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md hover:shadow-xl leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
                 Get started
-              </a>
+              </button>
             </NextLink>
             <NextLink href="/">
-              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 text-white text-lg shadow-md hover:shadow-xl leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              <button className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 text-white text-lg shadow-md hover:shadow-xl leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
                 Learn more
-              </a>
+              </button>
             </NextLink>
             <NextLink href="https://github.com/sponsors/javaistic">
-              <a
-                className="w-full sm:w-auto flex-none bg-gray-50 hover:bg-gray-100 text-md text-gray-900 font-semibold shadow-md hover:shadow-xl leading-6 py-3 sm:px-6 border-2 border-gray-300 rounded-xl flex items-center justify-center focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-300 focus:outline-none transition-colors duration-200"
+              <button
+                className="w-full sm:w-auto flex-none bg-gray-50 hover:bg-gray-100 text-md text-gray-900 font-semibold shadow-md hover:shadow-xl leading-6 py-3 sm:px-6 border-2 border-gray-300 rounded-lg flex items-center justify-center focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-300 focus:outline-none transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -106,7 +106,7 @@ export default function Home() {
                   <path d="M18.7663 7.23375C18.3753 6.84262 17.9111 6.53234 17.4002 6.32065C16.8893 6.10896 16.3417 6 15.7887 6C15.2357 6 14.6881 6.10896 14.1772 6.32065C13.6663 6.53234 13.2021 6.84262 12.8112 7.23375L11.9998 8.04511L11.1884 7.23375C10.3987 6.44406 9.32768 6.00041 8.21089 6.00041C7.09409 6.00041 6.02303 6.44406 5.23334 7.23375C4.44365 8.02344 4 9.0945 4 10.2113C4 11.3281 4.44365 12.3991 5.23334 13.1888L6.0447 14.0002L11.9998 19.9553L17.9549 14.0002L18.7663 13.1888C19.1574 12.7979 19.4677 12.3337 19.6794 11.8228C19.891 11.3119 20 10.7643 20 10.2113C20 9.65828 19.891 9.11068 19.6794 8.59978C19.4677 8.08888 19.1574 7.6247 18.7663 7.23375V7.23375Z" />
                 </svg>
                 &nbsp;Sponsor
-              </a>
+              </button>
             </NextLink>
           </div>
         </div>
