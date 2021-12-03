@@ -6,9 +6,7 @@ const pages = createPageList(
 )
 
 export const documentationNav = {
-  'Getting started': [
-    pages['installation'],
-  ],
+  'Getting started': [pages['installation']],
   'Java Introduction': [
     pages['introduction'],
     pages['hello-world'],
@@ -20,4 +18,5 @@ export const documentationNav = {
     pages['expressions-statements-blocks'],
     pages['comments'],
   ],
+  'Java Flow Control': [pages['if-else-statement']],
 }
