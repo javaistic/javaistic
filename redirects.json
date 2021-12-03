@@ -7,8 +7,8 @@
   },
   { "source": "/docs/slug", "destination": "/docs/slug", "permanent": false },
   { "source": "/community", "destination": "https://discord.gg/RkHJqvK9r8", "permanent": false },
-  { "source": "/changelog", "destination":"https://javaistic-changelog.vercel.app/", "permanent": false },
-  { "source": "/license", "destination":"  https://raw.githubusercontent.com/javaistic/javaistic/main/LICENSE", "permanent": false },
+  { "source": "/changelog", "destination": "https://javaistic-changelog.vercel.app/", "permanent": false },
+  { "source": "/license", "destination": "https://raw.githubusercontent.com/javaistic/javaistic/main/LICENSE", "permanent": false },
   { "source": "/discord", "destination": "https://discord.gg/RkHJqvK9r8", "permanent": false },
   { "source": "/status", "destination": "https://javaistic.betteruptime.com/", "permanent": false },
   { "source": "/stats", "destination": "https://javaistic.betteruptime.com/", "permanent": false }
