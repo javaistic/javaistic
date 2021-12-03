@@ -1,6 +1,7 @@
 import { BigText, InlineCode, Paragraph, Widont } from '@/components/home/common'
 import { Footer } from '@/components/home/Footer'
 import { Hero } from '@/components/home/Hero'
+import MenuButton from '@/components/home/Menu'
 import { Newsletter } from '@/components/home/Newsletter'
 import { OpenSource } from '@/components/home/OpenSource'
 import { Logo } from '@/components/Logo'
@@ -46,17 +47,17 @@ export default function Home() {
                 </a>
               </NextLink>
             </div>
-            <div className="flex items-center space-x-6 sm:space-x-10 ml-6 sm:ml-2">
+            <div className="flex items-center space-x-4 sm:space-x-6 ml-6 sm:ml-2">
               <Search />
               <NextLink href="/docs">
-                <a className="text-base leading-6 font-medium hover:text-gray-600 transition-colors duration-200 py-2">
-                  <span className="sm:hidden">Docs</span>
+                <a className="hidden sm:inline text-base leading-4 font-medium hover:text-gray-600 px-4 py-3 rounded-md hover:bg-gray-100 transition-colors duration-200">
                   <span className="hidden sm:inline">Documentation</span>
                 </a>
               </NextLink>
+              <MenuButton />
               <a
                 href="https://github.com/javaistic/javaistic"
-                className="text-gray-400 hover:text-gray-500 transition-colors duration-200"
+                className="hidden sm:inline text-gray-400 hover:text-gray-500 transition-colors duration-200"
               >
                 <span className="sr-only">Javaistic on GitHub</span>
                 <svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor">
