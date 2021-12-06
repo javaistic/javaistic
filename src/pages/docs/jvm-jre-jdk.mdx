@@ -5,6 +5,7 @@ description: Definations of JDK, JRE and JVM
 
 import { Heading } from '@/components/Heading'
 import Link from 'next/link'
+import NextImage from 'next/image'
  
 
 In this tutorial, you will learn about [JDK](#what-is-jdk), [JRE](#what-is-jre), and [JVM](#what-is-jvm). You will also learn the key differences between them.
@@ -19,10 +20,21 @@ Java is a **platform-independent language**. It's because when you write Java co
 
 <div className="mt-8" />
 <div align="center">
-<img className="flex-shrink" src="/img/docs/jvm-jre-jdk/1.svg" />
+  
+<NextImage
+      className="object-cover object-center shadow-xl"
+      alt="Working of a Java Program"
+      src={require('@/img/docs/jvm-jre-jdk/1.svg').default}
+      width={730}
+      height={99}
+      layout="responsive"
+      blurDataURL={require('@/img/docs/jvm-jre-jdk/1.svg').default}
+      placeholder="blur"
+      loading="lazy"
+      quality={100}
+    />
 
-**Working of a Java Program**
-
+<p align="center" className="text-base text-gray-600 font-medium">Working of a Java Program</p>
 </div>
 
 If you are interested in learning about JVM Architecture, visit [The JVM Architecture Explained](https://dzone.com/articles/jvm-architecture-explained).
@@ -34,10 +46,23 @@ If you are interested in learning about JVM Architecture, visit [The JVM Archite
 JRE is the superset of JVM.
 
 <div className="mt-8"/>
-<div align="center">
-<img className="flex-shrink" src="/img/docs/jvm-jre-jdk/2.svg" />
 
-**Java Runtime Environment**
+<div align="center"  className="lg:px-36">
+
+<NextImage
+      className="object-cover object-center shadow-xl"
+      alt="Java Runtime Environment"
+      src={require('@/img/docs/jvm-jre-jdk/2.svg').default}
+      width={354}
+      height={99}
+      layout="responsive"
+      blurDataURL={require('@/img/docs/jvm-jre-jdk/2.svg').default}
+      placeholder="blur"
+      loading="lazy"
+      quality={100}
+    />
+
+<p align="center" className="text-base text-gray-600 font-medium">Java Runtime Environment</p>
 
 </div>
 
@@ -50,10 +75,22 @@ If you need to run Java programs, but not develop them, JRE is what you need. Yo
 In addition to JRE, JDK also contains a number of development tools (compilers, JavaDoc, Java Debugger, etc).
 
 <div className="mt-8" />
-<div align="center">
-  <img className="flex-shrink" src="/img/docs/jvm-jre-jdk/3.svg" />
 
-  **Java Development Kit**
+<div align="center"  className="lg:px-36">
+<NextImage
+      className="object-cover object-center shadow-xl"
+      alt="Java Development Kit"
+      src={require('@/img/docs/jvm-jre-jdk/3.svg').default}
+      width={410}
+      height={98}
+      layout="responsive"
+      blurDataURL={require('@/img/docs/jvm-jre-jdk/3.svg').default}
+      placeholder="blur"
+      loading="lazy"
+      quality={100}
+    />
+
+<p align="center" className="text-base text-gray-600 font-medium">Java Development Kit</p>
 
 </div>
 
@@ -62,9 +99,20 @@ If you want to develop Java applications, [download JDK](http://www.oracle.com/t
 ## Relationship between JVM, JRE, and JDK.
 
 <div className="mt-8" />
-<div align="center">
-  <img className="flex-shrink" src="/img/docs/jvm-jre-jdk/4.svg" />
+<div align="center" className="lg:px-36">
+<NextImage
+      className="object-cover object-center shadow-xl "
+      alt="Relationship between JVM, JRE, and JDK"
+      src={require('@/img/docs/jvm-jre-jdk/4.svg').default}
+      width={411}
+      height={346}
+      layout="responsive"
+      blurDataURL={require('@/img/docs/jvm-jre-jdk/4.svg').default}
+      placeholder="blur"
+      loading="lazy"
+      quality={100}
+    />
 
-  **Relationship between JVM, JRE, and JDK**
+<p align="center" className="text-base text-gray-600 font-medium">Relationship between JVM, JRE, and JDK</p>
 
 </div>
