@@ -56,7 +56,7 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
-  border-radius: 1rem;
+  border-radius: 0.7rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   background: white;
 }
@@ -313,16 +313,20 @@
 }
 
 .DocSearch-Footer {
+  align-items: center;
   flex: none;
   display: flex;
   justify-content: flex-end;
   margin: 0 1.5rem;
   border-top: 1px solid theme('colors.gray.200');
   padding: 1.25rem 0;
-}
-
-.DocSearch-Commands {
-  display: none;
+  flex-direction: row-reverse;
+  position: relative;
+  flex-shrink: 0;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  justify-content: space-between;
 }
 
 .DocSearch-Logo a {
@@ -336,6 +340,37 @@
 .DocSearch-Logo svg {
   color: #5468ff;
   margin-left: 0.5rem;
+}
+
+.DocSearch-Commands {
+  color: theme('colors.gray.500');
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.75rem;
+}
+
+.DocSearch-Commands li {
+  align-items: center;
+  display: flex;
+}
+
+.DocSearch-Commands li:not(:last-of-type) {
+  margin-right: 0.8em;
+}
+
+.DocSearch-Commands-Key {
+  align-items: center;
+  background: theme('colors.gray.200');
+  border-radius: 2px;
+  box-shadow: theme('colors.gray.600');
+  display: flex;
+  height: 18px;
+  justify-content: center;
+  margin-right: 0.4em;
+  padding-bottom: 1px;
+  width: 20px;
 }
 
 .DocSearch-Hit--deleting,
@@ -400,4 +435,10 @@
   box-shadow: theme('boxShadow.link');
   color: theme('colors.blue.700');
   font-weight: 500;
+}
+
+@media (max-width: 500px) {
+  .DocSearch-Commands {
+    display: none;
+  }
 }
