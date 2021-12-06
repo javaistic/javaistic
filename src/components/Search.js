@@ -68,13 +68,13 @@ export function Search() {
         type="button"
         ref={searchButtonRef}
         onClick={onOpen}
-        className="group leading-6 font-medium flex items-center space-x-3 sm:space-x-4 hover:text-gray-600 transition-colors duration-200 w-full py-2"
+        className="group leading-6 font-medium flex items-center space-x-3 sm:space-x-4 bg-gray-100 hover:text-gray-600 transition-colors duration-200 w-full py-1.5 px-1.5 sm:px-4 lg:px-4 rounded-lg border-2 border-gray-200"
       >
         <svg
           width="24"
           height="24"
           fill="none"
-          className="text-gray-400 group-hover:text-gray-500 transition-colors duration-200"
+          className="text-blue-400 group-hover:text-blue-500 transition-colors duration-200"
         >
           <path
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
@@ -89,7 +89,7 @@ export function Search() {
         </span>
         <span
           style={{ opacity: browserDetected ? '1' : '0' }}
-          className="hidden sm:block text-gray-400 text-sm leading-5 py-0.5 px-1.5 border border-gray-300 rounded-md"
+          className="hidden sm:block text-gray-500 text-sm leading-5 py-0.5 px-1.5 border border-gray-400 rounded-md"
         >
           <span className="sr-only">Press </span>
           <kbd className="font-sans">
