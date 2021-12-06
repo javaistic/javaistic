@@ -45,7 +45,7 @@
     "glob": "^7.2.0",
     "intersection-observer": "^0.12.0",
     "minimatch": "^3.0.4",
-    "next": "^12.0.4",
+    "next": "^12.0.7",
     "postcss": "^8.4.4",
     "postcss-focus-visible": "^5.0.0",
     "postcss-import": "^14.0.2",
