@@ -15,22 +15,22 @@ export default function ProgramsLandingPage() {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-1 gap-6 xl:gap-8">
         <section className="flex">
-          <div className="w-full relative text-white overflow-hidden rounded-3xl flex shadow-lg">
-            <div className={`w-full flex md:flex-col bg-gradient-to-br ${gradients.pink[0]}`}>
+          <div className="w-full relative text-white overflow-hidden rounded-xl flex shadow-lg">
+            <div className={`w-full flex md:flex-row py-6 bg-gradient-to-br ${gradients.pink[0]}`}>
               <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
                 <h2 className="text-xl font-semibold mb-2 text-shadow">Java Programs</h2>
                 <p className="font-medium text-rose-100 text-shadow mb-4">
-                  Start coding right now or go through Java code.
+                  A bunch of Java programms for learning and practicing.
                 </p>
                 <a
                   href="/programs/introduction"
-                  className="mt-auto bg-rose-900 bg-opacity-50 hover:bg-opacity-75 transition-colors duration-200 rounded-xl font-semibold py-2 px-4 inline-flex"
+                  className="mt-auto bg-rose-900 bg-opacity-50 hover:bg-opacity-75 transition-colors duration-200 rounded-lg font-semibold py-2 px-4 inline-flex"
                 >
                   Start learning
                 </a>
               </div>
-              <div className={`${styles.image} relative md:pl-6 xl:pl-8 hidden sm:block`}>
-                <PlayImage className="absolute top-6 left-6 md:static overflow-visible" />
+              <div className={`${styles.image} relative md:pl-16 xl:pl-20 hidden sm:block`}>
+                <PlayImage className="absolute top-6 right-6 md:static overflow-visible" />
               </div>
             </div>
             <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-rose-500 hidden sm:block" />
