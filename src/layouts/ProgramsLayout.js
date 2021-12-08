@@ -14,6 +14,7 @@ export function ProgramsLayout(props) {
         {props.layoutProps.meta.metaTitle || props.layoutProps.meta.title}
       </Title>
       <Head>
+        <meta name="description" content={props.layoutProps.meta.metaDescription || props.layoutProps.meta.description} />
         <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
         <meta
           key="twitter:image"
