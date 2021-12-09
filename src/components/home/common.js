@@ -48,7 +48,7 @@ export function Link({ className = '', href, ...props }) {
 }
 
 export function InlineCode({ className = '', ...props }) {
-  return <code className={`font-mono text-gray-900 font-bold ${className}`} {...props} />
+  return <code className={`font-mono text-gray-900 dark:text-gray-50 font-bold ${className}`} {...props} />
 }
 
 export { Widont } from '@/components/Widont'
