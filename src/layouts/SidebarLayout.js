@@ -14,13 +14,13 @@ const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHre
       <Link href={isPublished ? href : fallbackHref}>
         <a
           className={clsx('px-3 py-2 transition-colors duration-200 relative block', {
-            'text-blue-700': isActive,
-            'hover:text-gray-900 text-gray-500': !isActive && isPublished,
-            'text-gray-400': !isActive && !isPublished,
+            'text-blue-700 dark:text-blue-400': isActive,
+            'hover:text-gray-900 text-gray-500 dark:hover:text-white': !isActive && isPublished,
+            'text-gray-400 dark:text-white': !isActive && !isPublished,
           })}
         >
           <span
-            className={clsx('rounded-md absolute inset-0 bg-blue-50', {
+            className={clsx('rounded-md absolute inset-0 bg-blue-50 dark:bg-gray-800', {
               'opacity-0': !isActive,
             })}
           />
@@ -55,7 +55,7 @@ function Nav({ nav, children, fallbackHref }) {
     <nav
       id="nav"
       ref={scrollRef}
-      className="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-6 lg:pb-14 sticky?lg:h-(screen-18)"
+      className="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-6 lg:pb-14 sticky?lg:h-(screen-18) bg-white dark:bg-gray-900"
     >
       <div className="relative flex mb-8 px-3 lg:hidden">
         <Logo className="w-auto h-10" />
@@ -113,10 +113,10 @@ const TopLevelAnchor = forwardRef(
           href={href}
           onClick={onClick}
           className={clsx(
-            'flex items-center px-3 hover:text-gray-900 transition-colors duration-200',
+            'flex items-center px-3 hover:text-gray-900 dark:hover:text-white transition-colors duration-200',
             className,
             {
-              'text-gray-900': isActive,
+              'text-gray-900 dark:text-white': isActive,
             }
           )}
         >
