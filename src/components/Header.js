@@ -3,12 +3,14 @@ import { Search } from '@/components/Search'
 import clsx from 'clsx'
 import Link from 'next/link'
 import Router from 'next/router'
+import ThemeChanger from './ThemeChanger'
+
 
 export function Header({ navIsOpen, onNavToggle }) {
   return (
     <>
-      <div className="sticky top-0 z-40 lg:z-50 w-full max-w-8xl mx-auto bg-white flex-none flex border-b border-gray-200">
-        <div className="flex-none pl-4 sm:pl-6 xl:pl-8 flex items-center border-b border-gray-200 lg:border-b-0 lg:w-60 xl:w-72">
+      <div className="sticky top-0 z-40 lg:z-50 w-full max-w-8xl mx-auto bg-white dark:bg-gray-900 flex-none flex border-b border-gray-200 dark:border-gray-700">
+        <div className="flex-none pl-4 sm:pl-6 xl:pl-8 flex items-center border-b border-gray-200 dark:border-gray-700 lg:border-b-0 lg:w-60 xl:w-72">
           <Link href="/">
             <a
               className="overflow-hidden w-10 md:w-auto"
@@ -18,13 +20,14 @@ export function Header({ navIsOpen, onNavToggle }) {
               }}
             >
               <span className="sr-only">Javaistic home page</span>
-              <Logo className="w-auto h-10" />
+              <Logo className="w-auto h-10 text-black dark:text-white" />
             </a>
           </Link>
         </div>
         <div className="flex-auto h-18 flex items-center justify-between px-4 sm:px-6 lg:mx-6 lg:px-0 xl:mx-8">
           <Search />
           <div className="lg:w-64 pl-8 flex-shrink-0 flex items-center justify-end space-x-6">
+            <ThemeChanger />
             <a
               href="https://github.com/javaistic/javaistic"
               className="text-gray-400 hover:text-gray-500 transition-colors duration-200"
