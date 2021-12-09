@@ -10,6 +10,7 @@ import { Testimonials } from '@/components/Testimonials'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import Router from 'next/router'
+import ThemeChanger from '@/components/ThemeChanger'
 
 export default function Home() {
   return (
@@ -43,11 +44,11 @@ export default function Home() {
                     Router.push('/brand')
                   }}
                 >
-                  <Logo className="w-auto flex h-8 lg:h-10 sm:h-5" />
+                  <Logo className="w-auto flex h-8 lg:h-10 sm:h-5 text-black dark:text-white" />
                 </a>
               </NextLink>
             </div>
-            <div className="flex items-center space-x-4 sm:space-x-6 ml-6 sm:ml-2">
+            <div className="flex items-center space-x-4 sm:space-x-6 ml-4 sm:ml-2">
               <Search />
               <NextLink href="/docs">
                 <a className="hidden sm:inline text-base leading-4 font-medium hover:text-gray-600 px-4 py-3 rounded-md hover:bg-gray-100 transition-colors duration-200">
@@ -55,6 +56,7 @@ export default function Home() {
                 </a>
               </NextLink>
               <MenuButton />
+              <ThemeChanger />
               <a
                 href="https://github.com/javaistic/javaistic"
                 className="hidden sm:inline text-gray-400 hover:text-gray-500 transition-colors duration-200"
@@ -69,7 +71,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-gray-900 mt-16 mb-8 sm:mt-18 sm:mb-10">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-gray-900 dark:text-white mt-16 mb-8 sm:mt-18 sm:mb-10">
             Learn{' '}
             <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-cyan-500">
               Java
@@ -115,7 +117,7 @@ export default function Home() {
       </header>
       <section className="relative z-10 text-center max-w-screen-lg xl:max-w-screen-xl mx-auto">
         <div className="px-4 sm:px-6 md:px-8">
-          <BigText as="h2" className="mb-8">
+          <BigText as="h2" className="mb-8 text-gray-900 dark:text-white">
             <Widont>“ Learning By Doing ” actually works.</Widont>
           </BigText>
           <figure>
