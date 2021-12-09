@@ -8,3 +8,11 @@
 
 @import 'tailwindcss/components';
 @import 'utilities.css';
+
+h1,h2,h3,h4,h5,h6,code,strong {
+    @apply text-gray-900 dark:text-white
+}
+
+p{
+    @apply text-gray-600 dark:text-gray-300
+}
