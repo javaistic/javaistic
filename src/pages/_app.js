@@ -5,6 +5,7 @@ import ProgressBar from '@badrap/bar-of-progress'
 import { ResizeObserver } from '@juggle/resize-observer'
 import 'focus-visible'
 import 'intersection-observer'
+import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import Router from 'next/router'
 import { Fragment, useEffect, useState } from 'react'
@@ -50,7 +51,7 @@ export default function App({ Component, pageProps, router }) {
     return () => {
       Router.events.off('routeChangeComplete', handleRouteChange)
     }
-  }, [navIsOpen],[router.events])
+  }, [navIsOpen], [router.events])
 
   const Layout = Component.layoutProps?.Layout || Fragment
   const layoutProps = Component.layoutProps?.Layout
@@ -65,36 +66,38 @@ export default function App({ Component, pageProps, router }) {
 
   return (
     <>
-      <Title suffix="Javaistic">{meta.metaTitle || meta.title}</Title>
-      <Head>
-        <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
-        <meta key="twitter:site" name="twitter:site" content="@javaistic" />
-        <meta key="twitter:description" name="twitter:description" content={description} />
-        <meta
-          key="twitter:image"
-          name="twitter:image"
-          content={`https://javaistic.vercel.app${twitterLargeCard}`}
-        />
-        <meta key="twitter:creator" name="twitter:creator" content="@javaistic" />
-        <meta
-          key="og:url"
-          property="og:url"
-          content={`https://javaistic.vercel.app${router.pathname}`}
-        />
-        <meta key="og:type" property="og:type" content="article" />
-        <meta key="og:description" property="og:description" content={description} />
-        <meta
-          key="og:image"
-          property="og:image"
-          content={`https://javaistic.vercel.app${twitterLargeCard}`}
-        />
-      </Head>
-      {router.pathname !== '/' && (
-        <Header navIsOpen={navIsOpen} onNavToggle={(isOpen) => setNavIsOpen(isOpen)} />
-      )}
-      <Layout {...layoutProps}>
-        <Component {...pageProps} />
-      </Layout>
+      <ThemeProvider enableSystem={true} attribute="class">
+        <Title suffix="Javaistic">{meta.metaTitle || meta.title}</Title>
+        <Head>
+          <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
+          <meta key="twitter:site" name="twitter:site" content="@javaistic" />
+          <meta key="twitter:description" name="twitter:description" content={description} />
+          <meta
+            key="twitter:image"
+            name="twitter:image"
+            content={`https://javaistic.vercel.app${twitterLargeCard}`}
+          />
+          <meta key="twitter:creator" name="twitter:creator" content="@javaistic" />
+          <meta
+            key="og:url"
+            property="og:url"
+            content={`https://javaistic.vercel.app${router.pathname}`}
+          />
+          <meta key="og:type" property="og:type" content="article" />
+          <meta key="og:description" property="og:description" content={description} />
+          <meta
+            key="og:image"
+            property="og:image"
+            content={`https://javaistic.vercel.app${twitterLargeCard}`}
+          />
+        </Head>
+        {router.pathname !== '/' && (
+          <Header navIsOpen={navIsOpen} onNavToggle={(isOpen) => setNavIsOpen(isOpen)} />
+        )}
+        <Layout {...layoutProps}>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
     </>
   )
 }
