@@ -25,7 +25,7 @@ export function OpenSource() {
           <GitHubImage />
         </div>
         <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl leading-none font-extrabold text-gray-900 tracking-tight mb-8">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl leading-none font-extrabold text-gray-900 dark:text-white tracking-tight mb-8">
             Open to anyone.&nbsp;
             <br className="hidden lg:inline-block" />
             Fork it, twist it. Flip it.
@@ -35,7 +35,7 @@ export function OpenSource() {
             everyone.
           </p>
           <div className="flex justify-center">
-            <button className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-800 text-white text-lg shadow-md hover:shadow-xl leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+            <button className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 text-white text-lg shadow-md hover:shadow-xl leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
               <NextLink href="https://github.com/javaistic/javaistic">View on GitHub</NextLink>
             </button>
           </div>
