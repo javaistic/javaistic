@@ -30,7 +30,7 @@ export function Header({ navIsOpen, onNavToggle }) {
             <ThemeChanger />
             <a
               href="https://github.com/javaistic/javaistic"
-              className="text-gray-400 hover:text-gray-500 transition-colors duration-200"
+              className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors duration-200"
             >
               <span className="sr-only">Javaistic on GitHub</span>
               <svg className="w-6 h-6" viewBox="0 0 16 16" fill="currentColor">
@@ -45,7 +45,7 @@ export function Header({ navIsOpen, onNavToggle }) {
       </div>
       <button
         type="button"
-        className="fixed z-50 bottom-4 right-4 w-16 h-16 rounded-full bg-gray-900 text-white block lg:hidden"
+        className="fixed z-50 bottom-4 right-4 w-16 h-16 rounded-full bg-gray-900 dark:bg-gray-700 text-white block lg:hidden"
         onClick={() => onNavToggle(!navIsOpen)}
       >
         <span className="sr-only">Open site navigation</span>
