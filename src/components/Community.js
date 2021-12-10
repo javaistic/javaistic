@@ -1,7 +1,7 @@
 export function Community() {
   return (
     <ul className="grid sm:grid-cols-2 gap-4 xl:gap-4">
-      <li className="bg-gray-100 hover:bg-gray-200 px-4 py-4 rounded-xl transition ease-in-out duration-200" >
+      <li className="bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 px-4 py-4 rounded-xl transition ease-in-out duration-200" >
         <a
           href="https://github.com/javaistic/javaistic/discussions"
           className="flex items-start space-x-4"
@@ -15,12 +15,12 @@ export function Community() {
             />
           </svg>
           <div className="flex-auto">
-            <h3 className="font-bold text-gray-900">GitHub Discussions</h3>
+            <h3 className="font-bold text-gray-900 dark:text-white">GitHub Discussions</h3>
             <p>Connect with members of the Javaistic community.</p>
           </div>
         </a>
       </li>
-      <li className="bg-gray-100 hover:bg-indigo-100 px-4 py-4 rounded-xl transition ease-in-out duration-200">
+      <li className="bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 px-4 py-4 rounded-xl transition ease-in-out duration-200">
         <a href="/discord" className="flex items-start space-x-4">
           <svg fill="currentColor" className="flex-none text-indigo-400 w-12 h-12">
             <rect width="48" height="48" rx="12" />
@@ -36,12 +36,12 @@ export function Community() {
             />
           </svg>
           <div className="flex-auto">
-            <h3 className="font-bold text-gray-900">Discord</h3>
+            <h3 className="font-bold text-gray-900 dark:text-white">Discord</h3>
             <p>Join our Discord group to chat with other Javaistic users.</p>
           </div>
         </a>
       </li>
-      <li className="bg-gray-100 hover:bg-sky-100 px-4 py-4 rounded-xl transition ease-in-out duration-200">
+      <li className="bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 px-4 py-4 rounded-xl transition ease-in-out duration-200">
         <a href="https://twitter.com/javaistic" className="flex items-start space-x-4">
           <svg fill="currentColor" className="flex-none text-sky-400 w-12 h-12">
             <rect width="48" height="48" rx="12" />
@@ -52,7 +52,7 @@ export function Community() {
             />
           </svg>
           <div className="flex-auto">
-            <h3 className="font-bold text-gray-900">Twitter</h3>
+            <h3 className="font-bold text-gray-900 dark:text-white">Twitter</h3>
             <p>Follow the Javaistic Twitter account for news and updates.</p>
           </div>
         </a>
