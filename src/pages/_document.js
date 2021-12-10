@@ -11,7 +11,7 @@ export default class Document extends NextDocument {
       <Html
         lang="en"
         className={`text-gray-500 antialiased ${
-          this.props.dangerousAsPath.startsWith('/examples/') ? '' : 'bg-white'
+          this.props.dangerousAsPath.startsWith('/examples/') ? '' : 'bg-white dark:bg-gray-900'
         }`}
       >
         <Head>
@@ -40,7 +40,7 @@ export default class Document extends NextDocument {
             }}
           />
         </Head>
-        <body>
+        <body className="bg-white dark:bg-gray-900">
           <Main />
           <NextScript />
           <script> </script>

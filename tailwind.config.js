@@ -84,10 +84,8 @@ module.exports = {
               backgroundColor: theme('colors.gray.300'),
             },
             a: {
-              color: theme('colors.blue.700'),
+              color: theme('colors.blue.600'),
               fontWeight: theme('fontWeight.medium'),
-              textDecoration: 'none',
-              boxShadow: theme('boxShadow.link'),
             },
             'a code': {
               color: 'inherit',
@@ -106,10 +104,8 @@ module.exports = {
               color: theme('colors.gary.900'),
               // backgroundColor: theme('colors.gray.800'),
               padding: '2px 4px 2px 4px',
-              borderRadius: 6,
-              borderStyle: 'solid',
-              borderWidth: '2px',
-              borderColor: theme('colors.gray.400'),
+              borderRadius: 4,
+
             },
             'code::before': {
               content: 'none',
@@ -130,10 +126,9 @@ module.exports = {
             },
             thead: {
               color: theme('colors.gray.600'),
-              borderBottomColor: theme('colors.gray.200'),
             },
             'thead th': {
-              paddingTop: 0,
+              paddingTop: 7,
               fontWeight: theme('fontWeight.semibold'),
             },
             'tbody tr': {
@@ -176,7 +171,6 @@ module.exports = {
       }),
       boxShadow: {
         px: '0 0 0 1px rgba(0, 0, 0, 0.5)',
-        link: 'inset 0 -0.125em 0 0 #fff, inset 0 -0.375em 0 0 rgba(165, 243, 252, 0.4)',
       },
       keyframes: {
         'flash-code': {

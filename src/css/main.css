@@ -8,3 +8,42 @@
 
 @import 'tailwindcss/components';
 @import 'utilities.css';
+
+/*Custom CSS*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+code,
+strong,
+prose {
+  @apply text-gray-900 dark:text-white;
+}
+
+p {
+  @apply text-gray-500 dark:text-gray-300;
+}
+
+p a,.prose a {
+  @apply text-blue-500 dark:text-blue-300 no-underline hover:underline;
+}
+
+.prose p code,
+li code {
+  @apply text-gray-700 dark:text-white bg-gray-200 dark:bg-gray-600;
+}
+
+hr {
+  @apply border-gray-300 dark:border-gray-700;
+}
+
+thead tr th {
+  @apply text-gray-700 dark:text-white bg-gray-200 dark:bg-gray-600;
+}
+
+.prose {
+  @apply text-gray-500 dark:text-gray-300;
+}

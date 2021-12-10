@@ -29,10 +29,10 @@ function TableOfContents({ tableOfContents, currentSection }) {
 
   return (
     <>
-      <h5 className="text-gray-900 uppercase tracking-wide font-semibold mb-3 text-sm lg:text-xs">
+      <h5 className="text-gray-900 dark:text-white uppercase tracking-wide font-semibold mb-3 text-sm lg:text-xs">
         On this page
       </h5>
-      <ul className="overflow-x-hidden text-gray-500 font-medium">
+      <ul className="overflow-x-hidden text-gray-500 dark:text-gray-400 font-medium">
         {tableOfContents.map((section) => {
           let sectionIsActive =
             currentSection === section.slug ||
@@ -45,9 +45,9 @@ function TableOfContents({ tableOfContents, currentSection }) {
                   href={`#${section.slug}`}
                   onClick={closeNav}
                   className={clsx(
-                    'block transform transition-colors duration-200 py-2 hover:text-gray-900',
+                    'block transform transition-colors duration-200 py-2 hover:text-gray-900 dark:hover:text-white',
                     {
-                      'text-gray-900': sectionIsActive,
+                      'text-gray-900 dark:text-white': sectionIsActive,
                     }
                   )}
                 >
@@ -69,9 +69,9 @@ function TableOfContents({ tableOfContents, currentSection }) {
                       href={`#${subsection.slug}`}
                       onClick={closeNav}
                       className={clsx(
-                        'block py-2 transition-colors duration-200 hover:text-gray-900 font-medium',
+                        'block py-2 transition-colors duration-200 hover:text-gray-900 dark:hover:text-white font-medium',
                         {
-                          'text-gray-900': subsectionIsActive,
+                          'text-gray-900 dark:text-white': subsectionIsActive,
                         }
                       )}
                     >
@@ -191,7 +191,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
           <div className="mt-16 flex leading-6 font-medium">
             {prev && (
               <Link href={prev.href}>
-                <a className="flex mr-8 px-2 py-1 border-2 border-blue-500 rounded-md hover:shadow-md transition-colors duration-200 hover:text-gray-900">
+                <a className="flex mr-8 px-2 py-1 border-2 border-blue-500 dark:border-blue-400 rounded-md hover:shadow-md transition-colors duration-200 text-gray-400 hover:text-gray-900 dark:hover:text-white">
                   <span aria-hidden="true" className="mr-2">
                     &larr;
                   </span>
@@ -201,7 +201,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
             )}
             {next && (
               <Link href={next.href}>
-                <a className="flex text-right ml-auto px-2 py-1 border-2 border-blue-500 rounded-md hover:shadow-md transition-colors duration-200 hover:text-gray-900">
+                <a className="flex text-right ml-auto px-2 py-1 border-2 border-blue-500 dark:border-blue-400 rounded-md hover:shadow-md transition-colors duration-200 text-gray-400 hover:text-gray-900 dark:hover:text-white">
                   {next.shortTitle || next.title}
                   <span aria-hidden="true" className="ml-2">
                     &rarr;
@@ -211,16 +211,16 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
             )}
           </div>
         )}
-        <div className="mt-12 border-t border-gray-200 pt-6 text-right">
+        <div className="mt-12 border-t border-gray-200 dark:border-gray-700 pt-6 text-right">
           <Link
             href={`https://github.com/javaistic/javaistic/edit/main/src/pages${router.pathname}.mdx`}
           >
-            <a className="mt-10 text-sm hover:text-gray-900">Edit this page on GitHub</a>
+            <a className="mt-10 text-sm hover:text-gray-900 dark:hover:text-white">Edit this page on GitHub</a>
           </Link>
         </div>
         <Link href={`https://vercel.com/?utm_source=javaistic&utm_campaign=oss`}>
           <a className="text-sm mr-1">
-            Powered by <span className="text text-base font-bold text-black">▲Vercel</span>
+            Powered by <span className="text text-base font-bold text-black dark:text-white">▲Vercel</span>
           </a>
         </Link>
       </div>

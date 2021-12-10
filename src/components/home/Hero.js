@@ -152,7 +152,7 @@ export function Hero() {
               <div className="flex-auto flex flex-col min-w-0">
                 <CompletionDemo />
                 <div className="border-t border-white border-opacity-10 font-mono text-xs text-white p-4 space-y-2">
-                  <h3>Output</h3>
+                  <h3 className='text-white'>Output</h3>
                   <ul className="leading-5">
                     {outputs.map((output, i) => (
                       <li key={i} className="flex min-w-0">

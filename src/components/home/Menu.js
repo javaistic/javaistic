@@ -1,5 +1,5 @@
 import { Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon,MenuIcon } from '@heroicons/react/solid'
 import { Fragment } from 'react'
 
 function classNames(...classes) {
@@ -10,9 +10,10 @@ export default function MenuButton() {
     return (
         <Menu as="div" className="relative inline-block text-left">
             <div>
-                <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-100">
-                    Menu
-                    <ChevronDownIcon className="-mr-1 ml-2 h-6 w-6" aria-hidden="true" />
+                <Menu.Button className="inline-flex justify-center w-full rounded-md border-2 border-gray-300 dark:border-gray-500 shadow-sm px-3.5 py-1.5 bg-white dark:bg-gray-700 text-base font-medium text-gray-700 dark:text-white hover:bg-gray-100">
+                    <span className="hidden sm:inline-flex">Menu</span>
+                    <ChevronDownIcon className="hidden sm:inline-flex -mr-1 ml-2 h-6 w-6" aria-hidden="true" />
+                    <MenuIcon className="sm:hidden h-6 w-6" aria-hidden="true" />
                 </Menu.Button>
             </div>
 
@@ -25,14 +26,14 @@ export default function MenuButton() {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black dark:ring-gray-700 ring-opacity-5 focus:outline-none">
                     <div className="py-1">
                         <Menu.Item>
                             {({ active }) => (
                                 <a
                                     href="/docs"
                                     className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                        active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
                                         'block px-4 py-2 text-base sm:hidden'
                                     )}
                                 >
@@ -45,7 +46,7 @@ export default function MenuButton() {
                                 <a
                                     href="#"
                                     className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                        active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
                                         'block px-4 py-2 text-base'
                                     )}
                                 >
@@ -58,7 +59,7 @@ export default function MenuButton() {
                                 <a
                                     href="/sponsors"
                                     className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                        active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
                                         'block px-4 py-2 text-base'
                                     )}
                                 >
@@ -71,7 +72,7 @@ export default function MenuButton() {
                                 <a
                                     href="/license"
                                     className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                        active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
                                         'block px-4 py-2 text-base'
                                     )}
                                 >
@@ -84,7 +85,7 @@ export default function MenuButton() {
                                 <a
                                     href="/changelog"
                                     className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                        active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
                                         'block w-full text-left px-4 py-2 text-base'
                                     )}
                                 >
@@ -97,7 +98,7 @@ export default function MenuButton() {
                                 <a
                                     href="https://github.com/javaistic/javaistic"
                                     className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                        active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
                                         'block px-4 py-2 text-base sm:hidden'
                                     )}
                                 >

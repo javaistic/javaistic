@@ -68,7 +68,7 @@ export function Search() {
         type="button"
         ref={searchButtonRef}
         onClick={onOpen}
-        className="group leading-6 font-medium flex items-center space-x-3 sm:space-x-4 bg-gray-100 hover:text-gray-600 transition-colors duration-200 w-full py-1.5 px-1.5 sm:px-4 lg:px-4 rounded-lg border-2 border-gray-200"
+        className="group leading-6 font-medium flex items-center space-x-3 sm:space-x-4 text-gray-500 bg-gray-100 hover:text-gray-600 dark:bg-gray-800 dark:text-gray-400 transition ease-in-out duration-200 w-full py-1.5 px-1.5 sm:px-4 lg:px-4 rounded-lg border-2 border-gray-200 dark:border-gray-600"
       >
         <svg
           width="24"
@@ -85,7 +85,7 @@ export function Search() {
           />
         </svg>
         <span>
-        <span className="lg:hidden md:hidden">Search</span><span className="hidden sm:inline">Quick search for anything</span>
+          <span className="lg:hidden md:hidden">Search</span><span className="hidden sm:inline">Quick search for anything</span>
         </span>
         <span
           style={{ opacity: browserDetected ? '1' : '0' }}

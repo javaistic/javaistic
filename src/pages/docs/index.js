@@ -20,8 +20,8 @@ export default function DocsLandingPage() {
           <div className="w-full relative text-white overflow-hidden rounded-xl flex shadow-lg">
             <div className={`w-full flex md:flex-col bg-gradient-to-br ${gradients.violet[0]}`}>
               <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
-                <h2 className="text-xl font-semibold mb-2 text-shadow">Read the docs</h2>
-                <p className="font-medium text-violet-100 text-shadow mb-4">
+                <h2 className="text-xl font-semibold mb-2 text-shadow text-white">Read the docs</h2>
+                <p className="font-medium text-violet-100 dark:text-violet-100 text-shadow mb-4">
                   Learn how to get Java set up in your project.
                 </p>
                 <Link href="/docs/installation">
@@ -46,8 +46,8 @@ export default function DocsLandingPage() {
           <div className="w-full relative text-white overflow-hidden rounded-xl flex shadow-lg">
             <div className={`w-full flex md:flex-col bg-gradient-to-br ${gradients.pink[0]}`}>
               <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
-                <h2 className="text-xl font-semibold mb-2 text-shadow">Java Programs</h2>
-                <p className="font-medium text-rose-100 text-shadow mb-4">
+                <h2 className="text-xl font-semibold mb-2 text-shadow text-white">Java Programs</h2>
+                <p className="font-medium text-rose-100 dark:text-rose-100 text-shadow mb-4">
                   Start coding right now or go through Java code.
                 </p>
                 <a
