@@ -26,14 +26,14 @@ export default function MenuButton() {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black dark:ring-gray-700 ring-opacity-5 focus:outline-none">
                     <div className="py-1">
                         <Menu.Item>
                             {({ active }) => (
                                 <a
                                     href="/docs"
                                     className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                        active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
                                         'block px-4 py-2 text-base sm:hidden'
                                     )}
                                 >
@@ -46,7 +46,7 @@ export default function MenuButton() {
                                 <a
                                     href="#"
                                     className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                        active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
                                         'block px-4 py-2 text-base'
                                     )}
                                 >
@@ -59,7 +59,7 @@ export default function MenuButton() {
                                 <a
                                     href="/sponsors"
                                     className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                        active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
                                         'block px-4 py-2 text-base'
                                     )}
                                 >
@@ -72,7 +72,7 @@ export default function MenuButton() {
                                 <a
                                     href="/license"
                                     className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                        active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
                                         'block px-4 py-2 text-base'
                                     )}
                                 >
@@ -85,7 +85,7 @@ export default function MenuButton() {
                                 <a
                                     href="/changelog"
                                     className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                        active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
                                         'block w-full text-left px-4 py-2 text-base'
                                     )}
                                 >
@@ -98,7 +98,7 @@ export default function MenuButton() {
                                 <a
                                     href="https://github.com/javaistic/javaistic"
                                     className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                        active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
                                         'block px-4 py-2 text-base sm:hidden'
                                     )}
                                 >
