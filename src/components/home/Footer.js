@@ -41,7 +41,7 @@ const footerNav = {
     className: 'row-span-2',
     items: programsNav['Getting started'],
   },
-  Javaistic: {
+  Product: {
     className: 'row-span-2',
     items: [
       { title: 'Home', href: '/' },
@@ -72,21 +72,21 @@ const footerNav = {
 
 export function Footer() {
   return (
-    <footer className="bg-gray-100 pt-16 pb-10 sm:pt-20 md:pt-24 xl:pt-28 sm:pb-10">
-      <div className="max-w-screen-lg xl:max-w-screen-xl mx-auto divide-y divide-gray-200 px-4 sm:px-6 md:px-8">
+    <footer className="bg-gray-100 dark:bg-gray-800 pt-16 pb-10 sm:pt-20 md:pt-24 xl:pt-28 sm:pb-10">
+      <div className="max-w-screen-lg xl:max-w-screen-xl mx-auto divide-y divide-gray-200 dark:divide-gray-600 px-4 sm:px-6 md:px-8">
         <ul
-          className={`${styles.nav} text-sm font-medium pb-14 sm:pb-20 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10`}
+          className={`${styles.nav} text-sm font-medium pb-14 sm:pb-20 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10`}
         >
           {Object.keys(footerNav).map((section, i) => (
             <li key={section} className={clsx('space-y-5', footerNav[section].className)}>
-              <h2 className="text-base font-bold tracking-wide text-gray-900 uppercase">
+              <h2 className="text-base font-bold tracking-wide text-gray-900 dark:text-white uppercase">
                 {section}
               </h2>
               <ul className="space-y-4">
                 {footerNav[section].items.map((item) => (
                   <li key={item.href}>
                     <Link href={item.href}>
-                      <a className="hover:text-gray-900 transition-colors duration-200">
+                      <a className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition ease-in-out duration-200">
                         {item.title}
                       </a>
                     </Link>
@@ -98,27 +98,27 @@ export function Footer() {
         </ul>
         <div className="container px-5 py-8 pb-8 mx-auto flex items-center sm:flex-row flex-col">
           <a href="#" className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            <Logo className="w-auto h-10" />
+            <Logo className="w-auto h-10 text-black dark:text-white" />
           </a>
-          <div className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:pr-4 sm:border-l-2 sm:border-r-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+          <div className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:pr-4 sm:border-l-2 sm:border-r-2 sm:border-gray-200 sm:dark:border-gray-600 sm:py-2 sm:mt-0 mt-4">
             <div className="flex">
               <a href="https://github.com/uiuxarghya" target="_blank" rel="noopener noreferrer">
-                <p className="text text-base text-gray-500 flex">
-                  by&nbsp;<span className="text-base text-gray-800 font-bold">@uiuxarghya</span>
+                <p className="text text-base text-gray-500 dark:text-gray-200 flex">
+                  by&nbsp;<span className="text-base text-gray-800 dark:text-white font-bold">@uiuxarghya</span>
                 </p>
               </a>
             </div>
           </div>
-          <div className="text-sm text-gray-500 sm:pl-4 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+          <div className="text-sm text-gray-500 sm:pl-4 sm:border-gray-200 sm:dark:border-gray-600 sm:py-2 sm:mt-0 mt-4">
             <div className="flex">
               <a
                 href="https://vercel.com/?utm_source=javaistic&utm_campaign=oss"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <p className="text text-sm text-gray-500 flex">
+                <p className="text text-sm text-gray-500 dark:text-gray-200 flex">
                   Powered by
-                  <Vercel className="w-auto h-5 ml-1 flex" />
+                  <Vercel className="w-auto h-5 ml-1 flex text-black dark:text-white" />
                 </p>
               </a>
             </div>
@@ -127,7 +127,7 @@ export function Footer() {
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <a
               href="https://github.com/javaistic/javaistic"
-              className="ml-3 text-gray-500 hover:text-black"
+              className="ml-3 text-gray-500 hover:text-black dark:hover:text-white transition ease-in-out duration-200"
             >
               <GitHub />
             </a>
@@ -155,7 +155,7 @@ export function Footer() {
             href="https://javaistic.betteruptime.com"
             className="flex pl-6 title-font font-medium items-center md:justify-start justify-center text-gray-900"
           >
-            <p className="mt-2 text-sm text-gray-500 hover:text-black">Status</p>
+            <p className="mt-2 text-sm text-gray-500 hover:text-black dark:hover:text-white">Status</p>
           </a>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start"></span>
         </div>
