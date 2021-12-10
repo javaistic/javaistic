@@ -15,7 +15,7 @@ const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHre
         <a
           className={clsx('px-3 py-2 transition-colors duration-200 relative block', {
             'text-blue-700 dark:text-blue-400': isActive,
-            'hover:text-gray-900 text-gray-500 dark:hover:text-white': !isActive && isPublished,
+            'hover:text-gray-900 text-gray-500 dark:text-gray-400 dark:hover:text-white': !isActive && isPublished,
             'text-gray-400 dark:text-white': !isActive && !isPublished,
           })}
         >
@@ -113,7 +113,7 @@ const TopLevelAnchor = forwardRef(
           href={href}
           onClick={onClick}
           className={clsx(
-            'flex items-center px-3 hover:text-gray-900 dark:hover:text-white transition-colors duration-200',
+            'flex items-center px-3 hover:text-gray-900 dark:hover:text-white dark:text-gray-400 transition-colors duration-200',
             className,
             {
               'text-gray-900 dark:text-white': isActive,
@@ -294,7 +294,7 @@ export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar,
           <div
             id="content-wrapper"
             className={clsx(
-              'min-w-0 w-full flex-auto lg:static lg:max-h-full lg:overflow-visible',
+              'min-w-0 w-full flex-auto lg:static lg:max-h-full lg:overflow-visible bg-white dark:bg-gray-900',
               {
                 'overflow-hidden max-h-screen fixed': navIsOpen,
               }
