@@ -35,7 +35,7 @@ export default function Home() {
       </Head>
       <header className="relative z-10 max-w-screen-lg xl:max-w-screen-xl mx-auto">
         <div className="px-4 sm:px-6 md:px-8 mb-14 sm:mb-20 xl:mb-8">
-          <div className="border-b border-gray-200 py-4 flex items-center justify-between mb-16 sm:mb-20 sm:mx-0 sm:px-0">
+          <div className="border-b border-gray-200 dark:border-gray-700 py-4 flex items-center justify-between mb-16 sm:mb-20 sm:mx-0 sm:px-0">
             <div className="flex items-center">
               <NextLink href="/">
                 <a
@@ -51,7 +51,7 @@ export default function Home() {
             <div className="flex items-center space-x-4 sm:space-x-6 ml-4 sm:ml-2">
               <Search />
               <NextLink href="/docs">
-                <a className="hidden sm:inline text-base leading-4 font-medium hover:text-gray-600 px-4 py-3 rounded-md hover:bg-gray-100 transition-colors duration-200">
+                <a className="hidden sm:inline text-base leading-4 font-medium hover:text-gray-600 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700 px-4 py-3 rounded-md hover:bg-gray-100  transition-colors duration-200">
                   <span className="hidden sm:inline">Documentation</span>
                 </a>
               </NextLink>
@@ -94,7 +94,7 @@ export default function Home() {
               </button>
             </NextLink>
             <NextLink href="/">
-              <button className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 text-white text-lg shadow-md hover:shadow-xl leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              <button className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white text-lg shadow-md hover:shadow-xl leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 dark:focus:ring-gray-700 focus:outline-none transition-colors duration-200">
                 Learn more
               </button>
             </NextLink>
