@@ -19,7 +19,7 @@ export default function ProgramsLandingPage() {
             <div className={`w-full flex md:flex-row py-6 bg-gradient-to-br ${gradients.pink[0]}`}>
               <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
                 <h2 className="text-xl font-semibold mb-2 text-shadow text-white">Java Programs</h2>
-                <p className="font-medium text-rose-100 text-shadow mb-4">
+                <p className="font-medium text-rose-100 dark:text-rose-50 text-shadow mb-4">
                   A bunch of Java programms for learning and practicing.
                 </p>
                 <a

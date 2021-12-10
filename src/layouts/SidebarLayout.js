@@ -57,7 +57,7 @@ function Nav({ nav, children, fallbackHref }) {
       ref={scrollRef}
       className="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-6 lg:pb-14 sticky?lg:h-(screen-18) bg-white dark:bg-gray-900"
     >
-      <div className="relative flex mb-8 px-3 lg:hidden">
+      <div className="relative flex mb-8 px-3 lg:hidden text-black dark:text-white">
         <Logo className="w-auto h-10" />
       </div>
       <ul>
@@ -116,7 +116,8 @@ const TopLevelAnchor = forwardRef(
             'flex items-center px-3 hover:text-gray-900 dark:hover:text-white dark:text-gray-400 transition-colors duration-200',
             className,
             {
-              'text-gray-900 dark:text-white': isActive,
+              'text-gray-900': isActive,
+              'dark:text-gray-50': isActive,
             }
           )}
         >
@@ -284,7 +285,7 @@ export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar,
             <div
               id="navWrapper"
               onClick={(e) => e.stopPropagation()}
-              className="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white mr-24 lg:mr-0"
+              className="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white dark:bg-gray-900 mr-24 lg:mr-0"
             >
               <Nav nav={nav} fallbackHref={fallbackHref}>
                 {sidebar}
