@@ -41,7 +41,7 @@ export function TipCompat({ children }) {
 
 export function TipInfo({ children }) {
   return (
-    <div className="text-sm leading-6 bg-blue-50 text-blue-800 px-6 py-4 mb-8 rounded-lg">
+    <div className="text-sm leading-6 bg-blue-50 dark:bg-blue-600 text-blue-800 px-6 py-4 mb-8 rounded-lg">
       <div className="flex items-start space-x-3">
         <svg width="40" height="40" className="text-sky-500" fill="none">
           <path
