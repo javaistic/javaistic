@@ -4,7 +4,7 @@ export function PageHeader({ title, description, badge = {}, border = true }) {
   if (!title && !description) return null
 
   return (
-    <div className={clsx('pb-10', { 'border-b border-gray-200 mb-10': border })}>
+    <div className={clsx('pb-10', { 'border-b border-gray-200 dark:border-gray-700 mb-10': border })}>
       <div>
         <h1 className="inline-block text-3xl font-extrabold text-gray-900 tracking-tight">
           {title}
