@@ -66,7 +66,7 @@ export default function App({ Component, pageProps, router }) {
 
   return (
     <>
-      <ThemeProvider enableSystem={true} attribute="class">
+      <ThemeProvider enableSystem={false} attribute="class">
         <Title suffix="Javaistic">{meta.metaTitle || meta.title}</Title>
         <Head>
           <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
