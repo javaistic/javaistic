@@ -17,15 +17,15 @@ export function Newsletter() {
         <div id="revue-embed">
           <form action="https://www.getrevue.co/profile/javaistic/add_subscriber" double_opt_in="false" method="post" id="revue-form" name="revue-form" target="_blank">
             <div className="flex flex-center flex-wrap p-5 pb-1 space-y-4 sm:space-y-4 sm:space-x-0 text-center mt-1">
-              <label for="member_email">Email address</label>
+              <label htmlFor="member_email">Email address</label>
               <input className="flex-none w-full px-4 py-4 font-medium text-lg bg-gray-100 hover:shadow-lg rounded-lg border border-gray-400 focus:outline-none" placeholder="Your email address..." type="email" name="member[email]" id="member_email" />
             </div>
             <div className="flex flex-center flex-wrap p-5 pb-1 space-y-4 sm:space-y-4 sm:space-x-0 text-center">
-              <label for="member_first_name">First name <span class="optional">(Optional)</span></label>
+              <label htmlFor="member_first_name">First name <span className="optional">(Optional)</span></label>
               <input className="flex-none w-full px-4 py-4 font-medium text-lg bg-gray-100 hover:shadow-lg rounded-lg border border-gray-400 focus:outline-none" placeholder="First name... (Optional)" type="text" name="member[first_name]" id="member_first_name" />
             </div>
             <div className="flex flex-center flex-wrap p-5 pb-1 space-y-4 sm:space-y-4 sm:space-x-0 text-center">
-              <label for="member_last_name">Last name <span class="optional">(Optional)</span></label>
+              <label htmlFor="member_last_name">Last name <span className="optional">(Optional)</span></label>
               <input className="flex-none w-full px-4 py-4 font-medium text-lg bg-gray-100 hover:shadow-lg rounded-lg border border-gray-400 focus:outline-none" placeholder="Last name... (Optional)" type="text" name="member[last_name]" id="member_last_name" />
             </div>
             <div className="flex flex-center flex-wrap p-5 pb-1 space-y-4 sm:space-y-4 sm:space-x-0 text-center">
