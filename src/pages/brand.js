@@ -33,18 +33,18 @@ export default function Brand() {
           <h2 className="text-xl text-gray-900 font-bold mb-4">
             Main Logo<span className="sr-only">: Javaistic Main Logo</span>
           </h2>
-          <div className="h-40 sm:h-56 xl:h-64 rounded-2xl bg-gray-200 mb-6 flex items-center justify-center p-6">
+          <div className="h-40 sm:h-56 xl:h-64 rounded-xl bg-gray-200 dark:bg-gray-50 mb-6 flex items-center justify-center p-6">
             <Logo title="Headless UI" component={JavaisticLogo} />
           </div>
 
           <div className="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-4 text-center mt-4 mb-4 ">
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
+              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
                 SVG
               </a>
             </Link>
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
                 PNG
               </a>
             </Link>
@@ -54,18 +54,18 @@ export default function Brand() {
           <h2 className="text-xl text-gray-900 font-bold mb-4">
             Alternate Logo<span className="sr-only">: Javaistic Alternate Logo</span>
           </h2>
-          <div className="h-40 sm:h-56 xl:h-64 rounded-2xl bg-gray-900 mb-6 flex items-center justify-center p-6">
+          <div className="h-40 sm:h-56 xl:h-64 rounded-xl bg-gray-900 dark:bg-gray-800 mb-6 flex items-center justify-center p-6">
             <Logo title="Headless UI" component={JavaisticAltLogo} />
           </div>
 
           <div className="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-4 text-center mt-4 mb-4 ">
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
+              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
                 SVG
               </a>
             </Link>
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
                 PNG
               </a>
             </Link>
@@ -78,18 +78,18 @@ export default function Brand() {
           <h2 className="text-xl text-gray-900 font-bold mb-4">
             Logo Black<span className="sr-only">: Javaistic Black Logo</span>
           </h2>
-          <div className="h-40 sm:h-56 xl:h-64 rounded-2xl bg-gray-200 mb-6 flex items-center justify-center p-6">
+          <div className="h-40 sm:h-56 xl:h-64 rounded-xl bg-gray-200 dark:bg-gray-50 mb-6 flex items-center justify-center p-6">
             <Logo title="Headless UI" component={JavaisticBlackLogo} />
           </div>
 
           <div className="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-4 text-center mt-4 mb-4 ">
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
+              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
                 SVG
               </a>
             </Link>
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
                 PNG
               </a>
             </Link>
@@ -101,7 +101,7 @@ export default function Brand() {
           </h2>
           <Link href="/">
             <a
-              className="h-40 sm:h-56 xl:h-64 rounded-2xl bg-gray-900 mb-6 flex items-center justify-center p-6"
+              className="h-40 sm:h-56 xl:h-64 rounded-xl bg-gray-900 dark:bg-gray-800 mb-6 flex items-center justify-center p-6"
             >
               <Logo title="Headless UI" component={JavaisticWhiteLogo} />
             </a>
@@ -109,12 +109,12 @@ export default function Brand() {
 
           <div className="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-4 text-center mt-4 mb-4 ">
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
+              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
                 SVG
               </a>
             </Link>
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
                 PNG
               </a>
             </Link>
