@@ -36,7 +36,7 @@ export default function Brand() {
           <div className="h-40 sm:h-56 xl:h-64 rounded-2xl bg-gray-200 mb-6 flex items-center justify-center p-6">
             <Logo title="Headless UI" component={JavaisticLogo} />
           </div>
-         
+
           <div className="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-4 text-center mt-4 mb-4 ">
             <Link href="/">
               <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
@@ -57,7 +57,7 @@ export default function Brand() {
           <div className="h-40 sm:h-56 xl:h-64 rounded-2xl bg-gray-900 mb-6 flex items-center justify-center p-6">
             <Logo title="Headless UI" component={JavaisticAltLogo} />
           </div>
-          
+
           <div className="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-4 text-center mt-4 mb-4 ">
             <Link href="/">
               <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
@@ -81,7 +81,7 @@ export default function Brand() {
           <div className="h-40 sm:h-56 xl:h-64 rounded-2xl bg-gray-200 mb-6 flex items-center justify-center p-6">
             <Logo title="Headless UI" component={JavaisticBlackLogo} />
           </div>
-          
+
           <div className="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-4 text-center mt-4 mb-4 ">
             <Link href="/">
               <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
@@ -99,13 +99,14 @@ export default function Brand() {
           <h2 className="text-xl text-gray-900 font-bold mb-4">
             Logo White<span className="sr-only">: Javaistic White Logo</span>
           </h2>
-          <a
-            href="/"
-            className="h-40 sm:h-56 xl:h-64 rounded-2xl bg-gray-900 mb-6 flex items-center justify-center p-6"
-          >
-            <Logo title="Headless UI" component={JavaisticWhiteLogo} />
-          </a>
-          
+          <Link href="/">
+            <a
+              className="h-40 sm:h-56 xl:h-64 rounded-2xl bg-gray-900 mb-6 flex items-center justify-center p-6"
+            >
+              <Logo title="Headless UI" component={JavaisticWhiteLogo} />
+            </a>
+          </Link>
+
           <div className="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-4 text-center mt-4 mb-4 ">
             <Link href="/">
               <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
