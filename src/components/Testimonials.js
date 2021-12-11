@@ -1,5 +1,6 @@
 import { gradients } from '@/utils/gradients'
 import { animate, motion, useMotionValue, useTransform } from 'framer-motion'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 
@@ -121,11 +122,17 @@ function Testimonial({ testimonial, base, index, total }) {
         <figcaption
           className={`flex items-center space-x-4 p-6 md:px-10 md:py-6 bg-gradient-to-br rounded-b-xl leading-6 font-semibold text-white ${color[0]}`}
         >
-          <div className="flex-none w-14 h-14 bg-white rounded-full flex items-center justify-center">
-            <img
+          <div className="flex-none w-14 h-14 p-1 bg-white rounded-full flex items-center justify-center">
+            <Image
               src={testimonial.author.avatar}
-              alt=""
+              alt={testimonial.author.name}
               className={`w-12 h-12 rounded-full ${color[2]}`}
+              width={416}
+              height={416}
+              quality={100}
+              layout="intrinsic"
+              blurDataURL={testimonial.author.avatar}
+              placeholder="blur"
               loading="lazy"
             />
           </div>
