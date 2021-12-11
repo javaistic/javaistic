@@ -11,6 +11,7 @@ import Head from 'next/head'
 import NextLink from 'next/link'
 import Router from 'next/router'
 import ThemeChanger from '@/components/ThemeChanger'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -123,20 +124,26 @@ export default function Home() {
           <figure>
             <blockquote>
               <Paragraph className="max-w-4xl mx-auto mb-6">
-                Let's us learn Java by learning concepts and practicing programs.
+                Let&apos;s us learn Java by learning concepts and practicing programs.
                 <br /> <Widont>I am sure you will fall in love with Java.</Widont>
               </Paragraph>
             </blockquote>
             <figcaption className="sm:text-xl font-medium flex flex-col items-center">
-              <div className="p-1 border-2 border-sky-400 rounded-full mb-3">
-                <img
-                  src={require('@/img/uiuxarghya.png').default}
-                  alt=""
-                  className="w-10 h-10 rounded-full bg-sky-100"
+              <div className="p-1 border-4 border-sky-400 rounded-full mb-4 object-cover object-center w-24 h-24">
+                <Image
+                  src={require('@/img/uiuxarghya.jpg').default}
+                  alt="Creator of Javaistic"
+                  className=" bg-sky-400 rounded-full "
+                  width={100}
+                  height={100}
+                  quality={100}
+                  layout="responsive"
+                  blurDataURL={require('@/img/uiuxarghya.jpg').default}
+                  placeholder="blur"
                   loading="lazy"
                 />
               </div>
-              <div className="text-gray-900">Arghya Ghosh</div>
+              <div className="text-gray-900 dark:text-white">Arghya Ghosh</div>
               <div className="text-sky-600">Creator of Javaistic</div>
             </figcaption>
           </figure>

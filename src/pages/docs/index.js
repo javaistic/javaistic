@@ -50,12 +50,13 @@ export default function DocsLandingPage() {
                 <p className="font-medium text-rose-100 dark:text-rose-100 text-shadow mb-4">
                   Start coding right now or go through Java code.
                 </p>
-                <a
-                  href="/programs"
-                  className="mt-auto bg-rose-900 bg-opacity-50 hover:bg-opacity-75 transition-colors duration-200 rounded-lg font-semibold py-2 px-4 inline-flex"
-                >
-                  Start coding
-                </a>
+                <Link href="/programs">
+                  <a
+                    className="mt-auto bg-rose-900 bg-opacity-50 hover:bg-opacity-75 transition-colors duration-200 rounded-lg font-semibold py-2 px-4 inline-flex"
+                  >
+                    Start coding
+                  </a>
+                </Link>
               </div>
               <div className={`${styles.image} relative md:pl-6 xl:pl-8 hidden sm:block`}>
                 <PlayImage className="absolute top-6 left-6 md:static overflow-visible" />
