@@ -1,11 +1,11 @@
 [
+  { "source": "/docs/:slug", "destination": "/docs/:slug", "permanent": false },
   { "source": "/docs/what-is-javaistic", "destination": "/", "permanent": false },
   {
     "source": "/forum",
     "destination": "https://github.com/javaistic/javaistic/discussions",
     "permanent": false
   },
-  { "source": "/docs/slug", "destination": "/docs/slug", "permanent": false },
   { "source": "/community", "destination": "https://discord.gg/RkHJqvK9r8", "permanent": false },
   { "source": "/changelog", "destination": "https://javaistic-changelog.vercel.app/", "permanent": false },
   { "source": "/license", "destination": "https://raw.githubusercontent.com/javaistic/javaistic/main/LICENSE", "permanent": false },
