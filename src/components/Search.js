@@ -62,7 +62,7 @@ export function Search() {
   return (
     <>
       <Head>
-        <link rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossOrigin="true" />
+        <link rel="preconnect" href="https://29OTE3ZL5A-dsn.algolia.net" crossOrigin="true" />
       </Head>
       <button
         type="button"
@@ -109,8 +109,8 @@ export function Search() {
             initialScrollY={window.scrollY}
             onClose={onClose}
             indexName="javaistic"
-            apiKey="2ec8ae33bd1995918d1c196b74be5128"
-            appId="BH4D9OD16A"
+            apiKey="687a2c3fd1d675d08c5e29869d8c2aca"
+            appId="29OTE3ZL5A"
             navigator={{
               navigate({ suggestionUrl }) {
                 setIsOpen(false)
