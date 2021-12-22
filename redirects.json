@@ -1,5 +1,4 @@
 [
-  { "source": "/docs/:slug", "destination": "/docs/:slug", "permanent": false },
   { "source": "/docs/what-is-javaistic", "destination": "/", "permanent": false },
   {
     "source": "/forum",
