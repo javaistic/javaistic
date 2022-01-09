@@ -17,9 +17,9 @@
 
 </div>
 
-## **Website ⟶ [javaistic.vercel.app](https://javaistic.vercel.app/?utm_source=github&utm_medium=readme-link&utm_campaign=javaistic)**
+## Website ⟶ [javaistic.vercel.app](https://javaistic.vercel.app/?utm_source=github&utm_medium=readme-link&utm_campaign=javaistic)
 
-## **[Site Status](https://javaistic.betteruptime.com/) [![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/8a3u.svg)](https://betteruptime.com/?utm_source=status_badge)**
+## [Site Status](https://javaistic.betteruptime.com/) [![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/8a3u.svg)](https://betteruptime.com/?utm_source=status_badge)
 
 ![Stats](https://badgen.net/uptime-robot/status/m788498503-abfbb35c24db9355ed897d6d)
 ![Stats](https://badgen.net/uptime-robot/day/m788498503-abfbb35c24db9355ed897d6d)
@@ -27,11 +27,11 @@
 ![Stats](https://badgen.net/uptime-robot/month/m788498503-abfbb35c24db9355ed897d6d)
 ![Stats](https://badgen.net/uptime-robot/response/m788498503-abfbb35c24db9355ed897d6d)
 
-## **Description**
+## Description
 
 A Java Programming learning website packed with information and programs ranging from basics , arrays , string programs to 2D arrays , recursion , matrices and many more.
 
-## **Contributing**
+## Contributing
 If you're interested in contributing to Javaistic Documentation, please read our contributing docs before submitting a pull request.
 
 ## For developing locally
@@ -61,11 +61,20 @@ Javaistic uses [Next.js](https://nextjs.org/) for its documentation. Here is how
     ```sh
     yarn dev
     ```
+    
+## Community
 
-## **Author**
+The Javaistic community can be found on [GitHub Discussions](https://github.com/javaistic/javaistic/discussions), where you can ask questions, voice ideas, and share your projects.
+
+To chat with other community members, you can join the [Javaistic Discord](https://javaistic.vercel.app/discord)
+
+Our [Code of Conduct](https://github.com/javaistic/javaistic/blob/main/CODE_OF_CONDUCT.md) applies to all Javaistic community channels.
+    
+
+## Author
 - Arghya Ghosh [(@uiuxarghya)](https://twitter.com/uiuxarghya)
 
-## **Sponsors**
+## Sponsors
 
 A special thanks to our sponsors:
 
