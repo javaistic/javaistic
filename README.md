@@ -36,7 +36,7 @@ A Java Programming learning website packed with information and programs ranging
 
 
 ## Contributing
-If you're interested in contributing to Javaistic Documentation, please read our contributing docs before submitting a pull request.
+If you're interested in contributing to Javaistic Documentation, please read our [contributing docs](CONTRIBUTING.md) before submitting a pull request.
 
 ## For developing locally
 
