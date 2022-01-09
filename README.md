@@ -61,7 +61,10 @@ Javaistic uses [Next.js](https://nextjs.org/) for its documentation. Here is how
     ```sh
     yarn dev
     ```
-    
+
+## **Author**
+- Arghya Ghosh [(@uiuxarghya)](https://twitter.com/uiuxarghya)
+
 ## **Sponsors**
 
 A special thanks to our sponsors:
