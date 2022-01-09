@@ -6,7 +6,7 @@
 <img height=70 src="https://raw.githubusercontent.com/javaistic/.github/main/profile/img/logo-dark.svg#gh-light-mode-only">
 
   
-# ![Stars](https://badgen.net/github/stars/javaistic/javaistic) ![Release](https://badgen.net/github/release/javaistic/javaistic) [![CodeQL](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml) [![License](https://badgen.net/github/license/javaistic/javaistic)](LICENSE) [![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/8a3u.svg)](https://betteruptime.com/?utm_source=status_badge)
+# [![Stars](https://badgen.net/github/stars/javaistic/javaistic)](https://github.com/javaistic/javaistic/stargazers) [![Release](https://badgen.net/github/release/javaistic/javaistic)](https://github.com/javaistic/javaistic/releases) [![CodeQL](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml) [![License](https://badgen.net/github/license/javaistic/javaistic)](LICENSE) [![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/8a3u.svg)](https://betteruptime.com/?utm_source=status_badge)
 
 </div>
 
@@ -19,7 +19,7 @@
 
 ## Website ⟶ [javaistic.vercel.app](https://javaistic.vercel.app/?utm_source=github&utm_medium=readme-link&utm_campaign=javaistic)
 
-## Description
+## About
 
 A Java Programming learning website packed with information and programs ranging from basics , arrays , string programs to 2D arrays , recursion , matrices and many more.
 
