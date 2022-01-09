@@ -72,7 +72,7 @@ The Javaistic community can be found on [GitHub Discussions](https://github.com/
 
 To chat with other community members, you can join the [Javaistic Discord](https://javaistic.vercel.app/discord)
 
-Our [Code of Conduct](https://github.com/javaistic/javaistic/blob/main/CODE_OF_CONDUCT.md) applies to all Javaistic community channels.
+Our [Code of Conduct](CODE_OF_CONDUCT.md) applies to all Javaistic community channels.
     
 
 ## Author
