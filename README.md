@@ -6,7 +6,7 @@
 <img height=70 src="https://raw.githubusercontent.com/javaistic/.github/main/profile/img/logo-dark.svg#gh-light-mode-only">
 
   
-# ![Stars](https://badgen.net/github/stars/javaistic/javaistic) ![Release](https://badgen.net/github/release/javaistic/javaistic) [![CodeQL](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml) [![License](https://badgen.net/github/license/javaistic/javaistic)](LICENSE)
+# ![Stars](https://badgen.net/github/stars/javaistic/javaistic) ![Release](https://badgen.net/github/release/javaistic/javaistic) [![CodeQL](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml) [![License](https://badgen.net/github/license/javaistic/javaistic)](LICENSE) [![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/8a3u.svg)](https://betteruptime.com/?utm_source=status_badge)
 
 </div>
 
@@ -19,7 +19,11 @@
 
 ## Website ⟶ [javaistic.vercel.app](https://javaistic.vercel.app/?utm_source=github&utm_medium=readme-link&utm_campaign=javaistic)
 
-## [Site Status](https://javaistic.betteruptime.com/) [![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/8a3u.svg)](https://betteruptime.com/?utm_source=status_badge)
+## Description
+
+A Java Programming learning website packed with information and programs ranging from basics , arrays , string programs to 2D arrays , recursion , matrices and many more.
+
+## [Site Status](https://javaistic.betteruptime.com/)
 
 ![Stats](https://badgen.net/uptime-robot/status/m788498503-abfbb35c24db9355ed897d6d)
 ![Stats](https://badgen.net/uptime-robot/day/m788498503-abfbb35c24db9355ed897d6d)
@@ -27,9 +31,6 @@
 ![Stats](https://badgen.net/uptime-robot/month/m788498503-abfbb35c24db9355ed897d6d)
 ![Stats](https://badgen.net/uptime-robot/response/m788498503-abfbb35c24db9355ed897d6d)
 
-## Description
-
-A Java Programming learning website packed with information and programs ranging from basics , arrays , string programs to 2D arrays , recursion , matrices and many more.
 
 ## Contributing
 If you're interested in contributing to Javaistic Documentation, please read our contributing docs before submitting a pull request.
