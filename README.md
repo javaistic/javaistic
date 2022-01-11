@@ -7,7 +7,7 @@
 
 <br>
   
-### [![Stars](https://badgen.net/github/stars/javaistic/javaistic)](https://github.com/javaistic/javaistic/stargazers) [![Release](https://badgen.net/github/release/javaistic/javaistic)](https://github.com/javaistic/javaistic/releases) [![CodeQL](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml) [![License](https://badgen.net/github/license/javaistic/javaistic)](LICENSE) [![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/8a3u.svg)](https://javaistic.betteruptime.com/?utm_source=status_badge)
+### [![Depfu](https://badges.depfu.com/badges/b0bc0e5fa34d75e54478a4e37b1b2d72/status.svg)](https://depfu.com) [![Stars](https://badgen.net/github/stars/javaistic/javaistic)](https://github.com/javaistic/javaistic/stargazers) [![Release](https://badgen.net/github/release/javaistic/javaistic)](https://github.com/javaistic/javaistic/releases) [![CodeQL](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml) [![License](https://badgen.net/github/license/javaistic/javaistic)](LICENSE) [![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/8a3u.svg)](https://javaistic.betteruptime.com/?utm_source=status_badge)
 
 <br>
 
