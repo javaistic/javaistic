@@ -45,6 +45,7 @@
   font-weight: normal;
   font-style: normal;
   src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-display: swap;
 }
 
 code {
