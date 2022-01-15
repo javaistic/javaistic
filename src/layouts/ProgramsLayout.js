@@ -15,12 +15,12 @@ export function ProgramsLayout(props) {
       </Title>
       <Head>
         <meta name="description" content={props.layoutProps.meta.metaDescription || props.layoutProps.meta.description} />
-        <meta key="og:image" property="og:image" content={router.pathname === '/programs' ? `https://javaistic.vercel.app${twitterPrograms}`:`https://javaistic-og-image.vercel.app/**${props.layoutProps.meta.metaTitle || props.layoutProps.meta.title}**.png?theme=light&md=1&fontSize=120px&images=https%3A%2F%2Fjavaistic-assets.vercel.app%2Flogo%2Fjavaistic-logo-main.svg`} />
+        <meta key="og:image" property="og:image" content={router.pathname === '/programs' ? `https://javaistic.vercel.app${twitterPrograms}` : `https://javaistic-og-image.vercel.app/**${props.layoutProps.meta.metaTitle || props.layoutProps.meta.title}**.png?theme=light&md=1&fontSize=120px&images=https%3A%2F%2Fjavaistic-assets.vercel.app%2Flogo%2Fjavaistic-programs-main.svg`} />
         <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
         <meta
           key="twitter:image"
           name="twitter:image"
-          content={router.pathname === '/programs' ? `https://javaistic.vercel.app${twitterPrograms}` : `https://javaistic-og-image.vercel.app/**${props.layoutProps.meta.metaTitle || props.layoutProps.meta.title}**.png?theme=light&md=1&fontSize=120px&images=https%3A%2F%2Fjavaistic-assets.vercel.app%2Flogo%2Fjavaistic-logo-main.svg`}
+          content={router.pathname === '/programs' ? `https://javaistic.vercel.app${twitterPrograms}` : `https://javaistic-og-image.vercel.app/**${props.layoutProps.meta.metaTitle || props.layoutProps.meta.title}**.png?theme=light&md=1&fontSize=120px&images=https%3A%2F%2Fjavaistic-assets.vercel.app%2Flogo%2Fjavaistic-programs-main.svg`}
         />
       </Head>
       <SidebarLayout nav={programsNav} {...props} />
