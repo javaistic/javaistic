@@ -2,16 +2,15 @@ import { BigText, InlineCode, Paragraph, Widont } from '@/components/home/common
 import { Footer } from '@/components/home/Footer'
 import { Hero } from '@/components/home/Hero'
 import MenuButton from '@/components/home/Menu'
-import { Newsletter } from '@/components/home/Newsletter'
 import { OpenSource } from '@/components/home/OpenSource'
 import { Logo } from '@/components/Logo'
 import { Search } from '@/components/Search'
 import { Testimonials } from '@/components/Testimonials'
+import ThemeChanger from '@/components/ThemeChanger'
 import Head from 'next/head'
+import Image from 'next/image'
 import NextLink from 'next/link'
 import Router from 'next/router'
-import ThemeChanger from '@/components/ThemeChanger'
-import Image from 'next/image'
 
 export default function Home() {
   return (
