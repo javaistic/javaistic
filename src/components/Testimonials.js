@@ -25,7 +25,7 @@ const testimonials = [
     author: {
       name: 'Linus Trovalds',
       role: 'Creator of Linux',
-      avatar: require('@/img/avatars/linus-trovalds.jpg').default,
+      avatar: require('@/img/avatars/linus-trovalds.webp').default,
     },
   },
   {
@@ -33,7 +33,7 @@ const testimonials = [
     author: {
       name: 'Steve Jobs',
       role: 'Founder @ Apple Inc.',
-      avatar: require('@/img/avatars/steve-jobs.jpg').default,
+      avatar: require('@/img/avatars/steve-jobs.webp').default,
     },
   },
   {
@@ -41,7 +41,7 @@ const testimonials = [
     author: {
       name: 'Bill Gates',
       role: 'Founder @ Microsoft Inc.',
-      avatar: require('@/img/avatars/bill-gates.jpg').default,
+      avatar: require('@/img/avatars/bill-gates.webp').default,
     },
   },
   {
@@ -49,7 +49,7 @@ const testimonials = [
     author: {
       name: 'Guillermo Rauch',
       role: 'Founder @ Vercel.',
-      avatar: require('@/img/avatars/guillermo-rauch.jpg').default,
+      avatar: require('@/img/avatars/guillermo-rauch.webp').default,
     },
   },
   {
@@ -57,7 +57,7 @@ const testimonials = [
     author: {
       name: 'Martin Fowler',
       role: 'Programmer',
-      avatar: require('@/img/avatars/martin-fowler.jpg').default,
+      avatar: require('@/img/avatars/martin-fowler.webp').default,
     },
   },
   {
@@ -66,7 +66,7 @@ const testimonials = [
     author: {
       name: `Robert C. Martin`,
       role: 'Clean Code: A Handbook of Agile Software Craftsmanship',
-      avatar: require('@/img/avatars/robert-martin.jpg').default,
+      avatar: require('@/img/avatars/robert-martin.webp').default,
     },
   },
   {
@@ -74,7 +74,7 @@ const testimonials = [
     author: {
       name: 'Chris Heilmann',
       role: 'Programmer',
-      avatar: require('@/img/avatars/chris-heilmann.jpg').default,
+      avatar: require('@/img/avatars/chris-heilmann.webp').default,
     },
   },
   {
@@ -82,7 +82,7 @@ const testimonials = [
     author: {
       name: 'Corey House',
       role: `Founder @ ReactJS Consulting`,
-      avatar: require('@/img/avatars/corey-house.jpg').default,
+      avatar: require('@/img/avatars/corey-house.webp').default,
     },
   },
 ]
