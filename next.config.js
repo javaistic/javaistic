@@ -24,9 +24,6 @@ const fallbackDefaultExports = {
 }
 
 module.exports = withBundleAnalyzer({
-  images: {
-    disableStaticImages: true,
-  },
   pageExtensions: ['js', 'jsx', 'mdx'],
   experimental: {
     modern: true,
