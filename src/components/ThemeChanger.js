@@ -38,7 +38,7 @@ export default function ThemeChanger() {
     }
 
     return (
-        <div className="flex items-center justify-center p-1.5 bg-gray-50 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-500 rounded-md transition-all ease-in-out duration-300 ">
+        <div className="flex items-center justify-center p-1.5 bg-gray-50 dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-500 rounded-md transition-all ease-in-out duration-300 ">
             {renderThemeChanger()}
         </div>
     );
