@@ -1,5 +1,4 @@
 import { Title } from '@/components/Title'
-import twitterDocs from '@/img/twitter-docs.png'
 import { SidebarLayout } from '@/layouts/SidebarLayout'
 import { documentationNav } from '@/navs/documentation'
 import Head from 'next/head'
