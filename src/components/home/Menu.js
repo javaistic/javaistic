@@ -11,7 +11,7 @@ export default function MenuButton() {
     return (
         <Menu as="div" className="relative inline-block text-left">
             <div>
-                <Menu.Button className="inline-flex justify-center w-full rounded-md border-2 border-gray-300 dark:border-gray-500 shadow-sm px-3.5 py-1.5 bg-white dark:bg-gray-700 text-base font-medium text-gray-700 dark:text-white hover:bg-gray-100">
+                <Menu.Button className="inline-flex justify-center w-full rounded-md border-2 border-gray-300 dark:border-gray-500 shadow-sm p-1.5 sm:px-3.5 sm:py-1.5 bg-white dark:bg-gray-800 text-base font-medium text-gray-700 dark:text-white hover:bg-gray-100">
                     <span className="hidden sm:inline-flex">Menu</span>
                     <ChevronDownIcon className="hidden sm:inline-flex -mr-1 ml-2 h-6 w-6" aria-hidden="true" />
                     <MenuIcon className="sm:hidden h-6 w-6" aria-hidden="true" />
@@ -34,7 +34,7 @@ export default function MenuButton() {
                                 <Link href="/docs">
                                     <a
                                         className={classNames(
-                                            active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
+                                            active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700',
                                             'block px-4 py-2 text-base sm:hidden'
                                         )}
                                     >
@@ -48,7 +48,7 @@ export default function MenuButton() {
                                 <Link href="#">
                                     <a
                                         className={classNames(
-                                            active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
+                                            active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700',
                                             'block px-4 py-2 text-base'
                                         )}
                                     >
@@ -62,7 +62,7 @@ export default function MenuButton() {
                                 <Link href="/sponsors">
                                     <a
                                         className={classNames(
-                                            active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
+                                            active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700',
                                             'block px-4 py-2 text-base'
                                         )}
                                     >
@@ -76,7 +76,7 @@ export default function MenuButton() {
                                 <Link href="/license">
                                     <a
                                         className={classNames(
-                                            active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
+                                            active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700',
                                             'block px-4 py-2 text-base'
                                         )}
                                     >
@@ -90,7 +90,7 @@ export default function MenuButton() {
                                 <Link href="/changelog">
                                     <a
                                         className={classNames(
-                                            active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
+                                            active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700',
                                             'block w-full text-left px-4 py-2 text-base'
                                         )}
                                     >
@@ -104,7 +104,7 @@ export default function MenuButton() {
                                 <Link href="https://github.com/javaistic/javaistic">
                                     <a
                                         className={classNames(
-                                            active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200',
+                                            active ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700',
                                             'block px-4 py-2 text-base sm:hidden'
                                         )}
                                     >

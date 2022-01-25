@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import Router from 'next/router'
 import ThemeChanger from './ThemeChanger'
+import MenuButton from './home/Menu'
 
 
 export function Header({ navIsOpen, onNavToggle }) {
@@ -26,8 +27,11 @@ export function Header({ navIsOpen, onNavToggle }) {
         </div>
         <div className="flex-auto h-18 flex items-center justify-between px-4 sm:px-6 lg:mx-6 lg:px-0 xl:mx-8">
           <Search />
-          <div className="lg:w-64 pl-8 flex-shrink-0 flex items-center justify-end space-x-6">
+          <div className="lg:w-64 pl-6 flex-shrink-0 flex items-center justify-end space-x-4 sm:space-x-6">
             <ThemeChanger />
+            <MenuButton />
+
+
             <a
               href="https://github.com/javaistic/javaistic"
               className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors duration-200"
