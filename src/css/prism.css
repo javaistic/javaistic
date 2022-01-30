@@ -47,7 +47,7 @@
 }
 
 .token.deleted:not(.prefix) {
-  @apply relative block -mx-4 px-4;
+  @apply relative -mx-4 block px-4;
 }
 
 .token.deleted:not(.prefix)::after {
@@ -56,13 +56,13 @@
 }
 
 .token.deleted.prefix {
-  @apply text-gray-400 select-none;
+  @apply select-none text-gray-400;
 }
 
 .token.inserted:not(.prefix) {
-  @apply block bg-emerald-700 bg-opacity-50 -mx-4 px-4;
+  @apply -mx-4 block bg-emerald-700 bg-opacity-50 px-4;
 }
 
 .token.inserted.prefix {
-  @apply text-emerald-200 text-opacity-75 select-none;
+  @apply select-none text-emerald-200 text-opacity-75;
 }

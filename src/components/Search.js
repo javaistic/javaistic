@@ -68,13 +68,13 @@ export function Search() {
         type="button"
         ref={searchButtonRef}
         onClick={onOpen}
-        className="group leading-6 font-medium flex items-center space-x-3 sm:space-x-4 text-gray-500 bg-gray-100 hover:text-gray-600 dark:bg-gray-800 dark:text-gray-400 transition ease-in-out duration-200 w-full py-1.5 px-1.5 sm:px-4 lg:px-4 rounded-md border-2 border-gray-200 dark:border-gray-600"
+        className="group flex w-full items-center space-x-3 rounded-md border-2 border-gray-200 bg-gray-100 py-1.5 px-1.5 font-medium leading-6 text-gray-500 transition duration-200 ease-in-out hover:text-gray-600 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 sm:space-x-4 sm:px-4 lg:px-4"
       >
         <svg
           width="24"
           height="24"
           fill="none"
-          className="text-blue-400 group-hover:text-blue-500 transition-colors duration-200"
+          className="text-blue-400 transition-colors duration-200 group-hover:text-blue-500"
         >
           <path
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
@@ -85,11 +85,12 @@ export function Search() {
           />
         </svg>
         <span>
-          <span className="lg:hidden md:hidden">Search</span><span className="hidden sm:inline">Quick search for anything</span>
+          <span className="md:hidden lg:hidden">Search</span>
+          <span className="hidden sm:inline">Quick search for anything</span>
         </span>
         <span
           style={{ opacity: browserDetected ? '1' : '0' }}
-          className="hidden sm:block text-gray-500 text-sm leading-5 py-0.5 px-1.5 border border-gray-400 rounded-md"
+          className="hidden rounded-md border border-gray-400 py-0.5 px-1.5 text-sm leading-5 text-gray-500 sm:block"
         >
           <span className="sr-only">Press </span>
           <kbd className="font-sans">

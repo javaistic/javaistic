@@ -27,21 +27,21 @@ const { tokens: defaultTokens } = tokenize.html(`<div class="flex pa-2 bg-white 
 export function CodeWindow({ children, lineNumbersBackground = true, className = '' }) {
   return (
     <div
-      className={`relative overflow-hidden md:rounded-xl shadow-2xl flex ${styles.root} ${className}`}
+      className={`relative flex overflow-hidden shadow-2xl md:rounded-xl ${styles.root} ${className}`}
     >
       <div className="absolute inset-0 bg-black bg-opacity-75" />
-      <div className="relative w-full flex flex-col">
-        <div className="flex-none h-11 flex items-center px-4">
+      <div className="relative flex w-full flex-col">
+        <div className="flex h-11 flex-none items-center px-4">
           <div className="flex space-x-1.5">
-            <div className="w-3 h-3 border-2 rounded-full border-red-500" />
-            <div className="w-3 h-3 border-2 rounded-full border-amber-400" />
-            <div className="w-3 h-3 border-2 rounded-full border-green-400" />
+            <div className="h-3 w-3 rounded-full border-2 border-red-500" />
+            <div className="h-3 w-3 rounded-full border-2 border-amber-400" />
+            <div className="h-3 w-3 rounded-full border-2 border-green-400" />
           </div>
         </div>
-        <div className="relative border-t border-white border-opacity-10 min-h-0 flex-auto flex flex-col">
+        <div className="relative flex min-h-0 flex-auto flex-col border-t border-white border-opacity-10">
           {lineNumbersBackground && (
             <div
-              className="hidden md:block absolute inset-y-0 left-0 bg-black bg-opacity-25"
+              className="absolute inset-y-0 left-0 hidden bg-black bg-opacity-25 md:block"
               style={{ width: 50 }}
             />
           )}
@@ -71,17 +71,17 @@ CodeWindow.Code = forwardRef(({ tokens = defaultTokens, initialLineNumber = 1, .
   }, [tokens])
 
   return (
-    <div className="w-full flex-auto flex min-h-0 overflow-auto">
-      <div ref={ref} className="w-full relative flex-auto">
+    <div className="flex min-h-0 w-full flex-auto overflow-auto">
+      <div ref={ref} className="relative w-full flex-auto">
         <pre className="flex min-h-full text-xs md:text-sm">
           <div
             aria-hidden="true"
-            className="hidden md:block text-white text-opacity-50 flex-none py-4 pr-4 text-right select-none"
+            className="hidden flex-none select-none py-4 pr-4 text-right text-white text-opacity-50 md:block"
             style={{ width: 50 }}
           >
             {lineNumbers}
           </div>
-          <code className="flex-auto relative block text-white pt-4 pb-4 px-4 overflow-auto">
+          <code className="relative block flex-auto overflow-auto px-4 pt-4 pb-4 text-white">
             <Code tokens={tokens} {...props} />
           </code>
         </pre>
@@ -103,15 +103,15 @@ CodeWindow.Code2 = forwardRef(
     return (
       <div
         ref={ref}
-        className={clsx(className, 'w-full flex-auto flex min-h-0', {
+        className={clsx(className, 'flex min-h-0 w-full flex-auto', {
           'overflow-auto': overflow === true || overflow === 'y',
         })}
       >
-        <div className="w-full relative flex-auto">
+        <div className="relative w-full flex-auto">
           <pre className="flex min-h-full text-xs md:text-sm">
             <div
               aria-hidden="true"
-              className="hidden md:block text-white text-opacity-50 flex-none py-4 pr-4 text-right select-none"
+              className="hidden flex-none select-none py-4 pr-4 text-right text-white text-opacity-50 md:block"
               style={{ width: 50 }}
             >
               {Array.from({ length: lines }).map((_, i) =>
@@ -126,7 +126,7 @@ CodeWindow.Code2 = forwardRef(
               )}
             </div>
             <code
-              className={clsx('flex-auto relative block text-white pt-4 pb-4 px-4', {
+              className={clsx('relative block flex-auto px-4 pt-4 pb-4 text-white', {
                 'overflow-auto': overflow === true || overflow === 'x',
               })}
             >

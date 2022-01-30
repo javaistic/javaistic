@@ -8,7 +8,7 @@
 }
 
 .scrollbar-w-2::-webkit-scrollbar {
-  @apply w-2 h-2 !important;
+  @apply h-2 w-2 !important;
 }
 
 .scrollbar-track-gray-lighter::-webkit-scrollbar-track {

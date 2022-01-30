@@ -73,7 +73,7 @@ function Snippet({ color, snippet }) {
     >
       <pre
         className={clsx(
-          'scrollbar-none overflow-x-auto p-6 text-sm leading-snug language-html text-white',
+          'scrollbar-none language-html overflow-x-auto p-6 text-sm leading-snug text-white',
           {
             'bg-black bg-opacity-75': codeBackground[color],
           }
@@ -87,11 +87,11 @@ function Snippet({ color, snippet }) {
 
 export function CodeSample({ preview, src, snippet, previewClassName, color = 'gray' }) {
   return (
-    <div className="relative overflow-hidden mb-8">
+    <div className="relative mb-8 overflow-hidden">
       {preview ? (
         <div
           className={clsx(
-            'rounded-t-xl overflow-hidden',
+            'overflow-hidden rounded-t-xl',
             previewBackground[color],
             previewClassName,
             {
@@ -158,7 +158,7 @@ export function ResizableCodeSample({
         </div>
         <div
           ref={constraintsRef}
-          className="absolute inset-y-0 -right-4 left-80 ml-4 pointer-events-none"
+          className="pointer-events-none absolute inset-y-0 -right-4 left-80 ml-4"
         >
           <motion.div
             drag="x"
@@ -166,7 +166,7 @@ export function ResizableCodeSample({
             dragMomentum={false}
             dragElastic={0}
             dragConstraints={constraintsRef}
-            className={`pointer-events-auto absolute top-1/2 -mt-4 w-8 hidden md:flex items-center justify-center cursor-grab active:cursor-grabbing ${
+            className={`pointer-events-auto absolute top-1/2 -mt-4 hidden w-8 cursor-grab items-center justify-center active:cursor-grabbing md:flex ${
               min ? 'right-0 md:left-0 md:right-auto' : 'right-0'
             }`}
             style={{ x }}
@@ -180,7 +180,7 @@ export function ResizableCodeSample({
             }}
           >
             <div
-              className="flex-none rounded bg-white shadow flex items-center justify-center h-8"
+              className="flex h-8 flex-none items-center justify-center rounded bg-white shadow"
               style={{ width: '0.9375rem' }}
             >
               <svg

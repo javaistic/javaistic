@@ -14,7 +14,7 @@ import Router from 'next/router'
 
 export default function Home() {
   return (
-    <div className="space-y-20 sm:space-y-32 md:space-y-40 lg:space-y-44 overflow-hidden">
+    <div className="space-y-20 overflow-hidden sm:space-y-32 md:space-y-40 lg:space-y-44">
       <Head>
         <meta
           key="description"
@@ -33,9 +33,9 @@ export default function Home() {
         />
         <title>Javaistic - Learn Java programming very fast and easily with Javaistic.</title>
       </Head>
-      <header className="relative z-10 max-w-screen-lg xl:max-w-screen-xl mx-auto">
-        <div className="px-4 sm:px-6 md:px-8 mb-14 sm:mb-20 xl:mb-8">
-          <div className="border-b border-gray-200 dark:border-gray-700 py-4 flex items-center justify-between mb-16 sm:mb-20 sm:mx-0 sm:px-0">
+      <header className="relative z-10 mx-auto max-w-screen-lg xl:max-w-screen-xl">
+        <div className="mb-14 px-4 sm:mb-20 sm:px-6 md:px-8 xl:mb-8">
+          <div className="mb-16 flex items-center justify-between border-b border-gray-200 py-4 dark:border-gray-700 sm:mx-0 sm:mb-20 sm:px-0">
             <div className="flex items-center">
               <NextLink href="/">
                 <a
@@ -44,14 +44,14 @@ export default function Home() {
                     Router.push('/brand')
                   }}
                 >
-                  <Logo className="w-auto flex h-8 lg:h-10 sm:h-5 text-black dark:text-white" />
+                  <Logo className="flex h-8 w-auto text-black dark:text-white sm:h-5 lg:h-10" />
                 </a>
               </NextLink>
             </div>
-            <div className="flex items-center space-x-4 sm:space-x-6 ml-4 sm:ml-2">
+            <div className="ml-4 flex items-center space-x-4 sm:ml-2 sm:space-x-6">
               <Search />
               <NextLink href="/docs">
-                <a className="hidden sm:inline text-base leading-4 font-medium hover:text-gray-600 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700 px-4 py-3 rounded-md hover:bg-gray-100  transition-colors duration-200">
+                <a className="hidden rounded-md px-4 py-3 text-base font-medium leading-4 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-600 dark:text-gray-300 dark:hover:bg-gray-700  dark:hover:text-white sm:inline">
                   <span className="hidden sm:inline">Documentation</span>
                 </a>
               </NextLink>
@@ -59,7 +59,7 @@ export default function Home() {
               <ThemeChanger />
               <a
                 href="https://github.com/javaistic/javaistic"
-                className="hidden sm:inline text-gray-400 hover:text-gray-500 transition-colors duration-200"
+                className="hidden text-gray-400 transition-colors duration-200 hover:text-gray-500 sm:inline"
               >
                 <span className="sr-only">Javaistic on GitHub</span>
                 <svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor">
@@ -71,36 +71,36 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-gray-900 dark:text-white mt-16 mb-8 sm:mt-18 sm:mb-10">
+          <h1 className="mt-16 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white sm:mt-18 sm:mb-10 sm:text-6xl lg:text-7xl">
             Learn{' '}
-            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-cyan-500">
+            <span className="bg-gradient-to-br from-green-400 to-cyan-500 bg-clip-text font-extrabold text-transparent">
               Java
             </span>{' '}
             programming very fast and easily with{' '}
-            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-sky-400 to-indigo-500">
+            <span className="bg-gradient-to-br from-sky-400 to-indigo-500 bg-clip-text font-extrabold text-transparent">
               Javaistic.
             </span>
           </h1>
-          <p className="max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">
+          <p className="mb-10 max-w-screen-lg text-lg font-medium sm:mb-11 sm:text-2xl sm:leading-10">
             A Java Programming learning website packed with information and programs ranging from{' '}
             <InlineCode>basics</InlineCode> , <InlineCode>arrays</InlineCode> ,{' '}
             <InlineCode>string programs</InlineCode> to <InlineCode>2D arrays</InlineCode> ,{' '}
             <InlineCode>recursion</InlineCode> , <InlineCode>matrices</InlineCode> and many more.
           </p>
-          <div className="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4 text-center mt-12 mb-28 ">
+          <div className="mt-12 mb-28 flex flex-wrap space-y-4 text-center sm:space-y-0 sm:space-x-4 ">
             <NextLink href="/docs">
-              <button className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md hover:shadow-xl leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
+              <button className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 hover:shadow-xl focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto">
                 Get started
               </button>
             </NextLink>
             <NextLink href="/">
-              <button className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white text-lg shadow-md hover:shadow-xl leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 dark:focus:ring-gray-700 focus:outline-none transition-colors duration-200">
+              <button className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-700 hover:shadow-xl focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 sm:w-auto">
                 Learn more
               </button>
             </NextLink>
             <NextLink href="https://github.com/sponsors/javaistic">
               <button
-                className="w-full sm:w-auto flex-none bg-gray-50 hover:bg-gray-100 text-md text-gray-900 font-semibold shadow-md hover:shadow-xl leading-6 py-3 sm:px-6 border-2 border-gray-300 rounded-lg flex items-center justify-center focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-300 focus:outline-none transition-colors duration-200"
+                className="text-md focus:outline-none flex w-full flex-none items-center justify-center rounded-lg border-2 border-gray-300 bg-gray-50 py-3 font-semibold leading-6 text-gray-900 shadow-md transition-colors duration-200 hover:bg-gray-100 hover:shadow-xl focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:ring-offset-white sm:w-auto sm:px-6"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -115,24 +115,24 @@ export default function Home() {
         </div>
         <Hero />
       </header>
-      <section className="relative z-10 text-center max-w-screen-lg xl:max-w-screen-xl mx-auto">
+      <section className="relative z-10 mx-auto max-w-screen-lg text-center xl:max-w-screen-xl">
         <div className="px-4 sm:px-6 md:px-8">
           <BigText as="h2" className="mb-8 text-gray-900 dark:text-white">
             <Widont>“ Learning By Doing ” actually works.</Widont>
           </BigText>
           <figure>
             <blockquote>
-              <Paragraph className="max-w-4xl mx-auto mb-6">
+              <Paragraph className="mx-auto mb-6 max-w-4xl">
                 Let&apos;s us learn Java by learning concepts and practicing programs.
                 <br /> <Widont>I am sure you will fall in love with Java.</Widont>
               </Paragraph>
             </blockquote>
-            <figcaption className="sm:text-xl font-medium flex flex-col items-center">
-              <div className="p-1 border-4 border-sky-400 rounded-full mb-4 object-cover object-center w-24 h-24">
+            <figcaption className="flex flex-col items-center font-medium sm:text-xl">
+              <div className="mb-4 h-24 w-24 rounded-full border-4 border-sky-400 object-cover object-center p-1">
                 <Image
                   src={require('@/img/uiuxarghya.jpg').default}
                   alt="Creator of Javaistic"
-                  className=" bg-sky-400 rounded-full "
+                  className=" rounded-full bg-sky-400 "
                   width={100}
                   height={100}
                   quality={100}
@@ -150,7 +150,7 @@ export default function Home() {
       </section>
       <OpenSource />
       <Testimonials />
-      <div className="max-w-screen-lg xl:max-w-screen-xl mx-auto space-y-20 sm:space-y-32 md:space-y-40 lg:space-y-44"></div>
+      <div className="mx-auto max-w-screen-lg space-y-20 sm:space-y-32 md:space-y-40 lg:space-y-44 xl:max-w-screen-xl"></div>
       <Footer />
     </div>
   )

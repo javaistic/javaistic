@@ -41,17 +41,21 @@ Router.events.on('routeChangeError', progress.finish)
 export default function App({ Component, pageProps, router }) {
   let [navIsOpen, setNavIsOpen] = useState(false)
 
-  useEffect(() => {
-    if (!navIsOpen) return
-    function handleRouteChange(url) {
-      setNavIsOpen(false)
-      ga.pageview(url)
-    }
-    Router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      Router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [navIsOpen], [router.events])
+  useEffect(
+    () => {
+      if (!navIsOpen) return
+      function handleRouteChange(url) {
+        setNavIsOpen(false)
+        ga.pageview(url)
+      }
+      Router.events.on('routeChangeComplete', handleRouteChange)
+      return () => {
+        Router.events.off('routeChangeComplete', handleRouteChange)
+      }
+    },
+    [navIsOpen],
+    [router.events]
+  )
 
   const Layout = Component.layoutProps?.Layout || Fragment
   const layoutProps = Component.layoutProps?.Layout

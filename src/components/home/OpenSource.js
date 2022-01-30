@@ -19,13 +19,13 @@ const GitHubImage = () => {
 }
 export function OpenSource() {
   return (
-    <section className="text-gray-600 body-font">
-      <div className="container mx-auto flex px-4 py-24 sm:px-10  md:flex-row flex-col items-center">
-        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+    <section className="body-font text-gray-600">
+      <div className="container mx-auto flex flex-col items-center px-4  py-24 sm:px-10 md:flex-row">
+        <div className="mb-10 w-5/6 md:mb-0 md:w-1/2 lg:w-full lg:max-w-lg">
           <GitHubImage />
         </div>
-        <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl leading-none font-extrabold text-gray-900 dark:text-white tracking-tight mb-8">
+        <div className="flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-16 md:text-left lg:flex-grow lg:pl-24">
+          <h1 className="mb-8 text-2xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
             Open to anyone.&nbsp;
             <br className="hidden lg:inline-block" />
             Fork it, twist it. Flip it.
@@ -35,7 +35,7 @@ export function OpenSource() {
             everyone.
           </p>
           <div className="flex justify-center">
-            <button className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 text-white text-lg shadow-md hover:shadow-xl leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+            <button className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-800 hover:shadow-xl focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-700 dark:hover:bg-gray-600 sm:w-auto">
               <NextLink href="https://github.com/javaistic/javaistic">View on GitHub</NextLink>
             </button>
           </div>

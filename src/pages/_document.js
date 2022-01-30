@@ -21,7 +21,10 @@ export default class Document extends NextDocument {
           <link rel="manifest" href="/manifest.json" />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3884ff" />
           <meta name="theme-color" content="#ffffff" />
-          <meta name="google-site-verification" content="OMYBoUbVEYAJu6SsOajfrvkTJunKMieK9ZhAgOFHobM"/>
+          <meta
+            name="google-site-verification"
+            content="OMYBoUbVEYAJu6SsOajfrvkTJunKMieK9ZhAgOFHobM"
+          />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async

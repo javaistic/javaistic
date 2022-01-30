@@ -10,17 +10,17 @@ export default function Sponsors() {
         <meta key="og:title" property="og:title" content="Javaistic - Sponsors" />
         <title>Javaistic - Sponsors</title>
       </Head>
-      <div className="px-10 sm:px-10 md:px-12 pt-10 pb-16">
-        <h1 className="text-6xl text-center mt-5 text-gray-900 font-extrabold mb-4">Sponsors</h1>
-        <div className="text-lg text-center mb-2 space-y-5">
+      <div className="px-10 pt-10 pb-16 sm:px-10 md:px-12">
+        <h1 className="mt-5 mb-4 text-center text-6xl font-extrabold text-gray-900">Sponsors</h1>
+        <div className="mb-2 space-y-5 text-center text-lg">
           <p>A huge thanks to our Sponsors.</p>
         </div>
-        <section className="text-gray-600 body-font">
-          <div className="container px-2 py-10 mx-auto flex flex-wrap">
+        <section className="body-font text-gray-600">
+          <div className="container mx-auto flex flex-wrap px-2 py-10">
             <div className="flex flex-wrap">
-              <div className="p-4 lg:w-1/2 md:w-full">
-                <div className="flex border-2 rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-xl border-gray-300 dark:border-gray-600 border-opacity-50 p-8 sm:flex-row flex-col">
-                  <div className="w-24 h-24 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center text-black dark:text-white flex-shrink-0">
+              <div className="p-4 md:w-full lg:w-1/2">
+                <div className="flex flex-col rounded-xl border-2 border-gray-300 border-opacity-50 bg-white p-8 shadow-md hover:shadow-xl dark:border-gray-600 dark:bg-gray-800 sm:flex-row">
+                  <div className="mb-4 inline-flex h-24 w-24 flex-shrink-0 items-center justify-center text-black dark:text-white sm:mr-8 sm:mb-0">
                     <svg
                       width="4438"
                       height="1000"
@@ -35,18 +35,18 @@ export default function Sponsors() {
                     </svg>
                   </div>
                   <div className="flex-grow">
-                    <h2 className="text-gray-900 text-lg title-font font-semibold mb-3">Vercel</h2>
-                    <p className="leading-relaxed text-base">Proudly hosted by Vercel.</p>
+                    <h2 className="title-font mb-3 text-lg font-semibold text-gray-900">Vercel</h2>
+                    <p className="text-base leading-relaxed">Proudly hosted by Vercel.</p>
                     <a
                       href="https://vercel.com/?utm_source=javaistic&utm_campaign=oss"
                       target="_blank"
-                      className="mt-3 text-indigo-500 inline-flex items-center"
+                      className="mt-3 inline-flex items-center text-indigo-500"
                       rel="noreferrer"
                     >
                       Visit Vercel
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 ml-2"
+                        className="ml-2 h-5 w-5"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -62,9 +62,9 @@ export default function Sponsors() {
                   </div>
                 </div>
               </div>
-              <div className="p-4 lg:w-1/2 md:w-full">
-                <div className="flex border-2 rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-xl border-gray-300 dark:border-gray-600 border-opacity-50 p-8 sm:flex-row flex-col">
-                  <div className="w-24 h-24 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center text-black dark:text-white flex-shrink-0">
+              <div className="p-4 md:w-full lg:w-1/2">
+                <div className="flex flex-col rounded-xl border-2 border-gray-300 border-opacity-50 bg-white p-8 shadow-md hover:shadow-xl dark:border-gray-600 dark:bg-gray-800 sm:flex-row">
+                  <div className="mb-4 inline-flex h-24 w-24 flex-shrink-0 items-center justify-center text-black dark:text-white sm:mr-8 sm:mb-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 485 120">
                       <g fill="none">
                         <path
@@ -84,18 +84,18 @@ export default function Sponsors() {
                     </svg>
                   </div>
                   <div className="flex-grow">
-                    <h2 className="text-gray-900 text-lg title-font font-semibold mb-3">Algolia</h2>
-                    <p className="leading-relaxed text-base">Documentation Search by Algolia.</p>
+                    <h2 className="title-font mb-3 text-lg font-semibold text-gray-900">Algolia</h2>
+                    <p className="text-base leading-relaxed">Documentation Search by Algolia.</p>
                     <a
                       href="https://www.algolia.com/docsearch?ref=javaistic"
                       target="_blank"
-                      className="mt-3 text-indigo-500 inline-flex items-center"
+                      className="mt-3 inline-flex items-center text-indigo-500"
                       rel="noreferrer"
                     >
                       Visit Algolia
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 ml-2"
+                        className="ml-2 h-5 w-5"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -111,9 +111,9 @@ export default function Sponsors() {
                   </div>
                 </div>
               </div>
-              <div className="p-4 lg:w-1/2 md:w-full">
-                <div className="flex border-2 rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-xl border-gray-300 dark:border-gray-600 border-opacity-50 p-8 sm:flex-row flex-col">
-                  <div className="w-28 h-28 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full text-black dark:text-white flex-shrink-0">
+              <div className="p-4 md:w-full lg:w-1/2">
+                <div className="flex flex-col rounded-xl border-2 border-gray-300 border-opacity-50 bg-white p-8 shadow-md hover:shadow-xl dark:border-gray-600 dark:bg-gray-800 sm:flex-row">
+                  <div className="mb-4 inline-flex h-28 w-28 flex-shrink-0 items-center justify-center rounded-full text-black dark:text-white sm:mr-8 sm:mb-0">
                     <svg
                       width="169"
                       height="36"
@@ -147,15 +147,17 @@ export default function Sponsors() {
                     </svg>
                   </div>
                   <div className="flex-grow">
-                    <h2 className="text-gray-900 text-lg title-font font-semibold mb-3">Formspree</h2>
-                    <p className="leading-relaxed text-base">
+                    <h2 className="title-font mb-3 text-lg font-semibold text-gray-900">
+                      Formspree
+                    </h2>
+                    <p className="text-base leading-relaxed">
                       The form solution for any developer.
                     </p>
-                    <a className="mt-3 text-indigo-500 inline-flex items-center">
+                    <a className="mt-3 inline-flex items-center text-indigo-500">
                       Visit Formspree
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 ml-2"
+                        className="ml-2 h-5 w-5"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -172,9 +174,9 @@ export default function Sponsors() {
                 </div>
               </div>
 
-              <div className="p-4 lg:w-1/2 md:w-full">
-                <div className="flex border-2 rounded-xl bg-gray-100 dark:bg-gray-800 shadow-inner border-gray-300 dark:border-gray-600 border-opacity-50 p-8 sm:flex-row flex-col">
-                  <div className="w-28 h-28 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 border-4 border-gray-300 dark:border-gray-600 border-dashed text-gray-300 flex-shrink-0">
+              <div className="p-4 md:w-full lg:w-1/2">
+                <div className="flex flex-col rounded-xl border-2 border-gray-300 border-opacity-50 bg-gray-100 p-8 shadow-inner dark:border-gray-600 dark:bg-gray-800 sm:flex-row">
+                  <div className="mb-4 inline-flex h-28 w-28 flex-shrink-0 items-center justify-center rounded-full border-4 border-dashed border-gray-300 text-gray-300 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 sm:mr-8 sm:mb-0">
                     <svg className="p-6" viewBox="0 0 24 24" aria-hidden="true">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -193,14 +195,14 @@ export default function Sponsors() {
                     </svg>
                   </div>
                   <div className="flex-grow">
-                    <h2 className="text-gray-900 text-lg title-font font-semibold mb-3">
+                    <h2 className="title-font mb-3 text-lg font-semibold text-gray-900">
                       Become our sponsor!
                     </h2>
-                    <p className="leading-relaxed text-base">
+                    <p className="text-base leading-relaxed">
                       To join us, choose how you want to contribute.
                     </p>
                     <a
-                      className="mt-3 text-indigo-500 inline-flex items-center"
+                      className="mt-3 inline-flex items-center text-indigo-500"
                       href="https://github.com/sponsors/javaistic"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -208,7 +210,7 @@ export default function Sponsors() {
                       Start sponsoring
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 ml-2"
+                        className="ml-2 h-5 w-5"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"

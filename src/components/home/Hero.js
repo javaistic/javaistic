@@ -7,10 +7,7 @@ import colors from 'tailwindcss/colors'
 import { tokenizeWithLines } from '../../macros/tokenize.macro'
 import styles from './EditorTools.module.css'
 
-const outputs = [
-  ["Element to Search : 3"],
-  ["Element found at index : 1"],
-]
+const outputs = [['Element to Search : 3'], ['Element found at index : 1']]
 
 const { lines } = tokenizeWithLines.java(`class BinarySearch {
 	int binarySearch(int arr[], int l, int r, int x)
@@ -65,7 +62,7 @@ function CompletionDemo() {
                           <Fragment key={i}>
                             {space}
                             <span
-                              className="inline-flex w-2.5 h-2.5 md:w-3 md:h-3 rounded-sm shadow-px relative top-px mr-0.5 md:mr-1"
+                              className="relative top-px mr-0.5 inline-flex h-2.5 w-2.5 rounded-sm shadow-px md:mr-1 md:h-3 md:w-3"
                               style={{ background: color }}
                             />
                             {c}
@@ -92,7 +89,6 @@ function CompletionDemo() {
   )
 }
 
-
 export function Hero() {
   return (
     <section id="editor-tools">
@@ -101,8 +97,8 @@ export function Hero() {
         rotate={2}
         left={
           <CodeWindow className={`bg-sky-500 ${styles.code}`} lineNumbersBackground={false}>
-            <div className="flex-auto flex min-h-0">
-              <div className="flex-none w-14 bg-white bg-opacity-10 flex flex-col items-center justify-between pt-3.5 pb-4">
+            <div className="flex min-h-0 flex-auto">
+              <div className="flex w-14 flex-none flex-col items-center justify-between bg-white bg-opacity-10 pt-3.5 pb-4">
                 <svg width="24" height="216" fill="none">
                   <path
                     d="M3 69l6-6m-2-5a7 7 0 1014 0 7 7 0 00-14 0z"
@@ -149,15 +145,15 @@ export function Hero() {
                   />
                 </svg>
               </div>
-              <div className="flex-auto flex flex-col min-w-0">
+              <div className="flex min-w-0 flex-auto flex-col">
                 <CompletionDemo />
-                <div className="border-t border-white border-opacity-10 font-mono text-xs text-white p-4 space-y-2">
-                  <h3 className='text-white'>Output</h3>
+                <div className="space-y-2 border-t border-white border-opacity-10 p-4 font-mono text-xs text-white">
+                  <h3 className="text-white">Output</h3>
                   <ul className="leading-5">
                     {outputs.map((output, i) => (
                       <li key={i} className="flex min-w-0">
-                        <p className="truncate ml-1">{output[0]}</p>
-                        <p className="hidden sm:block flex-none opacity-50">&nbsp;{output[1]}</p>
+                        <p className="ml-1 truncate">{output[0]}</p>
+                        <p className="hidden flex-none opacity-50 sm:block">&nbsp;{output[1]}</p>
                       </li>
                     ))}
                   </ul>

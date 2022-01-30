@@ -13,14 +13,15 @@ const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHre
     <li ref={ref}>
       <Link href={isPublished ? href : fallbackHref}>
         <a
-          className={clsx('px-3 py-2 transition-colors duration-200 relative block', {
+          className={clsx('relative block px-3 py-2 transition-colors duration-200', {
             'text-blue-700 dark:text-blue-400': isActive,
-            'hover:text-gray-900 text-gray-500 dark:text-gray-400 dark:hover:text-white': !isActive && isPublished,
+            'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white':
+              !isActive && isPublished,
             'text-gray-400 dark:text-white': !isActive && !isPublished,
           })}
         >
           <span
-            className={clsx('rounded-md absolute inset-0 bg-blue-50 dark:bg-gray-800', {
+            className={clsx('absolute inset-0 rounded-md bg-blue-50 dark:bg-gray-800', {
               'opacity-0': !isActive,
             })}
           />
@@ -55,10 +56,10 @@ function Nav({ nav, children, fallbackHref }) {
     <nav
       id="nav"
       ref={scrollRef}
-      className="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-6 lg:pb-14 sticky?lg:h-(screen-18) bg-white dark:bg-gray-900"
+      className="sticky?lg:h-(screen-18) overflow-y-auto bg-white px-1 pt-6 pb-10 text-base font-medium dark:bg-gray-900 sm:px-3 lg:pt-6 lg:pb-14 lg:text-sm xl:px-5"
     >
-      <div className="relative flex mb-8 px-3 lg:hidden text-black dark:text-white">
-        <Logo className="w-auto h-10" />
+      <div className="relative mb-8 flex px-3 text-black dark:text-white lg:hidden">
+        <Logo className="h-10 w-auto" />
       </div>
       <ul>
         <TopLevelNav />
@@ -72,7 +73,7 @@ function Nav({ nav, children, fallbackHref }) {
                 <li key={category} className="mt-8">
                   <h5
                     className={clsx(
-                      'px-3 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs',
+                      'mb-3 px-3 text-sm font-semibold uppercase tracking-wide lg:mb-3 lg:text-xs',
                       {
                         'text-gray-900': publishedItems.length > 0,
                         'text-gray-400': publishedItems.length === 0,
@@ -113,7 +114,7 @@ const TopLevelAnchor = forwardRef(
           href={href}
           onClick={onClick}
           className={clsx(
-            'flex items-center px-3 hover:text-gray-900 dark:hover:text-white dark:text-gray-400 transition-colors duration-200',
+            'flex items-center px-3 transition-colors duration-200 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white',
             className,
             {
               'text-gray-900': isActive,
@@ -270,13 +271,13 @@ function TopLevelNav() {
 export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar, fallbackHref }) {
   return (
     <SidebarContext.Provider value={{ nav, navIsOpen, setNavIsOpen }}>
-      <div className="w-full max-w-8xl mx-auto">
+      <div className="mx-auto w-full max-w-8xl">
         <div className="lg:flex">
           <div
             id="sidebar"
             onClick={() => setNavIsOpen(false)}
             className={clsx(
-              'fixed z-40 inset-0 flex-none h-full bg-black bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block',
+              'fixed inset-0 z-40 h-full w-full flex-none bg-black bg-opacity-25 lg:static lg:block lg:h-auto lg:w-60 lg:overflow-y-visible lg:bg-white lg:pt-0 xl:w-72',
               {
                 hidden: !navIsOpen,
               }
@@ -285,7 +286,7 @@ export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar,
             <div
               id="navWrapper"
               onClick={(e) => e.stopPropagation()}
-              className="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white dark:bg-gray-900 mr-24 lg:mr-0"
+              className="scrolling-touch mr-24 h-full overflow-hidden overflow-y-auto bg-white dark:bg-gray-900 lg:relative lg:sticky lg:top-18 lg:mr-0 lg:block lg:h-auto lg:bg-transparent"
             >
               <Nav nav={nav} fallbackHref={fallbackHref}>
                 {sidebar}
@@ -295,9 +296,9 @@ export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar,
           <div
             id="content-wrapper"
             className={clsx(
-              'min-w-0 w-full flex-auto lg:static lg:max-h-full lg:overflow-visible bg-white dark:bg-gray-900',
+              'w-full min-w-0 flex-auto bg-white dark:bg-gray-900 lg:static lg:max-h-full lg:overflow-visible',
               {
-                'overflow-hidden max-h-screen fixed': navIsOpen,
+                'fixed max-h-screen overflow-hidden': navIsOpen,
               }
             )}
           >

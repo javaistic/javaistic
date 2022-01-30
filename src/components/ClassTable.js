@@ -126,40 +126,40 @@ export const ClassTable = memo(
     })
 
     return (
-      <div className="border-b border-gray-200 overflow-hidden relative">
+      <div className="relative overflow-hidden border-b border-gray-200">
         <Heading level={2} id="class-reference" toc={true} className="relative">
           <span className="sr-only">Default class reference</span>
         </Heading>
         <div
           className={clsx(
-            'overflow-y-auto scrollbar-w-2 scrollbar-track-gray-lighter scrollbar-thumb-rounded scrollbar-thumb-gray scrolling-touch',
+            'scrollbar-w-2 scrollbar-track-gray-lighter scrollbar-thumb-rounded scrollbar-thumb-gray scrolling-touch overflow-y-auto',
             { 'lg:max-h-sm': Object.keys(utilities).length > 12 }
           )}
         >
           {custom || (
-            <table className="w-full text-left border-collapse">
+            <table className="w-full border-collapse text-left">
               <thead>
                 <tr>
-                  <th className="z-20 sticky top-0 text-sm font-semibold text-gray-600 bg-white p-0">
-                    <div className="pb-2 pr-2 border-b border-gray-200">Class</div>
+                  <th className="sticky top-0 z-20 bg-white p-0 text-sm font-semibold text-gray-600">
+                    <div className="border-b border-gray-200 pb-2 pr-2">Class</div>
                   </th>
                   <th
                     className={clsx(
-                      'z-20 sticky top-0 text-sm font-semibold text-gray-600 bg-white p-0',
+                      'sticky top-0 z-20 bg-white p-0 text-sm font-semibold text-gray-600',
                       {
                         'hidden sm:table-cell': preview,
                       }
                     )}
                   >
                     <div
-                      className={clsx('pb-2 pl-2 border-b border-gray-200', { 'pr-2': preview })}
+                      className={clsx('border-b border-gray-200 pb-2 pl-2', { 'pr-2': preview })}
                     >
                       Properties
                     </div>
                   </th>
                   {preview && (
-                    <th className="z-20 sticky top-0 text-sm font-semibold text-gray-600 bg-white p-0">
-                      <div className="pb-2 pl-2 border-b border-gray-200">
+                    <th className="sticky top-0 z-20 bg-white p-0 text-sm font-semibold text-gray-600">
+                      <div className="border-b border-gray-200 pb-2 pl-2">
                         <span className="sr-only">Preview</span>&nbsp;
                       </div>
                     </th>
@@ -176,7 +176,7 @@ export const ClassTable = memo(
                       <td
                         translate="no"
                         className={clsx(
-                          'py-2 pr-2 font-mono text-xs text-violet-600 whitespace-nowrap',
+                          'whitespace-nowrap py-2 pr-2 font-mono text-xs text-violet-600',
                           {
                             'border-t border-gray-200': i !== 0,
                           }
@@ -186,13 +186,10 @@ export const ClassTable = memo(
                       </td>
                       <td
                         translate="no"
-                        className={clsx(
-                          'py-2 pl-2 font-mono text-xs text-sky-600 whitespace-pre',
-                          {
-                            'border-t border-gray-200': i !== 0,
-                            'hidden sm:table-cell sm:pr-2': preview,
-                          }
-                        )}
+                        className={clsx('whitespace-pre py-2 pl-2 font-mono text-xs text-sky-600', {
+                          'border-t border-gray-200': i !== 0,
+                          'hidden sm:table-cell sm:pr-2': preview,
+                        })}
                       >
                         {stringifyProperties(transformProperties({ selector, properties }), {
                           filter: filterProperties,

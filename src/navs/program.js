@@ -6,11 +6,6 @@ const pages = createPageList(
 )
 
 export const programsNav = {
-  'Getting started': [
-    pages['introduction'],
-  ],
-  'Introduction': [
-    pages['print-an-integer'],
-  ],
-  
+  'Getting started': [pages['introduction']],
+  Introduction: [pages['print-an-integer']],
 }

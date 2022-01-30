@@ -1,30 +1,30 @@
 export function TipGood({ children }) {
   return (
-    <p className="flex items-start mt-8 mb-4 space-x-2">
-      <svg className="w-6 h-6 flex-none mt-0.5" fill="none">
+    <p className="mt-8 mb-4 flex items-start space-x-2">
+      <svg className="mt-0.5 h-6 w-6 flex-none" fill="none">
         <circle cx="12" cy="12" r="12" fill="#A7F3D0" />
         <path d="M18 8l-8 8-4-4" stroke="#047857" strokeWidth="2" />
       </svg>
-      <strong className="flex-1 text-base leading-7 font-semibold text-gray-900">{children}</strong>
+      <strong className="flex-1 text-base font-semibold leading-7 text-gray-900">{children}</strong>
     </p>
   )
 }
 
 export function TipBad({ children }) {
   return (
-    <p className="flex items-start mt-8 mb-4 space-x-2">
-      <svg className="w-6 h-6 flex-none mt-0.5" fill="none">
+    <p className="mt-8 mb-4 flex items-start space-x-2">
+      <svg className="mt-0.5 h-6 w-6 flex-none" fill="none">
         <circle cx="12" cy="12" r="12" fill="#FECDD3" />
         <path d="M8 8l8 8M16 8l-8 8" stroke="#B91C1C" strokeWidth="2" />
       </svg>
-      <strong className="flex-1 text-base leading-7 font-semibold text-gray-900">{children}</strong>
+      <strong className="flex-1 text-base font-semibold leading-7 text-gray-900">{children}</strong>
     </p>
   )
 }
 
 export function TipCompat({ children }) {
   return (
-    <div className="text-sm bg-sky-100 text-sky-800 font-medium px-4 py-3 mb-4 rounded-xl">
+    <div className="mb-4 rounded-xl bg-sky-100 px-4 py-3 text-sm font-medium text-sky-800">
       <div className="flex items-start space-x-3">
         <svg width="20" height="20" className="text-sky-500" fill="currentColor">
           <path
@@ -41,7 +41,7 @@ export function TipCompat({ children }) {
 
 export function TipInfo({ children }) {
   return (
-    <div className="text-sm leading-6 bg-blue-50 dark:bg-blue-900 text-blue-800 px-6 py-4 mb-8 rounded-lg">
+    <div className="mb-8 rounded-lg bg-blue-50 px-6 py-4 text-sm leading-6 text-blue-800 dark:bg-blue-900">
       <div className="flex items-start space-x-3">
         <svg width="40" height="40" className="text-sky-500" fill="none">
           <path
@@ -60,7 +60,7 @@ export function TipInfo({ children }) {
           />
         </svg>
 
-        <p className="flex-1 min-w-0">{children}</p>
+        <p className="min-w-0 flex-1">{children}</p>
       </div>
     </div>
   )
