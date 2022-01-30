@@ -29,10 +29,10 @@ function TableOfContents({ tableOfContents, currentSection }) {
 
   return (
     <>
-      <h5 className="text-gray-900 dark:text-white uppercase tracking-wide font-semibold mb-3 text-sm lg:text-xs">
+      <h5 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-900 dark:text-white lg:text-xs">
         On this page
       </h5>
-      <ul className="overflow-x-hidden text-gray-500 dark:text-gray-400 font-medium">
+      <ul className="overflow-x-hidden font-medium text-gray-500 dark:text-gray-400">
         {tableOfContents.map((section) => {
           let sectionIsActive =
             currentSection === section.slug ||
@@ -45,7 +45,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
                   href={`#${section.slug}`}
                   onClick={closeNav}
                   className={clsx(
-                    'block transform transition-colors duration-200 py-2 hover:text-gray-900 dark:hover:text-white',
+                    'block transform py-2 transition-colors duration-200 hover:text-gray-900 dark:hover:text-white',
                     {
                       'text-gray-900 dark:text-white': sectionIsActive,
                     }
@@ -69,7 +69,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
                       href={`#${subsection.slug}`}
                       onClick={closeNav}
                       className={clsx(
-                        'block py-2 transition-colors duration-200 hover:text-gray-900 dark:hover:text-white font-medium',
+                        'block py-2 font-medium transition-colors duration-200 hover:text-gray-900 dark:hover:text-white',
                         {
                           'text-gray-900 dark:text-white': subsectionIsActive,
                         }
@@ -171,8 +171,8 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
   let { prev, next } = usePrevNext()
 
   return (
-    <div id={meta.containerId} className="w-full flex">
-      <div className="min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16">
+    <div id={meta.containerId} className="flex w-full">
+      <div className="min-w-0 flex-auto px-4 pt-10 pb-24 sm:px-6 lg:pb-16 xl:px-8">
         <PageHeader
           title={meta.title}
           description={meta.description}
@@ -188,10 +188,10 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
         </ContentsContext.Provider>
 
         {(prev || next) && (
-          <div className="mt-16 flex leading-6 font-medium">
+          <div className="mt-16 flex font-medium leading-6">
             {prev && (
               <Link href={prev.href}>
-                <a className="flex mr-8 px-2 py-1 border-2 border-blue-500 dark:border-blue-400 rounded-md hover:shadow-md transition-colors duration-200 text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                <a className="mr-8 flex rounded-md border-2 border-blue-500 px-2 py-1 text-gray-400 transition-colors duration-200 hover:text-gray-900 hover:shadow-md dark:border-blue-400 dark:hover:text-white">
                   <span aria-hidden="true" className="mr-2">
                     &larr;
                   </span>
@@ -201,7 +201,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
             )}
             {next && (
               <Link href={next.href}>
-                <a className="flex text-right ml-auto px-2 py-1 border-2 border-blue-500 dark:border-blue-400 rounded-md hover:shadow-md transition-colors duration-200 text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                <a className="ml-auto flex rounded-md border-2 border-blue-500 px-2 py-1 text-right text-gray-400 transition-colors duration-200 hover:text-gray-900 hover:shadow-md dark:border-blue-400 dark:hover:text-white">
                   {next.shortTitle || next.title}
                   <span aria-hidden="true" className="ml-2">
                     &rarr;
@@ -211,21 +211,24 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
             )}
           </div>
         )}
-        <div className="mt-12 border-t border-gray-200 dark:border-gray-700 pt-6 text-right">
+        <div className="mt-12 border-t border-gray-200 pt-6 text-right dark:border-gray-700">
           <Link
             href={`https://github.com/javaistic/javaistic/edit/main/src/pages${router.pathname}.mdx`}
           >
-            <a className="mt-10 text-sm hover:text-gray-900 dark:hover:text-white">Edit this page on GitHub</a>
+            <a className="mt-10 text-sm hover:text-gray-900 dark:hover:text-white">
+              Edit this page on GitHub
+            </a>
           </Link>
         </div>
         <Link href={`https://vercel.com/?utm_source=javaistic&utm_campaign=oss`}>
-          <a className="text-sm mr-1">
-            Powered by <span className="text text-base font-bold text-black dark:text-white">▲Vercel</span>
+          <a className="mr-1 text-sm">
+            Powered by{' '}
+            <span className="text text-base font-bold text-black dark:text-white">▲Vercel</span>
           </a>
         </Link>
       </div>
-      <div className="hidden xl:text-sm xl:block flex-none w-64 pl-8 mr-8">
-        <div className="flex flex-col justify-between overflow-y-auto sticky max-h-(screen-18) pt-10 pb-6 top-18">
+      <div className="mr-8 hidden w-64 flex-none pl-8 xl:block xl:text-sm">
+        <div className="sticky top-18 flex max-h-(screen-18) flex-col justify-between overflow-y-auto pt-10 pb-6">
           {toc.length > 0 && (
             <div className="mb-8">
               <TableOfContents tableOfContents={toc} currentSection={currentSection} />

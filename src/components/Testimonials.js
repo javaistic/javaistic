@@ -20,8 +20,7 @@ const rotation = [-2, 1, -1, 2, -1, 1]
 
 const testimonials = [
   {
-    content:
-      'Talk is cheap. Show me the code.',
+    content: 'Talk is cheap. Show me the code.',
     author: {
       name: 'Linus Trovalds',
       role: 'Creator of Linux',
@@ -29,7 +28,8 @@ const testimonials = [
     },
   },
   {
-    content: 'The people who are crazy enough to think they can change the world are the ones who do.',
+    content:
+      'The people who are crazy enough to think they can change the world are the ones who do.',
     author: {
       name: 'Steve Jobs',
       role: 'Founder @ Apple Inc.',
@@ -61,8 +61,7 @@ const testimonials = [
     },
   },
   {
-    content:
-      'Truth can only be found in one place: the code.',
+    content: 'Truth can only be found in one place: the code.',
     author: {
       name: `Robert C. Martin`,
       role: 'Clean Code: A Handbook of Agile Software Craftsmanship',
@@ -99,34 +98,34 @@ function Testimonial({ testimonial, base, index, total }) {
 
   return (
     <motion.li
-      className="px-3 md:px-4 flex-none"
+      className="flex-none px-3 md:px-4"
       onMouseEnter={() => setStraight(true)}
       onMouseLeave={() => setStraight(false)}
       style={{ x }}
     >
       <motion.figure
-        className="shadow-lg rounded-xl flex-none w-80 md:w-xl"
+        className="w-80 flex-none rounded-xl shadow-lg md:w-xl"
         initial={false}
         animate={straight ? { rotate: 0 } : { rotate: rotation[index % rotation.length] }}
       >
-        <blockquote className="rounded-t-xl bg-white px-6 py-8 md:p-10 text-lg md:text-xl leading-8 md:leading-8 font-semibold text-gray-900">
+        <blockquote className="rounded-t-xl bg-white px-6 py-8 text-lg font-semibold leading-8 text-gray-900 md:p-10 md:text-xl md:leading-8">
           <svg width="45" height="36" className={`mb-5 fill-current ${color[1]}`}>
             <path d="M13.415.001C6.07 5.185.887 13.681.887 23.041c0 7.632 4.608 12.096 9.936 12.096 5.04 0 8.784-4.032 8.784-8.784 0-4.752-3.312-8.208-7.632-8.208-.864 0-2.016.144-2.304.288.72-4.896 5.328-10.656 9.936-13.536L13.415.001zm24.768 0c-7.2 5.184-12.384 13.68-12.384 23.04 0 7.632 4.608 12.096 9.936 12.096 4.896 0 8.784-4.032 8.784-8.784 0-4.752-3.456-8.208-7.776-8.208-.864 0-1.872.144-2.16.288.72-4.896 5.184-10.656 9.792-13.536L38.183.001z" />
           </svg>
           {typeof testimonial.content === 'string' ? (
-            <p className="text-gray-900 dark:text-gray-900" >{testimonial.content}</p>
+            <p className="text-gray-900 dark:text-gray-900">{testimonial.content}</p>
           ) : (
             testimonial.content
           )}
         </blockquote>
         <figcaption
-          className={`flex items-center space-x-4 p-6 md:px-10 md:py-6 bg-gradient-to-br rounded-b-xl leading-6 font-semibold text-white ${color[0]}`}
+          className={`flex items-center space-x-4 rounded-b-xl bg-gradient-to-br p-6 font-semibold leading-6 text-white md:px-10 md:py-6 ${color[0]}`}
         >
-          <div className="flex-none w-14 h-14 p-1 bg-white rounded-full flex items-center justify-center">
+          <div className="flex h-14 w-14 flex-none items-center justify-center rounded-full bg-white p-1">
             <Image
               src={testimonial.author.avatar}
               alt={testimonial.author.name}
-              className={`w-12 h-12 rounded-full ${color[2]}`}
+              className={`h-12 w-12 rounded-full ${color[2]}`}
               width={416}
               height={416}
               quality={100}
@@ -149,7 +148,7 @@ function Testimonial({ testimonial, base, index, total }) {
             <cite className="flex">
               <a
                 href={testimonial.tweetUrl}
-                className="opacity-50 hover:opacity-75 transition-opacity duration-200"
+                className="opacity-50 transition-opacity duration-200 hover:opacity-75"
               >
                 <span className="sr-only">Original tweet by {testimonial.author.name}</span>
                 <svg width="33" height="32" fill="currentColor">
@@ -176,7 +175,7 @@ export function Testimonials() {
       type: 'tween',
       duration,
       ease: 'linear',
-      repeatType: "loop"
+      repeatType: 'loop',
     })
 
     return controls.stop
@@ -190,11 +189,11 @@ export function Testimonials() {
       onMouseLeave={() => setDuration(150)}
     >
       <div
-        className="absolute right-0 bottom-1/2 left-0 bg-gradient-to-t from-gray-100 dark:from-gray-800 pointer-events-none"
+        className="pointer-events-none absolute right-0 bottom-1/2 left-0 bg-gradient-to-t from-gray-100 dark:from-gray-800"
         style={{ height: 607, maxHeight: '50vh' }}
       />
-      <div className="flex overflow-hidden -my-8">
-        <ul className="flex items-center w-full py-8">
+      <div className="-my-8 flex overflow-hidden">
+        <ul className="flex w-full items-center py-8">
           {testimonials.map((testimonial, i) => (
             <Testimonial
               key={i}

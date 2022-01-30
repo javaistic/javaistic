@@ -12,7 +12,7 @@ function Logo({ title, component: Component }) {
     <div className="w-60 max-w-full">
       <div className="relative" style={{ paddingTop: `${(60 / 240) * 100}%` }}>
         <span className="sr-only">{title}</span>
-        <Component className="absolute inset-0 w-full h-full" />
+        <Component className="absolute inset-0 h-full w-full" />
       </div>
     </div>
   )
@@ -20,101 +20,99 @@ function Logo({ title, component: Component }) {
 
 export default function Brand() {
   return (
-    <div className="px-4 sm:px-6 md:px-8 pt-10 pb-16">
-      <h1 className="text-4xl text-gray-900 font-extrabold mb-4">Brand</h1>
-      <div className="max-w-2xl mb-4">
-        <div className="text-lg mb-5 space-y-5">
+    <div className="px-4 pt-10 pb-16 sm:px-6 md:px-8">
+      <h1 className="mb-4 text-4xl font-extrabold text-gray-900">Brand</h1>
+      <div className="mb-4 max-w-2xl">
+        <div className="mb-5 space-y-5 text-lg">
           <p>Javaistic brand assets and usage guidelines.</p>{' '}
         </div>
       </div>
-      <h1 className="text-2xl text-gray-900 font-extrabold">Logos</h1>
-      <div className="grid md:grid-cols-2 gap-8 md:gap-6 xl:gap-8 my-8 sm:my-12">
+      <h1 className="text-2xl font-extrabold text-gray-900">Logos</h1>
+      <div className="my-8 grid gap-8 sm:my-12 md:grid-cols-2 md:gap-6 xl:gap-8">
         <section>
-          <h2 className="text-xl text-gray-900 font-bold mb-4">
+          <h2 className="mb-4 text-xl font-bold text-gray-900">
             Main Logo<span className="sr-only">: Javaistic Main Logo</span>
           </h2>
-          <div className="h-40 sm:h-56 xl:h-64 rounded-xl bg-gray-200 dark:bg-gray-50 mb-6 flex items-center justify-center p-6">
+          <div className="mb-6 flex h-40 items-center justify-center rounded-xl bg-gray-200 p-6 dark:bg-gray-50 sm:h-56 xl:h-64">
             <Logo title="Headless UI" component={JavaisticLogo} />
           </div>
 
-          <div className="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-4 text-center mt-4 mb-4 ">
+          <div className="mt-4 mb-4 flex flex-wrap space-y-2 text-center sm:space-y-0 sm:space-x-4 ">
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
+              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto">
                 SVG
               </a>
             </Link>
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-800 dark:hover:bg-gray-700 sm:w-auto">
                 PNG
               </a>
             </Link>
           </div>
         </section>
         <section>
-          <h2 className="text-xl text-gray-900 font-bold mb-4">
+          <h2 className="mb-4 text-xl font-bold text-gray-900">
             Alternate Logo<span className="sr-only">: Javaistic Alternate Logo</span>
           </h2>
-          <div className="h-40 sm:h-56 xl:h-64 rounded-xl bg-gray-900 dark:bg-gray-800 mb-6 flex items-center justify-center p-6">
+          <div className="mb-6 flex h-40 items-center justify-center rounded-xl bg-gray-900 p-6 dark:bg-gray-800 sm:h-56 xl:h-64">
             <Logo title="Headless UI" component={JavaisticAltLogo} />
           </div>
 
-          <div className="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-4 text-center mt-4 mb-4 ">
+          <div className="mt-4 mb-4 flex flex-wrap space-y-2 text-center sm:space-y-0 sm:space-x-4 ">
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
+              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto">
                 SVG
               </a>
             </Link>
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-800 dark:hover:bg-gray-700 sm:w-auto">
                 PNG
               </a>
             </Link>
           </div>
         </section>
       </div>
-      <h1 className="text-2xl text-gray-900 font-extrabold">Monochrome Logos</h1>
-      <div className="grid md:grid-cols-2 gap-8 md:gap-6 xl:gap-8 my-8 sm:my-12">
+      <h1 className="text-2xl font-extrabold text-gray-900">Monochrome Logos</h1>
+      <div className="my-8 grid gap-8 sm:my-12 md:grid-cols-2 md:gap-6 xl:gap-8">
         <section>
-          <h2 className="text-xl text-gray-900 font-bold mb-4">
+          <h2 className="mb-4 text-xl font-bold text-gray-900">
             Logo Black<span className="sr-only">: Javaistic Black Logo</span>
           </h2>
-          <div className="h-40 sm:h-56 xl:h-64 rounded-xl bg-gray-200 dark:bg-gray-50 mb-6 flex items-center justify-center p-6">
+          <div className="mb-6 flex h-40 items-center justify-center rounded-xl bg-gray-200 p-6 dark:bg-gray-50 sm:h-56 xl:h-64">
             <Logo title="Headless UI" component={JavaisticBlackLogo} />
           </div>
 
-          <div className="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-4 text-center mt-4 mb-4 ">
+          <div className="mt-4 mb-4 flex flex-wrap space-y-2 text-center sm:space-y-0 sm:space-x-4 ">
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
+              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto">
                 SVG
               </a>
             </Link>
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-800 dark:hover:bg-gray-700 sm:w-auto">
                 PNG
               </a>
             </Link>
           </div>
         </section>
         <section>
-          <h2 className="text-xl text-gray-900 font-bold mb-4">
+          <h2 className="mb-4 text-xl font-bold text-gray-900">
             Logo White<span className="sr-only">: Javaistic White Logo</span>
           </h2>
           <Link href="/">
-            <a
-              className="h-40 sm:h-56 xl:h-64 rounded-xl bg-gray-900 dark:bg-gray-800 mb-6 flex items-center justify-center p-6"
-            >
+            <a className="mb-6 flex h-40 items-center justify-center rounded-xl bg-gray-900 p-6 dark:bg-gray-800 sm:h-56 xl:h-64">
               <Logo title="Headless UI" component={JavaisticWhiteLogo} />
             </a>
           </Link>
 
-          <div className="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-4 text-center mt-4 mb-4 ">
+          <div className="mt-4 mb-4 flex flex-wrap space-y-2 text-center sm:space-y-0 sm:space-x-4 ">
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-blue-700 hover:bg-blue-600 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200">
+              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto">
                 SVG
               </a>
             </Link>
             <Link href="/">
-              <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 text-white text-lg shadow-md leading-6 font-semibold py-3 px-6 border border-transparent rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-800 dark:hover:bg-gray-700 sm:w-auto">
                 PNG
               </a>
             </Link>
@@ -122,7 +120,7 @@ export default function Brand() {
         </section>
       </div>
       <section>
-        <h2 className="text-2xl tracking-tight font-extrabold text-gray-900 mt-10 mb-8">
+        <h2 className="mt-10 mb-8 text-2xl font-extrabold tracking-tight text-gray-900">
           Get involved
         </h2>
         <Community />

@@ -8,7 +8,7 @@ export function BasicLayout({ children, meta, classes, tableOfContents }) {
   return (
     <div
       id={meta.containerId}
-      className={clsx('pb-16 w-full', { 'pt-12': isHome, 'pt-24 lg:pt-28': !isHome })}
+      className={clsx('w-full pb-16', { 'pt-12': isHome, 'pt-24 lg:pt-28': !isHome })}
     >
       <PageHeader
         title={meta.title}
@@ -16,7 +16,7 @@ export function BasicLayout({ children, meta, classes, tableOfContents }) {
         border={meta.headerSeparator !== false}
       />
       <div className="flex">
-        <div className="markdown px-6 xl:px-12 w-full max-w-3xl mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+        <div className="markdown mx-auto w-full max-w-3xl px-6 lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4 xl:px-12">
           {children}
         </div>
       </div>
