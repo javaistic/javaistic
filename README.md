@@ -34,6 +34,9 @@ A Java Programming learning website packed with information and programs ranging
 ![Stats](https://badgen.net/uptime-robot/month/m788498503-abfbb35c24db9355ed897d6d)
 ![Stats](https://badgen.net/uptime-robot/response/m788498503-abfbb35c24db9355ed897d6d)
 
+## 🪴 Project Activity
+
+![Alt](https://repobeats.axiom.co/api/embed/3df6f52cbd6d58e6c248f9457081834adf6459e5.svg "Repobeats analytics image")
 
 ## Contributing
 If you're interested in contributing to Javaistic Documentation, please read our [contributing docs](CONTRIBUTING.md) before submitting a pull request.
