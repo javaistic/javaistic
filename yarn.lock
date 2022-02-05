@@ -5025,10 +5025,10 @@ prelude-ls@^1.2.1:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prettier-plugin-tailwindcss@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.1.4.tgz#b09e826a57a0f69b0662eededd659b3d5a5551e7"
-  integrity sha512-kt3YFWqxcG9+bilBI0hPF7RjQZNtgBRvjJZGw6B2MNAjPqlfcYIiZnNaIEnq4XimKLTzZYxz6jQnUXmSQ/5njg==
+prettier-plugin-tailwindcss@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.1.5.tgz#1709b4cea44873cbfefe9862f9f0827a51fe8cc3"
+  integrity sha512-e+jTxwiHL4I3Ot8OjV1LAiiaAx0Zgy71xTL7xNmJtNmhpja7GKzFSAoulqBDS1D57B7lbZDCvDEKIWIQSBUmBQ==
 
 prettier@^2.5.1:
   version "2.5.1"
