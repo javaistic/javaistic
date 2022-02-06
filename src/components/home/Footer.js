@@ -5,6 +5,7 @@ import { programsNav } from '@/navs/program'
 import clsx from 'clsx'
 import Link from 'next/link'
 import styles from './Footer.module.css'
+import MadeInBadge from './MadeInBadge'
 
 const footerNav = {
   'Getting started': {
@@ -146,8 +147,9 @@ export function Footer() {
               Status
             </p>
           </a>
-          <span className="mt-4 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">
-          </span>
+          <div className="mt-4 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">
+            <MadeInBadge />
+          </div>
         </div>
       </div>
     </footer>
