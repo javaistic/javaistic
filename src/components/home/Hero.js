@@ -37,7 +37,8 @@ const { lines } = tokenizeWithLines.java(`class BinarySearch {
 		else
 			System.out.println("Element found at index " + result);
 	}
-}`)
+}
+`)
 
 function CompletionDemo() {
   const { ref } = useInView({ threshold: 0.5, triggerOnce: true })
