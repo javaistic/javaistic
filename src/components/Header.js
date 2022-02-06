@@ -3,8 +3,8 @@ import { Search } from '@/components/Search'
 import clsx from 'clsx'
 import Link from 'next/link'
 import Router from 'next/router'
-import ThemeChanger from './ThemeChanger'
 import MenuButton from './home/Menu'
+import ThemeChanger from './ThemeChanger'
 
 export function Header({ navIsOpen, onNavToggle }) {
   return (
@@ -29,7 +29,6 @@ export function Header({ navIsOpen, onNavToggle }) {
           <div className="flex flex-shrink-0 items-center justify-end space-x-4 pl-6 sm:space-x-6 lg:w-64">
             <ThemeChanger />
             <MenuButton />
-
             <a
               href="https://github.com/javaistic/javaistic"
               className="text-gray-400 transition-colors duration-200 hover:text-gray-600 dark:hover:text-gray-200"
