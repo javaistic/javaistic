@@ -1,8 +1,8 @@
 import { BigText, InlineCode, Paragraph, Widont } from '@/components/home/common'
+import { Features } from '@/components/home/Features'
 import { Footer } from '@/components/home/Footer'
 import { Hero } from '@/components/home/Hero'
 import MenuButton from '@/components/home/Menu'
-import { OpenSource } from '@/components/home/OpenSource'
 import { Logo } from '@/components/Logo'
 import { Search } from '@/components/Search'
 import { Testimonials } from '@/components/Testimonials'
@@ -71,7 +71,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <h1 className="mt-16 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white sm:mt-18 sm:mb-10 sm:text-6xl lg:text-7xl">
+          <h1 className="mt-16 mb-8 px-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white sm:mt-18 sm:mb-10 sm:px-0 sm:text-6xl lg:text-7xl">
             Learn{' '}
             <span className="bg-gradient-to-br from-green-400 to-cyan-500 bg-clip-text font-extrabold text-transparent">
               Java
@@ -81,7 +81,7 @@ export default function Home() {
               Javaistic.
             </span>
           </h1>
-          <p className="mb-10 max-w-screen-lg text-lg font-medium sm:mb-11 sm:text-2xl sm:leading-10">
+          <p className="mb-10 max-w-screen-lg px-4 text-lg font-medium sm:mb-11 sm:px-0 sm:text-2xl sm:leading-10">
             A Java Programming learning website packed with information and programs ranging from{' '}
             <InlineCode>basics</InlineCode> , <InlineCode>arrays</InlineCode> ,{' '}
             <InlineCode>string programs</InlineCode> to <InlineCode>2D arrays</InlineCode> ,{' '}
@@ -116,19 +116,41 @@ export default function Home() {
         <Hero />
       </header>
       <section className="relative z-10 mx-auto max-w-screen-lg text-center xl:max-w-screen-xl">
-        <div className="px-4 sm:px-6 md:px-8">
-          <BigText as="h2" className="mb-8 text-gray-900 dark:text-white">
-            <Widont>“ Learning By Doing ” actually works.</Widont>
+        <div className="px-10 sm:px-6 md:px-8">
+          <BigText
+            as="h2"
+            className="mb-8 text-left text-4xl text-gray-900 dark:text-white sm:text-center"
+          >
+            <Widont>“ Education should be free. ”</Widont> <p className="mt-0 sm:mt-1"></p>
           </BigText>
           <figure>
             <blockquote>
-              <Paragraph className="mx-auto mb-6 max-w-4xl">
-                Let&apos;s us learn Java by learning concepts and practicing programs.
-                <br /> <Widont>I am sure you will fall in love with Java.</Widont>
+              <Paragraph className="mx-auto mb-6 max-w-4xl text-left">
+                <Widont>
+                  Education is the greatest weapon in this era for the people. But, sadly, these
+                  days it&apos;s governed by corruption. Today with growing technologies everyone in
+                  a country must learn to code. As it is difficult to get 100% free coding
+                  education, they are unable to achieve it. Maybe, if coding education is free, then
+                  the country will be a developed country which will lead the country in the right
+                  direction and get prosperity.
+                </Widont>
+                <br />
+                <br />
+                As{' '}
+                <span className="bg-gradient-to-br from-green-400 to-cyan-500 bg-clip-text font-extrabold text-transparent">
+                  Java
+                </span>{' '}
+                is one of the most widely used programming languages, it should be learned by all
+                for free. By building{' '}
+                <span className="bg-gradient-to-br from-sky-400 to-indigo-500 bg-clip-text font-extrabold text-transparent">
+                  Javaistic
+                </span>
+                , we&apos;re doing just that. We&apos;re abstracting the complexity of getting free
+                education needed by all by giving you a world-class educational experience for free.
               </Paragraph>
             </blockquote>
-            <figcaption className="flex flex-col items-center font-medium sm:text-xl">
-              <div className="mb-4 h-24 w-24 rounded-full border-4 border-sky-400 object-cover object-center p-1">
+            <figcaption className="flex flex-wrap items-center justify-center pt-4 font-medium sm:text-xl">
+              <div className="h-24 w-24 rounded-full border-4 border-sky-400 object-cover object-center p-1">
                 <Image
                   src={require('@/img/uiuxarghya.jpg').default}
                   alt="Creator of Javaistic"
@@ -142,13 +164,19 @@ export default function Home() {
                   loading="lazy"
                 />
               </div>
-              <div className="text-gray-900 dark:text-white">Arghya Ghosh</div>
-              <div className="text-sky-600">Creator of Javaistic</div>
+              <div className="flex flex-col pl-4 text-left">
+                <NextLink href="https://twitter.com/uiuxarghya">
+                  <a className="font-extrabold text-gray-900 hover:underline dark:text-white">
+                    Arghya Ghosh
+                  </a>
+                </NextLink>
+                <p className="text-base font-semibold text-sky-500">Creator of Javaistic</p>
+              </div>
             </figcaption>
           </figure>
         </div>
       </section>
-      <OpenSource />
+      <Features />
       <Testimonials />
       <div className="mx-auto max-w-screen-lg space-y-20 sm:space-y-32 md:space-y-40 lg:space-y-44 xl:max-w-screen-xl"></div>
       <Footer />
