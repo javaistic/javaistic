@@ -201,7 +201,7 @@ function TopLevelNav() {
         Programs
       </TopLevelLink>
       <TopLevelLink
-        href="https://javaistic-changelog.vercel.app/"
+        href="/changelog"
         isActive={current === '' || current === 'changelog'}
         color="amber"
         className="mb-4"
@@ -225,7 +225,7 @@ function TopLevelNav() {
         Changelog
       </TopLevelLink>
       <TopLevelLink
-        href="/"
+        href="/blog"
         isActive={current === '' || current === 'news'}
         color="teal"
         className="mb-4"
@@ -243,7 +243,7 @@ function TopLevelNav() {
           </>
         }
       >
-        Practice
+        Blog
       </TopLevelLink>
       <TopLevelLink
         href="/brand"
