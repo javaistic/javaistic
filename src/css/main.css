@@ -52,3 +52,51 @@ thead tr th {
 .prose strong {
   font-weight: 700;
 }
+
+/* Heart */
+
+.heart {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  transform: rotate(45deg) scale(1);
+  border-radius: 0 0 2px 0;
+  animation: pumpHeart 1500ms ease-in-out infinite;
+}
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: red;
+}
+.heart::before {
+  transform: translateY(-50%);
+}
+.heart::after {
+  transform: translateX(-50%);
+}
+
+@keyframes pumpHeart {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(1);
+  }
+  60% {
+    transform: rotate(45deg) scale(1.2);
+  }
+  80% {
+    transform: rotate(45deg) scale(0.95);
+  }
+  90% {
+    transform: rotate(45deg) scale(1);
+  }
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+}
