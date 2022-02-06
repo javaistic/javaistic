@@ -2,6 +2,7 @@ import { ClassTable } from '@/components/ClassTable'
 import { PageHeader } from '@/components/PageHeader'
 import { usePrevNext } from '@/hooks/usePrevNext'
 import { SidebarContext, SidebarLayout } from '@/layouts/SidebarLayout'
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/outline'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -191,21 +192,17 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
           <div className="mt-16 flex font-medium leading-6">
             {prev && (
               <Link href={prev.href}>
-                <a className="mr-8 flex rounded-md border-2 border-blue-500 px-2 py-1 text-gray-400 transition-colors duration-200 hover:text-gray-900 hover:shadow-md dark:border-blue-400 dark:hover:text-white">
-                  <span aria-hidden="true" className="mr-2">
-                    &larr;
-                  </span>
+                <a className="mr-8 flex items-center rounded-md border-2 border-blue-500 px-2 py-1 text-gray-500 transition-colors duration-200 hover:text-gray-900 hover:shadow-md dark:border-blue-400 dark:text-gray-400 dark:hover:text-white">
+                  <ArrowLeftIcon className="mr-2 h-5 w-5" />
                   {prev.shortTitle || prev.title}
                 </a>
               </Link>
             )}
             {next && (
               <Link href={next.href}>
-                <a className="ml-auto flex rounded-md border-2 border-blue-500 px-2 py-1 text-right text-gray-400 transition-colors duration-200 hover:text-gray-900 hover:shadow-md dark:border-blue-400 dark:hover:text-white">
+                <a className="ml-auto flex items-center rounded-md border-2 border-blue-500 px-2 py-1 text-right text-gray-500 transition-colors duration-200 hover:text-gray-900 hover:shadow-md dark:border-blue-400 dark:text-gray-400 dark:hover:text-white">
                   {next.shortTitle || next.title}
-                  <span aria-hidden="true" className="ml-2">
-                    &rarr;
-                  </span>
+                  <ArrowRightIcon className="ml-2 h-5 w-5" />
                 </a>
               </Link>
             )}
