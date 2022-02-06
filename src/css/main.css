@@ -27,13 +27,14 @@ p {
   @apply text-gray-500 dark:text-gray-300;
 }
 
-p a,.prose a {
-  @apply text-blue-500 dark:text-blue-300 no-underline hover:underline;
+p a,
+.prose a {
+  @apply text-blue-500 no-underline hover:underline dark:text-blue-300;
 }
 
 .prose p code,
 li code {
-  @apply text-gray-700 dark:text-white bg-gray-200 dark:bg-gray-600;
+  @apply bg-gray-200 text-gray-700 dark:bg-gray-600 dark:text-white;
 }
 
 hr {
@@ -41,9 +42,13 @@ hr {
 }
 
 thead tr th {
-  @apply text-gray-700 dark:text-white bg-gray-200 dark:bg-gray-600;
+  @apply bg-gray-200 text-gray-700 dark:bg-gray-600 dark:text-white;
 }
 
 .prose {
   @apply text-gray-500 dark:text-gray-300;
+}
+
+.prose strong {
+  font-weight: 700;
 }
