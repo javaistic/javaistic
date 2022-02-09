@@ -18,8 +18,5 @@ export const documentationNav = {
     pages['expressions-statements-blocks'],
     pages['comments'],
   ],
-  'Java Flow Control': [
-    pages['if-else-statement'],
-    pages['switch-statement'],
-  ],
+  'Java Flow Control': [pages['if-else-statement'], pages['switch-statement'], pages['for-loop']],
 }
