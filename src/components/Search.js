@@ -68,7 +68,7 @@ export function Search() {
         type="button"
         ref={searchButtonRef}
         onClick={onOpen}
-        className="group flex w-full items-center space-x-3 rounded-md border-2 border-gray-200 bg-gray-100 py-1.5 px-1.5 font-medium leading-6 text-gray-500 transition duration-200 ease-in-out hover:text-gray-600 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 sm:space-x-4 sm:px-4 lg:px-4"
+        className="group flex w-full items-center space-x-3 rounded-md border-2 border-gray-200 bg-gray-100 py-1.5 px-1.5 font-medium leading-6 text-gray-500 hover:text-gray-600 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 sm:space-x-4 sm:px-4 lg:px-4"
       >
         <svg
           width="24"
