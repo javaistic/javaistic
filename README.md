@@ -76,7 +76,7 @@ Javaistic uses [Next.js](https://nextjs.org/) for its documentation. Here is how
 
 The Javaistic community can be found on [GitHub Discussions](https://github.com/javaistic/javaistic/discussions), where you can ask questions, voice ideas, and share your projects.
 
-To chat with other community members, you can join the [Javaistic Discord](https://javaistic.vercel.app/discord)
+To chat with other community members, you can join the [![Javaistic DiscordSupport Server](https://img.shields.io/discord/934819156296081459.svg?color=7289da&label=discord&logo=discord)](https://javaistic.vercel.app/discord)
 
 Our [Code of Conduct](CODE_OF_CONDUCT.md) applies to all Javaistic community channels.
 
