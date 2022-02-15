@@ -4,10 +4,17 @@ https://javaistic.vercel.app/docs/installation
 https://javaistic.vercel.app/programs/introduction
 https://javaistic.vercel.app/programs
 https://javaistic.vercel.app/brand
+https://javaistic.vercel.app/sponsors
 https://javaistic.vercel.app/docs/introduction
 https://javaistic.vercel.app/docs/hello-world
 https://javaistic.vercel.app/docs/jvm-jre-jdk
 https://javaistic.vercel.app/docs/variables-and-literals
 https://javaistic.vercel.app/docs/variables-primitive-data-types
 https://javaistic.vercel.app/docs/operators
+https://javaistic.vercel.app/docs/basic-input-output
+https://javaistic.vercel.app/docs/expressions-statements-blocks
+https://javaistic.vercel.app/docs/comments
+https://javaistic.vercel.app/docs/if-else-statement
+https://javaistic.vercel.app/docs/switch-statement
+https://javaistic.vercel.app/docs/for-loop
 https://javaistic.vercel.app/programs/print-an-integer
