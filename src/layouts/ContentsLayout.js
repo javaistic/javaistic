@@ -2,7 +2,7 @@ import { ClassTable } from '@/components/ClassTable'
 import { PageHeader } from '@/components/PageHeader'
 import { usePrevNext } from '@/hooks/usePrevNext'
 import { SidebarContext, SidebarLayout } from '@/layouts/SidebarLayout'
-import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/outline'
+import { ArrowLeftIcon, ArrowRightIcon, PencilAltIcon } from '@heroicons/react/outline'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -208,23 +208,18 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
             )}
           </div>
         )}
-        <div className="mt-12 border-t border-gray-200 pt-6 text-right dark:border-gray-700">
+        <div className="mt-12 border-t border-gray-200  dark:border-gray-700">
           <Link
             href={`https://github.com/javaistic/javaistic/edit/main/src/pages${router.pathname}.mdx`}
           >
-            <a className="mt-10 text-sm hover:text-gray-900 dark:hover:text-white">
+            <a className="mt-10 flex items-center text-base font-medium hover:text-gray-900 dark:hover:text-white">
               Edit this page on GitHub
+              <PencilAltIcon className="ml-2 h-5 w-5" />
             </a>
           </Link>
         </div>
-        <Link href={`https://vercel.com/?utm_source=javaistic&utm_campaign=oss`}>
-          <a className="mr-1 text-sm">
-            Powered by{' '}
-            <span className="text text-base font-bold text-black dark:text-white">▲Vercel</span>
-          </a>
-        </Link>
       </div>
-      <div className="mr-8 hidden w-64 flex-none pl-8 xl:block xl:text-sm">
+      <div className="mr-8 mb-8 hidden w-64 flex-none pl-8 xl:block xl:text-sm">
         <div className="sticky top-18 flex max-h-(screen-18) flex-col justify-between overflow-y-auto pt-10 pb-6">
           {toc.length > 0 && (
             <div className="mb-8">
