@@ -1,3 +1,4 @@
+import { Footer } from '@/components/home/Footer'
 import { Logo } from '@/components/Logo'
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
 import { gradients } from '@/utils/gradients'
@@ -306,6 +307,7 @@ export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar,
           </div>
         </div>
       </div>
+      <Footer />
     </SidebarContext.Provider>
   )
 }
