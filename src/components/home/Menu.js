@@ -66,6 +66,22 @@ export default function MenuButton() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
+                <Link href="/blog">
+                  <a
+                    className={classNames(
+                      active
+                        ? 'bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-white'
+                        : 'text-gray-700 hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700',
+                      'block w-full px-4 py-2 text-left text-base'
+                    )}
+                  >
+                    Blog
+                  </a>
+                </Link>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
                 <Link href="/sponsors">
                   <a
                     className={classNames(
@@ -82,7 +98,7 @@ export default function MenuButton() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/blog">
+                <Link href="/changelog">
                   <a
                     className={classNames(
                       active
@@ -91,7 +107,7 @@ export default function MenuButton() {
                       'block w-full px-4 py-2 text-left text-base'
                     )}
                   >
-                    Blog
+                    Changelog
                   </a>
                 </Link>
               )}
@@ -112,22 +128,7 @@ export default function MenuButton() {
                 </Link>
               )}
             </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <Link href="/changelog">
-                  <a
-                    className={classNames(
-                      active
-                        ? 'bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-white'
-                        : 'text-gray-700 hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700',
-                      'block w-full px-4 py-2 text-left text-base'
-                    )}
-                  >
-                    Change Log
-                  </a>
-                </Link>
-              )}
-            </Menu.Item>
+
             <Menu.Item>
               {({ active }) => (
                 <Link href="https://github.com/javaistic/javaistic">
