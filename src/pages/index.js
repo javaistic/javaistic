@@ -87,7 +87,7 @@ export default function Home() {
             <InlineCode>string programs</InlineCode> to <InlineCode>2D arrays</InlineCode> ,{' '}
             <InlineCode>recursion</InlineCode> , <InlineCode>matrices</InlineCode> and many more.
           </p>
-          <div className="mt-12 mb-28 flex flex-wrap space-y-4 text-center sm:space-y-0 sm:space-x-4 ">
+          <div className="mt-12 mb-28 flex flex-col space-y-4 text-center sm:space-y-0 sm:space-x-4 ">
             <NextLink href="/docs">
               <a>
                 <button className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 hover:shadow-xl focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto">
