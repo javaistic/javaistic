@@ -58,7 +58,7 @@
     "react-dom": "^17.0.2",
     "react-intersection-observer": "^8.33.1",
     "redent": "^3.0.0",
-    "sharp": "^0.30.1",
+    "sharp": "^0.30.2",
     "simple-functional-loader": "^1.2.1",
     "tailwindcss": "^2.2.19",
     "tinytime": "^0.2.6",
