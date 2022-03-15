@@ -83,9 +83,9 @@ Our [Code of Conduct](CODE_OF_CONDUCT.md) applies to all Javaistic community cha
 ## 👦 Author
 - Arghya Ghosh [(@uiuxarghya)](https://twitter.com/uiuxarghya)
 
-## 💖 Sponsors
+## 💖 Acknowledgement
 
-A special thanks to our sponsors:
+A special thanks these companies for helping me to build Javaistic:
 
 [![Powered by Vercel](.github/img/powered-by-vercel.svg)](https://vercel.com/?utm_source=javaistic&utm_campaign=oss)
 [![Search by Algolia](.github/img/search-by-algolia.svg)](https://algolia.com/?utm_source=javaistic&utm_campaign=oss)
