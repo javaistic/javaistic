@@ -24,7 +24,7 @@
     "@docsearch/react": "^1.0.0-alpha.28",
     "@formspree/react": "^2.2.4",
     "@headlessui/react": "^1.5.0",
-    "@heroicons/react": "^1.0.5",
+    "@heroicons/react": "^1.0.6",
     "@juggle/resize-observer": "^3.3.1",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
@@ -58,16 +58,16 @@
     "react-dom": "^17.0.2",
     "react-intersection-observer": "^8.33.1",
     "redent": "^3.0.0",
-    "sharp": "^0.30.1",
+    "sharp": "^0.30.3",
     "simple-functional-loader": "^1.2.1",
     "tailwindcss": "^2.2.19",
     "tinytime": "^0.2.6",
     "unist-util-visit": "^2.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.5",
+    "@babel/core": "^7.17.7",
     "@babel/plugin-transform-react-jsx": "^7.17.3",
-    "@types/react": "^17.0.39",
+    "@types/react": "^17.0.40",
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "babel-eslint": "10.1.0",
@@ -80,6 +80,6 @@
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.8",
     "typescript": "^4.6.2",
-    "webpack": "^5.69.1"
+    "webpack": "^5.70.0"
   }
 }
