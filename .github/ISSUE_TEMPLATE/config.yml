@@ -1,4 +1,10 @@
 contact_links:
   - name: Website
-    about: Visit the Javaistic website
+    about: Visit the Javaistic website.
     url: https://javaistic.vercel.app/
+  - name: Blog
+    about: Check out the Javaistic Official Blog.
+    url: https://blog-javaistic.vercel.app/
+  - name: Changelog
+    about: Check out the Javaistic detailed changelog.
+    url: https://javaistic.vercel.app/changelog
