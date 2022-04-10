@@ -19,7 +19,7 @@ body:
       description: >-
         If your issue type is not here, select "other" and explain in the
         "Description" field below.
-      options: [Improvement, Mistake, Other]
+      options: [Improvement, Addition, Bug, Mistake, Other]
     validations:
       required: true
 
