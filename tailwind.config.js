@@ -11,10 +11,8 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-
       black: '#000',
       white: '#fff',
-
       amber: colors.amber,
       blue: colors.blue,
       cyan: colors.cyan,
@@ -105,7 +103,6 @@ module.exports = {
               // backgroundColor: theme('colors.gray.800'),
               padding: '2px 4px 2px 4px',
               borderRadius: 4,
-
             },
             'code::before': {
               content: 'none',
