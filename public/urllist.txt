@@ -1,10 +1,11 @@
 https://javaistic.vercel.app/
 https://javaistic.vercel.app/docs
+https://javaistic.vercel.app/programs
 https://javaistic.vercel.app/docs/installation
 https://javaistic.vercel.app/programs/introduction
-https://javaistic.vercel.app/programs
 https://javaistic.vercel.app/brand
 https://javaistic.vercel.app/sponsors
+https://javaistic.vercel.app/changelog
 https://javaistic.vercel.app/docs/introduction
 https://javaistic.vercel.app/docs/hello-world
 https://javaistic.vercel.app/docs/jvm-jre-jdk
