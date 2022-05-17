@@ -54,7 +54,17 @@ const OpenSourceImage = () => {
 export function Features() {
   return (
     <section className="font-sans">
-      <div className="container mx-auto py-24 sm:px-10 md:flex-row">
+      <div className="px-10 sm:px-10 md:px-12">
+        <h1 className="mt-5 mb-4 text-center text-5xl font-extrabold text-gray-900 sm:text-7xl">
+          Why Javaistic?
+        </h1>
+        <div className="mb-2 items-center justify-center space-y-5 text-center">
+          <p className="mx-auto text-lg font-medium dark:text-gray-400 sm:w-1/2">
+            Our docs are designed to make learning Java easy and fun.
+          </p>
+        </div>
+      </div>
+      <div className="container mx-auto py-14 sm:px-10 md:flex-row">
         <div className="mx-auto mb-10 flex flex-col items-center py-10 sm:flex-row">
           <div className="mb-10 w-5/6 md:mb-0 md:w-1/2 lg:w-full lg:max-w-lg">
             <DocsImage />
