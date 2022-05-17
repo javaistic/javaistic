@@ -31,7 +31,7 @@ export function Header({ navIsOpen, onNavToggle }) {
             <MenuButton />
             <a
               href="https://github.com/javaistic/javaistic"
-              className="text-gray-400 transition-colors duration-200 hover:text-gray-600 dark:hover:text-gray-200"
+              className="hidden text-gray-400 transition-colors duration-200 hover:text-gray-600 dark:hover:text-gray-200 sm:flex"
             >
               <span className="sr-only">Javaistic on GitHub</span>
               <svg className="h-6 w-6" viewBox="0 0 16 16" fill="currentColor">
