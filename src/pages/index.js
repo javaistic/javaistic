@@ -3,6 +3,7 @@ import { Features } from '@/components/home/Features'
 import { Footer } from '@/components/home/Footer'
 import { Hero } from '@/components/home/Hero'
 import MenuButton from '@/components/home/Menu'
+import Support from '@/components/home/Support'
 import { Logo } from '@/components/Logo'
 import { Search } from '@/components/Search'
 import { Testimonials } from '@/components/Testimonials'
@@ -11,7 +12,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import NextLink from 'next/link'
 import Router, { useRouter } from 'next/router'
-
 
 export default function Home() {
   const router = useRouter()
@@ -92,13 +92,15 @@ export default function Home() {
           <div className="mt-12 mb-28 flex flex-wrap space-y-4 text-center sm:space-y-0 sm:space-x-4 ">
             <button
               className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 hover:shadow-xl focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto"
-              type="button" onClick={() => router.push('/docs')}
+              type="button"
+              onClick={() => router.push('/docs')}
             >
               Get started
             </button>
             <button
-              className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-700 hover:shadow-xl focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white sm:w-auto"
-              type="button" onClick={() => router.push('/about')}
+              className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-800 hover:shadow-xl focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-700 dark:hover:bg-gray-600 sm:w-auto"
+              type="button"
+              onClick={() => router.push('/about')}
             >
               Learn more
             </button>
@@ -106,7 +108,8 @@ export default function Home() {
               className="text-md focus:outline-none flex w-full flex-none items-center justify-center rounded-lg border-2 border-gray-300 bg-gray-50 py-3 font-semibold leading-6 text-gray-900 shadow-md transition-colors duration-200 hover:bg-gray-100 hover:shadow-xl focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:ring-offset-white sm:w-auto sm:px-6"
               target="_blank"
               rel="noopener noreferrer"
-              type="button" onClick={() => router.push('/sponsors')}
+              type="button"
+              onClick={() => router.push('/sponsors')}
             >
               <span className="sr-only">(Sponsor Javaistic)</span>
               <svg width="24" height="24" fill="none" stroke="#db61a2" strokeWidth="2.5">
@@ -118,67 +121,6 @@ export default function Home() {
         </div>
         <Hero />
       </header>
-      <section className="relative z-10 mx-auto max-w-screen-lg text-center xl:max-w-screen-xl">
-        <div className="px-10 sm:px-6 md:px-8">
-          <BigText
-            as="h2"
-            className="mb-8 text-left text-4xl text-gray-900 dark:text-white sm:text-center"
-          >
-            <Widont>“ Education should be free. ”</Widont> <p className="mt-0 sm:mt-1"></p>
-          </BigText>
-          <figure>
-            <blockquote>
-              <Paragraph className="mx-auto mb-6 max-w-4xl text-left">
-                <Widont>
-                  Education is the greatest weapon in this era for the people. But, sadly, these
-                  days it&apos;s governed by corruption. Today with growing technologies everyone in
-                  a country must learn to code. As it is difficult to get 100% free coding
-                  education, they are unable to achieve it. Maybe, if coding education is free, then
-                  the country will be a developed country which will lead the country in the right
-                  direction and get prosperity.
-                </Widont>
-                <br />
-                <br />
-                As{' '}
-                <span className="bg-gradient-to-br from-green-400 to-cyan-500 bg-clip-text font-extrabold text-transparent">
-                  Java
-                </span>{' '}
-                is one of the most widely used programming languages, it should be learned by all
-                for free. By building{' '}
-                <span className="bg-gradient-to-br from-sky-400 to-indigo-500 bg-clip-text font-extrabold text-transparent">
-                  Javaistic
-                </span>
-                , we&apos;re doing just that. We&apos;re abstracting the complexity of getting free
-                education needed by all by giving you a world-class educational experience for free.
-              </Paragraph>
-            </blockquote>
-            <figcaption className="flex flex-wrap items-center justify-center pt-4 font-medium sm:text-xl">
-              <div className="h-24 w-24 rounded-full border-4 border-sky-400 object-cover object-center p-1">
-                <Image
-                  src={require('@/img/uiuxarghya.jpg').default}
-                  alt="Creator of Javaistic"
-                  className=" rounded-full bg-sky-400 "
-                  width={100}
-                  height={100}
-                  quality={100}
-                  layout="responsive"
-                  blurDataURL={require('@/img/uiuxarghya.jpg').default}
-                  placeholder="blur"
-                  loading="lazy"
-                />
-              </div>
-              <div className="flex flex-col pl-4 text-left">
-                <NextLink href="https://twitter.com/uiuxarghya">
-                  <a className="font-extrabold text-gray-900 hover:underline dark:text-white">
-                    Arghya Ghosh
-                  </a>
-                </NextLink>
-                <p className="text-base font-semibold text-sky-500">Creator of Javaistic</p>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
-      </section>
       <Features />
       <Testimonials />
       <div className="mx-auto max-w-screen-lg space-y-20 sm:space-y-32 md:space-y-40 lg:space-y-44 xl:max-w-screen-xl"></div>
