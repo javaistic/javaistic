@@ -21,7 +21,7 @@ function Logo({ title, component: Component }) {
 export default function Brand() {
   return (
     <div className="px-4 pt-10 pb-16 sm:px-6 md:px-8">
-      <h1 className="mb-4 text-4xl font-extrabold text-gray-900">Brand</h1>
+      <h1 className="mb-4 text-5xl font-extrabold text-gray-900">Brand</h1>
       <div className="mb-4 max-w-2xl">
         <div className="mb-5 space-y-5 text-lg">
           <p>Javaistic brand assets and usage guidelines.</p>{' '}
@@ -31,7 +31,7 @@ export default function Brand() {
       <div className="my-8 grid gap-8 sm:my-12 md:grid-cols-2 md:gap-6 xl:gap-8">
         <section>
           <h2 className="mb-4 text-xl font-bold text-gray-900">
-            Main Logo<span className="sr-only">: Javaistic Main Logo</span>
+            Main Logo<span className="sr-only">Javaistic Main Logo</span>
           </h2>
           <div className="mb-6 flex h-40 items-center justify-center rounded-xl bg-gray-200 p-6 dark:bg-gray-50 sm:h-56 xl:h-64">
             <Logo title="Headless UI" component={JavaisticLogo} />
@@ -52,7 +52,7 @@ export default function Brand() {
         </section>
         <section>
           <h2 className="mb-4 text-xl font-bold text-gray-900">
-            Alternate Logo<span className="sr-only">: Javaistic Alternate Logo</span>
+            Alternate Logo<span className="sr-only">Javaistic Alternate Logo</span>
           </h2>
           <div className="mb-6 flex h-40 items-center justify-center rounded-xl bg-gray-900 p-6 dark:bg-gray-800 sm:h-56 xl:h-64">
             <Logo title="Headless UI" component={JavaisticAltLogo} />
