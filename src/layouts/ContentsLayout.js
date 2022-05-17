@@ -1,5 +1,4 @@
 import { ClassTable } from '@/components/ClassTable'
-import FeedbackForm from '@/components/Feedback'
 import { PageHeader } from '@/components/PageHeader'
 import { usePrevNext } from '@/hooks/usePrevNext'
 import { SidebarContext, SidebarLayout } from '@/layouts/SidebarLayout'
@@ -14,7 +13,7 @@ import {
   useCallback,
   useContext,
   useEffect,
-  useState,
+  useState
 } from 'react'
 
 export const ContentsContext = createContext()
