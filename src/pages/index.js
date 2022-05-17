@@ -123,6 +123,7 @@ export default function Home() {
       </header>
       <Features />
       <Testimonials />
+      <Support />
       <div className="mx-auto max-w-screen-lg space-y-20 sm:space-y-32 md:space-y-40 lg:space-y-44 xl:max-w-screen-xl"></div>
       <Footer />
     </div>
