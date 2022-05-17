@@ -1,9 +1,10 @@
-import { useState, useCallback, useRef, useEffect } from 'react'
-import { createPortal } from 'react-dom'
-import Link from 'next/link'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
+import { SearchIcon } from '@heroicons/react/outline'
+import Head from 'next/head'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 
 const ACTION_KEY_DEFAULT = ['Ctrl ', 'Control']
 const ACTION_KEY_APPLE = ['⌘', 'Command']
@@ -70,20 +71,7 @@ export function Search() {
         onClick={onOpen}
         className="group flex w-full items-center space-x-3 rounded-md border-2 border-gray-200 bg-gray-100 py-1.5 px-1.5 font-medium leading-6 text-gray-500 hover:text-gray-600 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 sm:space-x-4 sm:px-4 lg:px-4"
       >
-        <svg
-          width="24"
-          height="24"
-          fill="none"
-          className="text-blue-400 transition-colors duration-200 group-hover:text-blue-500"
-        >
-          <path
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <SearchIcon className="h-6 w-6 text-blue-400 transition-colors duration-200 group-hover:text-blue-500" />
         <span>
           <span className="md:hidden lg:hidden">Search</span>
           <span className="hidden sm:inline">Quick search for anything</span>

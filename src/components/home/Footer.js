@@ -59,7 +59,7 @@ export function Footer() {
               </h2>
               <ul className="space-y-4">
                 {footerNav[section].items.map((item) => (
-                  <li key={item.href}>
+                  <li key={item.title}>
                     <Link href={item.href}>
                       <a className="text-base text-gray-500 transition duration-200 ease-in-out hover:font-semibold hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
                         {item.title}
@@ -120,33 +120,34 @@ export function Footer() {
             </a>
           </span>
         </div>
-        <div className="container mx-auto mb-0 flex flex-col items-center px-5 py-2 sm:flex-row">
+        <div className="container mx-auto mb-0 flex flex-col items-center py-2 sm:flex-row">
           <div className="title-font flex items-center justify-center font-medium text-gray-900 md:justify-start">
             <p className="mt-2 text-sm text-gray-500">
               &copy; {new Date().getFullYear()} Javaistic. All rights reserved.
             </p>
           </div>
-          <div className="flex items-center"></div>
-          <a
-            href="#"
-            className="title-font flex items-center justify-center pl-6 font-medium text-gray-900 md:justify-start"
-          >
-            <p className="mt-2 text-sm text-gray-500">Privacy Policy</p>
-          </a>
-          <a
-            href="#"
-            className="title-font flex items-center justify-center pl-6 font-medium text-gray-900 md:justify-start"
-          >
-            <p className="mt-2 text-sm text-gray-500">Terms &amp; Conditions</p>
-          </a>
-          <a
-            href="https://javaistic.betteruptime.com"
-            className="title-font flex items-center justify-center pl-6 font-medium text-gray-900 md:justify-start"
-          >
-            <p className="mt-2 text-sm text-gray-500 hover:text-black dark:hover:text-white">
-              Status
-            </p>
-          </a>
+          <div className="flex items-center">
+            <a
+              href="#"
+              className="title-font flex items-center justify-center pl-6 font-medium text-gray-900 md:justify-start"
+            >
+              <p className="mt-2 text-sm text-gray-500">Privacy Policy</p>
+            </a>
+            <Link href="/terms-and-conditions">
+              <a className="title-font flex items-center justify-center pl-6 font-medium md:justify-start">
+                <p className="mt-2 text-sm text-gray-500 hover:text-black dark:hover:text-white">
+                  Terms &amp; Conditions
+                </p>
+              </a>
+            </Link>
+            <Link href="/status">
+              <a className="title-font flex items-center justify-center pl-6 font-medium text-gray-900 md:justify-start">
+                <p className="mt-2 text-sm text-gray-500 hover:text-black dark:hover:text-white">
+                  Status
+                </p>
+              </a>
+            </Link>
+          </div>
           <div className="mt-4 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">
             <MadeInBadge />
           </div>
