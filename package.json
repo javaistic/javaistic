@@ -23,7 +23,7 @@
     "@badrap/bar-of-progress": "^0.2.1",
     "@docsearch/react": "^1.0.0-alpha.28",
     "@formspree/react": "^2.2.5",
-    "@headlessui/react": "^1.6.1",
+    "@headlessui/react": "^1.6.2",
     "@heroicons/react": "^1.0.6",
     "@juggle/resize-observer": "^3.3.1",
     "@mdx-js/loader": "^1.6.22",
