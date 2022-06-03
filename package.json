@@ -20,7 +20,6 @@
     "> 1%"
   ],
   "dependencies": {
-    "@badrap/bar-of-progress": "^0.2.1",
     "@docsearch/react": "^1.0.0-alpha.28",
     "@formspree/react": "^2.2.5",
     "@headlessui/react": "^1.6.1",
@@ -36,6 +35,7 @@
     "@svgr/webpack": "^5.5.0",
     "@tailwindcss/jit": "^0.1.18",
     "@tailwindcss/typography": "^0.4.1",
+    "@uiuxarghya/progress-bar": "^0.1.0",
     "autoprefixer": "^10.4.7",
     "babel-plugin-preval": "^5.1.0",
     "clsx": "^1.1.1",
