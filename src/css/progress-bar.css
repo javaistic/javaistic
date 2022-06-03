@@ -1,4 +1,4 @@
-.bar-of-progress::after {
+.progress-bar::after {
   content: '';
   display: block;
   position: absolute;
