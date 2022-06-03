@@ -1,7 +1,7 @@
 import { Header } from '@/components/Header'
 import { Title } from '@/components/Title'
 import twitterLargeCard from '@/img/twitter-large-card.png'
-import ProgressBar from '@badrap/bar-of-progress'
+import ProgressBar from '@uiuxarghya/progress-bar'
 import { ResizeObserver } from '@juggle/resize-observer'
 import 'focus-visible'
 import 'intersection-observer'
@@ -20,7 +20,7 @@ if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
 const progress = new ProgressBar({
   size: 2,
   color: '#3B82F6',
-  className: 'bar-of-progress',
+  className: 'progress-bar',
   delay: 100,
 })
 
