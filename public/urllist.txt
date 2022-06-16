@@ -18,4 +18,7 @@ https://javaistic.vercel.app/docs/comments
 https://javaistic.vercel.app/docs/if-else-statement
 https://javaistic.vercel.app/docs/switch-statement
 https://javaistic.vercel.app/docs/for-loop
+https://javaistic.vercel.app/docs/enhanced-for-loop
 https://javaistic.vercel.app/programs/print-an-integer
+https://javaistic.vercel.app/programs/add-two-integers
+https://javaistic.vercel.app/programs/check-even-or-odd
