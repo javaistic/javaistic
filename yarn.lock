@@ -1965,10 +1965,10 @@
     "@typescript-eslint/types" "5.30.0"
     eslint-visitor-keys "^3.3.0"
 
-"@uiuxarghya/progress-bar@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@uiuxarghya/progress-bar/-/progress-bar-0.1.0.tgz#6d3ce446a6d52b93216168325363cb0dbfda59d5"
-  integrity sha512-RJMYVw54pti7vxdq+MptSHdb6MvlMVjeq8B6KQaSCKkTYRpPxAcjWgD+M+Xm1+j2fvNk8VN4xrHhV1nk3jxSmQ==
+"@uiuxarghya/progress-bar@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@uiuxarghya/progress-bar/-/progress-bar-0.1.1.tgz#7430cd1c2f7d6ca5eeae92ebccfbdf0a85f2a6f1"
+  integrity sha512-+Btj1t8qG5zCtOcL5kSjB+mlJ224x43TBPICcoZYzMc4f7kW237NyfLD2seYjl8vhBGlENG9rKhvTvv7IPQsHw==
 
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
