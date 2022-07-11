@@ -28,7 +28,7 @@
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@next/bundle-analyzer": "^12.2.2",
-    "@next/mdx": "^12.2.0",
+    "@next/mdx": "^12.2.2",
     "@reach/rect": "^0.17.0",
     "@silvenon/remark-smartypants": "^1.0.0",
     "@sindresorhus/slugify": "^1.1.2",
