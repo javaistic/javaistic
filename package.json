@@ -67,7 +67,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@babel/plugin-transform-react-jsx": "^7.18.10",
-    "@types/react": "^18.0.15",
+    "@types/react": "^18.0.16",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
     "babel-eslint": "^10.1.0",
