@@ -22,7 +22,7 @@
   "dependencies": {
     "@docsearch/react": "^1.0.0-alpha.28",
     "@formspree/react": "^2.4.0",
-    "@headlessui/react": "^1.7.0",
+    "@headlessui/react": "^1.7.1",
     "@heroicons/react": "^1.0.6",
     "@juggle/resize-observer": "^3.4.0",
     "@mdx-js/loader": "^1.6.22",
