@@ -2276,10 +2276,10 @@
     "@typescript-eslint/types" "5.40.0"
     eslint-visitor-keys "^3.3.0"
 
-"@uiuxarghya/progress-bar@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@uiuxarghya/progress-bar/-/progress-bar-0.1.1.tgz#7430cd1c2f7d6ca5eeae92ebccfbdf0a85f2a6f1"
-  integrity sha512-+Btj1t8qG5zCtOcL5kSjB+mlJ224x43TBPICcoZYzMc4f7kW237NyfLD2seYjl8vhBGlENG9rKhvTvv7IPQsHw==
+"@uiuxarghya/progress-bar@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@uiuxarghya/progress-bar/-/progress-bar-0.1.2.tgz#98f7364247e82d05be5126c9dd1e61adcb57272b"
+  integrity sha512-tZcHF8m2aERK0uBaoTH/yg4tZF3No+mWeYH+OY/0mUioUHYf12ftnlRl3SjjX1FZ2iCOYDMzL7ojVikIi6mkZw==
 
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
