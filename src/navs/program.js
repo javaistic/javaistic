@@ -7,5 +7,10 @@ const pages = createPageList(
 
 export const programsNav = {
   'Getting started': [pages['introduction']],
-  Introduction: [pages['print-an-integer'], pages['add-two-integers'], pages['check-even-or-odd']],
+  Introduction: [
+    pages['print-an-integer'],
+    pages['add-two-integers'],
+    pages['check-even-or-odd'],
+    pages['java-program-to-add-two-binary-numbers'],
+  ],
 }
