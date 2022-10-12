@@ -1,10 +1,10 @@
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
-import { SearchIcon } from '@heroicons/react/outline'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
+import SearchIcon from '@/components/icons/SearchIcon'
 
 const ACTION_KEY_DEFAULT = ['Ctrl ', 'Control']
 const ACTION_KEY_APPLE = ['⌘', 'Command']
@@ -69,16 +69,19 @@ export function Search() {
         type="button"
         ref={searchButtonRef}
         onClick={onOpen}
-        className="group flex w-full items-center space-x-3 rounded-md border-2 border-gray-200 bg-gray-100 py-1.5 px-1.5 font-medium leading-6 text-gray-500 hover:text-gray-600 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 sm:space-x-4 sm:px-4 lg:px-4"
+        className="group flex w-full items-center justify-between rounded-full border-2 border-gray-200 py-1.5 px-1.5 font-medium leading-6 text-gray-500 shadow-inner hover:text-gray-600 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 sm:space-x-4 sm:rounded-md sm:px-4 lg:px-4"
       >
-        <SearchIcon className="h-6 w-6 text-blue-400 transition-colors duration-200 group-hover:text-blue-500" />
-        <span>
-          <span className="md:hidden lg:hidden">Search</span>
-          <span className="hidden sm:inline">Quick search for anything</span>
-        </span>
+        <div className="flex items-center justify-start">
+          <SearchIcon className="h-6 w-6 text-blue-400 transition-colors duration-200 group-hover:text-blue-500" />
+          <span className={router.pathname === '/' ? 'sm:ml-2' : 'ml-2'}>
+            <span className="sm:hidden lg:hidden">{router.pathname === '/' ? '' : 'Search'}</span>
+            <span className="hidden sm:inline">Quick search for anything</span>
+          </span>
+        </div>
+
         <span
           style={{ opacity: browserDetected ? '1' : '0' }}
-          className="hidden rounded-md border border-gray-400 py-0.5 px-1.5 text-sm leading-5 text-gray-500 sm:block"
+          className="hidden  justify-end rounded-md border border-gray-400 py-0.5 px-1.5 text-sm leading-5 text-gray-500 sm:block"
         >
           <span className="sr-only">Press </span>
           <kbd className="font-sans">
@@ -107,6 +110,7 @@ export function Search() {
               },
             }}
             hitComponent={Hit}
+            hitsPerPage={10}
             transformItems={(items) => {
               return items.map((item) => {
                 // We transform the absolute URL into a relative URL to
