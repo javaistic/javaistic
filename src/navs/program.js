@@ -12,5 +12,6 @@ export const programsNav = {
     pages['add-two-integers'],
     pages['check-even-or-odd'],
     pages['java-program-to-add-two-binary-numbers'],
+    pages['java-program-to-add-two-complex-numbers'],
   ],
 }

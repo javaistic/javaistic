@@ -1,0 +1,54 @@
+---
+title: Java Program to Add Two Complex Numbers
+shortTitle: Add Two Complex Numbers
+description: In this tutorial, we will write a Java program to add two complex numbers.
+---
+
+Complex numbers have two parts – real part and imaginary part. When adding complex numbers we add real parts together and imaginary parts together as shown in the following diagram.
+![Addition of two complex numbers](https://via.placeholder.com/800x500.webp?text=Addition+of+two+complex+numbers)
+
+## Adding two complex numbers in Java
+
+n this program we have a class `ComplexNumber`. In this class we have two instance variables `real` and `img` to hold the real and imaginary parts of complex numbers.
+
+We have declared a method sum() to [add the two numbers](./add-two-integers) by adding their real and imaginary parts together.
+
+The constructor of this class is used for initializing the complex numbers. For e.g. when we create an instance of this class like this `ComplexNumber temp = new ComplexNumber(0, 0);`, it actually creates a complex number `0 + 0i`.
+
+### Code:
+
+```java
+public class ComplexNumber{
+   //for real and imaginary parts of complex numbers
+   double real, img;
+
+   //constructor to initialize the complex number
+   ComplexNumber(double r, double i){
+	this.real = r;
+	this.img = i;
+   }
+
+   public static ComplexNumber sum(ComplexNumber c1, ComplexNumber c2)
+   {
+	//creating a temporary complex number to hold the sum of two numbers
+        ComplexNumber temp = new ComplexNumber(0, 0);
+
+        temp.real = c1.real + c2.real;
+        temp.img = c1.img + c2.img;
+
+        //returning the output complex number
+        return temp;
+    }
+    public static void main(String args[]) {
+	ComplexNumber c1 = new ComplexNumber(5.5, 4);
+	ComplexNumber c2 = new ComplexNumber(1.2, 3.5);
+        ComplexNumber temp = sum(c1, c2);
+        System.out.printf("Sum is: "+ temp.real+" + "+ temp.img +"i");
+    }
+}
+```
+### Output:
+
+```text
+Sum is: 6.7 + 7.5i
+```
