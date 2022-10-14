@@ -1,0 +1,89 @@
+---
+title: Java Program to Multiply Two Integers
+shortTitle: Multiply Two Integers
+description: In this program, you'll learn to store and multiply two integer numbers in Java. After multiplication, the final value is displayed on the screen.
+---
+
+import { List, ListItemGood } from '@/components/List'
+
+
+To understand this example, you should have the knowledge of the following Java programming topics:
+
+- [Java Operators](/docs/operators)
+- [Java Basic Input and Output](/docs/basic-input-output)
+
+## Multiply Two Integers
+
+A Java program that multiply two numbers predefined by the user is as follows:
+
+### Example 1: Program to Multiply Two Integers
+
+```java
+class Main {
+
+  public static void main(String[] args) {
+
+    System.out.println("Enter two numbers");
+    int first = 10;
+    int second = 2;
+
+    System.out.println(first + " " + second);
+
+    // multiply two numbers
+    int multiplication = first * second;
+    System.out.println("Multiplication: " + first + " * " + second + " = " + multiplication);
+  }
+}
+```
+
+#### Output
+
+```text
+Enter two numbers
+10 2
+Multiplication: 10 * 2 = 20
+```
+Just like the [previous program](/programs/add-two-integers#example-program-to-add-two-integers) of addition,
+
+Then, `first` and `second` are multiplied using the `*` operator, and its result is stored in another variable `multiplication`.
+
+And then, `multiplication` along with some [string concatenation](/docs/basic-input-output#example-print-concatenated-strings) is printed on the screen using `println()` function.
+
+
+### Example 2: Program to Multiply Two Double
+
+Multiplication can be performed between positive, negative numbers as well,
+
+```java
+class Main {
+
+  public static void main(String[] args) {
+
+    System.out.println("Enter two numbers");
+    double first = -13.0;
+    double second = 2.3;
+
+    System.out.println(first + " " + second);
+
+    // multiply two numbers
+    double multiplication = first * second;
+    System.out.println("Multiplication: " + first + " * " + second + " = " + multiplication);
+  }
+}
+```
+
+#### Output
+
+```text
+Enter two numbers
+-13.0 2.3
+Multiplication: -13.0 * 2.3 = -29.9
+```
+
+Datatype of variable `multiplication` is `double`, because the result of multiplying two numbers having data type `double` is `double`.
+
+<TipInfo>
+
+**Note:** Here, the output `multiplication` is negative, because these operations foolow [standard mathematical rules](https://en.wikipedia.org/wiki/Multiplication#Properties).
+
+</TipInfo>
