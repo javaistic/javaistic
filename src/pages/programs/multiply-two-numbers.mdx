@@ -1,0 +1,108 @@
+---
+title: Java Program to Multiply Two Numbers
+shortTitle: Multiply Two Numbers
+description: In this program, you'll learn to store and multiply two integer numbers in Java. After multiplication, the final value is displayed on the screen.
+---
+
+import { TipInfo } from '@/components/Tip'
+
+To understand this example, you should have the knowledge of the following Java programming topics:
+
+- [Java Operators](/docs/operators)
+- [Java Basic Input and Output](/docs/basic-input-output)
+
+## Multiply Two Numbers
+
+A Java program that multiply two numbers given by the user is as follows:
+
+### Example 1: Program to Multiply Two Integers
+
+```java
+import java.util.Scanner;
+
+class Main {
+
+  public static void main(String[] args) {
+
+    Scanner input = new Scanner(System.in); // create an object of Scanner
+
+    System.out.print("Enter two numbers: "); // take input from the user
+    int first = input.nextInt();
+    int second = input.nextInt();
+
+    System.out.println("Entered numbers are: " + first + " " + second);
+
+    // multiply two numbers
+    int multiplication = first * second;
+    System.out.println("Multiplication: " + first + " * " + second + " = " + multiplication);
+
+    input.close();
+  }
+}
+```
+
+#### Output
+
+```text
+Enter two numbers: 10 2
+Entered numbers are: 10 2
+Multiplication: 10 * 2 = 20
+```
+
+Just like the [previous program](/programs/add-two-integers#example-program-to-add-two-integers) of addition,
+
+`first` and `second` are multiplied using the `*` operator, and its result is stored in another variable `multiplication`.
+
+And then, `multiplication` along with some [string concatenation](/docs/basic-input-output#example-print-concatenated-strings) is printed on the screen using `println()` function.
+
+<TipInfo>
+
+Don't know how to take input from the user ? Look at [this examples](/docs/basic-input-output#java-input)
+
+Here two input numbers are taken from user one after another with space in between them which distinguish between two different inputs, this useful behavior is because of the default settings of Scanner called as Delimiter, [learn more here](https://www.javatpoint.com/post/java-scanner-delimiter-method).
+
+</TipInfo>
+
+### Example 2: Program to Multiply Two Decimal Numbers
+
+*Multiplication can be performed between positive, negative numbers as well.*
+
+```java
+import java.util.Scanner;
+
+class Main {
+
+  public static void main(String[] args) {
+
+    Scanner input = new Scanner(System.in); // create an object of Scanner
+
+    System.out.print("Enter two numbers: "); // take input from the user
+    double first = input.nextDouble();
+    double second = input.nextInt();
+
+    System.out.println("Entered numbers are: " + first + " " + second);
+
+    // multiply two numbers
+    double multiplication = first * second;
+    System.out.println("Multiplication: " + first + " * " + second + " = " + multiplication);
+
+    input.close();
+  }
+}
+```
+
+#### Output
+
+```text
+Enter two numbers: -13.0 2.3
+Entered numbers are: -13.0 2.3
+Multiplication: -13.0 * 2.3 = -29.9
+```
+
+Datatype of variable `multiplication` is `double`, because the result of multiplying two numbers having data type `double` is `double`.
+
+<TipInfo>
+
+**Note:** Here, the output `multiplication` is negative, because these operations follow [standard mathematical rules](https://en.wikipedia.org/wiki/Multiplication#Properties).
+
+</TipInfo>
