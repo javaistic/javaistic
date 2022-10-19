@@ -23,5 +23,6 @@ export const documentationNav = {
     pages['switch-statement'],
     pages['for-loop'],
     pages['enhanced-for-loop'],
+    pages['while-and-do-while-loop'],
   ],
 }
