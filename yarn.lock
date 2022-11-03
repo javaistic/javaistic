@@ -1512,10 +1512,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@formspree/react@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@formspree/react/-/react-2.4.0.tgz#156249a7832b13c869c0badf86bb920a529ed0a0"
-  integrity sha512-7zPt9tjX0zEiqJhbz5S35+AFyAz76iIJ5Qu9Mw+25kgO+FfmA1i9APakbJG57UsqEGT/dLX2aQa824A87zUtQw==
+"@formspree/react@^2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@formspree/react/-/react-2.4.1.tgz#c6ee262f63443006fc43902fd08ec1a43bfb51c3"
+  integrity sha512-ZP3oZ7HIMf6KK2sbz4H5XLNXjXBJotI9nveSiTX68Uc1eGzWjBKQqp2qAFlOSjmvgoYMkjJ7NtVD14s49ZrBow==
   dependencies:
     "@stripe/react-stripe-js" "^1.7.1"
     "@stripe/stripe-js" "^1.35.0"
