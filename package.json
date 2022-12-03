@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "@docsearch/react": "^1.0.0-alpha.28",
-    "@formspree/react": "^2.4.0",
+    "@formspree/react": "^2.4.1",
     "@headlessui/react": "^1.7.4",
     "@heroicons/react": "^1.0.6",
     "@juggle/resize-observer": "^3.4.0",
@@ -36,7 +36,7 @@
     "@tailwindcss/jit": "^0.1.18",
     "@tailwindcss/typography": "^0.4.1",
     "@uiuxarghya/progress-bar": "^0.1.2",
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.13",
     "babel-plugin-preval": "^5.1.0",
     "clsx": "^1.2.1",
     "dlv": "^1.1.3",
