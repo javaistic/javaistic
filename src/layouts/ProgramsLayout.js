@@ -22,10 +22,10 @@ export function ProgramsLayout(props) {
           property="og:image"
           content={
             router.pathname === '/programs'
-              ? `https://javaistic-og-image.vercel.app/.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fjavaistic-assets.vercel.app%2Flogo%2Fjavaistic-programs-main.svg`
-              : `https://javaistic-og-image.vercel.app/**${
+              ? `https://og.javaistic.ml/.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.javaistic.ml%2Flogo%2Fjavaistic-programs-main.svg`
+              : `https://og.javaistic.ml/**${
                   props.layoutProps.meta.metaTitle || props.layoutProps.meta.title
-                }**.png?theme=light&md=1&fontSize=120px&images=https%3A%2F%2Fjavaistic-assets.vercel.app%2Flogo%2Fjavaistic-programs-main.svg`
+                }**.png?theme=light&md=1&fontSize=120px&images=https%3A%2F%2Fassets.javaistic.ml%2Flogo%2Fjavaistic-programs-main.svg`
           }
         />
         <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
@@ -34,10 +34,10 @@ export function ProgramsLayout(props) {
           name="twitter:image"
           content={
             router.pathname === '/programs'
-              ? `https://javaistic-og-image.vercel.app/.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fjavaistic-assets.vercel.app%2Flogo%2Fjavaistic-programs-main.svg`
-              : `https://javaistic-og-image.vercel.app/**${
+              ? `https://og.javaistic.ml/.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.javaistic.ml%2Flogo%2Fjavaistic-programs-main.svg`
+              : `https://og.javaistic.ml/**${
                   props.layoutProps.meta.metaTitle || props.layoutProps.meta.title
-                }**.png?theme=light&md=1&fontSize=120px&images=https%3A%2F%2Fjavaistic-assets.vercel.app%2Flogo%2Fjavaistic-programs-main.svg`
+                }**.png?theme=light&md=1&fontSize=120px&images=https%3A%2F%2Fassets.javaistic.ml%2Flogo%2Fjavaistic-programs-main.svg`
           }
         />
       </Head>

@@ -23,7 +23,7 @@ export default function Changelog() {
         <meta
           key="twitter:image"
           name="twitter:image"
-          content="https://javaistic-og-image.vercel.app/.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fjavaistic-assets.vercel.app%2Flogo%2Fjavaistic-changelog-main.svg"
+          content="https://og.javaistic.ml/.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.javaistic.ml%2Flogo%2Fjavaistic-changelog-main.svg"
         />
         <meta key="twitter:creator" name="twitter:creator" content="@javaistic" />
 
@@ -38,7 +38,7 @@ export default function Changelog() {
         <meta
           key="og:image"
           property="og:image"
-          content="https://javaistic-og-image.vercel.app/.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fjavaistic-assets.vercel.app%2Flogo%2Fjavaistic-changelog-main.svg"
+          content="https://og.javaistic.ml/.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.javaistic.ml%2Flogo%2Fjavaistic-changelog-main.svg"
         />
       </Head>
       <div className="px-4 pt-10 pb-16 sm:px-6 md:px-8">
