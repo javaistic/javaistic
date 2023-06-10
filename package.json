@@ -22,7 +22,7 @@
   "dependencies": {
     "@docsearch/react": "^1.0.0-alpha.28",
     "@formspree/react": "^2.4.1",
-    "@headlessui/react": "^1.7.14",
+    "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^1.0.6",
     "@juggle/resize-observer": "^3.4.0",
     "@mdx-js/loader": "^1.6.22",
@@ -49,7 +49,7 @@
     "minimatch": "^3.1.2",
     "next": "^12.3.1",
     "next-themes": "^0.2.1",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.24",
     "postcss-focus-visible": "^5.0.0",
     "postcss-import": "^14.1.0",
     "postcss-nested": "^5.0.6",
