@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "@docsearch/react": "^1.0.0-alpha.28",
-    "@formspree/react": "^2.4.2",
+    "@formspree/react": "^2.4.4",
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^1.0.6",
     "@juggle/resize-observer": "^3.4.0",
