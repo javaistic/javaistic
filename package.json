@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "@docsearch/react": "^1.0.0-alpha.28",
-    "@formspree/react": "^2.5.0",
+    "@formspree/react": "^2.5.1",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^1.0.6",
     "@juggle/resize-observer": "^3.4.0",
@@ -65,7 +65,7 @@
     "unist-util-visit": "^2.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.10",
+    "@babel/core": "^7.22.11",
     "@babel/plugin-transform-react-jsx": "^7.22.5",
     "@types/react": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
