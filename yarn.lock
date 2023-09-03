@@ -1507,19 +1507,19 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.47.0.tgz#5478fdf443ff8158f9de171c704ae45308696c7d"
   integrity sha512-P6omY1zv5MItm93kLM8s2vr1HICJH8v0dvddDhysbIuZ+vcjOHg5Zbkf1mTkcmi2JA9oBG2anOkRnW8WJTS8Og==
 
-"@formspree/core@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@formspree/core/-/core-3.0.0.tgz#ea316305aab74ec0790eeb234b0445915d0caa44"
-  integrity sha512-bDvM8c+AtIZOmgZq+Buk3DEmspEJU7kdpUrQTWZdyEjM4KRgNPYTd+LWVMchNX4q73F+DaY1mBG0hO0ioB6MjQ==
+"@formspree/core@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@formspree/core/-/core-3.0.1.tgz#e04bdb59825ecaf727114d2f46eccc928b57ab20"
+  integrity sha512-jGNgrEtL8mx8k1kkmeNfyeoP1a+H2kci8TMG7CT3R5k3ssqr0Sl1j10SIKo74CFZVewMW4JjMYwcunWUPfutSQ==
   dependencies:
     "@stripe/stripe-js" "^1.35.0"
 
-"@formspree/react@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@formspree/react/-/react-2.5.0.tgz#b66eb8a1e4757e69274ed252221663ecedc8d21f"
-  integrity sha512-R2UyaKXAEaaV5lRnE7fUw1xr+Cp+TEzfIyT1r2iH4/hUdcg2od35kU33LOOZo4CPEk2KEuF2RPblnJWSPOvBCw==
+"@formspree/react@^2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@formspree/react/-/react-2.5.1.tgz#6e4fbff66a3c200365de8d54708b96510ff47702"
+  integrity sha512-Yhxyn32m3zH63i0DNpnBq55zargDlbihqC0wlK18dqU7GOUqJXKY+WywLXuTRGfqo79/hT+Qx6eFS6M0J6eh0A==
   dependencies:
-    "@formspree/core" "^3.0.0"
+    "@formspree/core" "^3.0.1"
     "@stripe/react-stripe-js" "^1.7.1"
     "@stripe/stripe-js" "^1.35.0"
 
