@@ -14,5 +14,6 @@ export const programsNav = {
     pages['java-program-to-add-two-binary-numbers'],
     pages['java-program-to-add-two-complex-numbers'],
     pages['multiply-two-numbers'],
+    pages['java-program-to-check-Leap-year'],
   ],
 }
