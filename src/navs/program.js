@@ -17,5 +17,7 @@ export const programsNav = {
     pages['java-program-to-check-Leap-year'],
     pages['calculate-simple-interest'],
     pages['java-program-to-check-divisbility'],
+    pages['find-quotient-and-reminder'],
+    pages['calculate-power-of-a-number'],
   ],
 }
