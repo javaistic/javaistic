@@ -16,5 +16,6 @@ export const programsNav = {
     pages['multiply-two-numbers'],
     pages['java-program-to-check-Leap-year'],
     pages['calculate-simple-interest'],
+    pages['java-program-to-check-divisbility'],
   ],
 }
