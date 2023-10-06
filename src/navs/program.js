@@ -19,5 +19,6 @@ export const programsNav = {
     pages['java-program-to-check-divisbility'],
     pages['find-quotient-and-reminder'],
     pages['calculate-power-of-a-number'],
+    pages['calculate-compound-interest'],
   ],
 }
