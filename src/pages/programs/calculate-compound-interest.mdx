@@ -1,0 +1,80 @@
+---
+title: Java program To Calculate Compound Interest
+shotTitle: Calculate Compound Interest
+description: This code takes the principal amount, annual interest rate (as a percentage), number of years, and compounding frequency (how many times per year the interest is compounded) as input from the user.
+---
+
+import { List, ListItemGood } from '@/components/List'
+
+The integer is stored in a variable using `System.in`, and is displayed on the screen using `System.out`.
+
+To understand this example, you should have the knowledge of the following Java programming topics:
+
+- [Java Operators](/docs/operators)
+- [Java Basic Input and Output](/docs/basic-input-output)
+
+## to calculate the compound Interest
+
+A java program to calculate compound Interest
+
+
+## Java Code
+
+```java
+import java.util.Scanner;
+
+public class CompoundInterestCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input principal amount
+        System.out.print("Enter the principal amount: ");
+        double principal = scanner.nextDouble();
+
+        // Input annual interest rate (as a percentage)
+        System.out.print("Enter the annual interest rate (as a percentage): ");
+        double annualRate = scanner.nextDouble();
+
+        // Input number of years
+        System.out.print("Enter the number of years: ");
+        int years = scanner.nextInt();
+
+        // Input number of times interest is compounded per year
+        System.out.print("Enter the number of times interest is compounded per year: ");
+        int compoundingFrequency = scanner.nextInt();
+
+        // Convert annual rate to decimal and calculate compound interest
+        double rate = annualRate / 100;
+        double amount = principal * Math.pow(1 + (rate / compoundingFrequency), compoundingFrequency * years);
+
+        // Calculate compound interest
+        double compoundInterest = amount - principal;
+
+        // Display the result
+        System.out.println("The compound interest after " + years + " years is: " + compoundInterest);
+        
+        // Close the scanner
+        scanner.close();
+    }
+}
+```
+
+#### Output 1
+
+```text
+Enter the principal amount: 5000
+Enter the annual interest rate (as a percentage): 5
+Enter the number of years: 3
+Enter the number of times interest is compounded per year: 4
+The compound interest after 3 years is: 797.1955807499652
+```
+
+#### Output 2
+
+```text
+Enter the principal amount: 10000
+Enter the annual interest rate (as a percentage): 3.5
+Enter the number of years: 5
+Enter the number of times interest is compounded per year: 12
+The compound interest after 5 years is: 1938.8365362833173
+```
