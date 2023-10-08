@@ -13,7 +13,7 @@
 
 <div align="center">
 
-### [Javaistic Site](https://javaistic.vercel.app/) • [Blog](https://javaistic.vercel.app/blog) • [Changelog](https://javaistic.vercel.app/changelog) • [Status](https://javaistic.vercel.app/status) 
+### [Visit Javaistic Site](https://javaistic.vercel.app/) • [Read Blog](https://javaistic.vercel.app/blog) • [View Changelog](https://javaistic.vercel.app/changelog) • [Check Status](https://javaistic.vercel.app/status) 
 
 </div>
 
@@ -21,52 +21,51 @@
 
 [![javaistic](.github/img/javaistic-readme.png)](https://javaistic.vercel.app/?utm_source=github&utm_medium=readme-image&utm_campaign=javaistic)
 
-  ### Visit ⟶ [javaistic.vercel.app](https://javaistic.vercel.app/?utm_source=github&utm_medium=readme-link&utm_campaign=javaistic)
+### Explore Javaistic ⟶ [javaistic.vercel.app](https://javaistic.vercel.app/?utm_source=github&utm_medium=readme-link&utm_campaign=javaistic)
 
 </div>
 
 ## 📄 Description
 
-A Java Programming learning website packed with information and programs ranging from basics , arrays , string programs to 2D arrays , recursion , matrices and many more.
+Javaistic is a comprehensive website for learning Java programming, packed with detailed information and programs covering everything from basics to advanced topics, including arrays, strings, 2D arrays, recursion, matrices, and more.
 
 ## 🔥 Features
 
-- Beautifully designed & optimized
-- Easy to understand
-- Filled with java docs & programs
-- Open Source → Everything is Free
-- Ad Free
+- **Beautiful Design:** Enjoy a visually appealing and optimized learning experience.
+- **Comprehensive Content:** Easily understandable Java docs and programs for learners at all levels.
+- **Open Source:** Everything is free and open source, encouraging a collaborative learning environment.
+- **Ad Free:** Study without distractions - Javaistic is ad-free for an uninterrupted learning experience.
 
 ## 🪴 Project Activity
 
-![Alt](https://repobeats.axiom.co/api/embed/3df6f52cbd6d58e6c248f9457081834adf6459e5.svg "Repobeats analytics image")
+![Repobeats Analytics](https://repobeats.axiom.co/api/embed/3df6f52cbd6d58e6c248f9457081834adf6459e5.svg "Repobeats analytics image")
 
 ## 🧑‍💻 Contributing
-If you're interested in contributing to Javaistic Documentation, please read our [contributing docs](CONTRIBUTING.md) before submitting a pull request.
+Interested in contributing to Javaistic Documentation? Please read our [contributing guidelines](CONTRIBUTING.md) before submitting a pull request.
 
-### For developing locally
+### Running Locally
 
-Javaistic uses [Next.js](https://nextjs.org/) for its documentation. Here is how you can run the project locally:
+To develop locally, follow these steps:
 
-1. Clone this repo
+1. **Clone this repo:**
 
     ```sh
     git clone https://github.com/javaistic/javaistic.git
     ```
 
-2. Go into the project root directory
+2. **Navigate to the project root directory:**
 
     ```sh
     cd javaistic
     ```
 
-3. Install JS dependencies
+3. **Install JS dependencies:**
 
     ```sh
     yarn
     ```
 
-4. Start the dev server
+4. **Start the development server:**
 
     ```sh
     yarn dev
@@ -74,18 +73,18 @@ Javaistic uses [Next.js](https://nextjs.org/) for its documentation. Here is how
     
 ## 🤝 Community
 
-The Javaistic community can be found on [GitHub Discussions](https://github.com/javaistic/javaistic/discussions), where you can ask questions, voice ideas, and share your projects.
+Join the Javaistic community on [GitHub Discussions](https://github.com/javaistic/javaistic/discussions) to ask questions, share ideas, and showcase your projects.
 
-To chat with other community members, you can join the [![Javaistic DiscordSupport Server](https://img.shields.io/discord/934819156296081459.svg?color=7289da&label=discord&logo=discord)](https://javaistic.vercel.app/discord)
+For real-time communication, you can also join the [Javaistic Discord Server](https://javaistic.vercel.app/discord).
 
-Our [Code of Conduct](CODE_OF_CONDUCT.md) applies to all Javaistic community channels.
+Please review our [Code of Conduct](CODE_OF_CONDUCT.md) for all community interactions.
 
-## 👦 Author
+## Author
 - Arghya Ghosh [(@uiuxarghya)](https://twitter.com/uiuxarghya)
 
-## 💖 Acknowledgement
+## 💖 Acknowledgements
 
-A special thanks these companies for helping me to build Javaistic:
+Special thanks to the following companies for their support in building Javaistic:
 
 [![Powered by Vercel](.github/img/powered-by-vercel.svg)](https://vercel.com/?utm_source=javaistic&utm_campaign=oss)
 [![Search by Algolia](.github/img/search-by-algolia.svg)](https://algolia.com/?utm_source=javaistic&utm_campaign=oss)
