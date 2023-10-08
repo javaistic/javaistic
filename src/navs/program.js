@@ -20,5 +20,6 @@ export const programsNav = {
     pages['find-quotient-and-reminder'],
     pages['calculate-power-of-a-number'],
     pages['calculate-compound-interest'],
+    pages['factorial-in-java'],
   ],
 }
