@@ -6,14 +6,14 @@
 <img height=70 src="https://raw.githubusercontent.com/javaistic/.github/main/profile/img/logo-dark.svg#gh-light-mode-only">
 
 <br>
-  
+
 ### [![Depfu](https://badges.depfu.com/badges/b0bc0e5fa34d75e54478a4e37b1b2d72/status.svg)](https://depfu.com) [![Stars](https://badgen.net/github/stars/javaistic/javaistic)](https://github.com/javaistic/javaistic/stargazers) [![Release](https://badgen.net/github/release/javaistic/javaistic)](https://github.com/javaistic/javaistic/releases) [![CodeQL](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml) [![License](https://badgen.net/github/license/javaistic/javaistic)](LICENSE) [![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/8a3u.svg)](https://javaistic.betteruptime.com/?utm_source=status_badge)
 
 </div>
 
 <div align="center">
 
-### [Visit Javaistic Site](https://javaistic.vercel.app/) • [Read Blog](https://javaistic.vercel.app/blog) • [View Changelog](https://javaistic.vercel.app/changelog) • [Check Status](https://javaistic.vercel.app/status) 
+### [Visit Javaistic Site](https://javaistic.vercel.app/) • [Read Blog](https://javaistic.vercel.app/blog) • [View Changelog](https://javaistic.vercel.app/changelog) • [Check Status](https://javaistic.vercel.app/status)
 
 </div>
 
@@ -41,6 +41,7 @@ Javaistic is a comprehensive website for learning Java programming, packed with 
 ![Repobeats Analytics](https://repobeats.axiom.co/api/embed/3df6f52cbd6d58e6c248f9457081834adf6459e5.svg "Repobeats analytics image")
 
 ## 🧑‍💻 Contributing
+
 Interested in contributing to Javaistic Documentation? Please read our [contributing guidelines](CONTRIBUTING.md) before submitting a pull request.
 
 ### Running Locally
@@ -70,7 +71,7 @@ To develop locally, follow these steps:
     ```sh
     yarn dev
     ```
-    
+
 ## 🤝 Community
 
 Join the Javaistic community on [GitHub Discussions](https://github.com/javaistic/javaistic/discussions) to ask questions, share ideas, and showcase your projects.
@@ -80,6 +81,7 @@ For real-time communication, you can also join the [Javaistic Discord Server](ht
 Please review our [Code of Conduct](CODE_OF_CONDUCT.md) for all community interactions.
 
 ## Author
+
 - Arghya Ghosh [(@uiuxarghya)](https://twitter.com/uiuxarghya)
 
 ## 💖 Acknowledgements
