@@ -1,0 +1,78 @@
+---
+title: Java Arrays
+description: In this tutorial, we will learn how to use the Java continue statement to skip the current iteration of a loop.
+---
+
+## Java Arrays
+An array is a collection of similar types of data.
+
+For example, if we want to store the names of 100 people then we can create an array of the string type that can store 100 names.
+
+```java
+String[] array = new String[100];
+```
+Here, the above array cannot store more than 100 names. The number of values in a Java array is always fixed.
+
+### How to declare an array in Java?
+In Java, here is how we can declare an array.
+
+```java
+dataType[] arrayName;
+```
+- `dataType` - it can be primitive data types like `int`, `char`, `double`, `byte`, etc. or Java objects
+- `arrayName` - it is an identifier
+For example,
+
+```java
+double[] data;
+```
+Here, data is an array that can hold values of type double.
+
+But, how many elements can array this hold?
+
+Good question! To define the number of elements that an array can hold, we have to allocate memory for the array in Java. For example,
+
+```java
+// declare an array
+double[] data;
+
+// allocate memory
+data = new double[10];
+```
+Here, the array can store 10 elements. We can also say that the size or length of the array is 10.
+
+In Java, we can declare and allocate the memory of an array in one single statement. For example,
+
+```java
+double[] data = new double[10];
+```
+### How to Initialize Arrays in Java?
+In Java, we can initialize arrays during declaration. For example,
+
+```java
+//declare and initialize and array
+int[] age = {12, 4, 5, 2, 5};
+```
+Here, we have created an array named age and initialized it with the values inside the curly brackets.
+
+Note that we have not provided the size of the array. In this case, the Java compiler automatically specifies the size by counting the number of elements in the array (i.e. 5).
+
+In the Java array, each memory location is associated with a number. The number is known as an array index. We can also initialize arrays in Java, using the index number. For example,
+
+```java
+// declare an array
+int[] age = new int[5];
+
+// initialize array
+age[0] = 12;
+age[1] = 4;
+age[2] = 5;
+..
+```
+Elements are stored in the array
+Java Arrays initialization
+
+Note:
+
+Array indices always start from 0. That is, the first element of an array is at index 0.
+If the size of an array is n, then the last element of the array will be at index n-1.
