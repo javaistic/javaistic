@@ -1,0 +1,122 @@
+---
+title: Java continue Statement
+description: In this tutorial, we will learn how to use the Java continue statement to skip the current iteration of a loop.
+---
+
+While working with loops, sometimes you might want to skip some statements or terminate the loop. In such cases, break and continue statements are used.
+
+To learn about the break statement, visit Java break. Here, we will learn about the continue statement.
+
+import { List, ListItemGood } from '@/components/List'
+import { TipInfo } from '@/components/Tip'
+
+## Java continue
+
+The continue statement skips the current iteration of a loop (for, while, do...while, etc).
+
+After the continue statement, the program moves to the end of the loop. And, test expression is evaluated (update statement is evaluated in case of the for loop).
+
+Here's the syntax of the continue statement.
+
+```java
+continue;
+```
+
+Note: The continue statement is almost always used in decision-making statements (if...else Statement).
+
+
+## Working of Java continue statement
+The working of continue statement with Java while, do...while, and for loop.
+Working of Java continue Statement
+
+### Example 1: Java continue statement
+
+```java
+class Main {
+  public static void main(String[] args) {
+
+    // for loop
+    for (int i = 1; i <= 10; ++i) {
+
+      // if value of i is between 4 and 9
+      // continue is executed
+      if (i > 4 && i < 9) {
+        continue;
+      }
+      System.out.println(i);
+    }
+  }
+}
+```
+
+#### Output:
+
+```text
+1
+2
+3
+4
+9
+10
+```
+In the above program, we are using the for loop to print the value of i in each iteration. To know how for loop works, visit Java for loop. Notice the statement,
+
+```java
+if (i > 4 && i < 9) {
+    continue;
+}
+```
+Here, the continue statement is executed when the value of i becomes more than 4 and less than 9.
+
+It then skips the print statement for those values. Hence, the output skips the values 5, 6, 7, and 8.
+
+### Example 2: Compute the sum of 5 positive numbers
+
+```java
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+
+    Double number, sum = 0.0;
+    // create an object of Scanner
+    Scanner input = new Scanner(System.in);
+
+    for (int i = 1; i < 6; ++i) {
+      System.out.print("Enter number " + i + " : ");
+      // takes input from the user
+      number = input.nextDouble();
+
+      // if number is negative
+      // continue statement is executed
+      if (number <= 0.0) {
+        continue;
+      }
+
+      sum += number;
+    }
+    System.out.println("Sum = " + sum);
+    input.close();
+  }
+}
+```
+#### Output:
+
+```text
+Enter number 1: 2.2
+Enter number 2: 5.6
+Enter number 3: 0
+Enter number 4: -2.4
+Enter number 5: -3
+Sum = 7.8
+```
+In the above example, we have used the for loop to print the sum of 5 positive numbers. Notice the line,
+
+```java
+if (number < 0.0) {
+    continue;
+}
+```
+Here, when the user enters a negative number, the continue statement is executed. This skips the current iteration of the loop and takes the program control to the update expression of the loop.
+
+Note: To take input from the user, we have used the Scanner object. To learn more, visit Java Scanner.
