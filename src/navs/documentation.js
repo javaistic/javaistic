@@ -27,4 +27,5 @@ export const documentationNav = {
     pages['break-statement'],
     pages['continue-statement'],
   ],
+  'Java Arrays': [pages['arrays']],
 }
