@@ -25,5 +25,6 @@ export const documentationNav = {
     pages['enhanced-for-loop'],
     pages['while-and-do-while-loop'],
     pages['break-statement'],
+    pages['continue-statement'],
   ],
 }
