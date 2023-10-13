@@ -1,3 +1,4 @@
+import BackToTopButton from '@/components/home/BackToTopButton'
 import { BigText, InlineCode, Paragraph, Widont } from '@/components/home/common'
 import { Features } from '@/components/home/Features'
 import { Footer } from '@/components/home/Footer'
@@ -125,6 +126,7 @@ export default function Home() {
       <Testimonials />
       <Support />
       <div className="mx-auto max-w-screen-lg space-y-20 sm:space-y-32 md:space-y-40 lg:space-y-44 xl:max-w-screen-xl"></div>
+      <BackToTopButton />
       <Footer />
     </div>
   )
