@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://javaistic.ml/sitemap.xml
+Sitemap: https://javaistic.vercel.app/sitemap.xml
