@@ -23,10 +23,12 @@ export function DocumentationLayout(props) {
           property="og:image"
           content={
             router.pathname === '/docs'
-              ? `https://og.javaistic.ml/.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.javaistic.ml%2Flogo%2Fjavaistic-docs-main.svg`
-              : `https://og.javaistic.ml/**${
+              ? `https://og-image-javaistic.vercel.app/og?title=${
                   props.layoutProps.meta.metaTitle || props.layoutProps.meta.title
-                }**.png?theme=light&md=1&fontSize=120px&images=https%3A%2F%2Fassets.javaistic.ml%2Flogo%2Fjavaistic-docs-main.svg`
+                }`
+              : `https://og-image-javaistic.vercel.app/og?title=${
+                  props.layoutProps.meta.metaTitle || props.layoutProps.meta.title
+                }`
           }
         />
         <meta
@@ -34,10 +36,12 @@ export function DocumentationLayout(props) {
           name="twitter:image"
           content={
             router.pathname === '/docs'
-              ? `https://og.javaistic.ml/.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.javaistic.ml%2Flogo%2Fjavaistic-docs-main.svg`
-              : `https://og.javaistic.ml/**${
+              ? `https://og-image-javaistic.vercel.app/og?title=${
                   props.layoutProps.meta.metaTitle || props.layoutProps.meta.title
-                }**.png?theme=light&md=1&fontSize=120px&images=https%3A%2F%2Fassets.javaistic.ml%2Flogo%2Fjavaistic-docs-main.svg`
+                }`
+              : `https://og-image-javaistic.vercel.app/og?title=${
+                  props.layoutProps.meta.metaTitle || props.layoutProps.meta.title
+                }`
           }
         />
       </Head>
