@@ -76,7 +76,9 @@ To develop locally, follow these steps:
 
 Join the Javaistic community on [GitHub Discussions](https://github.com/javaistic/javaistic/discussions) to ask questions, share ideas, and showcase your projects.
 
+<!--
 For real-time communication, you can also join the [Javaistic Discord Server](https://javaistic.vercel.app/discord).
+-->
 
 Please review our [Code of Conduct](CODE_OF_CONDUCT.md) for all community interactions.
 
