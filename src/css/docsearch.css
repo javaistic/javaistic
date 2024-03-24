@@ -2,6 +2,10 @@
   overflow: hidden !important;
 }
 
+.DocSearch-VisuallyHiddenForAccessibility {
+  display: none;
+}
+
 .DocSearch-Container {
   height: 100vh;
   left: 0;
