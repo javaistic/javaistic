@@ -65,8 +65,8 @@
     "unist-util-visit": "^2.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.9",
-    "@babel/plugin-transform-react-jsx": "^7.24.7",
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-transform-react-jsx": "^7.25.2",
     "@types/react": "^18.3.3",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
