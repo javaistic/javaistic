@@ -28,4 +28,5 @@ export const documentationNav = {
     pages['continue-statement'],
   ],
   'Java Arrays': [pages['arrays']],
+  'Java OOPS': [pages['static-keyword']],
 }
