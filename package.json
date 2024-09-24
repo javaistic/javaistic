@@ -29,7 +29,7 @@
     "@mdx-js/react": "^1.6.22",
     "@next/bundle-analyzer": "^14.2.12",
     "@next/mdx": "^14.2.12",
-    "@reach/rect": "^0.17.0",
+    "@reach/rect": "^0.18.0",
     "@silvenon/remark-smartypants": "^1.0.0",
     "@sindresorhus/slugify": "^1.1.2",
     "@svgr/webpack": "^5.5.0",
