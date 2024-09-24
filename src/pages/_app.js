@@ -1,7 +1,7 @@
 import { Header } from '@/components/Header'
 import { Title } from '@/components/Title'
 import twitterLargeCard from '@/img/twitter-large-card.png'
-import ProgressBar from '@uiuxarghya/progress-bar'
+// import ProgressBar from '@uiuxarghya/progress-bar'
 import { ResizeObserver } from '@juggle/resize-observer'
 import 'focus-visible'
 import 'intersection-observer'
@@ -17,26 +17,26 @@ if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
   window.ResizeObserver = ResizeObserver
 }
 
-const progress = new ProgressBar({
-  size: 2,
-  color: '#3B82F6',
-  className: 'progress-bar',
-  delay: 100,
-})
+// const progress = new ProgressBar({
+//   size: 2,
+//   color: '#3B82F6',
+//   className: 'progress-bar',
+//   delay: 100,
+// })
 
 // this fixes safari jumping to the bottom of the page
 // when closing the search modal using the `esc` key
-if (typeof window !== 'undefined') {
-  progress.start()
-  progress.finish()
-}
+// if (typeof window !== 'undefined') {
+//   progress.start()
+//   progress.finish()
+// }
 
-Router.events.on('routeChangeStart', progress.start)
-Router.events.on('routeChangeComplete', () => {
-  progress.finish()
-  window.scrollTo(0, 0)
-})
-Router.events.on('routeChangeError', progress.finish)
+// Router.events.on('routeChangeStart', progress.start)
+// Router.events.on('routeChangeComplete', () => {
+//   // progress.finish()
+//   window.scrollTo(0, 0)
+// })
+// Router.events.on('routeChangeError', progress.finish)
 
 export default function App({ Component, pageProps, router }) {
   let [navIsOpen, setNavIsOpen] = useState(false)
