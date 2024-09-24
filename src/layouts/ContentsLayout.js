@@ -13,7 +13,7 @@ import {
   useCallback,
   useContext,
   useEffect,
-  useState
+  useState,
 } from 'react'
 
 export const ContentsContext = createContext()
@@ -191,19 +191,21 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
         {(prev || next) && (
           <div className="mt-16 flex font-medium leading-6">
             {prev && (
-              <Link href={prev.href}>
-                <a className="mr-8 flex items-center rounded-md border-2 border-blue-500 px-2 py-1 text-gray-500 transition-colors duration-200 hover:text-gray-900 hover:shadow-md dark:border-blue-400 dark:text-gray-400 dark:hover:text-white">
-                  <ArrowLeftIcon className="mr-2 h-5 w-5" />
-                  {prev.shortTitle || prev.title}
-                </a>
+              <Link
+                href={prev.href}
+                className="mr-8 flex items-center rounded-md border-2 border-blue-500 px-2 py-1 text-gray-500 transition-colors duration-200 hover:text-gray-900 hover:shadow-md dark:border-blue-400 dark:text-gray-400 dark:hover:text-white"
+              >
+                <ArrowLeftIcon className="mr-2 h-5 w-5" />
+                {prev.shortTitle || prev.title}
               </Link>
             )}
             {next && (
-              <Link href={next.href}>
-                <a className="ml-auto flex items-center rounded-md border-2 border-blue-500 px-2 py-1 text-right text-gray-500 transition-colors duration-200 hover:text-gray-900 hover:shadow-md dark:border-blue-400 dark:text-gray-400 dark:hover:text-white">
-                  {next.shortTitle || next.title}
-                  <ArrowRightIcon className="ml-2 h-5 w-5" />
-                </a>
+              <Link
+                href={next.href}
+                className="ml-auto flex items-center rounded-md border-2 border-blue-500 px-2 py-1 text-right text-gray-500 transition-colors duration-200 hover:text-gray-900 hover:shadow-md dark:border-blue-400 dark:text-gray-400 dark:hover:text-white"
+              >
+                {next.shortTitle || next.title}
+                <ArrowRightIcon className="ml-2 h-5 w-5" />
               </Link>
             )}
           </div>
@@ -212,11 +214,10 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
         <div className="mt-12 border-t border-gray-200  dark:border-gray-700 ">
           <Link
             href={`https://github.com/javaistic/javaistic/edit/main/src/pages${router.pathname}.mdx`}
+            className="mt-10 flex items-center text-base font-medium hover:text-gray-900 dark:hover:text-white sm:w-1/3"
           >
-            <a className="mt-10 flex items-center text-base font-medium hover:text-gray-900 dark:hover:text-white sm:w-1/3">
-              Edit this page on GitHub
-              <PencilAltIcon className="ml-2 h-5 w-5" />
-            </a>
+            Edit this page on GitHub
+            <PencilAltIcon className="ml-2 h-5 w-5" />
           </Link>
         </div>
       </div>

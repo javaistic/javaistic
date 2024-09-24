@@ -10,11 +10,7 @@ const ACTION_KEY_DEFAULT = ['Ctrl ', 'Control']
 const ACTION_KEY_APPLE = ['⌘', 'Command']
 
 function Hit({ hit, children }) {
-  return (
-    <Link href={hit.url}>
-      <a>{children}</a>
-    </Link>
-  )
+  return <Link href={hit.url}>{children}</Link>
 }
 
 export function Search() {

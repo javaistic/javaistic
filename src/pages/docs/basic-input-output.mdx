@@ -31,14 +31,14 @@ Let's take an example to output a line.
 ```java
 class AssignmentOperator {
     public static void main(String[] args) {
-    	
-        System.out.println("Java programming is interesting.");   
+
+        System.out.println("Java programming is interesting.");
     }
 }
 ```
 **Output:**
 
-```text
+```plaintext
 Java programming is interesting.
 ```
 Here, we have used the `println()` method to display the string.
@@ -52,19 +52,19 @@ Here, we have used the `println()` method to display the string.
 ```java
 class Output {
     public static void main(String[] args) {
-    	
+
         System.out.println("1. println ");
         System.out.println("2. println ");
-    	
+
         System.out.print("1. print ");
         System.out.print("2. print");
     }
 }
 ```
 **Output:**
-```text
-1. println 
-2. println 
+```plaintext
+1. println
+2. println
 1. print 2. print
 ```
 In the above example, we have shown the working of the `print()` and `println()` methods. To learn about the `printf()` method, visit Java [**printf()**](https://www.cs.colostate.edu/~cs160/.Summer16/resources/Java_printf_method_quick_reference.pdf).
@@ -74,9 +74,9 @@ In the above example, we have shown the working of the `print()` and `println()`
 ```java
 class Variables {
     public static void main(String[] args) {
-    	
+
         Double number = -10.6;
-    	
+
         System.out.println(5);
         System.out.println(number);
     }
@@ -84,7 +84,7 @@ class Variables {
 ```
 When you run the program, the output will be:
 
-```text
+```plaintext
 5
 -10.6
 ```
@@ -94,9 +94,9 @@ Here, you can see that we have not used the quotation marks. It is because to di
 ```java
 class PrintVariables {
     public static void main(String[] args) {
-    	
+
         Double number = -10.6;
-    	
+
         System.out.println("I am " + "awesome.");
         System.out.println("Number = " + number);
     }
@@ -151,9 +151,9 @@ import java.util.Scanner;
 
 class Input {
     public static void main(String[] args) {
-    	
+
         Scanner input = new Scanner(System.in);
-    	
+
         System.out.print("Enter an integer: ");
         int number = input.nextInt();
         System.out.println("You entered " + number);
@@ -165,7 +165,7 @@ class Input {
 ```
 **Output:**
 
-```text
+```plaintext
 Enter an integer: 23
 You entered 23
 ```
@@ -185,19 +185,19 @@ import java.util.Scanner;
 
 class Input {
     public static void main(String[] args) {
-    	
+
         Scanner input = new Scanner(System.in);
-    	
+
         // Getting float input
         System.out.print("Enter float: ");
         float myFloat = input.nextFloat();
         System.out.println("Float entered = " + myFloat);
-    	
+
         // Getting double input
         System.out.print("Enter double: ");
         double myDouble = input.nextDouble();
         System.out.println("Double entered = " + myDouble);
-    	
+
         // Getting String input
         System.out.print("Enter text: ");
         String myString = input.next();
@@ -208,7 +208,7 @@ class Input {
 
 **Output:**
 
-```text
+```plaintext
 Enter float: 2.343
 Float entered = 2.343
 Enter double: -23.4

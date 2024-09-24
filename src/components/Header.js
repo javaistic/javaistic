@@ -11,17 +11,16 @@ export function Header({ navIsOpen, onNavToggle }) {
     <>
       <div className="sticky top-0 z-40 mx-auto flex w-full max-w-8xl flex-none border-b border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900 lg:z-50">
         <div className="flex flex-none items-center border-b border-gray-200 pl-4 dark:border-gray-700 sm:pl-6 lg:w-60 lg:border-b-0 xl:w-72 xl:pl-8">
-          <Link href="/">
-            <a
-              className="w-10 overflow-hidden md:w-auto"
-              onContextMenu={(e) => {
-                e.preventDefault()
-                Router.push('/brand')
-              }}
-            >
-              <span className="sr-only">Javaistic home page</span>
-              <Logo className="h-10 w-auto text-black dark:text-white" />
-            </a>
+          <Link
+            href="/"
+            className="w-10 overflow-hidden md:w-auto"
+            onContextMenu={(e) => {
+              e.preventDefault()
+              Router.push('/brand')
+            }}
+          >
+            <span className="sr-only">Javaistic home page</span>
+            <Logo className="h-10 w-auto text-black dark:text-white" />
           </Link>
         </div>
         <div className="flex h-18 flex-auto items-center justify-between px-4 sm:px-6 lg:mx-6 lg:px-0 xl:mx-8">

@@ -38,12 +38,11 @@ export function Paragraph({ as: Component = 'p', className = '', ...props }) {
 
 export function Link({ className = '', href, ...props }) {
   return (
-    <NextLink href={href}>
-      <a
-        className={`focus:outline-none inline-flex rounded-md text-lg font-medium transition-colors duration-200 focus:ring-2 focus:ring-current focus:ring-offset-2 sm:text-2xl ${className}`}
-        {...props}
-      />
-    </NextLink>
+    <NextLink
+      href={href}
+      className={`focus:outline-none inline-flex rounded-md text-lg font-medium transition-colors duration-200 focus:ring-2 focus:ring-current focus:ring-offset-2 sm:text-2xl ${className}`}
+      {...props}
+    ></NextLink>
   )
 }
 

@@ -38,15 +38,17 @@ export default function Brand() {
           </div>
 
           <div className="mt-4 mb-4 flex flex-wrap space-y-2 text-center sm:space-y-0 sm:space-x-4 ">
-            <Link href="/">
-              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto">
-                SVG
-              </a>
+            <Link
+              href="/"
+              className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto"
+            >
+              SVG
             </Link>
-            <Link href="/">
-              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-800 dark:hover:bg-gray-700 sm:w-auto">
-                PNG
-              </a>
+            <Link
+              href="/"
+              className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-800 dark:hover:bg-gray-700 sm:w-auto"
+            >
+              PNG
             </Link>
           </div>
         </section>
@@ -59,15 +61,17 @@ export default function Brand() {
           </div>
 
           <div className="mt-4 mb-4 flex flex-wrap space-y-2 text-center sm:space-y-0 sm:space-x-4 ">
-            <Link href="/">
-              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto">
-                SVG
-              </a>
+            <Link
+              href="/"
+              className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto"
+            >
+              SVG
             </Link>
-            <Link href="/">
-              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-800 dark:hover:bg-gray-700 sm:w-auto">
-                PNG
-              </a>
+            <Link
+              href="/"
+              className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-800 dark:hover:bg-gray-700 sm:w-auto"
+            >
+              PNG
             </Link>
           </div>
         </section>
@@ -83,15 +87,17 @@ export default function Brand() {
           </div>
 
           <div className="mt-4 mb-4 flex flex-wrap space-y-2 text-center sm:space-y-0 sm:space-x-4 ">
-            <Link href="/">
-              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto">
-                SVG
-              </a>
+            <Link
+              href="/"
+              className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto"
+            >
+              SVG
             </Link>
-            <Link href="/">
-              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-800 dark:hover:bg-gray-700 sm:w-auto">
-                PNG
-              </a>
+            <Link
+              href="/"
+              className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-800 dark:hover:bg-gray-700 sm:w-auto"
+            >
+              PNG
             </Link>
           </div>
         </section>
@@ -99,22 +105,25 @@ export default function Brand() {
           <h2 className="mb-4 text-xl font-bold text-gray-900">
             Logo White<span className="sr-only">: Javaistic White Logo</span>
           </h2>
-          <Link href="/">
-            <a className="mb-6 flex h-40 items-center justify-center rounded-xl bg-gray-900 p-6 dark:bg-gray-800 sm:h-56 xl:h-64">
-              <Logo title="Headless UI" component={JavaisticWhiteLogo} />
-            </a>
+          <Link
+            href="/"
+            className="mb-6 flex h-40 items-center justify-center rounded-xl bg-gray-900 p-6 dark:bg-gray-800 sm:h-56 xl:h-64"
+          >
+            <Logo title="Headless UI" component={JavaisticWhiteLogo} />
           </Link>
 
           <div className="mt-4 mb-4 flex flex-wrap space-y-2 text-center sm:space-y-0 sm:space-x-4 ">
-            <Link href="/">
-              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto">
-                SVG
-              </a>
+            <Link
+              href="/"
+              className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-blue-700 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-blue-600 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white sm:w-auto"
+            >
+              SVG
             </Link>
-            <Link href="/">
-              <a className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-800 dark:hover:bg-gray-700 sm:w-auto">
-                PNG
-              </a>
+            <Link
+              href="/"
+              className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-800 dark:hover:bg-gray-700 sm:w-auto"
+            >
+              PNG
             </Link>
           </div>
         </section>

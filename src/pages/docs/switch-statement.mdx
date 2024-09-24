@@ -16,14 +16,14 @@ switch (expression) {
   case value1:
     // code
     break;
-  
+
   case value2:
     // code
     break;
-  
+
   ...
   ...
-  
+
   default:
     // default statements
   }
@@ -74,7 +74,7 @@ class Main {
       case 48:
         size = "Extra Large";
         break;
-      
+
       default:
         size = "Unknown";
         break;
@@ -86,7 +86,7 @@ class Main {
 ```
 #### Output:
 
-```text
+```plaintext
 Size: Large
 ```
 In the above example, we have used the switch statement to find the size. Here, we have a variable `number`. The variable is compared with the value of each case statement.
@@ -110,7 +110,6 @@ Here, the `size` variable is assigned with the value `Large`.
       src={require('@/img/docs/switch-case-flowchart.svg').default}
       width={852}
       height={1266}
-      layout="responsive"
       blurDataURL={require('@/img/docs/switch-case-flowchart.svg').default}
       placeholder="blur"
       loading="lazy"
@@ -163,9 +162,9 @@ class Main {
 
 #### Output
 
-```text
+```plaintext
 Case 2
-Case 3      
+Case 3
 Default case
 ```
 In the above example, `expression` matches with `case 2`. Here, we haven't used the break statement after each case.
@@ -183,11 +182,11 @@ The switch statement also includes an **optional default case**. It is executed 
 ```java
 class Main {
   public static void main(String[] args) {
-  
+
     int expression = 9;
-    
+
     switch(expression) {
-        
+
       case 2:
         System.out.println("Small Size");
         break;
@@ -195,7 +194,7 @@ class Main {
       case 3:
         System.out.println("Large Size");
         break;
-            
+
       // default case
       default:
         System.out.println("Unknown Size");
@@ -205,7 +204,7 @@ class Main {
 ```
 #### Output
 
-```text
+```plaintext
 Unknown Size
 ```
 
