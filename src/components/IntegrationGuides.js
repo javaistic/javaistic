@@ -15,11 +15,13 @@ export function IntegrationGuides() {
       {guides.map((guide) => {
         const Logo = guide.logo
         return (
-          <Link href={guide.link} key={guide.name}>
-            <a className="flex flex-col items-center rounded-xl py-4 shadow-sm ring-1 ring-black ring-opacity-5">
-              <Logo className="h-12 w-auto" />
-              <div className="mt-3 text-sm font-semibold text-gray-900 sm:mt-2">{guide.name}</div>
-            </a>
+          <Link
+            href={guide.link}
+            key={guide.name}
+            className="flex flex-col items-center rounded-xl py-4 shadow-sm ring-1 ring-black ring-opacity-5"
+          >
+            <Logo className="h-12 w-auto" />
+            <div className="mt-3 text-sm font-semibold text-gray-900 sm:mt-2">{guide.name}</div>
           </Link>
         )
       })}

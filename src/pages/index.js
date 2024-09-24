@@ -40,23 +40,23 @@ export default function Home() {
         <div className="mb-14 px-4 sm:mb-20 sm:px-6 md:px-8 xl:mb-8">
           <div className="mb-16 flex items-center justify-between border-b border-gray-200 py-4 dark:border-gray-700 sm:mx-0 sm:mb-20 sm:px-0">
             <div className="flex items-center">
-              <NextLink href="/">
-                <a
-                  onContextMenu={(e) => {
-                    e.preventDefault()
-                    Router.push('/brand')
-                  }}
-                >
-                  <Logo className="flex h-8 w-auto text-black dark:text-white sm:h-5 lg:h-10" />
-                </a>
+              <NextLink
+                href="/"
+                onContextMenu={(e) => {
+                  e.preventDefault()
+                  Router.push('/brand')
+                }}
+              >
+                <Logo className="flex h-8 w-auto text-black dark:text-white sm:h-5 lg:h-10" />
               </NextLink>
             </div>
             <div className="ml-4 flex items-center space-x-4 sm:ml-2 sm:space-x-6">
               <Search />
-              <NextLink href="/docs">
-                <a className="hidden rounded-md px-4 py-3 text-base font-medium leading-4 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-600 dark:text-gray-300 dark:hover:bg-gray-700  dark:hover:text-white sm:inline">
-                  <span className="hidden sm:inline">Documentation</span>
-                </a>
+              <NextLink
+                href="/docs"
+                className="hidden rounded-md px-4 py-3 text-base font-medium leading-4 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-600 dark:text-gray-300 dark:hover:bg-gray-700  dark:hover:text-white sm:inline"
+              >
+                <span className="hidden sm:inline">Documentation</span>
               </NextLink>
               <MenuButton />
               <ThemeChanger />

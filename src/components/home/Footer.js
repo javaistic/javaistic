@@ -60,10 +60,11 @@ export function Footer() {
               <ul className="space-y-4">
                 {footerNav[section].items.map((item) => (
                   <li key={item.title}>
-                    <Link href={item.href}>
-                      <a className="text-base text-gray-500 transition duration-200 ease-in-out hover:font-semibold hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
-                        {item.title}
-                      </a>
+                    <Link
+                      href={item.href}
+                      className="text-base text-gray-500 transition duration-200 ease-in-out hover:font-semibold hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                    >
+                      {item.title}
                     </Link>
                   </li>
                 ))}
@@ -128,24 +129,26 @@ export function Footer() {
           </div>
           <div className="flex items-center">
             <a
-              href="#"
+              href="/privacy"
               className="title-font flex items-center justify-center pl-6 font-medium text-gray-900 md:justify-start"
             >
               <p className="mt-2 text-sm text-gray-500">Privacy Policy</p>
             </a>
-            <Link href="/terms-and-conditions">
-              <a className="title-font flex items-center justify-center pl-6 font-medium md:justify-start">
-                <p className="mt-2 text-sm text-gray-500 hover:text-black dark:hover:text-white">
-                  Terms &amp; Conditions
-                </p>
-              </a>
+            <Link
+              href="/terms"
+              className="title-font flex items-center justify-center pl-6 font-medium md:justify-start"
+            >
+              <p className="mt-2 text-sm text-gray-500 hover:text-black dark:hover:text-white">
+                Terms &amp; Conditions
+              </p>
             </Link>
-            <Link href="/status">
-              <a className="title-font flex items-center justify-center pl-6 font-medium text-gray-900 md:justify-start">
-                <p className="mt-2 text-sm text-gray-500 hover:text-black dark:hover:text-white">
-                  Status
-                </p>
-              </a>
+            <Link
+              href="/status"
+              className="title-font flex items-center justify-center pl-6 font-medium text-gray-900 md:justify-start"
+            >
+              <p className="mt-2 text-sm text-gray-500 hover:text-black dark:hover:text-white">
+                Status
+              </p>
             </Link>
           </div>
           <div className="mt-4 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">

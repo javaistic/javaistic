@@ -12,22 +12,21 @@ export const SidebarContext = createContext()
 const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHref }, ref) => {
   return (
     <li ref={ref}>
-      <Link href={isPublished ? href : fallbackHref}>
-        <a
-          className={clsx('relative block px-3 py-2 transition-colors duration-200', {
-            'text-blue-700 dark:text-blue-400': isActive,
-            'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white':
-              !isActive && isPublished,
-            'text-gray-400 dark:text-white': !isActive && !isPublished,
+      <Link
+        href={isPublished ? href : fallbackHref}
+        className={clsx('relative block px-3 py-2 transition-colors duration-200', {
+          'text-blue-700 dark:text-blue-400': isActive,
+          'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white':
+            !isActive && isPublished,
+          'text-gray-400 dark:text-white': !isActive && !isPublished,
+        })}
+      >
+        <span
+          className={clsx('absolute inset-0 rounded-md bg-blue-50 dark:bg-gray-800', {
+            'opacity-0': !isActive,
           })}
-        >
-          <span
-            className={clsx('absolute inset-0 rounded-md bg-blue-50 dark:bg-gray-800', {
-              'opacity-0': !isActive,
-            })}
-          />
-          <span className="relative">{children}</span>
-        </a>
+        />
+        <span className="relative">{children}</span>
       </Link>
     </li>
   )
@@ -110,7 +109,7 @@ const TopLevelAnchor = forwardRef(
   ({ children, href, className, icon, isActive, onClick, color }, ref) => {
     return (
       <li>
-        <a
+        <Link
           ref={ref}
           href={href}
           onClick={onClick}
@@ -129,7 +128,7 @@ const TopLevelAnchor = forwardRef(
             </svg>
           </div>
           {children}
-        </a>
+        </Link>
       </li>
     )
   }
@@ -140,11 +139,7 @@ function TopLevelLink({ href, as, ...props }) {
     return <TopLevelAnchor href={href} {...props} />
   }
 
-  return (
-    <Link href={href} as={as} passHref>
-      <TopLevelAnchor {...props} />
-    </Link>
-  )
+  return <TopLevelAnchor {...props} href={href} as={as} />
 }
 
 function TopLevelNav() {

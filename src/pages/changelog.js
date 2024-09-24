@@ -67,10 +67,11 @@ export default function Changelog() {
                     <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
                       {item.description}
                     </p>
-                    <Link href={item.link}>
-                      <a className="inline-flex items-center rounded-md border border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-600 focus:z-10 focus:text-blue-600 focus:ring-2 focus:ring-blue-600 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                        Read More <ArrowRightIcon className="ml-2 h-4 w-4 fill-current" />
-                      </a>
+                    <Link
+                      href={item.link}
+                      className="inline-flex items-center rounded-md border border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-600 focus:z-10 focus:text-blue-600 focus:ring-2 focus:ring-blue-600 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >
+                      Read More <ArrowRightIcon className="ml-2 h-4 w-4 fill-current" />
                     </Link>
                   </li>
                 ))}
@@ -90,10 +91,11 @@ export default function Changelog() {
                     <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
                       {item.description}
                     </p>
-                    <Link href={item.link}>
-                      <a className="inline-flex items-center rounded-md border border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-600 focus:z-10 focus:text-blue-600 focus:ring-2 focus:ring-blue-600 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                        Read More <ArrowRightIcon className="ml-2 h-4 w-4 fill-current" />
-                      </a>
+                    <Link
+                      href={item.link}
+                      className="inline-flex items-center rounded-md border border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-600 focus:z-10 focus:text-blue-600 focus:ring-2 focus:ring-blue-600 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >
+                      Read More <ArrowRightIcon className="ml-2 h-4 w-4 fill-current" />
                     </Link>
                   </li>
                 ))}
