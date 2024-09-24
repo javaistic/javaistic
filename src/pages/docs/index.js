@@ -24,10 +24,11 @@ export default function DocsLandingPage() {
                 <p className="mb-4 font-medium text-violet-100 text-shadow dark:text-violet-100">
                   Learn how to get Java set up in your project.
                 </p>
-                <Link href="/docs/installation">
-                  <a className="mt-auto inline-flex rounded-lg bg-violet-800 bg-opacity-50 py-2 px-4 font-semibold transition-colors duration-200 hover:bg-opacity-75">
-                    Start learning
-                  </a>
+                <Link
+                  href="/docs/installation"
+                  className="mt-auto inline-flex rounded-lg bg-violet-800 bg-opacity-50 py-2 px-4 font-semibold transition-colors duration-200 hover:bg-opacity-75"
+                >
+                  Start learning
                 </Link>
               </div>
               <div className={`${styles.image} relative hidden sm:block md:pl-6 xl:pl-8`}>
@@ -50,10 +51,11 @@ export default function DocsLandingPage() {
                 <p className="mb-4 font-medium text-rose-100 text-shadow dark:text-rose-100">
                   Start coding right now or go through Java code.
                 </p>
-                <Link href="/programs">
-                  <a className="mt-auto inline-flex rounded-lg bg-rose-900 bg-opacity-50 py-2 px-4 font-semibold transition-colors duration-200 hover:bg-opacity-75">
-                    Start coding
-                  </a>
+                <Link
+                  href="/programs"
+                  className="mt-auto inline-flex rounded-lg bg-rose-900 bg-opacity-50 py-2 px-4 font-semibold transition-colors duration-200 hover:bg-opacity-75"
+                >
+                  Start coding
                 </Link>
               </div>
               <div className={`${styles.image} relative hidden sm:block md:pl-6 xl:pl-8`}>
