@@ -31,7 +31,7 @@
     "@next/mdx": "^14.2.12",
     "@reach/rect": "^0.17.0",
     "@silvenon/remark-smartypants": "^1.0.0",
-    "@sindresorhus/slugify": "^1.1.2",
+    "@sindresorhus/slugify": "^2.2.1",
     "@svgr/webpack": "^5.5.0",
     "@tailwindcss/jit": "^0.1.18",
     "@tailwindcss/typography": "^0.4.1",
