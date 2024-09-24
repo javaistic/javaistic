@@ -28,9 +28,6 @@ module.exports = withBundleAnalyzer({
     disableStaticImages: true,
   },
   pageExtensions: ['js', 'jsx', 'mdx'],
-  experimental: {
-    modern: true,
-  },
   async redirects() {
     return require('./redirects.json')
   },

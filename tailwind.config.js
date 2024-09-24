@@ -4,7 +4,6 @@ const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenCo
 const { toRgba } = require('tailwindcss/lib/util/withAlphaVariable')
 
 module.exports = {
-  mode: 'jit',
   purge: ['./src/**/*.{js,mdx}'],
   darkMode: 'class',
   theme: {
