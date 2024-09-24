@@ -6,12 +6,11 @@ import React from 'react'
 const DocsImage = () => {
   return (
     <NextImage
-      className="object-cover object-center shadow-xl"
+      className="object-cover object-center"
       alt="Javaistic Docs"
       src={require('@/img/home/docs.svg').default}
       width={1213}
       height={1023}
-      layout="responsive"
       blurDataURL={require('@/img/home/docs.svg').default}
       placeholder="blur"
       loading="lazy"
@@ -22,12 +21,11 @@ const DocsImage = () => {
 const ProgImage = () => {
   return (
     <NextImage
-      className="object-cover object-center shadow-xl"
+      className="object-cover object-center"
       alt="Javaistic Programs"
       src={require('@/img/home/programs.svg').default}
       width={1213}
       height={1023}
-      layout="responsive"
       blurDataURL={require('@/img/home/programs.svg').default}
       placeholder="blur"
       loading="lazy"
@@ -38,12 +36,11 @@ const ProgImage = () => {
 const OpenSourceImage = () => {
   return (
     <NextImage
-      className="object-cover object-center shadow-xl"
+      className="object-cover object-center"
       alt="Javaistic Open Source On GitHub"
       src={require('@/img/home/open-source.svg').default}
       width={613}
       height={521}
-      layout="responsive"
       blurDataURL={require('@/img/home/open-source.svg').default}
       placeholder="blur"
       loading="lazy"
@@ -79,14 +76,12 @@ export function Features() {
             </p>
             <div className="flex justify-center">
               <NextLink href="/docs">
-                <a>
-                  <button className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-800 hover:shadow-xl focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-700 dark:hover:bg-gray-600 sm:w-auto">
-                    <span className="flex items-center">
-                      Start Learning
-                      <ArrowRightIcon className="ml-2 h-6" />
-                    </span>
-                  </button>
-                </a>
+                <button className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-800 hover:shadow-xl focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-700 dark:hover:bg-gray-600 sm:w-auto">
+                  <span className="flex items-center">
+                    Start Learning
+                    <ArrowRightIcon className="ml-2 h-6" />
+                  </span>
+                </button>
               </NextLink>
             </div>
           </div>
@@ -101,14 +96,12 @@ export function Features() {
             </p>
             <div className="flex justify-center">
               <NextLink href="/programs">
-                <a>
-                  <button className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-800 hover:shadow-xl focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-700 dark:hover:bg-gray-600 sm:w-auto">
-                    <span className="flex items-center">
-                      <CodeIcon className="mr-2 h-6" />
-                      Start Coding
-                    </span>
-                  </button>
-                </a>
+                <button className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-800 hover:shadow-xl focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-700 dark:hover:bg-gray-600 sm:w-auto">
+                  <span className="flex items-center">
+                    <CodeIcon className="mr-2 h-6" />
+                    Start Coding
+                  </span>
+                </button>
               </NextLink>
             </div>
           </div>
@@ -132,14 +125,12 @@ export function Features() {
             </p>
             <div className="flex justify-center">
               <NextLink href="https://github.com/javaistic/javaistic" target="_blank">
-                <a>
-                  <button className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-800 hover:shadow-xl focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-700 dark:hover:bg-gray-600 sm:w-auto">
-                    <span className="flex items-center">
-                      View on GitHub
-                      <ExternalLinkIcon className="ml-2 h-6" />
-                    </span>
-                  </button>
-                </a>
+                <button className="focus:outline-none w-full flex-none rounded-lg border border-transparent bg-gray-900 py-3 px-6 text-lg font-semibold leading-6 text-white shadow-md transition-colors duration-200 hover:bg-gray-800 hover:shadow-xl focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-white dark:bg-gray-700 dark:hover:bg-gray-600 sm:w-auto">
+                  <span className="flex items-center">
+                    View on GitHub
+                    <ExternalLinkIcon className="ml-2 h-6" />
+                  </span>
+                </button>
               </NextLink>
             </div>
           </div>

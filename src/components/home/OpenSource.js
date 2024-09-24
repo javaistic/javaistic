@@ -10,7 +10,6 @@ const GitHubImage = () => {
       src={require('@/img/home/open-source-on-github.svg').default}
       width={613}
       height={521}
-      layout="responsive"
       blurDataURL={require('@/img/home/open-source-on-github.svg').default}
       placeholder="blur"
       loading="lazy"

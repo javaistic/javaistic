@@ -129,7 +129,6 @@ function Testimonial({ testimonial, base, index, total }) {
               width={416}
               height={416}
               quality={100}
-              layout="intrinsic"
               blurDataURL={testimonial.author.avatar}
               placeholder="blur"
               loading="lazy"
