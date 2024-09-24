@@ -62,7 +62,7 @@
     "simple-functional-loader": "^1.2.1",
     "tailwindcss": "^2.2.19",
     "tinytime": "^0.2.6",
-    "unist-util-visit": "^2.0.3"
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
