@@ -342,7 +342,8 @@
 }
 
 .DocSearch-Logo svg {
-  @apply text-[#5468ff] dark:text-blue-400;
+  color: #5468ff;
+  @apply dark:text-blue-400;
   margin-left: 0.5rem;
 }
 
