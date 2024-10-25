@@ -21,5 +21,6 @@ export const programsNav = {
     pages['calculate-power-of-a-number'],
     pages['calculate-compound-interest'],
     pages['factorial-in-java'],
+    pages['java-program-to-find-nth-fibonacci-number'],
   ],
 }
