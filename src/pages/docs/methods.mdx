@@ -1,0 +1,172 @@
+---
+title: Java Methods
+description: In this tutorial, we will learn how to implements methods or functions in Java.
+---
+
+## What is a method in Java?
+
+In Java, a method is a collection of statements designed to perform specific tasks and, optionally, return a result to the caller. A Java method can also execute a task without returning any value. Methods enable code reuse by eliminating the need to retype code. Importantly, in Java, every method must belong to a class.
+
+### Types of Methods in Java
+
+- `User-defined Methods`: Custom methods created by the programmer based on specific requirements.
+- `Standard Library Methods`: Built-in methods provided by Java, ready for immediate use.
+
+### Declaring a Java Method
+
+The basic syntax for a method declaration is:
+
+```java
+returnType methodName() {
+  // method body
+}
+```
+1. **returnType:** Specifies the type of value returned by the method. If it doesn’t return a value, the return type is void.
+2. **methodName:** The identifier used to call the method.
+3. **method body:** Code inside `{ }` that defines the task to be performed.
+
+#### Example 1:
+
+```java
+int addNumbers() {
+  // code
+}
+```
+In this example, `addNumbers()` is the method name, and its return type is `int`.
+
+#### For a more detailed declaration:
+
+```java
+modifier static returnType methodName(parameter1, parameter2, ...) {
+  // method body
+}
+```
+1. **modifier:** Defines access type (e.g., public, private).
+2. **static:** If included, the method can be called without creating an object.
+3. **parameter1, parameter2, ...parameterN:** Values passed to the method.
+
+#### Example 2:
+The `sqrt()` method in the Math class is static, so it can be accessed as `Math.sqrt()` without creating an instance of Math.
+
+### Calling a Method in Java
+To use a method, call it by name followed by parentheses.
+
+#### Java Method Call Example
+
+```java
+class Main {
+  public int addNumbers(int a, int b) {
+    return a + b;
+  }
+
+  public static void main(String[] args) {
+    int num1 = 25, num2 = 15;
+    Main obj = new Main(); // Create object of Main class
+    int result = obj.addNumbers(num1, num2);
+    System.out.println("Sum is: " + result);
+  }
+}
+```
+
+#### Output
+
+```bash
+Sum is: 40
+```
+
+Here, the `addNumbers()` method takes two parameters and returns their sum. Since it's not static, it requires an object to be called.
+
+### Method Return Types
+A method may or may not return a value. The return statement is used to return a value.
+
+#### Example 1: Method returns integer value
+
+```java
+public static int square(int num) {
+  return num * num;
+}
+```
+
+#### Example 2: Method does not return any value
+
+```java
+// void keyword is used as function does not return any value
+public void printSquare(int num) {
+  System.out.println(num * num);
+}
+```
+
+### Method Parameters
+Methods can accept parameters, which are values passed to the method.
+
+#### Examples
+- **With Parameters:** `int addNumbers(int a, int b)`
+- **Without Parameters:** `int addNumbers()`
+
+When calling a method with parameters, you must provide values for each parameter.
+
+#### Example of Method Parameters
+```java
+class Main {
+  public void display1() {
+    System.out.println("Method without parameter");
+  }
+
+  public void display2(int a) {
+    System.out.println("Method with a single parameter: " + a);
+  }
+
+  public static void main(String[] args) {
+    Main obj = new Main();
+    obj.display1();          // No parameters
+    obj.display2(24);        // Single parameter
+  }
+}
+```
+#### Output
+
+```bash
+Method without parameter
+Method with a single parameter: 24
+```
+**Note:** Java requires that argument types match the parameter types.
+
+### Standard Library Methods
+Java includes built-in methods available in the Java Class Library (JCL), which comes with the JVM and JRE.
+
+#### Example
+```java
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("Square root of 4 is: " + Math.sqrt(4));
+  }
+}
+```
+#### Output
+```bash
+Square root of 4 is: 2.0
+```
+
+### Advantages of Using Methods
+**Code Reusability:** Define once, use multiple times.
+ ```java
+private static int getSquare(int x) {
+  return x * x;
+}
+public static void main(String[] args) {
+  for (int i = 1; i <= 5; i++) {
+    System.out.println("Square of " + i + " is: " + getSquare(i));
+  }
+}
+```
+#### Output:
+
+```bash
+Square of 1 is: 1
+Square of 2 is: 4
+Square of 3 is: 9
+Square of 4 is: 16
+Square of 5 is: 25
+```
+
+**Improved Readability:** Grouping code into methods makes it easier to read and debug.
