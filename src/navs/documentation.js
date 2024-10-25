@@ -27,6 +27,6 @@ export const documentationNav = {
     pages['break-statement'],
     pages['continue-statement'],
   ],
-  'Java Arrays': [pages['arrays']],
+  'Java Arrays': [pages['arrays'], pages['multidimensional-arrays']],
   'Java OOPS': [pages['static-keyword']],
 }
