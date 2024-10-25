@@ -23,6 +23,9 @@ https://javaistic.vercel.app/docs/while-and-do-while-loop
 https://javaistic.vercel.app/docs/break-statement
 https://javaistic.vercel.app/docs/continue-statement
 https://javaistic.vercel.app/docs/arrays
+https://javaistic.vercel.app/docs/multidimensional-arrays
+https://javaistic.vercel.app/docs/class-objects
+https://javaistic.vercel.app/docs/static-keyword
 https://javaistic.vercel.app/programs/print-an-integer
 https://javaistic.vercel.app/programs/add-two-integers
 https://javaistic.vercel.app/programs/check-even-or-odd
@@ -36,3 +39,4 @@ https://javaistic.vercel.app/programs/find-quotient-and-reminder
 https://javaistic.vercel.app/programs/calculate-power-of-a-number
 https://javaistic.vercel.app/programs/calculate-compound-interest
 https://javaistic.vercel.app/programs/factorial-in-java
+https://javaistic.vercel.app/programs/java-program-to-find-nth-fibonacci-number
