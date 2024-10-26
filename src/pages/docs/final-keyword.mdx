@@ -1,0 +1,103 @@
+---
+title: Java final keyword
+description: In this tutorial, we will learn how to use the Java `final` keyword.
+---
+
+In Java, the `final` keyword is used to define constants and can be applied to variables, methods, and classes. Declaring an entity as `final` ensures it is only assigned once, meaning:
+
+- A `final` variable cannot be reassigned.
+- A `final` method cannot be overridden.
+- A `final` class cannot be subclassed.
+
+## 1. final Variable in Java
+
+A `final` variable cannot have its value changed once it has been assigned. For instance:
+
+```java
+class Main {
+  public static void main(String[] args) {
+
+    // create a final variable
+    final int AGE = 32;
+
+    // attempt to change the final variable
+    AGE = 45;
+    System.out.println("Age: " + AGE);
+  }
+}
+```
+
+In this example, the variable `AGE` is marked `final`, meaning its value cannot be changed after its initial assignment. Attempting to reassign it will result in a compilation error:
+
+```plaintext
+cannot assign a value to final variable AGE
+    AGE = 45;
+    ^
+```
+
+> **Note:** By convention, `final` variables in Java are typically written in uppercase.
+
+## 2. final Method in Java
+A `final` method cannot be overridden by subclasses. For example:
+
+```java
+class FinalDemo {
+    // define a final method
+    public final void display() {
+      System.out.println("This is a final method.");
+    }
+}
+
+class Main extends FinalDemo {
+  // attempt to override the final method
+  public final void display() {
+    System.out.println("The final method is overridden.");
+  }
+
+  public static void main(String[] args) {
+    Main obj = new Main();
+    obj.display();
+  }
+}
+```
+
+Here, the `display()` method in the `FinalDemo` class is `final`, so it cannot be overridden in the `Main` class. Attempting to do so will generate a compilation error:
+
+```plaintext
+display() in Main cannot override display() in FinalDemo
+  public final void display() {
+                    ^
+  overridden method is final
+```
+
+## 3. final Class in Java
+A `final` class cannot be extended by any other class. For example:
+
+```java
+// define a final class
+final class FinalClass {
+  public void display() {
+    System.out.println("This is a final method.");
+  }
+}
+
+// attempt to extend the final class
+class Main extends FinalClass {
+  public void display() {
+    System.out.println("The final method is overridden.");
+  }
+
+  public static void main(String[] args) {
+    Main obj = new Main();
+    obj.display();
+  }
+}
+```
+
+In this example, `FinalClass` is declared `final`, so it cannot be subclassed by `Main`. Attempting to inherit from it will result in a compilation error:
+
+```plaintext
+cannot inherit from final FinalClass
+class Main extends FinalClass {
+                   ^
+```
