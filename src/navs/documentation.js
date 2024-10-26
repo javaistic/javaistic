@@ -34,6 +34,7 @@ export const documentationNav = {
     pages['method-overloading'],
     pages['constructors'],
     pages['static-keyword'],
-    pages['this-keyword']
+    pages['this-keyword'],
+    pages['final-keyword']
   ],
 }
