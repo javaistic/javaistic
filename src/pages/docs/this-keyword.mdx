@@ -1,0 +1,176 @@
+---
+title: Java this keyword
+description: In this tutorial, we will learn the use of 'this' keyword in Java.
+---
+
+## What is 'this' keyword in Java?
+In Java, the `this` keyword is used within a class to refer to the current instance (object) of that class. It’s commonly used in methods or constructors to reference the current object’s properties or to call other constructors within the same class.
+
+### Example
+```java
+class Main {
+    int instVar;
+
+    Main(int instVar) {
+        this.instVar = instVar;
+        System.out.println("this reference = " + this);
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main(8);
+        System.out.println("object reference = " + obj);
+    }
+}
+```
+### Output
+```bash
+this reference = Main@23fc625e
+object reference = Main@23fc625e
+```
+In this example, `this` refers to the `obj` instance of Main. Both `this` and `obj` share the same memory reference, indicating that this represents the current object.
+
+## Common Uses of the this Keyword
+
+### 1. Resolving Variable Name Conflicts
+
+When instance variables and parameters have the same name, using `this` helps to avoid ambiguity:
+
+```java
+class MyClass {
+    int age;
+
+    MyClass(int age) {
+        this.age = age; // Uses `this` to differentiate instance variable from parameter
+    }
+}
+```
+Without `this`:
+
+```java
+class Main {
+    int age;
+    Main(int age) {
+        age = age; // No `this`, so no assignment to the instance variable
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main(8);
+        System.out.println("obj.age = " + obj.age); // Output: obj.age = 0
+    }
+}
+```
+### 2. Using this with Getters and Setters
+
+`this` is often used in setter methods to differentiate between instance variables and parameters:
+
+```java
+class Main {
+    String name;
+
+    void setName(String name) {
+        this.name = name;
+    }
+
+    String getName() {
+        return this.name;
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main();
+        obj.setName("Toshiba");
+        System.out.println("obj.name: " + obj.getName());
+    }
+}
+```
+### Output
+```bash
+obj.name: Toshiba
+```
+
+### 3. Constructor Overloading with this()
+In constructor overloading, `this()` can be used to call another constructor within the same class, reducing code duplication:
+
+```java
+class Complex {
+    private int a, b;
+
+    // Constructor with two parameters
+    Complex(int i, int j) {
+        this.a = i;
+        this.b = j;
+    }
+
+    // Single parameter constructor calls two-parameter constructor
+    Complex(int i) {
+        this(i, i);
+    }
+
+    // No-argument constructor calls single-parameter constructor
+    Complex() {
+        this(0);
+    }
+
+    @Override
+    public String toString() {
+        return this.a + " + " + this.b + "i";
+    }
+
+    public static void main(String[] args) {
+        Complex c1 = new Complex(2, 3);
+        Complex c2 = new Complex(3);
+        Complex c3 = new Complex();
+
+        System.out.println(c1); // Output: 2 + 3i
+        System.out.println(c2); // Output: 3 + 3i
+        System.out.println(c3); // Output: 0 + 0i
+    }
+}
+```
+Here, `this()` helps to manage multiple constructors, improving readability and reducing code duplication. However, it should be used carefully, as excessive use can slow down the program.
+
+### 4. Passing this as an Argument
+You can use `this` to pass the current object as an argument to other methods:
+
+```java
+class ThisExample {
+    int x;
+    int y;
+
+    ThisExample(int x, int y) {
+        this.x = x;
+        this.y = y;
+
+        System.out.println("Before passing this:");
+        System.out.println("x = " + this.x + ", y = " + this.y);
+
+        add(this);
+
+        System.out.println("After passing this:");
+        System.out.println("x = " + this.x + ", y = " + this.y);
+    }
+
+    void add(ThisExample obj) {
+        obj.x += 2;
+        obj.y += 2;
+    }
+
+    public static void main(String[] args) {
+        ThisExample obj = new ThisExample(1, -2);
+    }
+}
+```
+### Output
+
+```bash
+Before passing this:
+x = 1, y = -2
+After passing this:
+x = 3, y = 0
+```
+In this example, `this` allows the `add()` method to modify the current instance variables directly.
+
+## Key Points
+- **Variable Disambiguation:** `this` resolves conflicts when instance variables and parameters share the same name.
+- **Getters and Setters:** `this` is often used in setters to distinguish instance variables.
+- **Constructor Overloading:** `this()` can call other constructors within the same class, helping to reduce code redundancy.
+- **Passing Current Object:** `this` allows you to pass the current object as a method argument, enabling modifications on the current instance.
