@@ -86,12 +86,17 @@ Please review our [Code of Conduct](CODE_OF_CONDUCT.md) for all community intera
 
 - Arghya Ghosh [(@uiuxarghya)](https://twitter.com/uiuxarghya)
 
+## Contributors
+
+[![](https://contrib.rocks/image?repo=javaistic/javaistic)](https://github.com/javaistic/javaistic/graphs/contributors)
+
 ## 💖 Acknowledgements
 
 Special thanks to the following companies for their support in building Javaistic:
 
 [![Powered by Vercel](.github/img/powered-by-vercel.svg)](https://vercel.com/?utm_source=javaistic&utm_campaign=oss)
 [![Search by Algolia](.github/img/search-by-algolia.svg)](https://algolia.com/?utm_source=javaistic&utm_campaign=oss)
+[![JetBrains](.github/img/jetbrains.svg)](https://jetbrains.com/?utm_source=javaistic&utm_campaign=oss)
 [![Forms by Formspree](.github/img/forms-by-formspree.svg)](https://formspree.io/?utm_source=javaistic&utm_campaign=oss)
 
 **Made with ❤️ in India.**
