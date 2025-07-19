@@ -1,0 +1,59 @@
+---
+title: Java break Statement
+description: In this tutorial, we will learn how to use the Java break statement to terminate a loop or switch statement.
+---
+
+While working with loops, it is sometimes desirable to skip some statements inside the loop or terminate the loop immediately without checking the test expression.
+
+In such cases, `break` and `continue` statements are used. You will learn about the Java continue statement in the next tutorial.
+
+The break statement in Java terminates the loop immediately, and the control of the program moves to the next statement following the loop.
+
+It is almost always used with decision-making statements (Java if...else Statement).
+
+Here is the syntax of the break statement in Java:
+
+```java
+break;
+```
+
+## Example 1: Java break statement
+
+Java while loop is used to run a specific code until a certain condition is met. The syntax of the while loop is:
+
+```java
+class Test {
+    public static void main(String[] args) {
+
+        // for loop
+        for (int i = 1; i <= 10; ++i) {
+
+            // if the value of i is 5 the loop terminates
+            if (i == 5) {
+                break;
+            }
+            System.out.println(i);
+        }
+    }
+}
+```
+#### Output
+
+```plaintext
+1
+2
+3
+4
+```
+
+In the above program, we are using the `for` loop to print the value of i in each iteration. To know how for loop works, visit the Java `for` loop. Here, notice the statement,
+
+```java
+if (i == 5) {
+    break;
+}
+```
+This means when the value of `i` is equal to 5, the loop terminates. Hence we get the output with values less than 5 only.
+
+
+
