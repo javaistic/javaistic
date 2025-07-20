@@ -1,0 +1,34 @@
+{
+  "title": "Java Programs",
+  "description": "Collection of basic Java programs categorized by topic.",
+  "root": true,
+  "pages": [
+    "index",
+    "contents",
+    "---Basic I/O Programs---",
+    "print-an-integer",
+    "add-two-integers",
+    "multiply-two-numbers",
+
+    "---Mathematical Calculations---",
+    "calculate-simple-interest",
+    "calculate-compound-interest",
+    "calculate-power-of-a-number",
+
+    "---Conditional Checks---",
+    "check-even-or-odd",
+    "java-program-to-check-divisibility",
+    "java-program-to-check-Leap-year",
+
+    "---Loops & Recursion---",
+    "factorial-in-java",
+    "java-program-to-find-nth-fibonacci-number",
+
+    "---Division Logic---",
+    "find-quotient-and-reminder",
+
+    "---Binary & Complex Operations---",
+    "java-program-to-add-two-binary-numbers",
+    "java-program-to-add-two-complex-numbers"
+  ]
+}
