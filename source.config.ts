@@ -16,6 +16,16 @@ export const docs = defineDocs({
   },
 });
 
+export const programs = defineDocs({
+  dir: "content/programs",
+  docs: {
+    schema: frontmatterSchema,
+  },
+  meta: {
+    schema: metaSchema,
+  },
+});
+
 export default defineConfig({
   mdxOptions: {
     // MDX options

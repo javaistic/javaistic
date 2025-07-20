@@ -1,0 +1,49 @@
+---
+title: Java Program to Calculate Factorial of a number
+shotTitle: Calculate Simple Factorial
+description: In this program, you'll learn to calculate the factorial and display final value on screen/terminal
+---
+
+To understand this example, you should have the knowledge of the following Java programming topics:
+
+- [Java Loops](/docs/for-loop)
+- [Java Basic Input and Output](/docs/basic-input-output)
+
+## Calculate Factorial
+
+A java program that calculate the factorial of a number by getting user input of the number.
+
+```java
+import java.util.Scanner;
+class FactorialExample{
+ public static void main(String args[]){
+    Scanner in = new Scanner(System.in);
+  int i,fact=1;
+  int number = in.nextInt();
+  for(i=1;i<=number;i++){
+      fact=fact*i;
+  }
+  System.out.println("Factorial of "+number+" is: "+fact);
+ }
+}
+```
+
+#### Output
+
+```plaintext
+Enter the number : 5
+The factorial of 5 is : 120.
+```
+
+To Calculate Factorial ,
+`Factorial(5) = (5*4*3*2*1)`
+
+
+
+<Callout>
+
+Don't know how to take input from the user ? Look at [this examples](/docs/basic-input-output#java-input)
+
+Here two input numbers are taken from user one after another with space in between them which distinguish between two different inputs, this useful behavior is because of the default settings of Scanner called as Delimiter, [learn more here](https://www.javatpoint.com/post/java-scanner-delimiter-method).
+
+</Callout>
