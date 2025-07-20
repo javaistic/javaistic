@@ -1,4 +1,4 @@
-import { docs } from "@/.source";
+import { docs, programs } from "@/.source";
 import { loader } from "fumadocs-core/source";
 import { icons } from "lucide-react";
 import { createElement } from "react";
@@ -15,4 +15,9 @@ export const source = loader({
     }
     if (icon in icons) return createElement(icons[icon as keyof typeof icons]);
   },
+});
+
+export const programsSource = loader({
+  baseUrl: "/programs",
+  source: programs.toFumadocsSource(),
 });
