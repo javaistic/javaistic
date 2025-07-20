@@ -1,0 +1,128 @@
+---
+title: Java Expressions, Statements and Blocks
+description:  In this tutorial, you will learn about Java expressions, Java statements, difference between expression and statement, and Java blocks with the help of examples.
+---
+
+In previous chapters, we have used expressions, statements, and blocks without much explaining about them. Now that you know about variables, operators, and literals, it will be easier to understand these concepts.
+
+## Java Expressions
+
+A Java expression consists of variables, operators, literals, and method calls. To know more about method calls, visit Java methods. For example,
+
+```java
+int score;
+score = 90;
+```
+Here, `score = 90` is an expression that returns an `int`. Consider another example,
+
+```java
+Double a = 2.2, b = 3.4, result;
+result = a + b - 3.4;
+```
+Here, `a + b - 3.4` is an expression.
+
+```java
+if (number1 == number2)
+System.out.println("Number 1 is larger than number 2");
+```
+Here, `number1 == number2` is an expression that returns a boolean value. Similarly, `"Number 1 is larger than number 2"` is a string expression.
+
+## Java Statements
+
+In Java, each statement is a complete unit of execution. For example,
+
+```java
+int score = 9*5;
+```
+Here, we have a statement. The complete execution of this statement involves multiplying integers `9` and `5` and then assigning the result to the variable `score`.
+
+In the above statement, we have an expression `9 * 5`. In Java, expressions are part of statements.
+
+### Expression statements
+
+We can convert an expression into a statement by terminating the expression with a `;`. These are known as expression statements. For example,
+
+```java
+// expression
+number = 10
+// statement
+number = 10;
+```
+In the above example, we have an expression `number = 10`. Here, by adding a semicolon (`;`), we have converted the expression into a statement (`number = 10;`).
+
+Consider another example,
+
+```java
+// expression
+++number
+// statement
+++number;
+```
+
+Similarly, `++number` is an expression whereas `++number;` is a statement.
+
+### Declaration Statements
+
+In Java, declaration statements are used for declaring variables. For example,
+
+```java
+Double tax = 9.5;
+```
+The statement above declares a variable tax which is initialized to 9.5.
+<Callout>
+
+**Note:** There are control flow statements that are used in decision making and looping in Java. You will learn about control flow statements in later chapters.
+
+</Callout>
+
+## Java Blocks
+
+A block is a group of statements (zero or more) that is enclosed in curly braces { }. For example,
+
+```java
+class Main {
+    public static void main(String[] args) {
+
+        String band = "Beatles";
+
+        if (band == "Beatles") { // start of block
+            System.out.print("Hey ");
+            System.out.print("Jude!");
+        } // end of block
+    }
+}
+```
+Output:
+
+```plaintext
+Hey Jude!
+```
+In the above example, we have a block `if {....}`.
+
+Here, inside the block we have two statements:
+
+- `System.out.print("Hey ");`
+- `System.out.print("Jude!");`
+
+However, a block may not have any statements. Consider the following examples,
+
+```java
+class Main {
+    public static void main(String[] args) {
+
+        if (10 > 5) { // start of block
+
+        } // end of block
+    }
+}
+```
+This is a valid Java program. Here, we have a block `if {...}`. However, there is no any statement inside this block.
+
+```java
+class AssignmentOperator {
+    public static void main(String[] args) {  // start of block
+
+    } // end of block
+}
+```
+Here, we have block `public static void main() {...}`. However, similar to the above example, this block does not have any statement.
