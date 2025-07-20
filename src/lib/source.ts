@@ -20,4 +20,11 @@ export const source = loader({
 export const programsSource = loader({
   baseUrl: "/programs",
   source: programs.toFumadocsSource(),
+  icon(icon) {
+    if (!icon) {
+      // You may set a default icon
+      return;
+    }
+    if (icon in icons) return createElement(icons[icon as keyof typeof icons]);
+  },
 });
