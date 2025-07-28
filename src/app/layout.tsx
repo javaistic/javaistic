@@ -17,11 +17,12 @@ const funnelDisplay = Funnel_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://javaistic.vercel.app"),
   title: "Javaistic - Learn Java for Free",
   description:
     "Javaistic is a free platform to learn Java programming language with interactive tutorials and resources.",
   openGraph: {
-    images: "/og.png",
+    images: "https://javaistic.vercel.app/og.png",
   },
 };
 
