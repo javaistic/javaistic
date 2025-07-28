@@ -1,4 +1,3 @@
-import SearchDialog from "@/components/search";
 import { RootProvider } from "fumadocs-ui/provider";
 import type { Metadata } from "next";
 import { Funnel_Display, Inter } from "next/font/google";
@@ -32,7 +31,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <body
         className={`${inter.variable} ${funnelDisplay.variable} font-sans antialiased`}
       >
-        <RootProvider search={{ SearchDialog }}>{children}</RootProvider>
+        <RootProvider>{children}</RootProvider>
       </body>
     </html>
   );
