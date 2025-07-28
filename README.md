@@ -50,27 +50,27 @@ To develop locally, follow these steps:
 
 1. **Clone this repo:**
 
-    ```sh
-    git clone https://github.com/javaistic/javaistic.git
-    ```
+   ```sh
+   git clone https://github.com/javaistic/javaistic.git
+   ```
 
 2. **Navigate to the project root directory:**
 
-    ```sh
-    cd javaistic
-    ```
+   ```sh
+   cd javaistic
+   ```
 
-3. **Install JS dependencies:**
+3. **Install dependencies:**
 
-    ```sh
-    yarn
-    ```
+   ```sh
+   bun i
+   ```
 
 4. **Start the development server:**
 
-    ```sh
-    yarn dev
-    ```
+   ```sh
+   bun run dev
+   ```
 
 ## 🤝 Community
 
@@ -98,5 +98,13 @@ Special thanks to the following companies for their support in building Javaisti
 [![Search by Algolia](.github/img/search-by-algolia.svg)](https://algolia.com/?utm_source=javaistic&utm_campaign=oss)
 [![JetBrains](.github/img/jetbrains.svg)](https://jetbrains.com/?utm_source=javaistic&utm_campaign=oss)
 [![Forms by Formspree](.github/img/forms-by-formspree.svg)](https://formspree.io/?utm_source=javaistic&utm_campaign=oss)
+
+## 📝 License
+
+This work is licensed under the
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)
+
+Copyright © 2025 [Arghya Ghosh](https://github.com/uiuxarghya)
 
 **Made with ❤️ in India.**
