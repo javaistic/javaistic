@@ -90,6 +90,14 @@ Please review our [Code of Conduct](CODE_OF_CONDUCT.md) for all community intera
 
 [![](https://contrib.rocks/image?repo=javaistic/javaistic)](https://github.com/javaistic/javaistic/graphs/contributors)
 
+## 📝 License
+
+This project uses a **dual license**.
+Please refer to the main [`LICENSE.md`](./LICENSE.md) file for complete details.
+
+- Code is licensed under the **GNU AGPL v3**.
+- Documentation and content are licensed under the **CC BY-NC-SA 4.0**.
+
 ## 💖 Acknowledgements
 
 Special thanks to the following companies for their support in building Javaistic:
@@ -99,12 +107,4 @@ Special thanks to the following companies for their support in building Javaisti
 [![JetBrains](.github/img/jetbrains.svg)](https://jetbrains.com/?utm_source=javaistic&utm_campaign=oss)
 [![Forms by Formspree](.github/img/forms-by-formspree.svg)](https://formspree.io/?utm_source=javaistic&utm_campaign=oss)
 
-## 📝 License
-
-This work is licensed under the
-[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
-![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)
-
-Copyright © 2025 [Arghya Ghosh](https://github.com/uiuxarghya)
-
-**Made with ❤️ in India.**
+**Made with ❤️ in India by [Arghya Ghosh](https://github.com/uiuxarghya)**
