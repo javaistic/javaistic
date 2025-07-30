@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { RootProvider } from "fumadocs-ui/provider";
 import type { Metadata } from "next";
 import { Funnel_Display, Inter } from "next/font/google";
@@ -33,6 +34,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       >
         <RootProvider>{children}</RootProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS!} />
     </html>
   );
 }
