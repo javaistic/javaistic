@@ -58,7 +58,7 @@ export default function HomePage() {
 
         {/* Section: Docs */}
         <article className="mx-auto mb-10 sm:space-x-10 flex flex-col items-center py-10 sm:flex-row">
-          <div className="w-full sm:w-1/2">
+          <div className="w-full sm:w-1/2 transition-transform duration-300 hover:-translate-y-2 hover:scale-105">
             <Image
               src="/img/home/docs.svg"
               alt="Javaistic Docs"
@@ -111,7 +111,7 @@ export default function HomePage() {
               </Button>
             </Link>
           </div>
-          <div className="w-full sm:w-1/2">
+          <div className="w-full sm:w-1/2 transition-transform duration-300 hover:-translate-y-2 hover:scale-105">
             <Image
               src="/img/home/programs.svg"
               alt="Javaistic Programs"
@@ -127,7 +127,7 @@ export default function HomePage() {
 
         {/* Section: GitHub */}
         <article className="flex flex-col sm:flex-row items-center py-14 space-y-10 sm:space-y-0 sm:space-x-10">
-          <div className="w-full sm:w-1/2">
+          <div className="w-full sm:w-1/2 transition-transform duration-300 hover:-translate-y-2 hover:scale-105">
             <Image
               src="/img/home/open-source.svg"
               alt="Javaistic GitHub"
