@@ -25,6 +25,7 @@ switch (expression) {
     // default statements
   }
 ```
+
 ## How does the switch-case statement work?
 
 The `expression` is evaluated once and compared with the values of each case.
@@ -81,11 +82,13 @@ class Main {
   }
 }
 ```
+
 #### Output:
 
 ```plaintext
 Size: Large
 ```
+
 In the above example, we have used the switch statement to find the size. Here, we have a variable `number`. The variable is compared with the value of each case statement.
 
 Since the value matches with **44**, the code of `case 44` is executed.
@@ -94,8 +97,8 @@ Since the value matches with **44**, the code of `case 44` is executed.
 size = "Large";
 break;
 ```
-Here, the `size` variable is assigned with the value `Large`.
 
+Here, the `size` variable is assigned with the value `Large`.
 
 ## Flowchart of switch Statement
 
@@ -103,7 +106,9 @@ Here, the `size` variable is assigned with the value `Large`.
 
 ![Working of Java if statement](/img/docs/switch-case-flowchart.svg)
 
-<p align="center" className="text-base text-gray-600 font-medium">Flow chart of the Java switch statement</p>
+<p align="center" className="text-base font-medium text-gray-600">
+  Flow chart of the Java switch statement
+</p>
 
 </div>
 
@@ -118,6 +123,7 @@ case 29:
   break;
 ...
 ```
+
 The `break` statement is used to terminate the **switch-case** statement. If `break` is not used, all the cases after the matching case are also executed. For example,
 
 #### Input
@@ -154,6 +160,7 @@ Case 2
 Case 3
 Default case
 ```
+
 In the above example, `expression` matches with `case 2`. Here, we haven't used the break statement after each case.
 
 Hence, all the cases after `case 2` are also executed.
@@ -189,6 +196,7 @@ class Main {
   }
 }
 ```
+
 #### Output
 
 ```plaintext
@@ -203,17 +211,33 @@ Hence, the code inside the **default case** is executed.
 default:
   System.out.println("Unknown Size);
 ```
-<br/>
+
+<br />
 
 <Callout>
 
 **Note:** The Java switch statement only works with:
 
 <ul>
-<li> <a href="/docs/variables-primitive-data-types"><b>Primitive data types:</b></a> byte, short, char, and int </li>
-<li> <b>Enumerated types</b> </li>
-<li> <b>String Class</b> </li>
-<li> <b>Wrapper Classes:</b> Character, Byte, Short, and Integer.</li>
+  <li>
+    {" "}
+    <a href="/docs/variables-primitive-data-types">
+      <b>Primitive data types:</b>
+    </a>{" "}
+    byte, short, char, and int{" "}
+  </li>
+  <li>
+    {" "}
+    <b>Enumerated types</b>{" "}
+  </li>
+  <li>
+    {" "}
+    <b>String Class</b>{" "}
+  </li>
+  <li>
+    {" "}
+    <b>Wrapper Classes:</b> Character, Byte, Short, and Integer.
+  </li>
 </ul>
 
 </Callout>

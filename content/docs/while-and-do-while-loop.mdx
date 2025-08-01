@@ -7,7 +7,6 @@ In computer programming, loops are used to repeat a block of code. For example, 
 
 In the previous tutorial, you learned about [Java for loop](./for-loop). Here, you are going to learn about `while` and `do...while` loops.
 
-
 ## Java while loop
 
 Java while loop is used to run a specific code until a certain condition is met. The syntax of the while loop is:
@@ -17,6 +16,7 @@ while (testExpression) {
     // body of loop
 }
 ```
+
 Here,
 
 1. A `while` loop evaluates the **textExpression** inside the parenthesis `()`.
@@ -30,7 +30,8 @@ To learn more about the conditions, visit [Java relational](./operators#3-java-r
 ---
 
 ## Flowchart of while loop
-<img src="https://picsum.photos/600x400" alt="Flowchart of Java while loop"/>
+
+<img src="https://picsum.photos/600x400" alt="Flowchart of Java while loop" />
 
 ---
 
@@ -54,7 +55,6 @@ class Main {
 }
 ```
 
-
 #### Output
 
 ```plaintext
@@ -67,14 +67,14 @@ class Main {
 
 Here is how this program works.
 
-| Iteration | Variable          | Condition: i `<=` n | Action                                     |
-|-----------|-------------------|-------------------|--------------------------------------------|
-| 1st       | `i = 1` `n = 5`   | `true`            | `1` is printed. `i` is increased to **2**. |
-| 2nd       | `i = 2` `n = 5 `  | `true`            | `2` is printed. `i` is increased to **3**. |
-| 3rd       | `i = 3` ` n = 5 ` | `true`            | `3` is printed.`i` is increased to **4**.  |
-| 4th       | `i = 4` ` n = 5 ` | `true`            | `4` is printed. `i` is increased to **5**. |
-| 5th       | `i = 5` ` n = 5`  | `true`            | `5` is printed. `i` is increased to **6**. |
-| 6th       | `i = 6` `n = 5`   | `false`           | The loop is terminated                     |
+| Iteration | Variable         | Condition: i `<=` n | Action                                     |
+| --------- | ---------------- | ------------------- | ------------------------------------------ |
+| 1st       | `i = 1` `n = 5`  | `true`              | `1` is printed. `i` is increased to **2**. |
+| 2nd       | `i = 2` `n = 5 ` | `true`              | `2` is printed. `i` is increased to **3**. |
+| 3rd       | `i = 3` `n = 5`  | `true`              | `3` is printed.`i` is increased to **4**.  |
+| 4th       | `i = 4` `n = 5`  | `true`              | `4` is printed. `i` is increased to **5**. |
+| 5th       | `i = 5` ` n = 5` | `true`              | `5` is printed. `i` is increased to **6**. |
+| 6th       | `i = 6` `n = 5`  | `false`             | The loop is terminated                     |
 
 ### Example 2: Sum of Positive Numbers Only
 
@@ -133,11 +133,13 @@ When the user enters a negative number, the loop terminates. Finally, the total 
 ## Java do...while loop
 
 The `do...while` loop is similar to while loop. However, the body of `do...while` loop is executed once before the test expression is checked. For example,
+
 ```java
 do {
     // body of loop
 } while(textExpression);
 ```
+
 Here,
 
 1. The body of the loop is executed at first. Then the **textExpression** is evaluated.
@@ -147,6 +149,7 @@ Here,
 5. This process continues until the **textExpression** evaluates to false. Then the loop stops.
 
 ## Flowchart of do...while loop
+
 {/* ![Flowchart of Java do...while loop](https://picsum.photos/600x400?text=Flowchart+of+Java+do...while+loop) */}
 
 Let's see the working of `do...while` loop.
@@ -175,6 +178,7 @@ class Main {
   }
 }
 ```
+
 #### Output
 
 ```plaintext
@@ -187,14 +191,14 @@ class Main {
 
 Here is how this program works.
 
-| Iteration | Variable          | Condition: i `<=` n | Action                                     |
-|-----------|-------------------|-------------------|--------------------------------------------|
-|           | `i = 1` `n = 5`   | not checked       | `1` is printed. `i` is increased to **2**. |
-| 1st       | `i = 2` `n = 5 `  | `true`            | `2` is printed. `i` is increased to **3**. |
-| 2nd       | `i = 3` ` n = 5 ` | `true`            | `3` is printed.`i` is increased to **4**.  |
-| 3rd       | `i = 4` ` n = 5 ` | `true`            | `4` is printed. `i` is increased to **5**. |
-| 4th       | `i = 5` ` n = 5`  | `true`            | `5` is printed. `i` is increased to **6**. |
-| 5th       | `i = 6` `n = 5`   | `false`           | The loop is terminated                     |
+| Iteration | Variable         | Condition: i `<=` n | Action                                     |
+| --------- | ---------------- | ------------------- | ------------------------------------------ |
+|           | `i = 1` `n = 5`  | not checked         | `1` is printed. `i` is increased to **2**. |
+| 1st       | `i = 2` `n = 5 ` | `true`              | `2` is printed. `i` is increased to **3**. |
+| 2nd       | `i = 3` `n = 5`  | `true`              | `3` is printed.`i` is increased to **4**.  |
+| 3rd       | `i = 4` `n = 5`  | `true`              | `4` is printed. `i` is increased to **5**. |
+| 4th       | `i = 5` ` n = 5` | `true`              | `5` is printed. `i` is increased to **6**. |
+| 5th       | `i = 6` `n = 5`  | `false`             | The loop is terminated                     |
 
 ---
 
@@ -227,6 +231,7 @@ class Main {
   }
 }
 ```
+
 #### Output 1
 
 ```plaintext
@@ -240,6 +245,7 @@ Enter a number
 -3
 Sum = 39
 ```
+
 Here, the user enters a positive number, that number is added to the `sum` variable. And this process continues until the number is negative. When the number is negative, the loop terminates and displays the sum without adding the negative number.
 
 #### Output 2
@@ -249,6 +255,7 @@ Enter a number
 -8
 Sum is 0
 ```
+
 Here, the user enters a negative number. The test condition will be `false` but the code inside of the loop executes once.
 
 ## Infinite while loop
@@ -261,6 +268,7 @@ while(true){
     // body of loop
 }
 ```
+
 ## Infinite do...while loop
 
 Here is an example of an infinite `do...while` loop.
@@ -272,6 +280,7 @@ do {
    // body of loop
 } while(count == 1)
 ```
+
 In the above programs, the **textExpression** is always `true`. Hence, the loop body will run for infinite times.
 
 ---

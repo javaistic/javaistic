@@ -1,11 +1,10 @@
 ---
 title: Java Basic Input and Output
-description:  In this tutorial, you will learn simple ways to display output to users and take input from users in Java.
-
+description: In this tutorial, you will learn simple ways to display output to users and take input from users in Java.
 ---
 
-
 ## Java Output
+
 In Java, you can simply use
 
 ```java
@@ -35,19 +34,23 @@ class AssignmentOperator {
     }
 }
 ```
+
 **Output:**
 
 ```plaintext
 Java programming is interesting.
 ```
+
 Here, we have used the `println()` method to display the string.
 
 ## Difference between println(), print() and printf()
+
 - `print()` - It prints string inside the quotes.
 - `println()` - It prints string inside the quotes similar like `print()` method. Then the cursor moves to the beginning of the next line.
 - `printf()` - It provides string formatting.
 
 ### Example: print() and println()
+
 ```java
 class Output {
     public static void main(String[] args) {
@@ -60,12 +63,15 @@ class Output {
     }
 }
 ```
+
 **Output:**
+
 ```plaintext
 1. println
 2. println
 1. print 2. print
 ```
+
 In the above example, we have shown the working of the `print()` and `println()` methods. To learn about the `printf()` method, visit Java [**printf()**](https://www.cs.colostate.edu/~cs160/.Summer16/resources/Java_printf_method_quick_reference.pdf).
 
 ### Example: Printing Variables and Literals
@@ -81,15 +87,18 @@ class Variables {
     }
 }
 ```
+
 When you run the program, the output will be:
 
 ```plaintext
 5
 -10.6
 ```
+
 Here, you can see that we have not used the quotation marks. It is because to display integers, variables and so on, we don't use quotation marks.
 
 ### Example: Print Concatenated Strings
+
 ```java
 class PrintVariables {
     public static void main(String[] args) {
@@ -101,12 +110,14 @@ class PrintVariables {
     }
 }
 ```
+
 **Output:**
 
 ```java
 I am awesome.
 Number = -10.6
 ```
+
 In the above example, notice the line,
 
 ```java
@@ -120,21 +131,22 @@ And also, the line,
 ```java
 System.out.println("Number = " + number);
 ```
+
 Here, first the value of variable `number` is evaluated. Then, the value is concatenated to the string: `"Number = "`.
 
 ## Java Input
+
 Java provides different ways to get input from the user. However, in this tutorial, you will learn to get input from user using the object of `Scanner` class.
 
 In order to use the object of `Scanner`, we need to import `java.util.Scanner` package.
 
-
 ```java
 import java.util.Scanner;
 ```
+
 To learn more about importing packages in Java, visit [Java Import Packages]().
 
 Then, we need to create an object of the `Scanner` class. We can use the object to take input from the user.
-
 
 ```java
 // create an object of Scanner
@@ -145,6 +157,7 @@ int number = input.nextInt();
 ```
 
 ### Example: Get Integer Input From the User
+
 ```java
 import java.util.Scanner;
 
@@ -162,21 +175,25 @@ class Input {
     }
 }
 ```
+
 **Output:**
 
 ```plaintext
 Enter an integer: 23
 You entered 23
 ```
+
 In the above example, we have created an object named `input` of the `Scanner` class. We then call the `nextInt()` method of the `Scanner` class to get an integer input from the user.
 
 Similarly, we can use `nextLong()`, `nextFloat()`, `nextDouble()`, and `next()` methods to get `long`, `float`, `double`, and `string` input respectively from the user.
 
 <Callout>
-**Note:** We have used the `close()` method to close the object. It is recommended to close the scanner object once the input is taken.
+  **Note:** We have used the `close()` method to close the object. It is
+  recommended to close the scanner object once the input is taken.
 </Callout>
 
 ### Example: Get float, double and String Input
+
 ```java
 import java.util.Scanner;
 
@@ -213,4 +230,5 @@ Double entered = -23.4
 Enter text: Hey!
 Text entered = Hey!
 ```
+
 As mentioned, there are other several ways to get input from the user. To learn more about `Scanner`, visit Java Scanner.

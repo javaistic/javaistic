@@ -3,7 +3,6 @@ title: Java Methods
 description: In this tutorial, we will learn how to implements methods or functions in Java.
 ---
 
-
 ## What is a Method in Java?
 
 In Java, a method is a collection of statements designed to perform specific tasks and, optionally, return a result to the caller. A Java method can also execute a task without returning any value. Methods enable code reuse by eliminating the need to retype code. Importantly, in Java, every method must belong to a class.
@@ -22,6 +21,7 @@ returnType methodName() {
   // method body
 }
 ```
+
 1. **returnType:** Specifies the type of value returned by the method. If it doesn’t return a value, the return type is void.
 2. **methodName:** The identifier used to call the method.
 3. **method body:** Code inside `{ }` that defines the task to be performed.
@@ -33,6 +33,7 @@ int addNumbers() {
   // code
 }
 ```
+
 In this example, `addNumbers()` is the method name, and its return type is `int`.
 
 ### For a more detailed declaration:
@@ -42,14 +43,17 @@ modifier static returnType methodName(parameter1, parameter2, ...) {
   // method body
 }
 ```
+
 1. **modifier:** Defines access type (e.g., public, private).
 2. **static:** If included, the method can be called without creating an object.
 3. **parameter1, parameter2, ...parameterN:** Values passed to the method.
 
 ### Example 2:
+
 The `sqrt()` method in the Math class is static, so it can be accessed as `Math.sqrt()` without creating an instance of Math.
 
 ## Calling a Method in Java
+
 To use a method, call it by name followed by parentheses.
 
 ### Java Method Call Example
@@ -78,6 +82,7 @@ Sum is: 40
 Here, the `addNumbers()` method takes two parameters and returns their sum. Since it's not static, it requires an object to be called.
 
 ## Method Return Types
+
 A method may or may not return a value. The return statement is used to return a value.
 
 ### Example 1: Method returns integer value
@@ -98,15 +103,18 @@ public void printSquare(int num) {
 ```
 
 ## Method Parameters
+
 Methods can accept parameters, which are values passed to the method.
 
 ### Examples
+
 - **With Parameters:** `int addNumbers(int a, int b)`
 - **Without Parameters:** `int addNumbers()`
 
 When calling a method with parameters, you must provide values for each parameter.
 
 ### Example of Method Parameters
+
 ```java
 class Main {
   public void display1() {
@@ -124,6 +132,7 @@ class Main {
   }
 }
 ```
+
 ### Output
 
 ```bash
@@ -133,14 +142,16 @@ Method with a single parameter: 24
 
 <Callout>
 
-**Note:** *Java requires that argument types match the parameter types.*
+**Note:** _Java requires that argument types match the parameter types._
 
 </Callout>
 
 ## Standard Library Methods
+
 Java includes built-in methods available in the Java Class Library (JCL), which comes with the [JVM and JRE](/docs/jvm-jre-jdk).
 
 ### Example
+
 ```java
 public class Main {
   public static void main(String[] args) {
@@ -148,25 +159,30 @@ public class Main {
   }
 }
 ```
+
 ### Output
+
 ```bash
 Square root of 4 is: 2.0
 ```
 
 ## Advantages of Using Methods
+
 ### 1. Code Reusability
+
 Define once, use multiple times.
 
- ```java
+```java
 private static int getSquare(int x) {
-  return x * x;
+ return x * x;
 }
 public static void main(String[] args) {
-  for (int i = 1; i <= 5; i++) {
-    System.out.println("Square of " + i + " is: " + getSquare(i));
-  }
+ for (int i = 1; i <= 5; i++) {
+   System.out.println("Square of " + i + " is: " + getSquare(i));
+ }
 }
 ```
+
 ### Output:
 
 ```bash
@@ -178,4 +194,5 @@ Square of 5 is: 25
 ```
 
 ### 2. Improved Readability
+
 Grouping code into methods makes it easier to read and debug.
