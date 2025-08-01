@@ -4,9 +4,11 @@ description: In this tutorial, we will learn the use of 'this' keyword in Java.
 ---
 
 ## What is 'this' keyword in Java?
+
 In Java, the `this` keyword is used within a class to refer to the current instance (object) of that class. It’s commonly used in methods or constructors to reference the current object’s properties or to call other constructors within the same class.
 
 ### Example
+
 ```java
 class Main {
     int instVar;
@@ -22,11 +24,14 @@ class Main {
     }
 }
 ```
+
 ### Output
+
 ```bash
 this reference = Main@23fc625e
 object reference = Main@23fc625e
 ```
+
 In this example, `this` refers to the `obj` instance of Main. Both `this` and `obj` share the same memory reference, indicating that this represents the current object.
 
 ## Common Uses of the this Keyword
@@ -44,6 +49,7 @@ class MyClass {
     }
 }
 ```
+
 Without `this`:
 
 ```java
@@ -59,6 +65,7 @@ class Main {
     }
 }
 ```
+
 ### 2. Using this with Getters and Setters
 
 `this` is often used in setter methods to differentiate between instance variables and parameters:
@@ -82,12 +89,15 @@ class Main {
     }
 }
 ```
+
 ### Output
+
 ```bash
 obj.name: Toshiba
 ```
 
 ### 3. Constructor Overloading with this()
+
 In constructor overloading, `this()` can be used to call another constructor within the same class, reducing code duplication:
 
 ```java
@@ -126,9 +136,11 @@ class Complex {
     }
 }
 ```
+
 Here, `this()` helps to manage multiple constructors, improving readability and reducing code duplication. However, it should be used carefully, as excessive use can slow down the program.
 
 ### 4. Passing this as an Argument
+
 You can use `this` to pass the current object as an argument to other methods:
 
 ```java
@@ -159,6 +171,7 @@ class ThisExample {
     }
 }
 ```
+
 ### Output
 
 ```bash
@@ -167,9 +180,11 @@ x = 1, y = -2
 After passing this:
 x = 3, y = 0
 ```
+
 In this example, `this` allows the `add()` method to modify the current instance variables directly.
 
 ## Key Points
+
 - **Variable Disambiguation:** `this` resolves conflicts when instance variables and parameters share the same name.
 - **Getters and Setters:** `this` is often used in setters to distinguish instance variables.
 - **Constructor Overloading:** `this()` can call other constructors within the same class, helping to reduce code redundancy.

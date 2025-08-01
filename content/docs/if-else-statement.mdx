@@ -3,7 +3,6 @@ title: Java if...else Statement
 description: In this tutorial, you will learn about control flow statements using Java if and if...else statements with the help of examples.
 ---
 
-
 In programming, we use the `if..else` statement to run a block of code among more than one alternatives.
 
 For example, assigning grades (A, B, C) based on the percentage obtained by a student.
@@ -13,6 +12,7 @@ For example, assigning grades (A, B, C) based on the percentage obtained by a st
 - if the percentage is above **65**, assign grade **C**
 
 ## 1. Java if (if-then) Statement
+
 The syntax of an **if-then** statement is:
 
 ```java
@@ -20,11 +20,11 @@ if (condition) {
   // statements
 }
 ```
+
 Here, `condition` is a boolean expression such as `age >= 18`.
 
 - if `condition` evaluates to `true` , statements are executed
 - if `condition` evaluates to `false` , statements are skipped
-
 
 ## Working of if Statement
 
@@ -32,10 +32,11 @@ Here, `condition` is a boolean expression such as `age >= 18`.
 
 ![Working of Java if statement](/img/docs/wroking-of-java-if-statement.svg)
 
-<p align="center" className="text-base text-gray-600 font-medium">Working of Java if statement</p>
+<p align="center" className="text-base font-medium text-gray-600">
+  Working of Java if statement
+</p>
 
 </div>
-
 
 ### Example 1: Java if Statement
 
@@ -54,6 +55,7 @@ class IfStatement {
   }
 }
 ```
+
 #### Output
 
 ```plaintext
@@ -85,6 +87,7 @@ class Main {
   }
 }
 ```
+
 #### Output
 
 ```plaintext
@@ -94,6 +97,7 @@ Best Programming Language
 In the above example, we are comparing two strings in the `if` block.
 
 ## 2. Java if...else (if-then-else) Statement
+
 The `if` statement executes a certain section of code if the test expression is evaluated to `true`. However, if the test expression is evaluated to `false`, it does nothing.
 
 In this case, we can use an optional `else` block. Statements inside the body of `else` block are executed if the test expression is evaluated to `false`. This is known as the **if-...else** statement in Java.
@@ -108,6 +112,7 @@ else {
   // codes in else block
 }
 ```
+
 Here, the program will do one task (codes inside if block) if the condition is true and another task (codes inside else block) if the condition is false.
 
 ## How the if...else statement works?
@@ -115,10 +120,11 @@ Here, the program will do one task (codes inside if block) if the condition is t
 <div>
 ![Working of Java if statement](/img/docs/wroking-of-if-else-statement.svg)
 
-<p align="center" className="text-base text-gray-600 font-medium">Working of Java if-else statements</p>
+<p align="center" className="text-base font-medium text-gray-600">
+  Working of Java if-else statements
+</p>
 
 </div>
-
 
 ### Example 3: Java if...else Statement
 
@@ -142,12 +148,14 @@ class Main {
   }
 }
 ```
+
 #### Output
 
 ```plaintext
 The number is positive.
 Statement outside if...else block
 ```
+
 In the above example, we have a variable named `number`. Here, the test expression `number > 0` checks if `number` is greater than 0.
 
 Since the value of the `number` is `10`, the test expression evaluates to `true`. Hence code inside the body of `if` is executed.
@@ -157,15 +165,18 @@ Now, change the value of the `number` to a negative integer. Let's say `-5`.
 ```java
 int number = -5;
 ```
+
 If we run the program with the new value of `number`, the output will be:
 
 ```plaintext
 The number is not positive.
 Statement outside if...else block
 ```
+
 Here, the value of number is `-5`. So the test expression evaluates to `false`. Hence code inside the body of `else` is executed.
 
 ## 3. Java if...else...if Statement
+
 In Java, we have an if...else...if ladder, that can be used to execute one block of code among multiple other blocks.
 
 ```java
@@ -184,6 +195,7 @@ else {
   // codes
 }
 ```
+
 Here, `if` statements are executed from the top towards the bottom. When the test condition is `true`, codes inside the body of that `if` block is executed. And, program control jumps outside the **if...else...if** ladder.
 
 If all test expressions are `false`, codes inside the body of `else` are executed.
@@ -224,6 +236,7 @@ class Main {
 ```plaintext
 The number is 0.
 ```
+
 In the above example, we are checking whether `number` is **positive**, **negative**, or **zero**. Here, we have two condition expressions:
 
 - `number > 0` - checks if `number` is greater than `0`.
@@ -281,11 +294,13 @@ class Main {
   }
 }
 ```
+
 #### Output:
 
 ```plaintext
 Largest Number: 4.5
 ```
+
 In the above programs, we have assigned the value of variables ourselves to make this easier.
 
 However, in real-world applications, these values may come from user input data, log files, form submission, etc.

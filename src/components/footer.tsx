@@ -35,11 +35,11 @@ const footerNav = {
 
 export function Footer() {
   return (
-    <footer className="bg-neutral-100 dark:bg-neutral-900 pt-16 pb-10 sm:pt-20 md:pt-24 xl:pt-28">
+    <footer className="bg-neutral-100 pt-16 pb-10 sm:pt-20 md:pt-24 xl:pt-28 dark:bg-neutral-900">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 md:px-8">
         {/* Navigation Links */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 pb-14 sm:pb-20 text-sm font-medium">
-          <div className="flex flex-col items-start col-span-2 sm:col-span-2 gap-y-6">
+        <div className="grid grid-cols-2 gap-8 pb-14 text-sm font-medium sm:grid-cols-2 sm:pb-20 md:grid-cols-3 lg:grid-cols-6">
+          <div className="col-span-2 flex flex-col items-start gap-y-6 sm:col-span-2">
             <Logo className="h-8 w-auto" />
             <p className="text-muted-foreground">
               High quality Java coding education maintained by an open source
@@ -49,34 +49,34 @@ export function Footer() {
               <Link
                 href="https://github.com/javaistic/javaistic"
                 aria-label="GitHub"
-                className="transition-colors duration-200 ease-in-out text-muted-foreground hover:text-[#181717] dark:hover:text-white"
+                className="text-muted-foreground transition-colors duration-200 ease-in-out hover:text-[#181717] dark:hover:text-white"
               >
                 <GitHubIcon className="h-5 w-5" />
               </Link>
               <Link
                 href="/discord"
                 aria-label="Discord"
-                className="transition-colors duration-200 ease-in-out text-muted-foreground hover:text-[#5865F2]"
+                className="text-muted-foreground transition-colors duration-200 ease-in-out hover:text-[#5865F2]"
               >
                 <DiscordIcon className="h-5 w-5" />
               </Link>
               <Link
                 href="https://x.com/javaistic"
                 aria-label="X (formerly Twitter)"
-                className="transition-colors duration-200 ease-in-out text-muted-foreground hover:text-foreground"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-200 ease-in-out"
               >
                 <TwitterIcon className="h-5 w-5" />
               </Link>
               <Link
                 href="https://opencollective.com/javaistic"
                 aria-label="Open Collective"
-                className="transition-colors duration-200 ease-in-out text-muted-foreground hover:text-[#7FADF2]"
+                className="text-muted-foreground transition-colors duration-200 ease-in-out hover:text-[#7FADF2]"
               >
                 <OpenCollectiveIcon className="h-5 w-5" />
               </Link>
             </div>
 
-            <div className="text-sm text-neutral-500 flex items-center space-x-1">
+            <div className="flex items-center space-x-1 text-sm text-neutral-500">
               <span>Made by</span>
               <Link
                 href="https://arghya.dev?ref=javaistic"
@@ -90,7 +90,7 @@ export function Footer() {
           </div>
           {Object.entries(footerNav).map(([section, items]) => (
             <div key={section}>
-              <h2 className="text-lg font-bold text-foreground mb-4">
+              <h2 className="text-foreground mb-4 text-lg font-bold">
                 {section}
               </h2>
               <ul className="space-y-3">
@@ -98,7 +98,7 @@ export function Footer() {
                   <li key={item.title}>
                     <Link
                       href={item.href}
-                      className="transition-colors duration-200 ease-in-out text-muted-foreground hover:text-foreground"
+                      className="text-muted-foreground hover:text-foreground transition-colors duration-200 ease-in-out"
                     >
                       {item.title}
                     </Link>
@@ -110,7 +110,7 @@ export function Footer() {
         </div>
 
         {/* Legal and Badge */}
-        <div className="flex flex-col gap-y-2 sm:flex-row items-center justify-between text-sm text-neutral-500">
+        <div className="flex flex-col items-center justify-between gap-y-2 text-sm text-neutral-500 sm:flex-row">
           <h4>
             &copy; 2021 - {new Date().getFullYear()} Javaistic. All rights
             reserved.

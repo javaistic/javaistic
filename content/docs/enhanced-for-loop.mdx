@@ -6,6 +6,7 @@ description: In this tutorial, we will learn about the Java for-each loop and it
 In Java, the **for-each loop** is used to iterate through elements of [arrays](/docs/arrays) and collections (like [ArrayList](/docs/arraylist)). It is also known as the enhanced for loop.
 
 ## `for-each` Loop Syntax
+
 The syntax of the Java **for-each** loop is:
 
 ```java
@@ -13,6 +14,7 @@ for(dataType item : array) {
     ...
 }
 ```
+
 Here,
 
 - **array** - an array or a collection
@@ -39,6 +41,7 @@ class Main {
   }
 }
 ```
+
 #### Output
 
 ```plaintext
@@ -47,6 +50,7 @@ class Main {
 5
 -5
 ```
+
 Here, we have used the **for-each loop** to print each element of the numbers array one by one.
 
 - In the first iteration, the item will be 3.
@@ -77,6 +81,7 @@ class Main {
  }
 }
 ```
+
 #### Output:
 
 ```plaintext
@@ -85,14 +90,14 @@ Sum = 19
 
 In the above program, the execution of the for-each loop looks as:
 
-| Iteration |	Variables |
-|----------|----------|
-|1|	`number` = 3  `sum` = 0 + 3 = 3|
-|2|	`number` = 4  `sum` = 3 + 4 = 7
-|3|	`number` = 5  `sum` = 7 + 5 = 12|
-|4|	`number` = -5  `sum` = 12 + (-5) = 7|
-|5|	`number` = 0  `sum` = 7 + 0 = 7|
-|6| `number` = 12  `sum` = 7 + 12 = 19|
+| Iteration | Variables                           |
+| --------- | ----------------------------------- |
+| 1         | `number` = 3 `sum` = 0 + 3 = 3      |
+| 2         | `number` = 4 `sum` = 3 + 4 = 7      |
+| 3         | `number` = 5 `sum` = 7 + 5 = 12     |
+| 4         | `number` = -5 `sum` = 12 + (-5) = 7 |
+| 5         | `number` = 0 `sum` = 7 + 0 = 7      |
+| 6         | `number` = 12 `sum` = 7 + 12 = 19   |
 
 As we can see, we have added each element of the `numbers` array to the `sum` variable in each iteration of the loop.
 
@@ -117,6 +122,7 @@ class Main {
  }
 }
 ```
+
 #### Output:
 
 ```plaintext
@@ -126,6 +132,7 @@ i
 o
 u
 ```
+
 ### 2. Using for-each Loop
 
 #### Input
@@ -143,6 +150,7 @@ class Main {
  }
 }
 ```
+
 #### Output:
 
 ```plaintext
@@ -152,6 +160,7 @@ i
 o
 u
 ```
+
 Here, the output of both programs is the same. However, the **for-each** loop is easier to write and understand.
 
 This is why the **for-each** loop is preferred over the **for** loop when working with arrays and collections.
