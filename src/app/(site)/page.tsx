@@ -279,6 +279,7 @@ export default function HomePage() {
               className="w-full sm:w-1/2 text-left"
               variants={textVariants}
             >
+
               <h2 className="mb-6 font-funnel-display text-3xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white">
                 Quality over Quantity
               </h2>
