@@ -319,8 +319,8 @@ export default function HomePage() {
               </h2>
               <p className="mb-8 text-xl font-medium leading-relaxed text-muted-foreground">
                 Jump into hands-on coding right away or explore our step-by-step
-                breakdowns of real Java programs. Whether you're a beginner or
-                brushing up, it's coding made enjoyable.
+                breakdowns of real Java programs. Whether you&apos;re a beginner or
+                brushing up, it&apos;s coding made enjoyable.
               </p>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link href="/programs">
