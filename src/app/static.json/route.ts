@@ -1,6 +1,7 @@
-import { NextResponse } from "next/server";
+import { programsSource, source } from "@/lib/source";
+import { StructuredData } from "fumadocs-core/mdx-plugins";
 import { type DocumentRecord } from "fumadocs-core/search/algolia";
-import { source, programsSource } from "@/lib/source";
+import { NextResponse } from "next/server";
 
 export const revalidate = false;
 
@@ -10,7 +11,7 @@ interface PageWithStructuredData {
   data: {
     title: string;
     description?: string;
-    structuredData: any;
+    structuredData: StructuredData;
   };
 }
 
