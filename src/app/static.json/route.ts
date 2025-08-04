@@ -4,8 +4,21 @@ import { source, programsSource } from "@/lib/source";
 
 export const revalidate = false;
 
+// Type for page data with structured data
+interface PageWithStructuredData {
+  url: string;
+  data: {
+    title: string;
+    description?: string;
+    structuredData: any;
+  };
+}
+
 // Helper function to map pages to DocumentRecord format
-function mapPageToDocumentRecord(page: any, tag: string): DocumentRecord {
+function mapPageToDocumentRecord(
+  page: PageWithStructuredData,
+  tag: string,
+): DocumentRecord {
   return {
     _id: page.url,
     structured: page.data.structuredData,
@@ -56,4 +69,3 @@ export function GET() {
     );
   }
 }
-
