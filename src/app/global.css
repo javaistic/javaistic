@@ -7,7 +7,7 @@
 
 @theme inline {
   --font-sans: var(--font-inter);
-  --font-mono: var(--font-inter-mono);
+  --font-mono: var(--font-jetbrains-mono);
   --font-funnel-display: var(--font-funnel-display);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -122,4 +122,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+kbd {
+  @apply font-mono;
 }

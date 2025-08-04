@@ -1,19 +1,33 @@
+import SearchDialog from "@/components/search";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { RootProvider } from "fumadocs-ui/provider";
 import type { Metadata } from "next";
-import { Funnel_Display, Inter } from "next/font/google";
+import { Funnel_Display, Inter, JetBrains_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import "./global.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  weight: "variable",
+  display: "swap",
+  preload: true,
 });
 
 const funnelDisplay = Funnel_Display({
   subsets: ["latin", "latin-ext"],
   weight: "variable",
   variable: "--font-funnel-display",
+  display: "swap",
+  preload: true,
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin", "latin-ext"],
+  weight: "variable",
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -26,13 +40,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${funnelDisplay.variable} font-sans antialiased`}
+        className={`${inter.variable} ${funnelDisplay.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
-        <RootProvider>{children}</RootProvider>
+        <RootProvider
+          search={{
+            SearchDialog,
+          }}
+        >
+          {children}
+        </RootProvider>
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS!} />
     </html>
