@@ -1,0 +1,71 @@
+---
+title: Java Program to check whether input character is vowel or consonant.
+shortTitle: Check Input character for vowel or consonant.
+description: In this program you'll learn, how to check that a character is vowel or consonant.
+---
+
+To understand this example, you should have the knowledge of the following Java programming topics:
+
+- [Java Operators](/docs/operators)
+- [Java Basic Input and Output](/docs/basic-input-output)
+- [Control Flow statement - For-Loop in Java](/docs/for-loop)
+
+## Checking input character
+
+A java program to check the input character is vowel or consonant is as follows:
+
+### Code:
+
+```java
+import java.util.Scanner;
+
+public class VowelOrConsonant {
+    public static void main(String[] args) {
+               Scanner scanner = new Scanner(System.in);
+        
+        // Input character from user
+        System.out.print("Enter a single alphabet character: ");
+        char alphabet = scanner.next().charAt(0);
+        char ch = String.valueOf(alphabet).toLowerCase().charAt(0);
+        // Check if input is an alphabet
+        if ((ch >= 'a' && ch <= 'z')) {
+            // Check for vowel
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                System.out.println(alphabet + " is a vowel.");
+            } else {
+                System.out.println(alphabet + " is a consonant.");
+            }
+        } else {
+            System.out.println("Invalid input. Please enter an alphabet letter.");
+        }
+        scanner.close();
+    }
+}
+
+```
+
+### Output:
+
+```plaintext
+Enter a single alphabet character: E
+E is a vowel.
+
+Enter a single alphabet character: f
+f is a consonant.
+
+```
+The Java program:
+
+Takes a single character as input.
+
+Converts it to lowercase.
+
+Checks if it’s an alphabet.
+
+If it's a vowel (a, e, i, o, u), it prints “vowel”.
+
+Otherwise, it prints “consonant”.
+
+If not a letter, it prints “Invalid input”.
+
+Simple and effective for basic character classification.
