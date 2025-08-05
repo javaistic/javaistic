@@ -1,13 +1,13 @@
 import { source } from "@/lib/source";
+import { getMDXComponents } from "@/mdx-components";
+import { createRelativeLink } from "fumadocs-ui/mdx";
 import {
-  DocsPage,
   DocsBody,
   DocsDescription,
+  DocsPage,
   DocsTitle,
 } from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
-import { createRelativeLink } from "fumadocs-ui/mdx";
-import { getMDXComponents } from "@/mdx-components";
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -28,7 +28,9 @@ export default async function Page(props: {
       full={page.data.full}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription>{page.data.description}</DocsDescription>
+      <DocsDescription className="mb-3">
+        {page.data.description}
+      </DocsDescription>
       <DocsBody>
         <MDXContent
           components={getMDXComponents({
@@ -55,5 +57,16 @@ export async function generateMetadata(props: {
   return {
     title: page.data.title,
     description: page.data.description,
+    openGraph: {
+      title: page.data.title,
+      description: page.data.description,
+      sitename: "Javaistic",
+      images: `https://og-javaistic.vercel.app/og?title=${page.data.title}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@javaistic",
+      creator: "@uiuxarghya",
+    },
   };
 }
