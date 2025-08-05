@@ -38,6 +38,11 @@ export const metadata: Metadata = {
   openGraph: {
     images: "https://javaistic.vercel.app/og.png",
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@javaistic",
+    creator: "@uiuxarghya",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
