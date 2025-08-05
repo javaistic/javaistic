@@ -54,5 +54,16 @@ export async function generateMetadata(props: {
   return {
     title: page.data.title,
     description: page.data.description,
+    openGraph: {
+      title: page.data.title,
+      description: page.data.description,
+      sitename: "Javaistic",
+      images: `https://og-javaistic.vercel.app/og?title=${page.data.title}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@javaistic",
+      creator: "@uiuxarghya",
+    },
   };
 }
