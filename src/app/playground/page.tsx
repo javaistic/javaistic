@@ -103,7 +103,7 @@ export default function PlayGround(): JSX.Element {
         }
     }
 }`,
-    'Simple Calculator': `public class Main {
+    'Sum of Two nums': `public class Main {
     public static void main(String[] args) {
         int a = 10;
         int b = 5;
@@ -165,11 +165,11 @@ export default function PlayGround(): JSX.Element {
 
           <div className="flex flex-col lg:flex-row gap-6 m-auto px-4">
             <div className="bg-black dark:bg-gray-800 border rounded-xl shadow-lg p-3 flex-1 min-h-[70vh]">
-              <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+              <div className="flex items-center justify-between mb-4 flex-wrap gap-1">
                 <span className="text-sm text-white font-mono">Main.java</span>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1">
                   <button onClick={runCode} className="px-3 py-1 rounded-md bg-green-500 hover:bg-green-600 text-white shadow cursor-pointer text-sm">
-                    {loading ? 'Running...' : '▶️ Run'}
+                    {loading ? '▶️.....' : '▶️ Run'}
                   </button>
                   <button onClick={clearCode} className="px-3 py-1 rounded-md bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500 text-black dark:text-white shadow cursor-pointer text-sm">🔄 Clear</button>
                   <button onClick={copyCode} className="px-3 py-1 rounded-md bg-blue-400 hover:bg-blue-500 text-white shadow cursor-pointer text-sm">📋 Copy</button>
