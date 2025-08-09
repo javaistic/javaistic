@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { baseOptions } from '@/app/layout.config';
 import { Footer } from '@/components/footer';
 import { HomeLayout } from 'fumadocs-ui/layouts/home';
+import { JSX } from 'react/jsx-runtime';
 
 export default function PlayGround(): JSX.Element {
   const DEFAULT_CODE = `public class Main {\n    public static void main(String[] args) {\n        // Write your code here\n    }\n}`;
@@ -23,7 +24,7 @@ export default function PlayGround(): JSX.Element {
   const [examplesOpen, setExamplesOpen] = useState<boolean>(false);
 
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
-  const lineRef = useRef<HTMLElement | null>(null);
+ const lineRef = useRef<HTMLPreElement>(null);
 
   useEffect(() => {
     try {
@@ -34,10 +35,10 @@ export default function PlayGround(): JSX.Element {
   }, [code]);
 
   const showToast = (msg: string, ms = 1800): void => {
-    setToast(msg);
-    const id = window.setTimeout(() => setToast(''), ms);
-    return () => clearTimeout(id);
+  setToast(msg);
+  const id = window.setTimeout(() => setToast(''), ms);
   };
+
 
   const runCode = async (): Promise<void> => {
     setLoading(true);
@@ -191,9 +192,9 @@ export default function PlayGround(): JSX.Element {
 
     
               <div className="relative h-[60vh] rounded border overflow-hidden flex m-2">
-                <pre ref={lineRef as React.RefObject<HTMLElement>}className="select-none text-right px-3 py-3 text-sm overflow-hidden"style={{width: 50,}}>{getLineNumbers(code)}</pre>
+              <pre ref={lineRef as React.RefObject<HTMLPreElement>} className="select-none text-right px-3 py-3 text-sm overflow-hidden text-white" style={{ width: 50 }}>{getLineNumbers(code)}</pre>
 
-                <textarea ref={textareaRef} value={code} onChange={(e) => setCode(e.target.value)}spellCheck={false}className="flex-1 p-3 text-sm resize-none outline-none h-full font-mono overflow-auto bg-white dark:bg-[#0c1116] text-black dark:text-[#ffaa00]"/>
+                <textarea ref={textareaRef} value={code} onChange={(e) => setCode(e.target.value)}spellCheck={false}className="flex-1 p-3 text-sm resize-none outline-none h-full font-mono overflow-auto bg-gray-800/90 dark:bg-[#0c1116] text-orange-400 dark:text-[#ffaa00]"/>
               </div>
             </div>
 
@@ -202,7 +203,7 @@ export default function PlayGround(): JSX.Element {
               <div className="mb-2 flex items-center justify-between">
                 <span className="text-sm text-white dark:text-gray-500">Output</span>
               </div>
-              <pre className="h-[60vh] overflow-y-auto whitespace-pre-wrap text-sm rounded p-3 flex-1 bg-white dark:bg-black text-blue-800 dark:text-green-300">
+              <pre className="h-[60vh] overflow-y-auto whitespace-pre-wrap text-lg rounded p-3 flex-1 bg-fuchsia-50 dark:bg-blue-300/10 text-red-500 dark:text-green-300">
                 {output || 'Program output will appear here...'}
               </pre>
             </div>
