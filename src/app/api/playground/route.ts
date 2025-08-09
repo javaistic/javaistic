@@ -15,8 +15,8 @@ export async function POST(req: Request) {
         script: code,
         language: 'java',
         versionIndex: '3', // Java 11
-        clientId: '6d786cbb494a74d582ff33a3b176849f',       // ← replace with your actual clientId
-        clientSecret: 'd79b0a5a8cb2a1f1f937c3ff9acb5a0989db048390aea95b413894858e965ae2', // ← replace with your actual clientSecret
+        clientId: '' ,// ← replace with your actual clientId
+        clientSecret: '', // ← replace with your actual clientSecret
       }),
     });
 
