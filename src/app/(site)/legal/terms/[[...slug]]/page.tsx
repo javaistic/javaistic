@@ -39,7 +39,7 @@ export default function Page() {
           </div>
 
           <p className="text-lg leading-relaxed mb-6">
-            Welcome to Javaistic! These Terms of Service ("Terms") govern your use of our free and open-source Java programming learning platform. By accessing or using Javaistic, you agree to be bound by these Terms and our Privacy Policy.
+            Welcome to Javaistic! These Terms of Service (&quot;Terms&quot;) govern your use of our free and open-source Java programming learning platform. By accessing or using Javaistic, you agree to be bound by these Terms and our Privacy Policy.
           </p>
 
           <h2 id="acceptance" className="text-2xl font-semibold mt-8 mb-4">
@@ -120,7 +120,7 @@ export default function Page() {
             <li>Harass, abuse, or harm other users</li>
             <li>Post spam, malicious code, or inappropriate content</li>
             <li>Attempt to gain unauthorized access to our systems</li>
-            <li>Interfere with or disrupt the platform's functionality</li>
+            <li>Interfere with or disrupt the platform&apos;s functionality</li>
             <li>Use automated tools to scrape or download content without permission</li>
             <li>Impersonate others or provide false information</li>
             <li>Use the platform for commercial purposes without authorization</li>
@@ -140,7 +140,7 @@ export default function Page() {
             <li>You retain ownership of the original content you create and post</li>
             <li>By posting content, you grant us a license to use, display, and distribute it on our platform</li>
             <li>You represent that you have the right to post the content you share</li>
-            <li>You may not post content that infringes on others' intellectual property rights</li>
+            <li>You may not post content that infringes on others&apos; intellectual property rights</li>
           </ul>
 
           <h3 className="text-xl font-medium mt-6 mb-3">Code and Solutions</h3>
@@ -203,7 +203,7 @@ export default function Page() {
 
           <h3 className="text-xl font-medium mt-6 mb-3">No Warranty</h3>
           <p className="mb-4">
-            Our platform is provided "as is" without warranties of any kind. We do not guarantee uninterrupted access, error-free operation, or that the platform will meet your specific requirements.
+            Our platform is provided &quot;as is&quot; without warranties of any kind. We do not guarantee uninterrupted access, error-free operation, or that the platform will meet your specific requirements.
           </p>
 
           <h3 className="text-xl font-medium mt-6 mb-3">Limitation of Liability</h3>
@@ -238,7 +238,7 @@ export default function Page() {
           </p>
           <ul className="space-y-2 mb-4">
             <li>Notify users through email or platform announcements</li>
-            <li>Update the "Last Updated" date at the top of these Terms</li>
+            <li>Update the &quot;Last Updated&quot; date at the top of these Terms</li>
             <li>Provide a reasonable notice period before changes take effect</li>
           </ul>
           <p className="mb-6">
@@ -273,7 +273,7 @@ export default function Page() {
           <hr className="my-8 border-border" />
           
           <p className="text-sm text-muted-foreground italic text-center">
-            Thank you for being part of the Javaistic community. Together, we're making Java programming education accessible and enjoyable for everyone.
+            Thank you for being part of the Javaistic community. Together, we&apos;re making Java programming education accessible and enjoyable for everyone.
           </p>
         </div>
       </DocsBody>

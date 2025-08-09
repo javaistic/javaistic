@@ -15,7 +15,7 @@ export default function Page() {
         { title: "Data Security and Storage", url: "#data-security", depth: 2 },
         { title: "Your Rights and Choices", url: "#your-rights", depth: 2 },
         { title: "Cookies and Tracking", url: "#cookies", depth: 2 },
-        { title: "Children's Privacy", url: "#childrens-privacy", depth: 2 },
+        { title: "Children&apos;s Privacy", url: "#childrens-privacy", depth: 2 },
         { title: "Contact Information", url: "#contact", depth: 2 },
       ]}
       tableOfContent={{
@@ -164,9 +164,9 @@ export default function Page() {
           <p className="mb-6">You can control cookie preferences through your browser settings, though some features may require certain cookies to function properly.</p>
 
           <h2 id="childrens-privacy" className="text-2xl font-semibold mt-8 mb-4">
-            Children's Privacy
+            Children&apos;s Privacy
           </h2>
-          <p className="mb-6">Javaistic welcomes learners of all ages to explore Java programming. For users under 13, we require parental consent and take additional measures to protect young learners' privacy in accordance with applicable laws.</p>
+          <p className="mb-6">Javaistic welcomes learners of all ages to explore Java programming. For users under 13, we require parental consent and take additional measures to protect young learners&apos; privacy in accordance with applicable laws.</p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">
             International Data Transfers
@@ -181,7 +181,7 @@ export default function Page() {
           <h2 className="text-2xl font-semibold mt-8 mb-4">
             Changes to This Privacy Policy
           </h2>
-          <p className="mb-6">We may update this Privacy Policy to reflect changes in our practices or legal requirements. We'll notify you of significant changes through email or platform announcements. Continued use of Javaistic constitutes acceptance of the updated policy.</p>
+          <p className="mb-6">We may update this Privacy Policy to reflect changes in our practices or legal requirements. We&apos;ll notify you of significant changes through email or platform announcements. Continued use of Javaistic constitutes acceptance of the updated policy.</p>
 
           <h2 id="contact" className="text-2xl font-semibold mt-8 mb-4">
             Contact Information
