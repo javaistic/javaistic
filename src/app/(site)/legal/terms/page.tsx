@@ -744,7 +744,7 @@ const TermsOfServicePage = () => {
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-teal-500 dark:bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      Update the "Last Updated" date at the top of these Terms
+                      Update the Last Updated date at the top of these Terms
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-teal-500 dark:bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -842,7 +842,7 @@ const TermsOfServicePage = () => {
                 <p className={`text-sm ${
                   isDarkMode ? 'text-gray-400' : 'text-gray-500'
                 } italic text-center transition-colors duration-300`}>
-                  Thank you for being part of the Javaistic community. Together, we're making Java programming education accessible and enjoyable for everyone.
+                  Thank you for being part of the Javaistic community. Together, we are making Java programming education accessible and enjoyable for everyone.
                 </p>
               </motion.div>
             </div>
@@ -880,7 +880,7 @@ const TermsOfServicePage = () => {
               Ready to Start Learning?
             </h2>
             <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-              By using Javaistic, you agree to these terms and join our community of Java programming enthusiasts. Let's build something amazing together!
+              By using Javaistic, you agree to these terms and join our community of Java programming enthusiasts. Let us build something amazing together!
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
