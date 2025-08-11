@@ -26,8 +26,8 @@ const footerNav = {
     { title: "Contact Us", href: "/contact" },
   ],
   Legal: [
-    { title: "Privacy Policy", href: "/privacy" },
-    { title: "Terms of Service", href: "/terms" },
+    { title: "Privacy Policy", href: "/legal/privacy" },
+    { title: "Terms of Service", href: "/legal/terms" },
     { title: "License", href: "/license" },
     { title: "Security", href: "/security" },
   ],
