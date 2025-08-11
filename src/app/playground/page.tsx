@@ -5,6 +5,8 @@ import { baseOptions } from '@/app/layout.config';
 import { Footer } from '@/components/footer';
 import { HomeLayout } from 'fumadocs-ui/layouts/home';
 import { JSX } from 'react/jsx-runtime';
+import Image from 'next/image';
+
 
 export default function PlayGround(): JSX.Element {
   const DEFAULT_CODE = `public class Main {\n    public static void main(String[] args) {\n        // Write your code here\n    }\n}`;
@@ -36,7 +38,7 @@ export default function PlayGround(): JSX.Element {
 
   const showToast = (msg: string, ms = 1800): void => {
   setToast(msg);
-  const id = window.setTimeout(() => setToast(''), ms);
+  window.setTimeout(() => setToast(''), ms);
   };
 
 
@@ -158,7 +160,7 @@ export default function PlayGround(): JSX.Element {
     <>
       <HomeLayout
         {...baseOptions}
-        style={{ ['--spacing-fd-container' as any]: '1280px' } as React.CSSProperties}
+          style={{ '--spacing-fd-container': '1280px' } as React.CSSProperties}
       >
         <div className="space-y-6">
           <header className="text-center -mt-10 mb-6  py-3 border-b border-gray-300 dark:border-gray-700">
