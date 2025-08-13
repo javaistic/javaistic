@@ -1,4 +1,5 @@
 import { baseOptions } from "@/app/layout.config";
+import Particles from "@/components/Particles";
 import { HomeLayout } from "fumadocs-ui/layouts/home";
 import type { ReactNode } from "react";
 

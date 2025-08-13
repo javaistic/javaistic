@@ -162,35 +162,79 @@ export default function PlayGround(): JSX.Element {
         {...baseOptions}
           style={{ '--spacing-fd-container': '1280px' } as React.CSSProperties}
       >
-        <div className="space-y-6">
-          <header className="text-center -mt-10 mb-6  py-3 border-b border-gray-300 dark:border-gray-700">
-<h1 className="text-5xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-green-500">JAVAISTIC PLAYGROUND</h1>          </header>
+        <div className="space-y-6 mb-5">
+<h1 className="font-funnel-display max-w-3xl text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-6xl lg:text-[80px] dark:text-white text-center mx-auto mb- -mt-10">
+  Javaistic{" "}
+  <span className="bg-gradient-to-br from-sky-400 to-indigo-500 bg-clip-text text-transparent">
+    Playground
+  </span>
+</h1>
 
           <div className="flex flex-col lg:flex-row gap-6 m-auto px-4">
             <div className="bg-black dark:bg-gray-800 border rounded-xl shadow-lg p-3 flex-1 min-h-[70vh]">
               <div className="flex items-center justify-between mb-4 flex-wrap gap-1">
                 <span className="text-sm text-white font-mono">Main.java</span>
-                <div className="flex flex-wrap gap-1">
-                  <button onClick={runCode} className="px-3 py-1 rounded-md bg-green-500 hover:bg-green-600 text-white shadow cursor-pointer text-sm">
-                    {loading ? '▶️.....' : '▶️ Run'}
-                  </button>
-                  <button onClick={clearCode} className="px-3 py-1 rounded-md bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500 text-black dark:text-white shadow cursor-pointer text-sm">🔄 Clear</button>
-                  <button onClick={copyCode} className="px-3 py-1 rounded-md bg-blue-400 hover:bg-blue-500 text-white shadow cursor-pointer text-sm">📋 Copy</button>
-                  <button onClick={downloadCode} className="px-3 py-1 rounded-md bg-yellow-500 hover:bg-yellow-400 text-black shadow cursor-pointer text-sm">📥 Download</button>
-                  <div className="relative">
-                  <button onClick={() => setExamplesOpen((s) => !s)} className="px-3 py-1 rounded-md bg-purple-400 hover:bg-purple-500 text-white shadow cursor-pointer text-sm"> Examples ▾</button>
-                 {examplesOpen && ( <ul className="absolute mt-2 w-56 rounded-md shadow bg-white dark:bg-gray-700 border p-2 z-10">
-                 {Object.keys(EXAMPLES).map((key) => (
-                 <li key={key}>
-                 <button onClick={() => loadExample(key)} className="w-full text-left px-2 py-1 text-sm rounded hover:bg-gray-100 dark:hover:bg-gray-600">{key}</button>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                  <button onClick={clearOutput} className="px-3 py-1 rounded-md bg-red-400 hover:bg-red-500 text-white shadow cursor-pointer text-sm">🔄 Clear Output</button>
-                </div>
-              </div>
+               <div className="flex flex-wrap gap-1">
+  <button
+    onClick={runCode}
+    className="px-3 py-1 rounded-md bg-green-400 hover:bg-green-500 text-white shadow cursor-pointer text-sm"
+  >
+    {loading ? '▶️.....' : '▶️ Run'}
+  </button>
+
+  <button
+    onClick={clearCode}
+    className="px-3 py-1 rounded-md bg-gray-200 hover:bg-gray-300 dark:bg-gray-500 dark:hover:bg-gray-400 text-black dark:text-white shadow cursor-pointer text-sm"
+  >
+    🔄 Clear
+  </button>
+
+  <button
+    onClick={copyCode}
+    className="px-3 py-1 rounded-md bg-blue-300 hover:bg-blue-400 text-white shadow cursor-pointer text-sm"
+  >
+    📋 Copy
+  </button>
+
+  <button
+    onClick={downloadCode}
+    className="px-3 py-1 rounded-md bg-yellow-300 hover:bg-yellow-400 text-black shadow cursor-pointer text-sm"
+  >
+    📥 Download
+  </button>
+
+  <div className="relative">
+    <button
+      onClick={() => setExamplesOpen((s) => !s)}
+      className="px-3 py-1 rounded-md bg-purple-400 hover:bg-purple-500 text-white shadow cursor-pointer text-sm"
+    >
+      Examples ▾
+    </button>
+    {examplesOpen && (
+      <ul className="absolute mt-2 w-56 rounded-md shadow bg-white dark:bg-gray-700 border p-2 z-10">
+        {Object.keys(EXAMPLES).map((key) => (
+          <li key={key}>
+            <button
+              onClick={() => loadExample(key)}
+              className="w-full text-left px-2 py-1 text-sm rounded hover:bg-gray-100 dark:hover:bg-gray-600"
+            >
+              {key}
+            </button>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+  </div>
+
+  <button
+    onClick={clearOutput}
+    className="px-3 py-1 rounded-md bg-red-400 hover:bg-red-500 text-white shadow cursor-pointer text-sm"
+  >
+    🔄 Clear Output
+  </button>
+</div>
+
 
     
               <div className="relative h-[60vh] rounded border overflow-hidden flex m-2">
