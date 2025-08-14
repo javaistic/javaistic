@@ -7,8 +7,7 @@ import {
   Users, 
   MapPin, 
   Clock, 
-  Send, 
-  Phone, 
+  Send,  
   Globe,
   BookOpen,
   Bug,
@@ -272,7 +271,7 @@ const ContactUsPage = () => {
             className="text-muted-foreground mt-6 max-w-6xl text-lg sm:text-xl"
             variants={itemVariants}
           >
-            We'd love to hear from you! Whether you have questions, feedback, or want to contribute to our open-source Java learning platform.
+            We&apos;d love to hear from you! Whether you have questions, feedback, or want to contribute to our open-source Java learning platform.
           </motion.p>
           
           <motion.div
@@ -391,7 +390,7 @@ const ContactUsPage = () => {
                   </h2>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 transition-colors duration-300">
-                  Fill out the form below and we'll get back to you as soon as possible. We value your feedback and are here to help!
+                  Fill out the form below and we&apos;ll get back to you as soon as possible. We value your feedback and are here to help!
                 </p>
               </motion.div>
 
@@ -496,7 +495,7 @@ const ContactUsPage = () => {
                     className="p-4 bg-green-50 dark:bg-green-500/20 border border-green-200 dark:border-green-500/30 rounded-xl"
                   >
                     <p className="text-green-700 dark:text-green-300 font-medium">
-                      Thank you! Your message has been sent successfully. We'll get back to you soon.
+                      Thank you! Your message has been sent successfully. We&apos;ll get back to you soon.
                     </p>
                   </motion.div>
                 )}
@@ -562,7 +561,7 @@ const ContactUsPage = () => {
                   Platform Information
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  Have questions about Javaistic's features, learning paths, or how to get started? We're here to help you navigate your Java learning journey.
+                  Have questions about Javaistic&apos;s features, learning paths, or how to get started? We&apos;re here to help you navigate your Java learning journey.
                 </p>
                 <ul className="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
                   <li>• Course structure and learning paths</li>
@@ -901,7 +900,7 @@ const ContactUsPage = () => {
               Still Have Questions?
             </h2>
             <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-              We're here to help! Don't hesitate to reach out through any of our contact methods. Our team and community are always ready to assist you on your Java learning journey.
+              We&apos;re here to help! Don&apos;t hesitate to reach out through any of our contact methods. Our team and community are always ready to assist you on your Java learning journey.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

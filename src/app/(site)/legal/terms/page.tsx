@@ -1,6 +1,6 @@
 "use client";
 import { motion, easeOut } from "framer-motion";
-import { Shield, Users, Code, FileText, AlertTriangle, Scale, Globe, Mail, ExternalLink } from "lucide-react";
+import { Shield, Users, Code, FileText, AlertTriangle, Scale, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
 import Particles from "@/components/Particles";
 
