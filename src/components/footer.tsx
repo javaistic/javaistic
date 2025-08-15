@@ -125,7 +125,11 @@ export function Footer() {
               </span>
               <span className="flex items-center gap-x-1.5">
                 in
-               <Image src="/path.jpg" alt="..." width={100} height={100} />
+                <img
+                  src="https://flagapi.vercel.app/S/IND"
+                  alt="India"
+                  className="h-3 rounded-xs"
+                />
                 <span className="sr-only">India</span>
                 IND
               </span>
