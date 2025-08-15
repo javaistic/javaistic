@@ -1,6 +1,6 @@
 "use client";
 import { motion, easeOut } from "framer-motion";
-import { Shield, Lock, Eye, Users, Mail, FileText, AlertCircle, ExternalLink } from "lucide-react";
+import { Shield, Lock, Eye, Users, Mail, FileText, AlertCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 import Particles from "@/components/Particles";
 const PrivacyPage = () => {
