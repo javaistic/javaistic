@@ -6,6 +6,7 @@ import {
   OpenCollectiveIcon,
   TwitterIcon,
 } from "@/components/icons";
+import Image from 'next/image';
 
 const footerNav = {
   "Getting Started": [

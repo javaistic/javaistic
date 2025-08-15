@@ -29,6 +29,10 @@ export const baseOptions: BaseLayoutProps = {
       text: "Sponsors",
       url: "/sponsors",
     },
+   {
+  text: "Playground",
+  url: "/playground",  
+}
   ],
   githubUrl: "https://github.com/javaistic/javaistic",
   themeSwitch: {
