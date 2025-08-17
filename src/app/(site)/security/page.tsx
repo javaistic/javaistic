@@ -9,7 +9,6 @@ import {
   CheckCircle,
   FileText,
   Globe,
-  Zap,
   ShieldCheck,
   Github,
   ExternalLink,
@@ -135,38 +134,6 @@ const SecurityPage = () => {
       },
     },
   };
-
-  const securityFeatures = [
-    {
-      icon: <ShieldCheck className="h-6 w-6" />,
-      title: "End-to-End Encryption",
-      description:
-        "All data transmission is protected with industry-standard TLS 1.3 encryption",
-      status: "Active",
-      color: "green",
-    },
-    {
-      icon: <Eye className="h-6 w-6" />,
-      title: "Privacy by Design",
-      description: "Minimal data collection with transparent privacy practices",
-      status: "Built-in",
-      color: "indigo",
-    },
-    {
-      icon: <Server className="h-6 w-6" />,
-      title: "Secure Infrastructure",
-      description: "Hosted on trusted platforms with enterprise-grade security",
-      status: "Active",
-      color: "orange",
-    },
-    {
-      icon: <Code className="h-6 w-6" />,
-      title: "Open Source",
-      description: "Our code is publicly available for security review",
-      status: "Transparent",
-      color: "purple",
-    },
-  ];
 
   const complianceStandards = [
     {
@@ -361,8 +328,10 @@ const SecurityPage = () => {
                           Infrastructure Security
                         </h3>
                         <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                          <li>• Vercel's enterprise security platform</li>
-                          <li>• GitHub's security scanning and monitoring</li>
+                          <li>• Vercel&apos;s enterprise security platform</li>
+                          <li>
+                            • GitHub&apos;s security scanning and monitoring
+                          </li>
                           <li>• Automated dependency updates</li>
                           <li>• Open source code for transparency</li>
                         </ul>
@@ -451,10 +420,10 @@ const SecurityPage = () => {
                             No Data Collection Means Maximum Privacy
                           </p>
                           <p className="text-xs text-gray-600 dark:text-gray-300">
-                            Since we don't store personal data, there's nothing
-                            to access, delete, or modify. Your privacy is
-                            protected by design through our minimal data
-                            collection approach.
+                            Since we don&apos;t store personal data,
+                            there&apos;s nothing to access, delete, or modify.
+                            Your privacy is protected by design through our
+                            minimal data collection approach.
                           </p>
                         </div>
                       </div>
