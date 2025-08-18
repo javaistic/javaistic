@@ -1,0 +1,342 @@
+---
+title: Java Program to Create Class and Objects with Methods
+shortTitle: Classes and Objects
+description: Learn object-oriented programming basics with this Java program that demonstrates class creation, object instantiation, and method calling with practical examples.
+---
+
+In this program, you'll learn the fundamentals of object-oriented programming by creating classes, instantiating objects, and calling methods.
+
+To understand this example, you should have the knowledge of the following Java programming topics:
+
+- [Java Class and Objects](/docs/class-objects)
+- [Java Methods](/docs/methods)
+- [Java Constructors](/docs/constructors)
+
+## Program to Create Class and Objects
+
+### Example 1: Basic Class and Object Creation
+
+```java
+// Define a Student class
+class Student {
+    // Instance variables (attributes)
+    String name;
+    int age;
+    String major;
+    double gpa;
+
+    // Method to display student information
+    void displayInfo() {
+        System.out.println("=== Student Information ===");
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Major: " + major);
+        System.out.println("GPA: " + gpa);
+        System.out.println();
+    }
+
+    // Method to update GPA
+    void updateGPA(double newGPA) {
+        gpa = newGPA;
+        System.out.println(name + "'s GPA updated to: " + gpa);
+    }
+
+    // Method to check if student is eligible for honors
+    boolean isEligibleForHonors() {
+        return gpa >= 3.5;
+    }
+}
+
+class StudentDemo {
+    public static void main(String[] args) {
+        // Create first student object
+        Student student1 = new Student();
+        student1.name = "Alice Johnson";
+        student1.age = 20;
+        student1.major = "Computer Science";
+        student1.gpa = 3.8;
+
+        // Create second student object
+        Student student2 = new Student();
+        student2.name = "Bob Smith";
+        student2.age = 19;
+        student2.major = "Mathematics";
+        student2.gpa = 3.2;
+
+        // Display information for both students
+        student1.displayInfo();
+        student2.displayInfo();
+
+        // Update GPA and check honors eligibility
+        student2.updateGPA(3.6);
+
+        System.out.println(student1.name + " eligible for honors: " +
+                          student1.isEligibleForHonors());
+        System.out.println(student2.name + " eligible for honors: " +
+                          student2.isEligibleForHonors());
+    }
+}
+```
+
+#### Output:
+
+```
+=== Student Information ===
+Name: Alice Johnson
+Age: 20
+Major: Computer Science
+GPA: 3.8
+
+=== Student Information ===
+Name: Bob Smith
+Age: 19
+Major: Mathematics
+GPA: 3.2
+
+Bob Smith's GPA updated to: 3.6
+Alice Johnson eligible for honors: true
+Bob Smith eligible for honors: true
+```
+
+### Example 2: Class with Constructor
+
+```java
+class Car {
+    // Instance variables
+    private String brand;
+    private String model;
+    private int year;
+    private double price;
+
+    // Constructor to initialize car objects
+    public Car(String brand, String model, int year, double price) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.price = price;
+    }
+
+    // Method to display car details
+    public void displayDetails() {
+        System.out.println("=== Car Details ===");
+        System.out.println("Brand: " + brand);
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+        System.out.println("Price: $" + price);
+        System.out.println();
+    }
+
+    // Method to apply discount
+    public void applyDiscount(double percentage) {
+        double discount = price * (percentage / 100);
+        price -= discount;
+        System.out.println("Discount of " + percentage + "% applied.");
+        System.out.println("New price: $" + price);
+    }
+
+    // Method to check if car is vintage (older than 25 years)
+    public boolean isVintage() {
+        int currentYear = 2024;
+        return (currentYear - year) > 25;
+    }
+
+    // Getter methods
+    public String getBrand() { return brand; }
+    public String getModel() { return model; }
+    public int getYear() { return year; }
+    public double getPrice() { return price; }
+}
+
+class CarDemo {
+    public static void main(String[] args) {
+        // Create car objects using constructor
+        Car car1 = new Car("Toyota", "Camry", 2020, 25000.0);
+        Car car2 = new Car("BMW", "X5", 1995, 15000.0);
+        Car car3 = new Car("Honda", "Civic", 2023, 22000.0);
+
+        // Display car details
+        car1.displayDetails();
+        car2.displayDetails();
+        car3.displayDetails();
+
+        // Apply discount to car1
+        car1.applyDiscount(10);
+        System.out.println();
+
+        // Check which cars are vintage
+        System.out.println("=== Vintage Car Check ===");
+        Car[] cars = {car1, car2, car3};
+
+        for (Car car : cars) {
+            String vintage = car.isVintage() ? "Yes" : "No";
+            System.out.println(car.getBrand() + " " + car.getModel() +
+                             " (" + car.getYear() + ") - Vintage: " + vintage);
+        }
+    }
+}
+```
+
+#### Output:
+
+```
+=== Car Details ===
+Brand: Toyota
+Model: Camry
+Year: 2020
+Price: $25000.0
+
+=== Car Details ===
+Brand: BMW
+Model: X5
+Year: 1995
+Price: $15000.0
+
+=== Car Details ===
+Brand: Honda
+Model: Civic
+Year: 2023
+Price: $22000.0
+
+Discount of 10.0% applied.
+New price: $22500.0
+
+=== Vintage Car Check ===
+Toyota Camry (2020) - Vintage: No
+BMW X5 (1995) - Vintage: Yes
+Honda Civic (2023) - Vintage: No
+```
+
+### Example 3: Interactive Class with User Input
+
+```java
+import java.util.Scanner;
+
+class BankAccount {
+    private String accountHolder;
+    private String accountNumber;
+    private double balance;
+
+    // Constructor
+    public BankAccount(String holder, String number, double initialBalance) {
+        this.accountHolder = holder;
+        this.accountNumber = number;
+        this.balance = initialBalance;
+    }
+
+    // Method to deposit money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: $" + amount);
+            System.out.println("New balance: $" + balance);
+        } else {
+            System.out.println("Invalid deposit amount!");
+        }
+    }
+
+    // Method to withdraw money
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: $" + amount);
+            System.out.println("New balance: $" + balance);
+        } else if (amount > balance) {
+            System.out.println("Insufficient funds!");
+        } else {
+            System.out.println("Invalid withdrawal amount!");
+        }
+    }
+
+    // Method to display account info
+    public void displayAccountInfo() {
+        System.out.println("=== Account Information ===");
+        System.out.println("Account Holder: " + accountHolder);
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Current Balance: $" + balance);
+        System.out.println();
+    }
+
+    // Getter for balance
+    public double getBalance() {
+        return balance;
+    }
+}
+
+class BankDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Create a bank account
+        System.out.print("Enter account holder name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Enter account number: ");
+        String accNum = scanner.nextLine();
+
+        System.out.print("Enter initial balance: ");
+        double initialBalance = scanner.nextDouble();
+
+        BankAccount account = new BankAccount(name, accNum, initialBalance);
+        account.displayAccountInfo();
+
+        // Simple banking operations
+        while (true) {
+            System.out.println("Choose operation:");
+            System.out.println("1. Deposit");
+            System.out.println("2. Withdraw");
+            System.out.println("3. Check Balance");
+            System.out.println("4. Exit");
+            System.out.print("Enter choice: ");
+
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter deposit amount: ");
+                    double depositAmount = scanner.nextDouble();
+                    account.deposit(depositAmount);
+                    break;
+
+                case 2:
+                    System.out.print("Enter withdrawal amount: ");
+                    double withdrawAmount = scanner.nextDouble();
+                    account.withdraw(withdrawAmount);
+                    break;
+
+                case 3:
+                    System.out.println("Current balance: $" + account.getBalance());
+                    break;
+
+                case 4:
+                    System.out.println("Thank you for using our banking system!");
+                    scanner.close();
+                    return;
+
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+## Key Concepts Demonstrated
+
+1. **Class Definition**: Creating blueprints for objects
+2. **Object Creation**: Instantiating objects from classes
+3. **Instance Variables**: Storing object state
+4. **Methods**: Defining object behavior
+5. **Constructors**: Initializing objects
+6. **Encapsulation**: Using private variables and public methods
+7. **Method Overloading**: Multiple methods with different parameters
+
+## Next Steps
+
+Try extending these programs by:
+
+1. Adding more methods to the classes
+2. Creating multiple objects and comparing them
+3. Implementing inheritance between classes
+4. Adding validation and error handling
+5. Creating arrays of objects

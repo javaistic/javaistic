@@ -1,0 +1,315 @@
+---
+title: Java Strings
+description: Complete guide to Java Strings with examples. Learn String methods, manipulation, comparison, StringBuilder, StringBuffer, and string formatting.
+icon: Type
+---
+
+In Java, strings are objects that represent sequences of characters. The `String` class is one of the most commonly used classes in Java programming.
+
+## What is a String in Java?
+
+A string is a sequence of characters. In Java, strings are objects of the `String` class. Unlike primitive data types, strings are reference types.
+
+```java
+String message = "Hello, World!";
+```
+
+Here, `message` is a string variable that holds the value "Hello, World!".
+
+## Creating Strings in Java
+
+There are two main ways to create strings in Java:
+
+### 1. String Literal
+
+```java
+String str1 = "Java Programming";
+String str2 = "Javaistic";
+```
+
+### 2. Using new Keyword
+
+```java
+String str1 = new String("Java Programming");
+String str2 = new String("Javaistic");
+```
+
+<Callout>
+
+**Note:** String literals are stored in the string pool for memory efficiency, while strings created with `new` keyword are stored in the heap memory.
+
+</Callout>
+
+## String Methods
+
+Java provides many useful methods for string manipulation:
+
+### 1. length() Method
+
+Returns the number of characters in the string.
+
+```java
+class Main {
+    public static void main(String[] args) {
+        String str = "Java";
+        System.out.println("Length: " + str.length()); // Output: 4
+    }
+}
+```
+
+### 2. charAt() Method
+
+Returns the character at the specified index.
+
+```java
+class Main {
+    public static void main(String[] args) {
+        String str = "Java";
+        System.out.println("Character at index 1: " + str.charAt(1)); // Output: a
+    }
+}
+```
+
+### 3. substring() Method
+
+Extracts a portion of the string.
+
+```java
+class Main {
+    public static void main(String[] args) {
+        String str = "Java Programming";
+        System.out.println("Substring: " + str.substring(5)); // Output: Programming
+        System.out.println("Substring: " + str.substring(0, 4)); // Output: Java
+    }
+}
+```
+
+### 4. toLowerCase() and toUpperCase()
+
+Convert string to lowercase or uppercase.
+
+```java
+class Main {
+    public static void main(String[] args) {
+        String str = "Java Programming";
+        System.out.println("Lowercase: " + str.toLowerCase()); // java programming
+        System.out.println("Uppercase: " + str.toUpperCase()); // JAVA PROGRAMMING
+    }
+}
+```
+
+### 5. indexOf() Method
+
+Returns the index of the first occurrence of a character or substring.
+
+```java
+class Main {
+    public static void main(String[] args) {
+        String str = "Java Programming";
+        System.out.println("Index of 'a': " + str.indexOf('a')); // Output: 1
+        System.out.println("Index of 'Programming': " + str.indexOf("Programming")); // Output: 5
+    }
+}
+```
+
+## String Comparison
+
+### 1. Using equals() Method
+
+```java
+class Main {
+    public static void main(String[] args) {
+        String str1 = "Java";
+        String str2 = "Java";
+        String str3 = new String("Java");
+
+        System.out.println(str1.equals(str2)); // true
+        System.out.println(str1.equals(str3)); // true
+    }
+}
+```
+
+### 2. Using equalsIgnoreCase() Method
+
+```java
+class Main {
+    public static void main(String[] args) {
+        String str1 = "Java";
+        String str2 = "JAVA";
+
+        System.out.println(str1.equalsIgnoreCase(str2)); // true
+    }
+}
+```
+
+### 3. Using compareTo() Method
+
+```java
+class Main {
+    public static void main(String[] args) {
+        String str1 = "Apple";
+        String str2 = "Banana";
+
+        System.out.println(str1.compareTo(str2)); // negative value (Apple < Banana)
+    }
+}
+```
+
+<Callout>
+
+**Important:** Never use `==` operator to compare strings. It compares references, not content.
+
+</Callout>
+
+## String Concatenation
+
+### 1. Using + Operator
+
+```java
+class Main {
+    public static void main(String[] args) {
+        String firstName = "John";
+        String lastName = "Doe";
+        String fullName = firstName + " " + lastName;
+        System.out.println(fullName); // John Doe
+    }
+}
+```
+
+### 2. Using concat() Method
+
+```java
+class Main {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = " World";
+        String result = str1.concat(str2);
+        System.out.println(result); // Hello World
+    }
+}
+```
+
+## StringBuilder and StringBuffer
+
+When you need to perform many string operations, use `StringBuilder` or `StringBuffer` for better performance.
+
+### StringBuilder Example
+
+```java
+class Main {
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Java");
+        sb.append(" ");
+        sb.append("Programming");
+
+        System.out.println(sb.toString()); // Java Programming
+
+        // Insert at specific position
+        sb.insert(5, "is ");
+        System.out.println(sb.toString()); // Java is Programming
+
+        // Delete characters
+        sb.delete(5, 8);
+        System.out.println(sb.toString()); // Java Programming
+    }
+}
+```
+
+### StringBuffer vs StringBuilder
+
+| Feature       | StringBuilder                | StringBuffer                |
+| ------------- | ---------------------------- | --------------------------- |
+| Thread Safety | Not thread-safe              | Thread-safe                 |
+| Performance   | Faster                       | Slower                      |
+| Usage         | Single-threaded applications | Multi-threaded applications |
+
+## String Formatting
+
+### 1. Using printf() Method
+
+```java
+class Main {
+    public static void main(String[] args) {
+        String name = "John";
+        int age = 25;
+        System.out.printf("Name: %s, Age: %d%n", name, age);
+        // Output: Name: John, Age: 25
+    }
+}
+```
+
+### 2. Using String.format() Method
+
+```java
+class Main {
+    public static void main(String[] args) {
+        String name = "Alice";
+        double score = 95.5;
+        String formatted = String.format("Student: %s, Score: %.1f", name, score);
+        System.out.println(formatted); // Student: Alice, Score: 95.5
+    }
+}
+```
+
+## Common String Operations Example
+
+```java
+class StringExample {
+    public static void main(String[] args) {
+        String text = "  Java Programming Language  ";
+
+        // Remove whitespace
+        String trimmed = text.trim();
+        System.out.println("Trimmed: '" + trimmed + "'");
+
+        // Split string
+        String[] words = trimmed.split(" ");
+        for (String word : words) {
+            System.out.println("Word: " + word);
+        }
+
+        // Replace characters
+        String replaced = trimmed.replace("Java", "Python");
+        System.out.println("Replaced: " + replaced);
+
+        // Check if string contains substring
+        boolean contains = trimmed.contains("Programming");
+        System.out.println("Contains 'Programming': " + contains);
+
+        // Check if string starts with or ends with
+        boolean startsWith = trimmed.startsWith("Java");
+        boolean endsWith = trimmed.endsWith("Language");
+        System.out.println("Starts with 'Java': " + startsWith);
+        System.out.println("Ends with 'Language': " + endsWith);
+    }
+}
+```
+
+**Output:**
+
+```plaintext
+Trimmed: 'Java Programming Language'
+Word: Java
+Word: Programming
+Word: Language
+Replaced: Python Programming Language
+Contains 'Programming': true
+Starts with 'Java': true
+Ends with 'Language': true
+```
+
+## Key Points to Remember
+
+- Strings in Java are **immutable** - once created, they cannot be changed
+- Use `StringBuilder` for frequent string modifications
+- Always use `.equals()` method to compare string content
+- String literals are stored in the string pool for memory efficiency
+- Use `.trim()` to remove leading and trailing whitespace
+- The `String` class provides many useful methods for manipulation
+
+<Callout>
+
+**Performance Tip:** When concatenating many strings, use `StringBuilder` instead of the `+` operator to avoid creating multiple intermediate string objects.
+
+</Callout>

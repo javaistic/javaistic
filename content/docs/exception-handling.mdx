@@ -1,0 +1,474 @@
+---
+title: Java Exception Handling
+description: Complete guide to Java exception handling with examples. Learn try-catch-finally, throw, throws, custom exceptions, and exception hierarchy.
+icon: AlertTriangle
+---
+
+Exception handling is a powerful mechanism in Java that allows you to handle runtime errors gracefully, ensuring that your program doesn't crash unexpectedly. Instead of terminating abruptly, your program can recover from errors and continue execution.
+
+## What is an Exception?
+
+An exception is an unexpected event that occurs during program execution and disrupts the normal flow of the program. Examples include:
+
+- Dividing by zero
+- Accessing an array element out of bounds
+- Opening a file that doesn't exist
+- Network connection failures
+
+## Exception Hierarchy in Java
+
+```
+                    Object
+                      |
+                  Throwable
+                   /      \
+               Error    Exception
+                         /      \
+                RuntimeException  Checked Exceptions
+                (Unchecked)       (IOException, etc.)
+```
+
+### Types of Exceptions
+
+1. **Checked Exceptions**: Must be handled at compile time (e.g., IOException, SQLException)
+2. **Unchecked Exceptions**: Runtime exceptions that can be handled optionally (e.g., NullPointerException, ArrayIndexOutOfBoundsException)
+3. **Errors**: Serious problems that applications shouldn't try to handle (e.g., OutOfMemoryError)
+
+## Basic Exception Handling with try-catch
+
+The `try-catch` block is used to handle exceptions in Java.
+
+### Syntax
+
+```java
+try {
+    // Code that might throw an exception
+} catch (ExceptionType e) {
+    // Code to handle the exception
+}
+```
+
+### Example: Handling ArithmeticException
+
+```java
+class Main {
+    public static void main(String[] args) {
+        try {
+            int a = 10;
+            int b = 0;
+            int result = a / b; // This will throw ArithmeticException
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Cannot divide by zero!");
+            System.out.println("Exception message: " + e.getMessage());
+        }
+
+        System.out.println("Program continues...");
+    }
+}
+```
+
+**Output:**
+
+```plaintext
+Error: Cannot divide by zero!
+Exception message: / by zero
+Program continues...
+```
+
+## Multiple catch Blocks
+
+You can handle different types of exceptions using multiple catch blocks.
+
+```java
+class Main {
+    public static void main(String[] args) {
+        try {
+            int[] numbers = {1, 2, 3};
+            System.out.println(numbers[5]); // ArrayIndexOutOfBoundsException
+
+            int result = 10 / 0; // ArithmeticException
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array index out of bounds: " + e.getMessage());
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic error: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("General exception: " + e.getMessage());
+        }
+    }
+}
+```
+
+<Callout>
+
+**Note:** More specific exception types should be caught before general ones. The `Exception` class should be the last catch block as it's the parent of all exceptions.
+
+</Callout>
+
+## The finally Block
+
+The `finally` block contains code that executes regardless of whether an exception occurs or not. It's typically used for cleanup operations.
+
+```java
+class Main {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 2;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        } finally {
+            System.out.println("This always executes!");
+        }
+
+        System.out.println("Program ends");
+    }
+}
+```
+
+**Output:**
+
+```plaintext
+Result: 5
+This always executes!
+Program ends
+```
+
+### Example: File Handling with finally
+
+```java
+import java.io.*;
+
+class FileExample {
+    public static void main(String[] args) {
+        FileReader file = null;
+        try {
+            file = new FileReader("test.txt");
+            // Read file operations
+            System.out.println("File opened successfully");
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + e.getMessage());
+        } finally {
+            // Cleanup: Close the file
+            if (file != null) {
+                try {
+                    file.close();
+                    System.out.println("File closed");
+                } catch (IOException e) {
+                    System.out.println("Error closing file: " + e.getMessage());
+                }
+            }
+        }
+    }
+}
+```
+
+## The throw Keyword
+
+The `throw` keyword is used to explicitly throw an exception.
+
+```java
+class AgeValidator {
+    static void validateAge(int age) {
+        if (age < 18) {
+            throw new IllegalArgumentException("Age must be 18 or older");
+        }
+        System.out.println("Age is valid: " + age);
+    }
+
+    public static void main(String[] args) {
+        try {
+            validateAge(16);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+
+        validateAge(25); // This will execute normally
+    }
+}
+```
+
+**Output:**
+
+```plaintext
+Exception: Age must be 18 or older
+Age is valid: 25
+```
+
+## The throws Keyword
+
+The `throws` keyword is used in method signatures to declare that the method might throw certain exceptions.
+
+```java
+import java.io.*;
+
+class FileHandler {
+    // Method declares that it might throw IOException
+    static void readFile(String fileName) throws IOException {
+        FileReader file = new FileReader(fileName);
+        BufferedReader reader = new BufferedReader(file);
+        System.out.println(reader.readLine());
+        reader.close();
+    }
+
+    public static void main(String[] args) {
+        try {
+            readFile("example.txt");
+        } catch (IOException e) {
+            System.out.println("File error: " + e.getMessage());
+        }
+    }
+}
+```
+
+## Custom Exceptions
+
+You can create your own exception classes by extending the `Exception` class or its subclasses.
+
+```java
+// Custom exception class
+class InsufficientFundsException extends Exception {
+    public InsufficientFundsException(String message) {
+        super(message);
+    }
+}
+
+class BankAccount {
+    private double balance;
+
+    public BankAccount(double balance) {
+        this.balance = balance;
+    }
+
+    public void withdraw(double amount) throws InsufficientFundsException {
+        if (amount > balance) {
+            throw new InsufficientFundsException(
+                "Insufficient funds. Available: $" + balance + ", Requested: $" + amount
+            );
+        }
+        balance -= amount;
+        System.out.println("Withdrawal successful. New balance: $" + balance);
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(1000.0);
+
+        try {
+            account.withdraw(500.0);  // Success
+            account.withdraw(600.0);  // This will throw custom exception
+        } catch (InsufficientFundsException e) {
+            System.out.println("Transaction failed: " + e.getMessage());
+        }
+    }
+}
+```
+
+**Output:**
+
+```plaintext
+Withdrawal successful. New balance: $500.0
+Transaction failed: Insufficient funds. Available: $500.0, Requested: $600.0
+```
+
+## Common Exception Types
+
+### 1. NullPointerException
+
+Thrown when trying to access methods or fields of a null reference.
+
+```java
+class Main {
+    public static void main(String[] args) {
+        try {
+            String str = null;
+            int length = str.length(); // NullPointerException
+        } catch (NullPointerException e) {
+            System.out.println("Null pointer error: " + e.getMessage());
+        }
+    }
+}
+```
+
+### 2. ArrayIndexOutOfBoundsException
+
+Thrown when accessing an array with an invalid index.
+
+```java
+class Main {
+    public static void main(String[] args) {
+        try {
+            int[] numbers = {1, 2, 3};
+            System.out.println(numbers[5]); // Invalid index
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array index error: " + e.getMessage());
+        }
+    }
+}
+```
+
+### 3. NumberFormatException
+
+Thrown when trying to convert an invalid string to a number.
+
+```java
+class Main {
+    public static void main(String[] args) {
+        try {
+            String str = "abc";
+            int number = Integer.parseInt(str); // Invalid number format
+        } catch (NumberFormatException e) {
+            System.out.println("Number format error: " + e.getMessage());
+        }
+    }
+}
+```
+
+## Exception Handling Best Practices
+
+### 1. Use Specific Exception Types
+
+```java
+// Good
+try {
+    // code
+} catch (FileNotFoundException e) {
+    // handle file not found
+} catch (IOException e) {
+    // handle other IO errors
+}
+
+// Avoid
+try {
+    // code
+} catch (Exception e) {
+    // too generic
+}
+```
+
+### 2. Don't Ignore Exceptions
+
+```java
+// Bad
+try {
+    // risky code
+} catch (Exception e) {
+    // empty catch block - never do this!
+}
+
+// Good
+try {
+    // risky code
+} catch (Exception e) {
+    logger.error("Error occurred: " + e.getMessage(), e);
+    // or handle appropriately
+}
+```
+
+### 3. Use try-with-resources for Resource Management
+
+```java
+// Automatic resource management (Java 7+)
+try (FileReader file = new FileReader("example.txt");
+     BufferedReader reader = new BufferedReader(file)) {
+
+    String line = reader.readLine();
+    System.out.println(line);
+
+} catch (IOException e) {
+    System.out.println("File error: " + e.getMessage());
+}
+// File is automatically closed
+```
+
+## Real-World Example: User Input Validation
+
+```java
+import java.util.Scanner;
+
+class UserInputValidator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            try {
+                System.out.print("Enter your age: ");
+                String input = scanner.nextLine();
+
+                int age = Integer.parseInt(input);
+
+                if (age < 0) {
+                    throw new IllegalArgumentException("Age cannot be negative");
+                }
+
+                if (age > 150) {
+                    throw new IllegalArgumentException("Age seems unrealistic");
+                }
+
+                System.out.println("Valid age: " + age);
+                break; // Exit loop on successful input
+
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid number!");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Invalid age: " + e.getMessage());
+            }
+        }
+
+        scanner.close();
+    }
+}
+```
+
+## Exception Propagation
+
+When an exception is not handled in a method, it propagates up the call stack.
+
+```java
+class ExceptionPropagation {
+    static void method1() {
+        int result = 10 / 0; // ArithmeticException thrown here
+    }
+
+    static void method2() {
+        method1(); // Exception propagates from method1
+    }
+
+    static void method3() {
+        try {
+            method2(); // Exception propagates from method2
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught in method3: " + e.getMessage());
+        }
+    }
+
+    public static void main(String[] args) {
+        method3();
+        System.out.println("Program continues...");
+    }
+}
+```
+
+## Key Points to Remember
+
+- Use `try-catch` blocks to handle exceptions gracefully
+- Always handle specific exceptions before general ones
+- Use `finally` block for cleanup operations
+- Use `throw` to explicitly throw exceptions
+- Use `throws` in method signatures to declare possible exceptions
+- Create custom exceptions by extending `Exception` class
+- Never ignore exceptions with empty catch blocks
+- Use try-with-resources for automatic resource management
+- Exceptions propagate up the call stack if not handled
+
+<Callout>
+
+**Best Practice:** Handle exceptions at the appropriate level in your application. Don't catch exceptions too early if you can't meaningfully handle them at that point.
+
+</Callout>
