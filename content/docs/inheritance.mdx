@@ -1,0 +1,504 @@
+---
+title: Java Inheritance
+description: Complete guide to Java inheritance with examples. Learn extends keyword, super keyword, method overriding, and inheritance types in Java OOP.
+icon: GitBranch
+---
+
+Inheritance is one of the fundamental concepts of Object-Oriented Programming (OOP). It allows a class to inherit properties and methods from another class, promoting code reusability and establishing a relationship between classes.
+
+## What is Inheritance in Java?
+
+Inheritance is a mechanism where a new class (child class or subclass) can inherit properties and methods from an existing class (parent class or superclass). The child class can use the parent class's methods and fields, and can also add its own methods and fields.
+
+```java
+class Animal {  // Parent class (superclass)
+    String name;
+
+    void eat() {
+        System.out.println(name + " is eating");
+    }
+}
+
+class Dog extends Animal {  // Child class (subclass)
+    void bark() {
+        System.out.println(name + " is barking");
+    }
+}
+```
+
+## The extends Keyword
+
+The `extends` keyword is used to establish inheritance between classes. The child class extends the parent class.
+
+### Syntax
+
+```java
+class ChildClass extends ParentClass {
+    // child class body
+}
+```
+
+### Example: Basic Inheritance
+
+```java
+class Vehicle {
+    String brand;
+    int speed;
+
+    void displayInfo() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Speed: " + speed + " km/h");
+    }
+
+    void start() {
+        System.out.println("Vehicle is starting...");
+    }
+}
+
+class Car extends Vehicle {
+    int doors;
+
+    void honk() {
+        System.out.println("Car is honking!");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.brand = "Toyota";
+        myCar.speed = 180;
+        myCar.doors = 4;
+
+        // Using inherited methods
+        myCar.displayInfo();
+        myCar.start();
+
+        // Using car-specific method
+        myCar.honk();
+    }
+}
+```
+
+**Output:**
+
+```plaintext
+Brand: Toyota
+Speed: 180 km/h
+Vehicle is starting...
+Car is honking!
+```
+
+## Types of Inheritance
+
+### 1. Single Inheritance
+
+One class inherits from another class.
+
+```java
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+```
+
+### 2. Multilevel Inheritance
+
+A class inherits from another class, which itself inherits from another class.
+
+```java
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Mammal extends Animal {
+    void walk() {
+        System.out.println("Mammal is walking");
+    }
+}
+
+class Dog extends Mammal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();   // From Animal class
+        dog.walk();  // From Mammal class
+        dog.bark();  // From Dog class
+    }
+}
+```
+
+### 3. Hierarchical Inheritance
+
+Multiple classes inherit from a single parent class.
+
+```java
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Cat is meowing");
+    }
+}
+```
+
+<Callout>
+
+**Note:** Java doesn't support multiple inheritance of classes (a class cannot extend multiple classes), but it supports multiple inheritance through interfaces.
+
+</Callout>
+
+## The super Keyword
+
+The `super` keyword is used to refer to the immediate parent class object. It has several uses:
+
+### 1. Accessing Parent Class Methods
+
+```java
+class Animal {
+    void display() {
+        System.out.println("I am an animal");
+    }
+}
+
+class Dog extends Animal {
+    void display() {
+        super.display(); // Call parent class method
+        System.out.println("I am a dog");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.display();
+    }
+}
+```
+
+**Output:**
+
+```plaintext
+I am an animal
+I am a dog
+```
+
+### 2. Accessing Parent Class Variables
+
+```java
+class Animal {
+    String color = "white";
+}
+
+class Dog extends Animal {
+    String color = "brown";
+
+    void displayColors() {
+        System.out.println("Dog color: " + color);        // brown
+        System.out.println("Animal color: " + super.color); // white
+    }
+}
+```
+
+### 3. Calling Parent Class Constructor
+
+```java
+class Animal {
+    String name;
+
+    Animal(String name) {
+        this.name = name;
+        System.out.println("Animal constructor called");
+    }
+}
+
+class Dog extends Animal {
+    String breed;
+
+    Dog(String name, String breed) {
+        super(name); // Call parent constructor
+        this.breed = breed;
+        System.out.println("Dog constructor called");
+    }
+
+    void display() {
+        System.out.println("Name: " + name + ", Breed: " + breed);
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog("Buddy", "Golden Retriever");
+        dog.display();
+    }
+}
+```
+
+**Output:**
+
+```plaintext
+Animal constructor called
+Dog constructor called
+Name: Buddy, Breed: Golden Retriever
+```
+
+## Method Overriding
+
+Method overriding allows a child class to provide a specific implementation of a method that is already defined in its parent class.
+
+### Rules for Method Overriding
+
+1. The method must have the same name as in the parent class
+2. The method must have the same parameters as in the parent class
+3. There must be an IS-A relationship (inheritance)
+
+### Example: Method Overriding
+
+```java
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+
+    void sleep() {
+        System.out.println("Animal is sleeping");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+
+    // sleep() method is inherited as-is
+}
+
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Cat meows");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Animal animal1 = new Dog();
+        Animal animal2 = new Cat();
+
+        animal1.makeSound(); // Dog barks
+        animal2.makeSound(); // Cat meows
+
+        animal1.sleep();     // Animal is sleeping
+    }
+}
+```
+
+### @Override Annotation
+
+The `@Override` annotation is used to indicate that a method is being overridden. It helps catch errors at compile time.
+
+```java
+class Parent {
+    void display() {
+        System.out.println("Parent display");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void display() { // This annotation ensures correct overriding
+        System.out.println("Child display");
+    }
+}
+```
+
+## Access Modifiers and Inheritance
+
+Different access modifiers affect how members are inherited:
+
+| Access Modifier | Same Class | Same Package | Subclass | Other Package |
+| --------------- | ---------- | ------------ | -------- | ------------- |
+| private         | ✓          | ✗            | ✗        | ✗             |
+| default         | ✓          | ✓            | ✓\*      | ✗             |
+| protected       | ✓          | ✓            | ✓        | ✗             |
+| public          | ✓          | ✓            | ✓        | ✓             |
+
+\*Only if subclass is in the same package
+
+### Example: Protected Members
+
+```java
+class Parent {
+    protected String message = "Hello from Parent";
+
+    protected void display() {
+        System.out.println("Protected method in Parent");
+    }
+}
+
+class Child extends Parent {
+    void show() {
+        System.out.println(message); // Can access protected member
+        display(); // Can access protected method
+    }
+}
+```
+
+## Constructor Chaining in Inheritance
+
+When creating an object of a child class, constructors are called in a chain from parent to child.
+
+```java
+class GrandParent {
+    GrandParent() {
+        System.out.println("GrandParent constructor");
+    }
+}
+
+class Parent extends GrandParent {
+    Parent() {
+        System.out.println("Parent constructor");
+    }
+}
+
+class Child extends Parent {
+    Child() {
+        System.out.println("Child constructor");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Child child = new Child();
+    }
+}
+```
+
+**Output:**
+
+```plaintext
+GrandParent constructor
+Parent constructor
+Child constructor
+```
+
+## Real-World Example: Employee Management System
+
+```java
+class Employee {
+    protected String name;
+    protected int id;
+    protected double salary;
+
+    public Employee(String name, int id, double salary) {
+        this.name = name;
+        this.id = id;
+        this.salary = salary;
+    }
+
+    public void displayInfo() {
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Salary: $" + salary);
+    }
+
+    public double calculateBonus() {
+        return salary * 0.05; // 5% bonus
+    }
+}
+
+class Manager extends Employee {
+    private int teamSize;
+
+    public Manager(String name, int id, double salary, int teamSize) {
+        super(name, id, salary);
+        this.teamSize = teamSize;
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Team Size: " + teamSize);
+        System.out.println("Role: Manager");
+    }
+
+    @Override
+    public double calculateBonus() {
+        return salary * 0.15; // 15% bonus for managers
+    }
+}
+
+class Developer extends Employee {
+    private String programmingLanguage;
+
+    public Developer(String name, int id, double salary, String language) {
+        super(name, id, salary);
+        this.programmingLanguage = language;
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Programming Language: " + programmingLanguage);
+        System.out.println("Role: Developer");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Manager manager = new Manager("Alice", 101, 75000, 5);
+        Developer developer = new Developer("Bob", 102, 60000, "Java");
+
+        System.out.println("Manager Details:");
+        manager.displayInfo();
+        System.out.println("Bonus: $" + manager.calculateBonus());
+
+        System.out.println("\nDeveloper Details:");
+        developer.displayInfo();
+        System.out.println("Bonus: $" + developer.calculateBonus());
+    }
+}
+```
+
+## Key Points to Remember
+
+- Use `extends` keyword to establish inheritance
+- Child class inherits all non-private members from parent class
+- Use `super` keyword to access parent class members
+- Method overriding allows child class to provide specific implementation
+- Use `@Override` annotation to ensure correct method overriding
+- Constructor chaining happens automatically from parent to child
+- Java supports single inheritance for classes
+- `private` members are not inherited
+- `protected` members are accessible to child classes
+
+<Callout>
+
+**Best Practice:** Always use the `@Override` annotation when overriding methods to catch errors early and improve code readability.
+
+</Callout>

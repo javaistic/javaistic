@@ -1,0 +1,705 @@
+---
+title: Java Interfaces
+description: Complete guide to Java interfaces with examples. Learn interface declaration, implementation, multiple inheritance, default methods, and interface vs abstract class.
+icon: Network
+---
+
+An interface in Java is a reference type that defines a contract of methods that a class must implement. Interfaces are used to achieve abstraction and multiple inheritance in Java, providing a way to specify what a class must do without defining how it should do it.
+
+## What is an Interface?
+
+An interface is a collection of abstract methods (methods without implementation) and constants. It defines a contract that implementing classes must follow. Think of an interface as a blueprint that specifies what methods a class should have.
+
+### Basic Interface Syntax
+
+```java
+interface InterfaceName {
+    // Constant declarations (public, static, final by default)
+    int CONSTANT_VALUE = 100;
+
+    // Abstract method declarations (public and abstract by default)
+    void method1();
+    int method2(String parameter);
+}
+```
+
+## Creating and Implementing Interfaces
+
+### Example: Basic Interface
+
+```java
+interface Animal {
+    // Constants (implicitly public, static, final)
+    String KINGDOM = "Animalia";
+
+    // Abstract methods (implicitly public and abstract)
+    void makeSound();
+    void move();
+    void eat();
+}
+
+class Dog implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Dog barks: Woof! Woof!");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Dog runs on four legs");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Dog eats dog food");
+    }
+}
+
+class Bird implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Bird chirps: Tweet! Tweet!");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Bird flies in the sky");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Bird eats seeds and insects");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Animal dog = new Dog();
+        Animal bird = new Bird();
+
+        System.out.println("Kingdom: " + Animal.KINGDOM);
+
+        System.out.println("\nDog behaviors:");
+        dog.makeSound();
+        dog.move();
+        dog.eat();
+
+        System.out.println("\nBird behaviors:");
+        bird.makeSound();
+        bird.move();
+        bird.eat();
+    }
+}
+```
+
+## Multiple Inheritance with Interfaces
+
+Java doesn't support multiple inheritance of classes, but it supports multiple inheritance through interfaces. A class can implement multiple interfaces.
+
+### Example: Multiple Interface Implementation
+
+```java
+interface Flyable {
+    void fly();
+    int getMaxAltitude();
+}
+
+interface Swimmable {
+    void swim();
+    int getMaxDepth();
+}
+
+interface Walkable {
+    void walk();
+    int getMaxSpeed();
+}
+
+class Duck implements Flyable, Swimmable, Walkable {
+    @Override
+    public void fly() {
+        System.out.println("Duck flies at moderate altitude");
+    }
+
+    @Override
+    public int getMaxAltitude() {
+        return 1000; // meters
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("Duck swims on water surface");
+    }
+
+    @Override
+    public int getMaxDepth() {
+        return 2; // meters
+    }
+
+    @Override
+    public void walk() {
+        System.out.println("Duck waddles on land");
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return 8; // km/h
+    }
+}
+
+class Penguin implements Swimmable, Walkable {
+    @Override
+    public void swim() {
+        System.out.println("Penguin swims underwater");
+    }
+
+    @Override
+    public int getMaxDepth() {
+        return 500; // meters
+    }
+
+    @Override
+    public void walk() {
+        System.out.println("Penguin walks on ice");
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return 5; // km/h
+    }
+}
+
+class AnimalShowcase {
+    public static void main(String[] args) {
+        Duck duck = new Duck();
+        Penguin penguin = new Penguin();
+
+        System.out.println("=== Duck Abilities ===");
+        duck.fly();
+        duck.swim();
+        duck.walk();
+        System.out.println("Max altitude: " + duck.getMaxAltitude() + "m");
+
+        System.out.println("\n=== Penguin Abilities ===");
+        penguin.swim();
+        penguin.walk();
+        System.out.println("Max depth: " + penguin.getMaxDepth() + "m");
+    }
+}
+```
+
+## Interface Inheritance
+
+Interfaces can extend other interfaces using the `extends` keyword.
+
+```java
+interface Vehicle {
+    void start();
+    void stop();
+}
+
+interface LandVehicle extends Vehicle {
+    void accelerate();
+    void brake();
+}
+
+interface WaterVehicle extends Vehicle {
+    void sail();
+    void anchor();
+}
+
+interface AmphibiousVehicle extends LandVehicle, WaterVehicle {
+    void switchToLandMode();
+    void switchToWaterMode();
+}
+
+class AmphibiousCar implements AmphibiousVehicle {
+    private String mode = "land";
+
+    @Override
+    public void start() {
+        System.out.println("Amphibious car engine started");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Amphibious car engine stopped");
+    }
+
+    @Override
+    public void accelerate() {
+        System.out.println("Accelerating on land");
+    }
+
+    @Override
+    public void brake() {
+        System.out.println("Braking on land");
+    }
+
+    @Override
+    public void sail() {
+        System.out.println("Sailing on water");
+    }
+
+    @Override
+    public void anchor() {
+        System.out.println("Anchoring in water");
+    }
+
+    @Override
+    public void switchToLandMode() {
+        mode = "land";
+        System.out.println("Switched to land mode");
+    }
+
+    @Override
+    public void switchToWaterMode() {
+        mode = "water";
+        System.out.println("Switched to water mode");
+    }
+}
+```
+
+## Default Methods (Java 8+)
+
+Since Java 8, interfaces can have default methods with implementation. This allows adding new methods to interfaces without breaking existing implementations.
+
+```java
+interface Drawable {
+    // Abstract method
+    void draw();
+
+    // Default method
+    default void print() {
+        System.out.println("Printing: " + this.getClass().getSimpleName());
+    }
+
+    // Default method with logic
+    default void displayInfo() {
+        System.out.println("This is a drawable object");
+        draw(); // Calling abstract method
+    }
+}
+
+interface Colorable {
+    String getColor();
+
+    default void paintWithColor(String color) {
+        System.out.println("Painting with " + color + " color");
+    }
+}
+
+class Circle implements Drawable, Colorable {
+    private String color;
+
+    public Circle(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+
+    @Override
+    public String getColor() {
+        return color;
+    }
+}
+
+class Rectangle implements Drawable, Colorable {
+    private String color;
+
+    public Rectangle(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+
+    @Override
+    public String getColor() {
+        return color;
+    }
+
+    // Overriding default method
+    @Override
+    public void print() {
+        System.out.println("Custom printing for rectangle");
+    }
+}
+
+class DefaultMethodExample {
+    public static void main(String[] args) {
+        Circle circle = new Circle("Red");
+        Rectangle rectangle = new Rectangle("Blue");
+
+        System.out.println("=== Circle ===");
+        circle.draw();
+        circle.print(); // Using default method
+        circle.displayInfo(); // Using default method
+        System.out.println("Color: " + circle.getColor());
+
+        System.out.println("\n=== Rectangle ===");
+        rectangle.draw();
+        rectangle.print(); // Using overridden method
+        rectangle.paintWithColor("Green"); // Using default method from Colorable
+    }
+}
+```
+
+## Static Methods in Interfaces (Java 8+)
+
+Interfaces can also have static methods that belong to the interface itself.
+
+```java
+interface MathUtils {
+    // Abstract method
+    double calculate();
+
+    // Static method
+    static double add(double a, double b) {
+        return a + b;
+    }
+
+    static double multiply(double a, double b) {
+        return a * b;
+    }
+
+    static void printWelcome() {
+        System.out.println("Welcome to MathUtils!");
+    }
+}
+
+class Calculator implements MathUtils {
+    private double result;
+
+    public Calculator(double initialValue) {
+        this.result = initialValue;
+    }
+
+    @Override
+    public double calculate() {
+        return result;
+    }
+
+    public void add(double value) {
+        result = MathUtils.add(result, value); // Using static method
+    }
+
+    public void multiply(double value) {
+        result = MathUtils.multiply(result, value); // Using static method
+    }
+}
+
+class StaticMethodExample {
+    public static void main(String[] args) {
+        MathUtils.printWelcome(); // Calling static method directly
+
+        Calculator calc = new Calculator(10);
+        calc.add(5);
+        calc.multiply(2);
+
+        System.out.println("Result: " + calc.calculate());
+
+        // Using static methods directly
+        double sum = MathUtils.add(10, 20);
+        double product = MathUtils.multiply(5, 6);
+        System.out.println("Sum: " + sum + ", Product: " + product);
+    }
+}
+```
+
+## Real-World Example: Payment System
+
+```java
+interface PaymentProcessor {
+    // Constants
+    double MAX_TRANSACTION_AMOUNT = 10000.0;
+    String CURRENCY = "USD";
+
+    // Abstract methods
+    boolean processPayment(double amount);
+    String getPaymentMethod();
+    double getTransactionFee(double amount);
+
+    // Default method
+    default boolean isValidAmount(double amount) {
+        return amount > 0 && amount <= MAX_TRANSACTION_AMOUNT;
+    }
+
+    default void logTransaction(double amount) {
+        System.out.println("Transaction logged: " + amount + " " + CURRENCY);
+    }
+
+    // Static method
+    static String formatCurrency(double amount) {
+        return String.format("%.2f %s", amount, CURRENCY);
+    }
+}
+
+interface SecurePayment {
+    boolean authenticate(String credentials);
+    void encrypt();
+    void decrypt();
+
+    default boolean isSecure() {
+        return true;
+    }
+}
+
+class CreditCardProcessor implements PaymentProcessor, SecurePayment {
+    private String cardNumber;
+
+    public CreditCardProcessor(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    @Override
+    public boolean processPayment(double amount) {
+        if (!isValidAmount(amount)) {
+            System.out.println("Invalid amount: " + amount);
+            return false;
+        }
+
+        encrypt();
+        System.out.println("Processing credit card payment of " +
+                         PaymentProcessor.formatCurrency(amount));
+        decrypt();
+        logTransaction(amount);
+        return true;
+    }
+
+    @Override
+    public String getPaymentMethod() {
+        return "Credit Card";
+    }
+
+    @Override
+    public double getTransactionFee(double amount) {
+        return amount * 0.03; // 3% fee
+    }
+
+    @Override
+    public boolean authenticate(String credentials) {
+        System.out.println("Authenticating credit card...");
+        return credentials.equals("valid_pin");
+    }
+
+    @Override
+    public void encrypt() {
+        System.out.println("Encrypting credit card data");
+    }
+
+    @Override
+    public void decrypt() {
+        System.out.println("Decrypting credit card data");
+    }
+}
+
+class PayPalProcessor implements PaymentProcessor, SecurePayment {
+    private String email;
+
+    public PayPalProcessor(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public boolean processPayment(double amount) {
+        if (!isValidAmount(amount)) {
+            System.out.println("Invalid amount: " + amount);
+            return false;
+        }
+
+        System.out.println("Processing PayPal payment of " +
+                         PaymentProcessor.formatCurrency(amount));
+        logTransaction(amount);
+        return true;
+    }
+
+    @Override
+    public String getPaymentMethod() {
+        return "PayPal";
+    }
+
+    @Override
+    public double getTransactionFee(double amount) {
+        return amount * 0.025; // 2.5% fee
+    }
+
+    @Override
+    public boolean authenticate(String credentials) {
+        System.out.println("Authenticating PayPal account...");
+        return credentials.equals("valid_password");
+    }
+
+    @Override
+    public void encrypt() {
+        System.out.println("Encrypting PayPal data");
+    }
+
+    @Override
+    public void decrypt() {
+        System.out.println("Decrypting PayPal data");
+    }
+}
+
+class PaymentSystem {
+    public static void processPayments(PaymentProcessor[] processors, double amount) {
+        System.out.println("=== Payment Processing System ===\n");
+
+        for (PaymentProcessor processor : processors) {
+            System.out.println("Payment Method: " + processor.getPaymentMethod());
+            System.out.println("Transaction Fee: " +
+                             PaymentProcessor.formatCurrency(processor.getTransactionFee(amount)));
+
+            boolean success = processor.processPayment(amount);
+            System.out.println("Payment Status: " + (success ? "SUCCESS" : "FAILED"));
+            System.out.println("---");
+        }
+    }
+
+    public static void main(String[] args) {
+        PaymentProcessor[] processors = {
+            new CreditCardProcessor("1234-5678-9012-3456"),
+            new PayPalProcessor("user@example.com")
+        };
+
+        processPayments(processors, 250.0);
+    }
+}
+```
+
+## Interface vs Abstract Class
+
+| Feature              | Interface                                      | Abstract Class                              |
+| -------------------- | ---------------------------------------------- | ------------------------------------------- |
+| **Methods**          | Abstract by default (can have default/static)  | Can have both abstract and concrete methods |
+| **Variables**        | Only constants (public, static, final)         | Can have instance variables                 |
+| **Inheritance**      | Multiple inheritance supported                 | Single inheritance only                     |
+| **Constructor**      | Cannot have constructors                       | Can have constructors                       |
+| **Access Modifiers** | Methods are public by default                  | Can have any access modifier                |
+| **When to Use**      | Define contracts, achieve multiple inheritance | Share code among related classes            |
+
+### Example: When to Use Interface vs Abstract Class
+
+```java
+// Use Interface: Define contract for unrelated classes
+interface Printable {
+    void print();
+}
+
+class Document implements Printable {
+    public void print() { System.out.println("Printing document"); }
+}
+
+class Photo implements Printable {
+    public void print() { System.out.println("Printing photo"); }
+}
+
+// Use Abstract Class: Share common code among related classes
+abstract class Shape {
+    protected String color;
+
+    public Shape(String color) {
+        this.color = color;
+    }
+
+    // Concrete method
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    // Abstract method
+    public abstract double getArea();
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(String color, double radius) {
+        super(color);
+        this.radius = radius;
+    }
+
+    @Override
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+}
+```
+
+## Best Practices for Interfaces
+
+### 1. Keep Interfaces Focused
+
+```java
+// Good: Single responsibility
+interface FileReader {
+    String readFile(String path);
+}
+
+interface FileWriter {
+    void writeFile(String path, String content);
+}
+
+// Avoid: Too many responsibilities
+interface FileHandler {
+    String readFile(String path);
+    void writeFile(String path, String content);
+    void deleteFile(String path);
+    void copyFile(String source, String dest);
+    // ... many more methods
+}
+```
+
+### 2. Use Default Methods Carefully
+
+```java
+interface Sortable {
+    void sort();
+
+    // Good: Providing useful default behavior
+    default void sortDescending() {
+        sort();
+        reverse();
+    }
+
+    private void reverse() {
+        // Helper method implementation
+    }
+}
+```
+
+### 3. Design for Extension
+
+```java
+interface EventHandler<T> {
+    void handle(T event);
+
+    // Allows for future extension without breaking existing code
+    default boolean canHandle(T event) {
+        return true;
+    }
+}
+```
+
+## Key Points to Remember
+
+- **Interfaces** define contracts that classes must implement
+- All methods in interfaces are **public and abstract** by default (before Java 8)
+- Interface variables are **public, static, and final** by default
+- Classes can implement **multiple interfaces** (multiple inheritance)
+- Interfaces can **extend other interfaces**
+- **Default methods** (Java 8+) provide implementations in interfaces
+- **Static methods** in interfaces belong to the interface itself
+- Use interfaces for **contracts** and abstract classes for **shared implementation**
+- Interfaces promote **loose coupling** and **high cohesion**
+- **Polymorphism** works seamlessly with interfaces
+
+<Callout>
+
+**Best Practice:** Program to interfaces, not implementations. This makes your code more flexible, testable, and maintainable.
+
+</Callout>
