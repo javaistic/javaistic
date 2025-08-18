@@ -27,6 +27,8 @@
     "---Java Arrays---",
     "arrays",
     "multidimensional-arrays",
+    "---Java Strings---",
+    "strings",
     "---Java OOPS(I)---",
     "class-objects",
     "methods",
@@ -34,6 +36,12 @@
     "constructors",
     "static-keyword",
     "this-keyword",
-    "final-keyword"
+    "final-keyword",
+    "---Java OOPS(II)---",
+    "inheritance",
+    "polymorphism",
+    "interfaces",
+    "---Java Exception Handling---",
+    "exception-handling"
   ]
 }

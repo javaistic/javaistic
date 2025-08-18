@@ -1,0 +1,629 @@
+---
+title: Java Program to Demonstrate Inheritance and Polymorphism
+shortTitle: Inheritance & Polymorphism
+description: Comprehensive Java program demonstrating inheritance concepts including extends keyword, method overriding, and polymorphism with real-world examples.
+---
+
+In this program, you'll learn about inheritance and polymorphism through practical examples that show how classes can inherit from other classes and how objects can take multiple forms.
+
+To understand this example, you should have the knowledge of the following Java programming topics:
+
+- [Java Inheritance](/docs/inheritance)
+- [Java Polymorphism](/docs/polymorphism)
+- [Java Class and Objects](/docs/class-objects)
+- [Java Methods](/docs/methods)
+
+## Inheritance and Polymorphism Program
+
+### Example 1: Basic Inheritance with Vehicle Classes
+
+```java
+// Base class (Parent class)
+class Vehicle {
+    protected String brand;
+    protected String model;
+    protected int year;
+
+    // Constructor
+    public Vehicle(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+    }
+
+    // Method to start the vehicle
+    public void start() {
+        System.out.println("The " + brand + " " + model + " is starting...");
+    }
+
+    // Method to stop the vehicle
+    public void stop() {
+        System.out.println("The " + brand + " " + model + " is stopping...");
+    }
+
+    // Method to display basic info
+    public void displayInfo() {
+        System.out.println("=== Vehicle Information ===");
+        System.out.println("Brand: " + brand);
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+    }
+
+    // Method that can be overridden
+    public void makeSound() {
+        System.out.println("Vehicle makes a sound");
+    }
+}
+
+// Derived class (Child class)
+class Car extends Vehicle {
+    private int numberOfDoors;
+    private String fuelType;
+
+    public Car(String brand, String model, int year, int numberOfDoors, String fuelType) {
+        super(brand, model, year); // Call parent constructor
+        this.numberOfDoors = numberOfDoors;
+        this.fuelType = fuelType;
+    }
+
+    // Override the makeSound method
+    @Override
+    public void makeSound() {
+        System.out.println("Car engine: Vroom vroom!");
+    }
+
+    // Override displayInfo to include car-specific information
+    @Override
+    public void displayInfo() {
+        super.displayInfo(); // Call parent method
+        System.out.println("Number of Doors: " + numberOfDoors);
+        System.out.println("Fuel Type: " + fuelType);
+        System.out.println("Type: Car");
+    }
+
+    // Car-specific method
+    public void honk() {
+        System.out.println("Car horn: Beep beep!");
+    }
+}
+
+// Another derived class
+class Motorcycle extends Vehicle {
+    private boolean hasSidecar;
+
+    public Motorcycle(String brand, String model, int year, boolean hasSidecar) {
+        super(brand, model, year);
+        this.hasSidecar = hasSidecar;
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.println("Motorcycle engine: Vroom vroom vrooooom!");
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Has Sidecar: " + (hasSidecar ? "Yes" : "No"));
+        System.out.println("Type: Motorcycle");
+    }
+
+    // Motorcycle-specific method
+    public void wheelie() {
+        System.out.println("Motorcycle doing a wheelie!");
+    }
+}
+
+class InheritanceDemo {
+    public static void main(String[] args) {
+        // Create instances of different vehicle types
+        Vehicle genericVehicle = new Vehicle("Generic", "Model X", 2020);
+        Car car = new Car("Toyota", "Camry", 2022, 4, "Gasoline");
+        Motorcycle motorcycle = new Motorcycle("Honda", "CBR600", 2021, false);
+
+        System.out.println("=== Testing Inheritance ===\n");
+
+        // Test generic vehicle
+        genericVehicle.displayInfo();
+        genericVehicle.start();
+        genericVehicle.makeSound();
+        genericVehicle.stop();
+
+        System.out.println("\n" + "=".repeat(40) + "\n");
+
+        // Test car
+        car.displayInfo();
+        car.start();
+        car.makeSound();
+        car.honk(); // Car-specific method
+        car.stop();
+
+        System.out.println("\n" + "=".repeat(40) + "\n");
+
+        // Test motorcycle
+        motorcycle.displayInfo();
+        motorcycle.start();
+        motorcycle.makeSound();
+        motorcycle.wheelie(); // Motorcycle-specific method
+        motorcycle.stop();
+    }
+}
+```
+
+#### Output:
+
+```
+=== Testing Inheritance ===
+
+=== Vehicle Information ===
+Brand: Generic
+Model: Model X
+Year: 2020
+The Generic Model X is starting...
+Vehicle makes a sound
+The Generic Model X is stopping...
+
+========================================
+
+=== Vehicle Information ===
+Brand: Toyota
+Model: Camry
+Year: 2022
+Number of Doors: 4
+Fuel Type: Gasoline
+Type: Car
+The Toyota Camry is starting...
+Car engine: Vroom vroom!
+Car horn: Beep beep!
+The Toyota Camry is stopping...
+
+========================================
+
+=== Vehicle Information ===
+Brand: Honda
+Model: CBR600
+Year: 2021
+Has Sidecar: No
+Type: Motorcycle
+The Honda CBR600 is starting...
+Motorcycle engine: Vroom vroom vrooooom!
+Motorcycle doing a wheelie!
+The Honda CBR600 is stopping...
+```
+
+### Example 2: Polymorphism with Animal Classes
+
+```java
+// Base class
+abstract class Animal {
+    protected String name;
+    protected int age;
+
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Abstract method - must be implemented by subclasses
+    public abstract void makeSound();
+    public abstract void move();
+
+    // Concrete method
+    public void eat() {
+        System.out.println(name + " is eating...");
+    }
+
+    public void sleep() {
+        System.out.println(name + " is sleeping...");
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+class Dog extends Animal {
+    private String breed;
+
+    public Dog(String name, int age, String breed) {
+        super(name, age);
+        this.breed = breed;
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.println(name + " barks: Woof! Woof!");
+    }
+
+    @Override
+    public void move() {
+        System.out.println(name + " runs on four legs");
+    }
+
+    public void wagTail() {
+        System.out.println(name + " is wagging its tail!");
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Breed: " + breed + ", Type: Dog");
+    }
+}
+
+class Cat extends Animal {
+    private boolean isIndoor;
+
+    public Cat(String name, int age, boolean isIndoor) {
+        super(name, age);
+        this.isIndoor = isIndoor;
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.println(name + " meows: Meow! Meow!");
+    }
+
+    @Override
+    public void move() {
+        System.out.println(name + " walks gracefully on four paws");
+    }
+
+    public void purr() {
+        System.out.println(name + " is purring contentedly");
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Indoor: " + (isIndoor ? "Yes" : "No") + ", Type: Cat");
+    }
+}
+
+class Bird extends Animal {
+    private boolean canFly;
+
+    public Bird(String name, int age, boolean canFly) {
+        super(name, age);
+        this.canFly = canFly;
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.println(name + " chirps: Tweet! Tweet!");
+    }
+
+    @Override
+    public void move() {
+        if (canFly) {
+            System.out.println(name + " flies in the sky");
+        } else {
+            System.out.println(name + " walks on the ground");
+        }
+    }
+
+    public void buildNest() {
+        System.out.println(name + " is building a nest");
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Can Fly: " + (canFly ? "Yes" : "No") + ", Type: Bird");
+    }
+}
+
+class PolymorphismDemo {
+    public static void main(String[] args) {
+        // Polymorphism: Animal references pointing to different object types
+        Animal[] animals = {
+            new Dog("Buddy", 3, "Golden Retriever"),
+            new Cat("Whiskers", 2, true),
+            new Bird("Tweety", 1, true),
+            new Dog("Max", 5, "German Shepherd"),
+            new Cat("Shadow", 4, false)
+        };
+
+        System.out.println("=== Demonstrating Polymorphism ===\n");
+
+        // Polymorphic behavior - same method call, different implementations
+        for (Animal animal : animals) {
+            System.out.println("--- Animal Details ---");
+            animal.displayInfo();
+            animal.makeSound();  // Polymorphic method call
+            animal.move();       // Polymorphic method call
+            animal.eat();        // Inherited method
+
+            // Type checking and casting for specific behaviors
+            if (animal instanceof Dog) {
+                Dog dog = (Dog) animal;
+                dog.wagTail();
+            } else if (animal instanceof Cat) {
+                Cat cat = (Cat) animal;
+                cat.purr();
+            } else if (animal instanceof Bird) {
+                Bird bird = (Bird) animal;
+                bird.buildNest();
+            }
+
+            animal.sleep();
+            System.out.println();
+        }
+
+        // Demonstrating method overloading
+        System.out.println("=== Method Overloading Demo ===");
+        AnimalTrainer trainer = new AnimalTrainer();
+
+        trainer.train(animals[0]);              // Train with Animal reference
+        trainer.train((Dog) animals[0]);        // Train with Dog reference
+        trainer.train((Dog) animals[0], "sit"); // Train with specific command
+    }
+}
+
+// Class demonstrating method overloading
+class AnimalTrainer {
+    // Method overloading - same method name, different parameters
+    public void train(Animal animal) {
+        System.out.println("Training " + animal.name + " with basic commands");
+    }
+
+    public void train(Dog dog) {
+        System.out.println("Training dog " + dog.name + " with dog-specific commands");
+        dog.wagTail();
+    }
+
+    public void train(Dog dog, String command) {
+        System.out.println("Teaching " + dog.name + " the command: " + command);
+        dog.makeSound();
+    }
+}
+```
+
+#### Output:
+
+```
+=== Demonstrating Polymorphism ===
+
+--- Animal Details ---
+Name: Buddy, Age: 3
+Breed: Golden Retriever, Type: Dog
+Buddy barks: Woof! Woof!
+Buddy runs on four legs
+Buddy is eating...
+Buddy is wagging its tail!
+Buddy is sleeping...
+
+--- Animal Details ---
+Name: Whiskers, Age: 2
+Indoor: Yes, Type: Cat
+Whiskers meows: Meow! Meow!
+Whiskers walks gracefully on four paws
+Whiskers is eating...
+Whiskers is purring contentedly
+Whiskers is sleeping...
+
+--- Animal Details ---
+Name: Tweety, Age: 1
+Can Fly: Yes, Type: Bird
+Tweety chirps: Tweet! Tweet!
+Tweety flies in the sky
+Tweety is eating...
+Tweety is building a nest
+Tweety is sleeping...
+
+=== Method Overloading Demo ===
+Training Buddy with basic commands
+Training dog Buddy with dog-specific commands
+Buddy is wagging its tail!
+Teaching Buddy the command: sit
+Buddy barks: Woof! Woof!
+```
+
+### Example 3: Real-World Employee Management System
+
+```java
+// Base Employee class
+class Employee {
+    protected String name;
+    protected int employeeId;
+    protected double baseSalary;
+
+    public Employee(String name, int employeeId, double baseSalary) {
+        this.name = name;
+        this.employeeId = employeeId;
+        this.baseSalary = baseSalary;
+    }
+
+    // Method to calculate salary (can be overridden)
+    public double calculateSalary() {
+        return baseSalary;
+    }
+
+    // Method to display employee info
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("ID: " + employeeId);
+        System.out.println("Base Salary: $" + baseSalary);
+        System.out.println("Calculated Salary: $" + calculateSalary());
+    }
+
+    // Method for work activity
+    public void work() {
+        System.out.println(name + " is working...");
+    }
+}
+
+class Manager extends Employee {
+    private double bonus;
+    private int teamSize;
+
+    public Manager(String name, int employeeId, double baseSalary, double bonus, int teamSize) {
+        super(name, employeeId, baseSalary);
+        this.bonus = bonus;
+        this.teamSize = teamSize;
+    }
+
+    @Override
+    public double calculateSalary() {
+        return baseSalary + bonus + (teamSize * 100); // $100 per team member
+    }
+
+    @Override
+    public void work() {
+        System.out.println(name + " is managing a team of " + teamSize + " people");
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Bonus: $" + bonus);
+        System.out.println("Team Size: " + teamSize);
+        System.out.println("Position: Manager");
+    }
+
+    public void conductMeeting() {
+        System.out.println(name + " is conducting a team meeting");
+    }
+}
+
+class Developer extends Employee {
+    private String programmingLanguage;
+    private int projectsCompleted;
+
+    public Developer(String name, int employeeId, double baseSalary,
+                    String programmingLanguage, int projectsCompleted) {
+        super(name, employeeId, baseSalary);
+        this.programmingLanguage = programmingLanguage;
+        this.projectsCompleted = projectsCompleted;
+    }
+
+    @Override
+    public double calculateSalary() {
+        return baseSalary + (projectsCompleted * 500); // $500 per completed project
+    }
+
+    @Override
+    public void work() {
+        System.out.println(name + " is coding in " + programmingLanguage);
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Programming Language: " + programmingLanguage);
+        System.out.println("Projects Completed: " + projectsCompleted);
+        System.out.println("Position: Developer");
+    }
+
+    public void debugCode() {
+        System.out.println(name + " is debugging " + programmingLanguage + " code");
+    }
+}
+
+class SalesRep extends Employee {
+    private double commission;
+    private double salesTarget;
+    private double actualSales;
+
+    public SalesRep(String name, int employeeId, double baseSalary,
+                   double commission, double salesTarget, double actualSales) {
+        super(name, employeeId, baseSalary);
+        this.commission = commission;
+        this.salesTarget = salesTarget;
+        this.actualSales = actualSales;
+    }
+
+    @Override
+    public double calculateSalary() {
+        double commissionEarned = actualSales * (commission / 100);
+        return baseSalary + commissionEarned;
+    }
+
+    @Override
+    public void work() {
+        System.out.println(name + " is making sales calls and meeting clients");
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Commission Rate: " + commission + "%");
+        System.out.println("Sales Target: $" + salesTarget);
+        System.out.println("Actual Sales: $" + actualSales);
+        System.out.println("Position: Sales Representative");
+    }
+
+    public void makeCall() {
+        System.out.println(name + " is calling potential clients");
+    }
+}
+
+class EmployeeManagementDemo {
+    public static void main(String[] args) {
+        // Create different types of employees
+        Employee[] employees = {
+            new Manager("Sarah Johnson", 101, 80000, 15000, 8),
+            new Developer("Mike Chen", 102, 75000, "Java", 12),
+            new SalesRep("Lisa Garcia", 103, 50000, 5.0, 200000, 180000),
+            new Developer("David Kim", 104, 70000, "Python", 8),
+            new Manager("Emily Brown", 105, 85000, 20000, 12)
+        };
+
+        System.out.println("=== Employee Management System ===\n");
+
+        double totalPayroll = 0;
+
+        for (Employee emp : employees) {
+            System.out.println("=".repeat(50));
+            emp.displayInfo();
+            System.out.println();
+            emp.work();
+
+            // Demonstrate instanceof and casting
+            if (emp instanceof Manager) {
+                Manager mgr = (Manager) emp;
+                mgr.conductMeeting();
+            } else if (emp instanceof Developer) {
+                Developer dev = (Developer) emp;
+                dev.debugCode();
+            } else if (emp instanceof SalesRep) {
+                SalesRep sales = (SalesRep) emp;
+                sales.makeCall();
+            }
+
+            totalPayroll += emp.calculateSalary();
+            System.out.println();
+        }
+
+        System.out.println("=".repeat(50));
+        System.out.printf("Total Company Payroll: $%.2f%n", totalPayroll);
+    }
+}
+```
+
+## Key Inheritance and Polymorphism Concepts
+
+1. **Inheritance**: Child classes inherit properties and methods from parent classes
+2. **Method Overriding**: Child classes provide specific implementations of parent methods
+3. **Polymorphism**: Objects of different types can be treated uniformly
+4. **Abstract Classes**: Classes that cannot be instantiated directly
+5. **Method Overloading**: Multiple methods with the same name but different parameters
+6. **instanceof operator**: Check object type at runtime
+7. **Type casting**: Convert object references between types
+
+## Benefits Demonstrated
+
+- **Code Reusability**: Common functionality in base classes
+- **Maintainability**: Changes in base class affect all subclasses
+- **Flexibility**: Polymorphic behavior allows dynamic method resolution
+- **Extensibility**: Easy to add new types without changing existing code
+
+## Next Steps
+
+Try extending these programs by:
+
+1. Adding more inheritance levels (multilevel inheritance)
+2. Implementing interfaces for multiple inheritance
+3. Creating abstract methods in base classes
+4. Adding more polymorphic behaviors
+5. Implementing design patterns using inheritance

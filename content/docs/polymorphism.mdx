@@ -1,0 +1,537 @@
+---
+title: Java Polymorphism
+description: Complete guide to Java polymorphism with examples. Learn method overloading, method overriding, runtime polymorphism, and dynamic method dispatch.
+icon: Shapes
+---
+
+Polymorphism is one of the core principles of Object-Oriented Programming (OOP). The word "polymorphism" comes from Greek, meaning "many forms." In Java, polymorphism allows objects of different types to be treated as objects of a common base type, while still maintaining their specific behaviors.
+
+## What is Polymorphism?
+
+Polymorphism enables a single interface to represent different underlying data types. It allows you to write code that can work with objects of multiple types, as long as they share a common interface or superclass.
+
+## Types of Polymorphism in Java
+
+### 1. Compile-time Polymorphism (Static Polymorphism)
+
+- **Method Overloading**
+- **Operator Overloading** (limited in Java)
+
+### 2. Runtime Polymorphism (Dynamic Polymorphism)
+
+- **Method Overriding**
+- **Dynamic Method Dispatch**
+
+## Method Overloading (Compile-time Polymorphism)
+
+Method overloading allows multiple methods with the same name but different parameters within the same class.
+
+### Example: Method Overloading
+
+```java
+class Calculator {
+    // Method with 2 integer parameters
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method with 3 integer parameters
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Method with 2 double parameters
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    // Method with different parameter types
+    public String add(String a, String b) {
+        return a + b;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+
+        System.out.println("Add two integers: " + calc.add(5, 3));           // 8
+        System.out.println("Add three integers: " + calc.add(5, 3, 2));     // 10
+        System.out.println("Add two doubles: " + calc.add(5.5, 3.2));       // 8.7
+        System.out.println("Add two strings: " + calc.add("Hello", "World")); // HelloWorld
+    }
+}
+```
+
+## Method Overriding (Runtime Polymorphism)
+
+Method overriding allows a subclass to provide a specific implementation of a method that is already defined in its superclass.
+
+### Example: Method Overriding
+
+```java
+class Animal {
+    public void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+
+    public void move() {
+        System.out.println("Animal moves");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Dog barks: Woof! Woof!");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Dog runs on four legs");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Cat meows: Meow! Meow!");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Cat walks gracefully");
+    }
+}
+
+class Bird extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Bird chirps: Tweet! Tweet!");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Bird flies in the sky");
+    }
+}
+```
+
+## Runtime Polymorphism and Dynamic Method Dispatch
+
+Runtime polymorphism is achieved through method overriding and dynamic method dispatch. The JVM determines which method to call at runtime based on the actual object type.
+
+### Example: Runtime Polymorphism
+
+```java
+class Main {
+    public static void main(String[] args) {
+        // Reference variable of type Animal
+        Animal animal;
+
+        // Creating objects of different types
+        animal = new Dog();
+        animal.makeSound(); // Dog barks: Woof! Woof!
+        animal.move();      // Dog runs on four legs
+
+        animal = new Cat();
+        animal.makeSound(); // Cat meows: Meow! Meow!
+        animal.move();      // Cat walks gracefully
+
+        animal = new Bird();
+        animal.makeSound(); // Bird chirps: Tweet! Tweet!
+        animal.move();      // Bird flies in the sky
+    }
+}
+```
+
+### Array of Polymorphic Objects
+
+```java
+class AnimalShelter {
+    public static void main(String[] args) {
+        // Array of Animal references
+        Animal[] animals = {
+            new Dog(),
+            new Cat(),
+            new Bird(),
+            new Dog(),
+            new Cat()
+        };
+
+        System.out.println("Animal Shelter Sounds:");
+        for (Animal animal : animals) {
+            animal.makeSound(); // Polymorphic method call
+            animal.move();
+            System.out.println("---");
+        }
+    }
+}
+```
+
+**Output:**
+
+```plaintext
+Animal Shelter Sounds:
+Dog barks: Woof! Woof!
+Dog runs on four legs
+---
+Cat meows: Meow! Meow!
+Cat walks gracefully
+---
+Bird chirps: Tweet! Tweet!
+Bird flies in the sky
+---
+Dog barks: Woof! Woof!
+Dog runs on four legs
+---
+Cat meows: Meow! Meow!
+Cat walks gracefully
+---
+```
+
+## Real-World Example: Shape Calculator
+
+```java
+abstract class Shape {
+    protected String color;
+
+    public Shape(String color) {
+        this.color = color;
+    }
+
+    // Abstract methods to be implemented by subclasses
+    public abstract double calculateArea();
+    public abstract double calculatePerimeter();
+
+    // Common method for all shapes
+    public void displayInfo() {
+        System.out.println("Shape: " + this.getClass().getSimpleName());
+        System.out.println("Color: " + color);
+        System.out.println("Area: " + calculateArea());
+        System.out.println("Perimeter: " + calculatePerimeter());
+    }
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(String color, double radius) {
+        super(color);
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    public Rectangle(String color, double length, double width) {
+        super(color);
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+}
+
+class Triangle extends Shape {
+    private double side1, side2, side3;
+
+    public Triangle(String color, double side1, double side2, double side3) {
+        super(color);
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+    }
+
+    @Override
+    public double calculateArea() {
+        // Using Heron's formula
+        double s = (side1 + side2 + side3) / 2;
+        return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return side1 + side2 + side3;
+    }
+}
+
+class ShapeCalculator {
+    public static void main(String[] args) {
+        // Array of different shapes
+        Shape[] shapes = {
+            new Circle("Red", 5.0),
+            new Rectangle("Blue", 4.0, 6.0),
+            new Triangle("Green", 3.0, 4.0, 5.0)
+        };
+
+        System.out.println("=== Shape Calculator ===\n");
+
+        for (Shape shape : shapes) {
+            shape.displayInfo(); // Polymorphic method call
+            System.out.println();
+        }
+
+        // Calculate total area using polymorphism
+        double totalArea = 0;
+        for (Shape shape : shapes) {
+            totalArea += shape.calculateArea();
+        }
+
+        System.out.printf("Total Area of all shapes: %.2f\n", totalArea);
+    }
+}
+```
+
+## Interface-based Polymorphism
+
+Interfaces provide another way to achieve polymorphism in Java.
+
+```java
+interface Drawable {
+    void draw();
+    void resize(double factor);
+}
+
+interface Moveable {
+    void move(int x, int y);
+}
+
+class Circle implements Drawable, Moveable {
+    private int x, y;
+    private double radius;
+
+    public Circle(int x, int y, double radius) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("Drawing Circle at (" + x + ", " + y + ") with radius " + radius);
+    }
+
+    @Override
+    public void resize(double factor) {
+        radius *= factor;
+        System.out.println("Circle resized. New radius: " + radius);
+    }
+
+    @Override
+    public void move(int newX, int newY) {
+        this.x = newX;
+        this.y = newY;
+        System.out.println("Circle moved to (" + x + ", " + y + ")");
+    }
+}
+
+class Square implements Drawable, Moveable {
+    private int x, y;
+    private double side;
+
+    public Square(int x, int y, double side) {
+        this.x = x;
+        this.y = y;
+        this.side = side;
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("Drawing Square at (" + x + ", " + y + ") with side " + side);
+    }
+
+    @Override
+    public void resize(double factor) {
+        side *= factor;
+        System.out.println("Square resized. New side: " + side);
+    }
+
+    @Override
+    public void move(int newX, int newY) {
+        this.x = newX;
+        this.y = newY;
+        System.out.println("Square moved to (" + x + ", " + y + ")");
+    }
+}
+
+class GraphicsEditor {
+    public static void main(String[] args) {
+        // Polymorphism with interfaces
+        Drawable[] drawables = {
+            new Circle(10, 20, 5.0),
+            new Square(30, 40, 8.0)
+        };
+
+        System.out.println("=== Drawing Shapes ===");
+        for (Drawable shape : drawables) {
+            shape.draw();
+            shape.resize(1.5);
+        }
+
+        System.out.println("\n=== Moving Shapes ===");
+        Moveable[] moveables = {
+            new Circle(0, 0, 3.0),
+            new Square(0, 0, 4.0)
+        };
+
+        for (Moveable shape : moveables) {
+            shape.move(100, 200);
+        }
+    }
+}
+```
+
+## Method Overloading vs Method Overriding
+
+| Aspect              | Method Overloading                                    | Method Overriding                                              |
+| ------------------- | ----------------------------------------------------- | -------------------------------------------------------------- |
+| **Definition**      | Multiple methods with same name, different parameters | Subclass provides specific implementation of superclass method |
+| **Inheritance**     | Not required                                          | Required                                                       |
+| **Parameters**      | Must be different                                     | Must be same                                                   |
+| **Return Type**     | Can be different                                      | Must be same (or covariant)                                    |
+| **Access Modifier** | Can be different                                      | Cannot be more restrictive                                     |
+| **Binding**         | Compile-time                                          | Runtime                                                        |
+| **Performance**     | Faster                                                | Slightly slower                                                |
+
+## Benefits of Polymorphism
+
+### 1. Code Reusability
+
+```java
+// One method can work with multiple types
+public void feedAnimal(Animal animal) {
+    animal.makeSound(); // Works with Dog, Cat, Bird, etc.
+}
+```
+
+### 2. Flexibility and Extensibility
+
+```java
+// Easy to add new types without changing existing code
+class Fish extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Fish makes bubbles");
+    }
+}
+// No need to modify existing methods that use Animal
+```
+
+### 3. Maintainability
+
+```java
+// Changes in implementation don't affect client code
+Animal pet = new Dog(); // Can easily change to Cat or Bird
+pet.makeSound(); // Method call remains the same
+```
+
+## Advanced Example: Plugin System
+
+```java
+interface Plugin {
+    String getName();
+    void execute();
+    String getVersion();
+}
+
+class LoggerPlugin implements Plugin {
+    @Override
+    public String getName() {
+        return "Logger Plugin";
+    }
+
+    @Override
+    public void execute() {
+        System.out.println("Logging system information...");
+    }
+
+    @Override
+    public String getVersion() {
+        return "1.0.0";
+    }
+}
+
+class SecurityPlugin implements Plugin {
+    @Override
+    public String getName() {
+        return "Security Plugin";
+    }
+
+    @Override
+    public void execute() {
+        System.out.println("Running security scan...");
+    }
+
+    @Override
+    public String getVersion() {
+        return "2.1.0";
+    }
+}
+
+class PluginManager {
+    private Plugin[] plugins;
+
+    public PluginManager(Plugin[] plugins) {
+        this.plugins = plugins;
+    }
+
+    public void runAllPlugins() {
+        System.out.println("=== Plugin Manager ===");
+        for (Plugin plugin : plugins) {
+            System.out.println("Loading: " + plugin.getName() + " v" + plugin.getVersion());
+            plugin.execute(); // Polymorphic method call
+            System.out.println("---");
+        }
+    }
+}
+
+class Application {
+    public static void main(String[] args) {
+        Plugin[] plugins = {
+            new LoggerPlugin(),
+            new SecurityPlugin()
+        };
+
+        PluginManager manager = new PluginManager(plugins);
+        manager.runAllPlugins();
+    }
+}
+```
+
+## Key Points to Remember
+
+- **Polymorphism** allows objects of different types to be treated uniformly
+- **Method overloading** is compile-time polymorphism (same method name, different parameters)
+- **Method overriding** is runtime polymorphism (subclass provides specific implementation)
+- **Dynamic method dispatch** determines which method to call at runtime
+- Use **abstract classes** and **interfaces** to define common behavior
+- Polymorphism promotes **code reusability** and **flexibility**
+- The actual method called is determined by the **object type**, not the reference type
+- Polymorphism is essential for creating **extensible** and **maintainable** code
+
+<Callout>
+
+**Best Practice:** Use polymorphism to write code that depends on abstractions (interfaces or abstract classes) rather than concrete implementations. This makes your code more flexible and easier to extend.
+
+</Callout>

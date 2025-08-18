@@ -1,0 +1,354 @@
+---
+title: Java Program to Handle Exceptions with Try-Catch
+shortTitle: Exception Handling
+description: Learn exception handling in Java with practical examples of try-catch blocks, multiple exceptions, and custom error handling strategies.
+---
+
+In this program, you'll learn how to handle exceptions gracefully using try-catch blocks, ensuring your program doesn't crash when errors occur.
+
+To understand this example, you should have the knowledge of the following Java programming topics:
+
+- [Java Exception Handling](/docs/exception-handling)
+- [Java Basic Input and Output](/docs/basic-input-output)
+- [Java Arrays](/docs/arrays)
+
+## Program to Handle Exceptions
+
+### Example 1: Basic Try-Catch Exception Handling
+
+```java
+import java.util.Scanner;
+
+class BasicExceptionHandling {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("=== Division Calculator ===");
+
+        try {
+            System.out.print("Enter first number: ");
+            int num1 = scanner.nextInt();
+
+            System.out.print("Enter second number: ");
+            int num2 = scanner.nextInt();
+
+            int result = num1 / num2;
+            System.out.println("Result: " + num1 + " / " + num2 + " = " + result);
+
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Cannot divide by zero!");
+            System.out.println("Exception message: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error: Invalid input! Please enter valid integers.");
+            System.out.println("Exception type: " + e.getClass().getSimpleName());
+        } finally {
+            System.out.println("Division operation completed.");
+            scanner.close();
+        }
+    }
+}
+```
+
+#### Sample Output (Division by zero):
+
+```
+=== Division Calculator ===
+Enter first number: 10
+Enter second number: 0
+Error: Cannot divide by zero!
+Exception message: / by zero
+Division operation completed.
+```
+
+#### Sample Output (Invalid input):
+
+```
+=== Division Calculator ===
+Enter first number: abc
+Error: Invalid input! Please enter valid integers.
+Exception type: InputMismatchException
+Division operation completed.
+```
+
+### Example 2: Array Index Exception Handling
+
+```java
+class ArrayExceptionHandling {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+
+        System.out.println("Array contents: ");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println("Index " + i + ": " + numbers[i]);
+        }
+
+        System.out.println("\n=== Testing Array Access ===");
+
+        // Test different index values
+        int[] testIndices = {2, 5, -1, 10};
+
+        for (int index : testIndices) {
+            try {
+                System.out.println("Trying to access index " + index + "...");
+                int value = numbers[index];
+                System.out.println("Value at index " + index + ": " + value);
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Error: Index " + index + " is out of bounds!");
+                System.out.println("Valid indices are 0 to " + (numbers.length - 1));
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+#### Output:
+
+```
+Array contents:
+Index 0: 10
+Index 1: 20
+Index 2: 30
+Index 3: 40
+Index 4: 50
+
+=== Testing Array Access ===
+Trying to access index 2...
+Value at index 2: 30
+
+Trying to access index 5...
+Error: Index 5 is out of bounds!
+Valid indices are 0 to 4
+
+Trying to access index -1...
+Error: Index -1 is out of bounds!
+Valid indices are 0 to 4
+
+Trying to access index 10...
+Error: Index 10 is out of bounds!
+Valid indices are 0 to 4
+```
+
+### Example 3: Multiple Exception Types and Custom Validation
+
+```java
+import java.util.Scanner;
+
+class Student {
+    private String name;
+    private int age;
+    private double gpa;
+
+    public Student(String name, int age, double gpa) throws IllegalArgumentException {
+        setName(name);
+        setAge(age);
+        setGPA(gpa);
+    }
+
+    public void setName(String name) throws IllegalArgumentException {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be empty!");
+        }
+        this.name = name.trim();
+    }
+
+    public void setAge(int age) throws IllegalArgumentException {
+        if (age < 0 || age > 150) {
+            throw new IllegalArgumentException("Age must be between 0 and 150!");
+        }
+        this.age = age;
+    }
+
+    public void setGPA(double gpa) throws IllegalArgumentException {
+        if (gpa < 0.0 || gpa > 4.0) {
+            throw new IllegalArgumentException("GPA must be between 0.0 and 4.0!");
+        }
+        this.gpa = gpa;
+    }
+
+    public void displayInfo() {
+        System.out.println("=== Student Information ===");
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("GPA: " + gpa);
+        System.out.println();
+    }
+}
+
+class StudentValidationDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Student student = null;
+
+        while (student == null) {
+            try {
+                System.out.println("=== Student Registration System ===");
+
+                System.out.print("Enter student name: ");
+                String name = scanner.nextLine();
+
+                System.out.print("Enter student age: ");
+                int age = Integer.parseInt(scanner.nextLine());
+
+                System.out.print("Enter student GPA (0.0-4.0): ");
+                double gpa = Double.parseDouble(scanner.nextLine());
+
+                // Try to create student object
+                student = new Student(name, age, gpa);
+                System.out.println("Student registered successfully!");
+                student.displayInfo();
+
+            } catch (IllegalArgumentException e) {
+                System.out.println("Validation Error: " + e.getMessage());
+                System.out.println("Please try again.\n");
+            } catch (NumberFormatException e) {
+                System.out.println("Input Error: Please enter valid numbers for age and GPA.");
+                System.out.println("Please try again.\n");
+            } catch (Exception e) {
+                System.out.println("Unexpected error: " + e.getMessage());
+                System.out.println("Please try again.\n");
+            }
+        }
+
+        // Test updating student information
+        System.out.println("=== Testing Student Updates ===");
+
+        try {
+            System.out.print("Enter new GPA: ");
+            double newGPA = Double.parseDouble(scanner.nextLine());
+            student.setGPA(newGPA);
+            System.out.println("GPA updated successfully!");
+            student.displayInfo();
+        } catch (IllegalArgumentException e) {
+            System.out.println("Update failed: " + e.getMessage());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid number format for GPA.");
+        }
+
+        scanner.close();
+    }
+}
+```
+
+#### Sample Output (with errors):
+
+```
+=== Student Registration System ===
+Enter student name:
+Validation Error: Name cannot be empty!
+Please try again.
+
+=== Student Registration System ===
+Enter student name: John Doe
+Enter student age: 200
+Validation Error: Age must be between 0 and 150!
+Please try again.
+
+=== Student Registration System ===
+Enter student name: John Doe
+Enter student age: 20
+Enter student GPA (0.0-4.0): 5.0
+Validation Error: GPA must be between 0.0 and 4.0!
+Please try again.
+
+=== Student Registration System ===
+Enter student name: John Doe
+Enter student age: 20
+Enter student GPA (0.0-4.0): 3.8
+Student registered successfully!
+=== Student Information ===
+Name: John Doe
+Age: 20
+GPA: 3.8
+
+=== Testing Student Updates ===
+Enter new GPA: 4.5
+Update failed: GPA must be between 0.0 and 4.0!
+```
+
+### Example 4: File Operations with Exception Handling
+
+```java
+import java.io.*;
+
+class FileExceptionHandling {
+    public static void main(String[] args) {
+        String fileName = "test.txt";
+        String content = "Hello, this is a test file!\nJava Exception Handling Example.";
+
+        // Writing to file with exception handling
+        System.out.println("=== Writing to File ===");
+        try (FileWriter writer = new FileWriter(fileName)) {
+            writer.write(content);
+            System.out.println("File written successfully: " + fileName);
+        } catch (IOException e) {
+            System.out.println("Error writing to file: " + e.getMessage());
+        }
+
+        // Reading from file with exception handling
+        System.out.println("\n=== Reading from File ===");
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            int lineNumber = 1;
+            while ((line = reader.readLine()) != null) {
+                System.out.println("Line " + lineNumber + ": " + line);
+                lineNumber++;
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: File not found - " + fileName);
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
+
+        // Trying to read non-existent file
+        System.out.println("\n=== Trying to Read Non-Existent File ===");
+        try (BufferedReader reader = new BufferedReader(new FileReader("nonexistent.txt"))) {
+            System.out.println(reader.readLine());
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: File 'nonexistent.txt' was not found!");
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
+    }
+}
+```
+
+#### Output:
+
+```
+=== Writing to File ===
+File written successfully: test.txt
+
+=== Reading from File ===
+Line 1: Hello, this is a test file!
+Line 2: Java Exception Handling Example.
+
+=== Trying to Read Non-Existent File ===
+Error: File 'nonexistent.txt' was not found!
+```
+
+## Key Exception Handling Concepts
+
+1. **try-catch blocks**: Handle specific exceptions gracefully
+2. **Multiple catch blocks**: Handle different exception types differently
+3. **finally block**: Code that always executes (cleanup)
+4. **Custom exceptions**: Validate business logic
+5. **try-with-resources**: Automatic resource management
+
+## Best Practices Demonstrated
+
+- Always handle specific exceptions before general ones
+- Use meaningful error messages
+- Clean up resources properly
+- Validate user input
+- Don't ignore exceptions
+
+## Next Steps
+
+Try extending these programs by:
+
+1. Creating custom exception classes
+2. Adding logging for exceptions
+3. Implementing retry mechanisms
+4. Handling network-related exceptions
+5. Building a robust error reporting system

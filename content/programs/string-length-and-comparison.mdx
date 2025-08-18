@@ -1,0 +1,179 @@
+---
+title: Java Program to Find String Length and Compare Strings
+shortTitle: String Length & Comparison
+description: Learn to find string length, compare strings using equals(), and perform basic string operations in Java with practical examples and explanations.
+---
+
+In this program, you'll learn to work with Java strings by finding their length and comparing different strings using various methods.
+
+To understand this example, you should have the knowledge of the following Java programming topics:
+
+- [Java Strings](/docs/strings)
+- [Java Basic Input and Output](/docs/basic-input-output)
+- [Java Variables and Data Types](/docs/variables-primitive-data-types)
+
+## Program to Find String Length and Compare Strings
+
+### Example 1: Finding String Length
+
+```java
+class StringLength {
+    public static void main(String[] args) {
+        String text1 = "Java Programming";
+        String text2 = "Hello World";
+        String text3 = "";
+
+        System.out.println("String: \"" + text1 + "\"");
+        System.out.println("Length: " + text1.length());
+
+        System.out.println("\nString: \"" + text2 + "\"");
+        System.out.println("Length: " + text2.length());
+
+        System.out.println("\nString: \"" + text3 + "\"");
+        System.out.println("Length: " + text3.length());
+    }
+}
+```
+
+#### Output:
+
+```
+String: "Java Programming"
+Length: 16
+
+String: "Hello World"
+Length: 11
+
+String: ""
+Length: 0
+```
+
+### Example 2: Comparing Strings
+
+```java
+class StringComparison {
+    public static void main(String[] args) {
+        String str1 = "Java";
+        String str2 = "Java";
+        String str3 = "JAVA";
+        String str4 = new String("Java");
+
+        // Using equals() method
+        System.out.println("=== Using equals() method ===");
+        System.out.println("str1.equals(str2): " + str1.equals(str2));
+        System.out.println("str1.equals(str3): " + str1.equals(str3));
+        System.out.println("str1.equals(str4): " + str1.equals(str4));
+
+        // Using equalsIgnoreCase() method
+        System.out.println("\n=== Using equalsIgnoreCase() method ===");
+        System.out.println("str1.equalsIgnoreCase(str3): " + str1.equalsIgnoreCase(str3));
+
+        // Using == operator (not recommended for strings)
+        System.out.println("\n=== Using == operator ===");
+        System.out.println("str1 == str2: " + (str1 == str2));
+        System.out.println("str1 == str4: " + (str1 == str4));
+
+        // Using compareTo() method
+        System.out.println("\n=== Using compareTo() method ===");
+        System.out.println("str1.compareTo(str2): " + str1.compareTo(str2));
+        System.out.println("str1.compareTo(str3): " + str1.compareTo(str3));
+    }
+}
+```
+
+#### Output:
+
+```
+=== Using equals() method ===
+str1.equals(str2): true
+str1.equals(str3): false
+str1.equals(str4): true
+
+=== Using equalsIgnoreCase() method ===
+str1.equalsIgnoreCase(str3): true
+
+=== Using == operator ===
+str1 == str2: true
+str1 == str4: false
+
+=== Using compareTo() method ===
+str1.compareTo(str2): 0
+str1.compareTo(str3): 32
+```
+
+### Example 3: Interactive String Operations
+
+```java
+import java.util.Scanner;
+
+class InteractiveStringOps {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first string: ");
+        String first = scanner.nextLine();
+
+        System.out.print("Enter second string: ");
+        String second = scanner.nextLine();
+
+        // Display lengths
+        System.out.println("\n=== String Analysis ===");
+        System.out.println("First string length: " + first.length());
+        System.out.println("Second string length: " + second.length());
+
+        // Compare strings
+        System.out.println("\n=== String Comparison ===");
+        if (first.equals(second)) {
+            System.out.println("The strings are exactly the same!");
+        } else if (first.equalsIgnoreCase(second)) {
+            System.out.println("The strings are the same (ignoring case)!");
+        } else {
+            System.out.println("The strings are different.");
+        }
+
+        // Additional operations
+        System.out.println("\n=== Additional Information ===");
+        System.out.println("First string in uppercase: " + first.toUpperCase());
+        System.out.println("Second string in lowercase: " + second.toLowerCase());
+        System.out.println("Combined length: " + (first.length() + second.length()));
+
+        scanner.close();
+    }
+}
+```
+
+#### Sample Output:
+
+```
+Enter first string: Hello
+Enter second string: hello
+
+=== String Analysis ===
+First string length: 5
+Second string length: 5
+
+=== String Comparison ===
+The strings are the same (ignoring case)!
+
+=== Additional Information ===
+First string in uppercase: HELLO
+Second string in lowercase: hello
+Combined length: 10
+```
+
+## Key Points
+
+- Use `length()` method to find the length of a string
+- Use `equals()` method to compare strings for content equality
+- Use `equalsIgnoreCase()` for case-insensitive comparison
+- Avoid using `==` operator for string comparison
+- `compareTo()` returns 0 if strings are equal, negative if first is smaller, positive if first is larger
+
+## Next Steps
+
+Try modifying the program to:
+
+1. Check if a string is empty or null
+2. Find the longest and shortest string from multiple inputs
+3. Count specific characters in a string
+4. Reverse a string and compare with the original
