@@ -52,10 +52,10 @@ export async function generateMetadata(props: {
   if (!page) notFound();
 
   return {
-    title: page.data.title,
+    title: `${page.data.title} - Javaistic`,
     description: page.data.description,
     openGraph: {
-      title: page.data.title,
+      title: `${page.data.title} - Javaistic`,
       description: page.data.description,
       sitename: "Javaistic",
       images: `https://og-javaistic.vercel.app/og?title=${page.data.title}`,
