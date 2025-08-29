@@ -7,6 +7,7 @@ import {
 } from "@/components/icons";
 import Logo from "@/components/logo";
 import Link from "next/link";
+import Image from "next/image";
 
 const footerNav = {
   "Getting Started": [
@@ -132,9 +133,11 @@ export function Footer() {
               </span>
               <span className="flex items-center gap-x-1.5">
                 in
-                <img
+                <Image
                   src="https://flagapi.vercel.app/S/IND"
                   alt="India"
+                  width={12}
+                  height={12}
                   className="h-3 rounded-xs"
                 />
                 <span className="sr-only">India</span>

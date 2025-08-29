@@ -1,12 +1,12 @@
 "use client";
-import { motion } from "motion/react";
+import { motion, type TargetAndTransition } from "motion/react";
 
 // Badge Component for consistency with accessibility improvements
 interface BadgeProps {
   icon: React.ComponentType<{ className?: string }>;
   text: string;
   colorClass: string;
-  hoverAnimation?: any;
+  hoverAnimation?: TargetAndTransition;
 }
 
 export function Badge({

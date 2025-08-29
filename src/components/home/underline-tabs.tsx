@@ -1,7 +1,6 @@
 "use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useDarkMode } from "@/hooks/useDarkMode";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import * as React from "react";
@@ -22,7 +21,7 @@ type UnderlineTabsProps = {
 };
 
 // Debounce utility for resize events
-function useDebounce<T extends (...args: any[]) => void>(
+function useDebounce<T extends (...args: unknown[]) => void>(
   callback: T,
   delay: number,
 ): T {
