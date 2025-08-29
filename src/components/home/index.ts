@@ -3,7 +3,6 @@ export { HeroSection } from "./hero-section";
 export { FeaturesSection } from "./features-section";
 export { VisionSection } from "./vision-section";
 export { BentoGridSection } from "./bento-grid-section";
-export { WhyLearnJavaSection } from "./why-learn-java-section";
 export { CTASection } from "./cta-section";
 export { BackgroundSection } from "./background-section";
 
