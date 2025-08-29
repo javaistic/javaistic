@@ -1,5 +1,5 @@
 "use client";
-import { motion, easeOut } from "framer-motion";
+import { motion, easeOut } from "motion/react";
 import {
   Mail,
   MessageSquare,
@@ -219,7 +219,7 @@ const ContactUsPage = () => {
         category: "",
         message: "",
       });
-    } catch {
+    } catch (error) {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -284,7 +284,7 @@ const ContactUsPage = () => {
 
           <motion.div
             className={`mt-8 text-sm ${
-              isDarkMode ? "text-gray-400" : "text-gray-500"
+              isDarkMode ? "text-neutral-400" : "text-neutral-500"
             } space-y-1 transition-colors duration-300`}
             variants={itemVariants}
           >
@@ -309,8 +309,8 @@ const ContactUsPage = () => {
             animate="visible"
           >
             <div className="sticky top-8 space-y-6">
-              <motion.div className="rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-2xl shadow-lg backdrop-blur-sm transition-colors duration-300 dark:border-gray-700/50 dark:bg-gray-900/70">
-                <h3 className="mb-6 text-lg font-bold text-gray-900 transition-colors duration-300 dark:text-white">
+              <motion.div className="rounded-2xl border border-neutral-200 bg-white/80 p-6 shadow-lg backdrop-blur-sm transition-colors duration-300 dark:border-neutral-700/50 dark:bg-neutral-900/70">
+                <h3 className="mb-6 text-lg font-bold text-neutral-900 transition-colors duration-300 dark:text-white">
                   How can we help?
                 </h3>
                 <nav className="space-y-3">
@@ -318,7 +318,7 @@ const ContactUsPage = () => {
                     <motion.a
                       key={index}
                       href={method.url}
-                      className="group block rounded-xl p-4 text-sm text-gray-600 transition-all duration-200 hover:bg-blue-50 hover:text-blue-600 dark:text-gray-300 dark:hover:bg-blue-500/10 dark:hover:text-blue-400"
+                      className="group block rounded-xl p-4 text-sm text-neutral-600 transition-all duration-200 hover:bg-blue-50 hover:text-blue-600 dark:text-neutral-300 dark:hover:bg-blue-500/10 dark:hover:text-blue-400"
                       whileHover={{ x: 5 }}
                     >
                       <div className="flex items-start">
@@ -341,10 +341,10 @@ const ContactUsPage = () => {
 
               {/* Quick Contact Info */}
               <motion.div
-                className="rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-2xl shadow-lg backdrop-blur-sm transition-colors duration-300 dark:border-gray-700/50 dark:bg-gray-900/70"
+                className="rounded-2xl border border-neutral-200 bg-white/80 p-6 shadow-lg backdrop-blur-sm transition-colors duration-300 dark:border-neutral-700/50 dark:bg-neutral-900/70"
                 variants={itemVariants}
               >
-                <h3 className="mb-4 text-lg font-bold text-gray-900 transition-colors duration-300 dark:text-white">
+                <h3 className="mb-4 text-lg font-bold text-neutral-900 transition-colors duration-300 dark:text-white">
                   Quick Contact
                 </h3>
                 <div className="space-y-4">
@@ -354,10 +354,10 @@ const ContactUsPage = () => {
                   >
                     <Mail className="mr-3 h-5 w-5 text-blue-500 dark:text-blue-400" />
                     <div>
-                      <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                      <p className="text-sm font-semibold text-neutral-900 dark:text-white">
                         Email
                       </p>
-                      <p className="text-xs text-gray-600 dark:text-gray-300">
+                      <p className="text-xs text-neutral-600 dark:text-neutral-300">
                         uiuxarghya@gmail.com
                       </p>
                     </div>
@@ -369,10 +369,10 @@ const ContactUsPage = () => {
                   >
                     <Github className="mr-3 h-5 w-5 text-purple-500 dark:text-purple-400" />
                     <div>
-                      <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                      <p className="text-sm font-semibold text-neutral-900 dark:text-white">
                         GitHub
                       </p>
-                      <p className="text-xs text-gray-600 dark:text-gray-300">
+                      <p className="text-xs text-neutral-600 dark:text-neutral-300">
                         github.com/javaistic
                       </p>
                     </div>
@@ -384,10 +384,10 @@ const ContactUsPage = () => {
                   >
                     <Users className="mr-3 h-5 w-5 text-green-500 dark:text-green-400" />
                     <div>
-                      <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                      <p className="text-sm font-semibold text-neutral-900 dark:text-white">
                         Community
                       </p>
-                      <p className="text-xs text-gray-600 dark:text-gray-300">
+                      <p className="text-xs text-neutral-600 dark:text-neutral-300">
                         Join our Discord
                       </p>
                     </div>
@@ -405,18 +405,18 @@ const ContactUsPage = () => {
             animate="visible"
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl border border-gray-200 bg-white/80 p-8 shadow-2xl shadow-lg backdrop-blur-sm transition-colors duration-300 dark:border-gray-700/50 dark:bg-gray-900/70">
+            <div className="rounded-2xl border border-neutral-200 bg-white/80 p-8 shadow-lg backdrop-blur-sm transition-colors duration-300 dark:border-neutral-700/50 dark:bg-neutral-900/70">
               {/* Form Header */}
               <motion.div className="mb-8" variants={itemVariants}>
                 <div className="mb-4 flex items-center">
                   <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-purple-600">
                     <Send className="h-6 w-6 text-white" />
                   </div>
-                  <h2 className="text-3xl font-bold text-gray-900 transition-colors duration-300 dark:text-white">
+                  <h2 className="text-3xl font-bold text-neutral-900 transition-colors duration-300 dark:text-white">
                     Send us a Message
                   </h2>
                 </div>
-                <p className="text-gray-600 transition-colors duration-300 dark:text-gray-300">
+                <p className="text-neutral-600 transition-colors duration-300 dark:text-neutral-300">
                   Fill out the form below and we&apos;ll get back to you as soon
                   as possible. We value your feedback and are here to help!
                 </p>
@@ -435,7 +435,7 @@ const ContactUsPage = () => {
                   >
                     <label
                       htmlFor="name"
-                      className="mb-2 block text-sm font-semibold text-gray-700 dark:text-gray-300"
+                      className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
                     >
                       Full Name *
                     </label>
@@ -446,7 +446,7 @@ const ContactUsPage = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 transition-all duration-200 focus:border-transparent focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+                      className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-500 transition-all duration-200 focus:border-transparent focus:ring-2 focus:ring-blue-500 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white dark:placeholder-neutral-400"
                       placeholder="Enter your full name"
                     />
                   </motion.div>
@@ -457,7 +457,7 @@ const ContactUsPage = () => {
                   >
                     <label
                       htmlFor="email"
-                      className="mb-2 block text-sm font-semibold text-gray-700 dark:text-gray-300"
+                      className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
                     >
                       Email Address *
                     </label>
@@ -468,7 +468,7 @@ const ContactUsPage = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 transition-all duration-200 focus:border-transparent focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+                      className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-500 transition-all duration-200 focus:border-transparent focus:ring-2 focus:ring-blue-500 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white dark:placeholder-neutral-400"
                       placeholder="your.email@example.com"
                     />
                   </motion.div>
@@ -481,7 +481,7 @@ const ContactUsPage = () => {
                   >
                     <label
                       htmlFor="category"
-                      className="mb-2 block text-sm font-semibold text-gray-700 dark:text-gray-300"
+                      className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
                     >
                       Category *
                     </label>
@@ -491,7 +491,7 @@ const ContactUsPage = () => {
                       value={formData.category}
                       onChange={handleInputChange}
                       required
-                      className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-all duration-200 focus:border-transparent focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
+                      className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-neutral-900 transition-all duration-200 focus:border-transparent focus:ring-2 focus:ring-blue-500 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white"
                     >
                       <option value="">Select a category</option>
                       <option value="general">General Inquiry</option>
@@ -510,7 +510,7 @@ const ContactUsPage = () => {
                   >
                     <label
                       htmlFor="subject"
-                      className="mb-2 block text-sm font-semibold text-gray-700 dark:text-gray-300"
+                      className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
                     >
                       Subject *
                     </label>
@@ -521,7 +521,7 @@ const ContactUsPage = () => {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 transition-all duration-200 focus:border-transparent focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+                      className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-500 transition-all duration-200 focus:border-transparent focus:ring-2 focus:ring-blue-500 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white dark:placeholder-neutral-400"
                       placeholder="Brief description of your inquiry"
                     />
                   </motion.div>
@@ -533,7 +533,7 @@ const ContactUsPage = () => {
                 >
                   <label
                     htmlFor="message"
-                    className="mb-2 block text-sm font-semibold text-gray-700 dark:text-gray-300"
+                    className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
                   >
                     Message *
                   </label>
@@ -544,7 +544,7 @@ const ContactUsPage = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full resize-none rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 transition-all duration-200 focus:border-transparent focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+                    className="w-full resize-none rounded-xl border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-500 transition-all duration-200 focus:border-transparent focus:ring-2 focus:ring-blue-500 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white dark:placeholder-neutral-400"
                     placeholder="Please provide as much detail as possible about your inquiry..."
                   />
                 </motion.div>
@@ -614,22 +614,22 @@ const ContactUsPage = () => {
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600">
                 <Mail className="h-6 w-6 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 transition-colors duration-300 dark:text-white">
+              <h2 className="text-3xl font-bold text-neutral-900 transition-colors duration-300 dark:text-white">
                 General Inquiries
               </h2>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
               <div className="rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50 to-cyan-50 p-6 transition-colors duration-300 dark:border-blue-500/30 dark:from-blue-500/20 dark:to-cyan-500/20">
-                <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="mb-4 text-xl font-semibold text-neutral-900 dark:text-white">
                   Platform Information
                 </h3>
-                <p className="mb-4 text-gray-600 dark:text-gray-300">
+                <p className="mb-4 text-neutral-600 dark:text-neutral-300">
                   Have questions about Javaistic&apos;s features, learning
                   paths, or how to get started? We&apos;re here to help you
                   navigate your Java learning journey.
                 </p>
-                <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-300">
                   <li>• Course structure and learning paths</li>
                   <li>• Platform features and tools</li>
                   <li>• Account setup and management</li>
@@ -638,15 +638,15 @@ const ContactUsPage = () => {
               </div>
 
               <div className="rounded-xl border border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50 p-6 transition-colors duration-300 dark:border-purple-500/30 dark:from-purple-500/20 dark:to-pink-500/20">
-                <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="mb-4 text-xl font-semibold text-neutral-900 dark:text-white">
                   Educational Support
                 </h3>
-                <p className="mb-4 text-gray-600 dark:text-gray-300">
+                <p className="mb-4 text-neutral-600 dark:text-neutral-300">
                   Need guidance on your Java learning path or have questions
                   about programming concepts? Our education team is ready to
                   assist.
                 </p>
-                <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-300">
                   <li>• Learning path recommendations</li>
                   <li>• Study tips and strategies</li>
                   <li>• Career guidance in Java development</li>
@@ -662,7 +662,7 @@ const ContactUsPage = () => {
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-red-600">
                 <Bug className="h-6 w-6 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 transition-colors duration-300 dark:text-white">
+              <h2 className="text-3xl font-bold text-neutral-900 transition-colors duration-300 dark:text-white">
                 Technical Support
               </h2>
             </div>
@@ -670,14 +670,14 @@ const ContactUsPage = () => {
             <div className="rounded-xl border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50 p-8 transition-colors duration-300 dark:border-orange-500/30 dark:from-orange-500/20 dark:to-red-500/20">
               <div className="grid gap-6 md:grid-cols-3">
                 <div>
-                  <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">
+                  <h3 className="mb-3 text-xl font-semibold text-neutral-900 dark:text-white">
                     Bug Reports
                   </h3>
-                  <p className="mb-3 text-sm text-gray-600 dark:text-gray-300">
+                  <p className="mb-3 text-sm text-neutral-600 dark:text-neutral-300">
                     Found a bug? Help us improve by reporting issues you
                     encounter.
                   </p>
-                  <ul className="space-y-1 text-xs text-gray-600 dark:text-gray-300">
+                  <ul className="space-y-1 text-xs text-neutral-600 dark:text-neutral-300">
                     <li>• Detailed error descriptions</li>
                     <li>• Browser and device info</li>
                     <li>• Steps to reproduce</li>
@@ -685,14 +685,14 @@ const ContactUsPage = () => {
                 </div>
 
                 <div>
-                  <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">
+                  <h3 className="mb-3 text-xl font-semibold text-neutral-900 dark:text-white">
                     Platform Issues
                   </h3>
-                  <p className="mb-3 text-sm text-gray-600 dark:text-gray-300">
+                  <p className="mb-3 text-sm text-neutral-600 dark:text-neutral-300">
                     Experiencing technical difficulties with the learning
                     platform?
                   </p>
-                  <ul className="space-y-1 text-xs text-gray-600 dark:text-gray-300">
+                  <ul className="space-y-1 text-xs text-neutral-600 dark:text-neutral-300">
                     <li>• Login and access issues</li>
                     <li>• Code editor problems</li>
                     <li>• Progress tracking errors</li>
@@ -700,13 +700,13 @@ const ContactUsPage = () => {
                 </div>
 
                 <div>
-                  <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">
+                  <h3 className="mb-3 text-xl font-semibold text-neutral-900 dark:text-white">
                     Performance
                   </h3>
-                  <p className="mb-3 text-sm text-gray-600 dark:text-gray-300">
+                  <p className="mb-3 text-sm text-neutral-600 dark:text-neutral-300">
                     Platform running slow or not performing as expected?
                   </p>
-                  <ul className="space-y-1 text-xs text-gray-600 dark:text-gray-300">
+                  <ul className="space-y-1 text-xs text-neutral-600 dark:text-neutral-300">
                     <li>• Slow loading times</li>
                     <li>• Compilation issues</li>
                     <li>• Browser compatibility</li>
@@ -722,7 +722,7 @@ const ContactUsPage = () => {
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-emerald-600">
                 <Users className="h-6 w-6 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 transition-colors duration-300 dark:text-white">
+              <h2 className="text-3xl font-bold text-neutral-900 transition-colors duration-300 dark:text-white">
                 Community & Open Source
               </h2>
             </div>
@@ -734,47 +734,47 @@ const ContactUsPage = () => {
               >
                 <div className="mb-4 flex items-center">
                   <Users className="mr-3 h-8 w-8 text-green-500 dark:text-green-400" />
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">
                     Join Our Community
                   </h3>
                 </div>
-                <p className="mb-4 text-gray-600 dark:text-gray-300">
+                <p className="mb-4 text-neutral-600 dark:text-neutral-300">
                   Connect with fellow Java learners, share knowledge, and get
                   help from our vibrant community.
                 </p>
                 <div className="space-y-3">
                   <motion.a
                     href="#"
-                    className="group flex items-center rounded-lg bg-white p-3 transition-colors hover:bg-gray-50 dark:bg-gray-800/50 dark:hover:bg-gray-700/50"
+                    className="group flex items-center rounded-lg bg-white p-3 transition-colors hover:bg-neutral-50 dark:bg-neutral-800/50 dark:hover:bg-neutral-700/50"
                     whileHover={{ x: 5 }}
                   >
                     <MessageSquare className="mr-3 h-5 w-5 text-blue-500" />
                     <div>
-                      <p className="font-medium text-gray-900 dark:text-white">
+                      <p className="font-medium text-neutral-900 dark:text-white">
                         Discord Server
                       </p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                      <p className="text-sm text-neutral-500 dark:text-neutral-400">
                         Real-time chat and discussions
                       </p>
                     </div>
-                    <ExternalLink className="ml-auto h-4 w-4 text-gray-400 group-hover:text-blue-500" />
+                    <ExternalLink className="ml-auto h-4 w-4 text-neutral-400 group-hover:text-blue-500" />
                   </motion.a>
 
                   <motion.a
                     href="https://github.com/orgs/javaistic/discussions"
-                    className="group flex items-center rounded-lg bg-white p-3 transition-colors hover:bg-gray-50 dark:bg-gray-800/50 dark:hover:bg-gray-700/50"
+                    className="group flex items-center rounded-lg bg-white p-3 transition-colors hover:bg-neutral-50 dark:bg-neutral-800/50 dark:hover:bg-neutral-700/50"
                     whileHover={{ x: 5 }}
                   >
                     <BookOpen className="mr-3 h-5 w-5 text-purple-500" />
                     <div>
-                      <p className="font-medium text-gray-900 dark:text-white">
+                      <p className="font-medium text-neutral-900 dark:text-white">
                         GitHub Discussions
                       </p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                      <p className="text-sm text-neutral-500 dark:text-neutral-400">
                         Q&A and knowledge sharing
                       </p>
                     </div>
-                    <ExternalLink className="ml-auto h-4 w-4 text-gray-400 group-hover:text-purple-500" />
+                    <ExternalLink className="ml-auto h-4 w-4 text-neutral-400 group-hover:text-purple-500" />
                   </motion.a>
                 </div>
               </motion.div>
@@ -785,47 +785,47 @@ const ContactUsPage = () => {
               >
                 <div className="mb-4 flex items-center">
                   <Github className="mr-3 h-8 w-8 text-purple-500 dark:text-purple-400" />
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">
                     Contribute to Open Source
                   </h3>
                 </div>
-                <p className="mb-4 text-gray-600 dark:text-gray-300">
+                <p className="mb-4 text-neutral-600 dark:text-neutral-300">
                   Help improve Javaistic by contributing code, documentation, or
                   educational content.
                 </p>
                 <div className="space-y-3">
                   <motion.a
                     href="https://github.com/javaistic/javaistic"
-                    className="group flex items-center rounded-lg bg-white p-3 transition-colors hover:bg-gray-50 dark:bg-gray-800/50 dark:hover:bg-gray-700/50"
+                    className="group flex items-center rounded-lg bg-white p-3 transition-colors hover:bg-neutral-50 dark:bg-neutral-800/50 dark:hover:bg-neutral-700/50"
                     whileHover={{ x: 5 }}
                   >
-                    <Github className="mr-3 h-5 w-5 text-gray-700 dark:text-gray-300" />
+                    <Github className="mr-3 h-5 w-5 text-neutral-700 dark:text-neutral-300" />
                     <div>
-                      <p className="font-medium text-gray-900 dark:text-white">
+                      <p className="font-medium text-neutral-900 dark:text-white">
                         GitHub Repository
                       </p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                      <p className="text-sm text-neutral-500 dark:text-neutral-400">
                         View source code and contribute
                       </p>
                     </div>
-                    <ExternalLink className="ml-auto h-4 w-4 text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300" />
+                    <ExternalLink className="ml-auto h-4 w-4 text-neutral-400 group-hover:text-neutral-700 dark:group-hover:text-neutral-300" />
                   </motion.a>
 
                   <motion.a
                     href="https://github.com/javaistic/javaistic/blob/main/CONTRIBUTING.md"
-                    className="group flex items-center rounded-lg bg-white p-3 transition-colors hover:bg-gray-50 dark:bg-gray-800/50 dark:hover:bg-gray-700/50"
+                    className="group flex items-center rounded-lg bg-white p-3 transition-colors hover:bg-neutral-50 dark:bg-neutral-800/50 dark:hover:bg-neutral-700/50"
                     whileHover={{ x: 5 }}
                   >
                     <BookOpen className="mr-3 h-5 w-5 text-orange-500" />
                     <div>
-                      <p className="font-medium text-gray-900 dark:text-white">
+                      <p className="font-medium text-neutral-900 dark:text-white">
                         Contributor Guidelines
                       </p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                      <p className="text-sm text-neutral-500 dark:text-neutral-400">
                         Learn how to contribute
                       </p>
                     </div>
-                    <ExternalLink className="ml-auto h-4 w-4 text-gray-400 group-hover:text-orange-500" />
+                    <ExternalLink className="ml-auto h-4 w-4 text-neutral-400 group-hover:text-orange-500" />
                   </motion.a>
                 </div>
               </motion.div>
@@ -838,7 +838,7 @@ const ContactUsPage = () => {
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600">
                 <MapPin className="h-6 w-6 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 transition-colors duration-300 dark:text-white">
+              <h2 className="text-3xl font-bold text-neutral-900 transition-colors duration-300 dark:text-white">
                 Our Information
               </h2>
             </div>
@@ -850,11 +850,11 @@ const ContactUsPage = () => {
               >
                 <div className="mb-4 flex items-center">
                   <Clock className="mr-3 h-8 w-8 text-indigo-500 dark:text-indigo-400" />
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">
                     Support Hours
                   </h3>
                 </div>
-                <div className="space-y-2 text-gray-600 dark:text-gray-300">
+                <div className="space-y-2 text-neutral-600 dark:text-neutral-300">
                   <p>
                     <span className="font-semibold">Monday - Friday:</span> 9:00
                     AM - 6:00 PM UTC
@@ -866,7 +866,7 @@ const ContactUsPage = () => {
                   <p>
                     <span className="font-semibold">Sunday:</span> Closed
                   </p>
-                  <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
+                  <p className="mt-3 text-sm text-neutral-500 dark:text-neutral-400">
                     Community support available 24/7 through our Discord server
                   </p>
                 </div>
@@ -878,11 +878,11 @@ const ContactUsPage = () => {
               >
                 <div className="mb-4 flex items-center">
                   <Globe className="mr-3 h-8 w-8 text-green-500 dark:text-green-400" />
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">
                     Global Reach
                   </h3>
                 </div>
-                <div className="space-y-2 text-gray-600 dark:text-gray-300">
+                <div className="space-y-2 text-neutral-600 dark:text-neutral-300">
                   <p>
                     <span className="font-semibold">Headquarters:</span>{" "}
                     Remote-First
@@ -894,7 +894,7 @@ const ContactUsPage = () => {
                     <span className="font-semibold">Languages:</span> English
                     (Primary)
                   </p>
-                  <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
+                  <p className="mt-3 text-sm text-neutral-500 dark:text-neutral-400">
                     Our distributed team serves learners globally
                   </p>
                 </div>
@@ -906,11 +906,11 @@ const ContactUsPage = () => {
               >
                 <div className="mb-4 flex items-center">
                   <Heart className="mr-3 h-8 w-8 text-purple-500 dark:text-purple-400" />
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">
                     Our Mission
                   </h3>
                 </div>
-                <div className="space-y-2 text-gray-600 dark:text-gray-300">
+                <div className="space-y-2 text-neutral-600 dark:text-neutral-300">
                   <p className="text-sm">
                     Making quality Java programming education accessible to
                     everyone, regardless of background or economic
@@ -931,7 +931,7 @@ const ContactUsPage = () => {
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600">
                 <MessageSquare className="h-6 w-6 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 transition-colors duration-300 dark:text-white">
+              <h2 className="text-3xl font-bold text-neutral-900 transition-colors duration-300 dark:text-white">
                 Frequently Asked Questions
               </h2>
             </div>
@@ -968,10 +968,10 @@ const ContactUsPage = () => {
                   className={`bg-gradient-to-r from-${faq.color}-50 to-${faq.color === "blue" ? "cyan" : faq.color === "green" ? "emerald" : faq.color === "purple" ? "pink" : "red"}-50 dark:from-${faq.color}-500/20 dark:to-${faq.color === "blue" ? "cyan" : faq.color === "green" ? "emerald" : faq.color === "purple" ? "pink" : "red"}-500/20 border border-${faq.color}-200 dark:border-${faq.color}-500/30 rounded-xl p-6 transition-colors duration-300`}
                   whileHover={{ y: -5 }}
                 >
-                  <h3 className="mb-3 text-lg font-semibold text-gray-900 dark:text-white">
+                  <h3 className="mb-3 text-lg font-semibold text-neutral-900 dark:text-white">
                     {faq.question}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300">
                     {faq.answer}
                   </p>
                 </motion.div>
@@ -993,7 +993,7 @@ const ContactUsPage = () => {
               isDarkMode
                 ? "border border-indigo-400/30 bg-gradient-to-br from-indigo-900 to-sky-700"
                 : "border border-indigo-300 bg-gradient-to-br from-indigo-600 to-sky-600"
-            } px-8 py-16 text-center text-white shadow-2xl transition-colors duration-300`}
+            } px-8 py-16 text-center text-white transition-colors duration-300`}
             variants={itemVariants}
             whileHover={{ scale: 1.02, y: -5 }}
             transition={{ duration: 0.3 }}
@@ -1017,7 +1017,7 @@ const ContactUsPage = () => {
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <motion.a
                 href="#"
-                className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-lg font-semibold text-indigo-600 shadow-lg transition-colors duration-200 hover:bg-gray-100"
+                className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-lg font-semibold text-indigo-600 shadow-lg transition-colors duration-200 hover:bg-neutral-100"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

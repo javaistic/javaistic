@@ -1,5 +1,6 @@
 import Logo from "@/components/logo";
-import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
+import type { BaseLayoutProps, LinkItemType } from "fumadocs-ui/layouts/shared";
+import { AlbumIcon, HeartIcon } from "lucide-react";
 
 /**
  * Shared layout configurations
@@ -29,10 +30,10 @@ export const baseOptions: BaseLayoutProps = {
       text: "Sponsors",
       url: "/sponsors",
     },
-   {
-  text: "Playground",
-  url: "/playground",  
-}
+    {
+      text: "Playground",
+      url: "/playground",
+    },
   ],
   githubUrl: "https://github.com/javaistic/javaistic",
   themeSwitch: {
@@ -40,3 +41,17 @@ export const baseOptions: BaseLayoutProps = {
     mode: "light-dark",
   },
 };
+
+export const linkItems: LinkItemType[] = [
+  {
+    icon: <AlbumIcon />,
+    text: "Blog",
+    url: "/blog",
+    active: "nested-url",
+  },
+  {
+    text: "Sponsors",
+    url: "/sponsors",
+    icon: <HeartIcon />,
+  },
+];

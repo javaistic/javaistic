@@ -1,5 +1,5 @@
 "use client";
-import { motion, easeOut } from "framer-motion";
+import { motion, easeOut } from "motion/react";
 import {
   Shield,
   Lock,
@@ -237,7 +237,7 @@ const SecurityPage = () => {
           </motion.h1>
 
           <motion.p
-            className="text-muted-foreground mt-6 max-w-6xl text-lg text-gray-600 sm:text-xl dark:text-gray-300"
+            className="text-muted-foreground mt-6 max-w-6xl text-lg sm:text-xl dark:text-neutral-300"
             variants={itemVariants}
           >
             Your security and privacy are our top priorities. Learn about our
@@ -247,7 +247,7 @@ const SecurityPage = () => {
 
           <motion.div
             className={`mt-8 text-sm ${
-              isDarkMode ? "text-gray-400" : "text-gray-500"
+              isDarkMode ? "text-neutral-400" : "text-neutral-500"
             } space-y-1 transition-colors duration-300`}
             variants={itemVariants}
           >
@@ -269,9 +269,9 @@ const SecurityPage = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <div className="rounded-2xl border border-gray-200 bg-white/80 p-8 shadow-2xl backdrop-blur-sm transition-colors duration-300 dark:border-gray-700/50 dark:bg-gray-900/70">
+          <div className="rounded-2xl border border-neutral-200 bg-white/80 p-8 shadow-2xl backdrop-blur-sm transition-colors duration-300 dark:border-neutral-700/50 dark:bg-neutral-900/70">
             {/* Tab Navigation */}
-            <div className="mb-8 flex flex-wrap gap-2 border-b border-gray-200 dark:border-gray-700">
+            <div className="mb-8 flex flex-wrap gap-2 border-b border-neutral-200 dark:border-neutral-700">
               {tabsData.map((tab) => (
                 <motion.button
                   key={tab.id}
@@ -279,7 +279,7 @@ const SecurityPage = () => {
                   className={`flex items-center rounded-t-lg px-4 py-3 font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? "border-b-2 border-blue-500 bg-blue-50 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400"
-                      : "text-gray-600 hover:bg-gray-50 hover:text-blue-600 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-blue-400"
+                      : "text-neutral-600 hover:bg-neutral-50 hover:text-blue-600 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-blue-400"
                   }`}
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -299,10 +299,10 @@ const SecurityPage = () => {
                   className="space-y-8"
                 >
                   <div>
-                    <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+                    <h2 className="mb-4 text-2xl font-bold text-neutral-900 dark:text-white">
                       Platform Security Architecture
                     </h2>
-                    <p className="mb-6 text-gray-600 dark:text-gray-300">
+                    <p className="mb-6 text-neutral-600 dark:text-neutral-300">
                       Our security approach is built on simplicity and
                       transparency. We minimize data collection and rely on
                       trusted infrastructure providers for enterprise-grade
@@ -311,11 +311,11 @@ const SecurityPage = () => {
 
                     <div className="grid gap-6 md:grid-cols-2">
                       <div className="space-y-4">
-                        <h3 className="flex items-center text-lg font-semibold text-gray-900 dark:text-white">
+                        <h3 className="flex items-center text-lg font-semibold text-neutral-900 dark:text-white">
                           <Lock className="mr-2 h-5 w-5 text-blue-500" />
                           Data Protection
                         </h3>
-                        <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-300">
                           <li>• Minimal data collection approach</li>
                           <li>• No sensitive data storage</li>
                           <li>• Analytics data anonymization</li>
@@ -323,11 +323,11 @@ const SecurityPage = () => {
                       </div>
 
                       <div className="space-y-4">
-                        <h3 className="flex items-center text-lg font-semibold text-gray-900 dark:text-white">
+                        <h3 className="flex items-center text-lg font-semibold text-neutral-900 dark:text-white">
                           <Server className="mr-2 h-5 w-5 text-green-500" />
                           Infrastructure Security
                         </h3>
-                        <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-300">
                           <li>• Vercel&apos;s enterprise security platform</li>
                           <li>
                             • GitHub&apos;s security scanning and monitoring
@@ -343,10 +343,10 @@ const SecurityPage = () => {
                     <div className="flex items-start">
                       <Code className="mt-1 mr-3 h-6 w-6 text-blue-500" />
                       <div>
-                        <h3 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+                        <h3 className="mb-2 text-lg font-semibold text-neutral-900 dark:text-white">
                           Open Source Security
                         </h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
+                        <p className="text-sm text-neutral-600 dark:text-neutral-300">
                           Our entire codebase is publicly available on GitHub,
                           allowing the community to review, audit, and
                           contribute to our security practices. This
@@ -366,10 +366,10 @@ const SecurityPage = () => {
                   className="space-y-8"
                 >
                   <div>
-                    <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+                    <h2 className="mb-4 text-2xl font-bold text-neutral-900 dark:text-white">
                       Privacy-First Approach
                     </h2>
-                    <p className="mb-6 text-gray-600 dark:text-gray-300">
+                    <p className="mb-6 text-neutral-600 dark:text-neutral-300">
                       We believe in privacy by design. Our platform collects
                       minimal data and operates without storing personal user
                       information.
@@ -377,11 +377,11 @@ const SecurityPage = () => {
 
                     <div className="space-y-6">
                       <div className="rounded-xl bg-gradient-to-r from-green-50 to-emerald-50 p-6 dark:from-green-500/20 dark:to-emerald-500/20">
-                        <h3 className="mb-3 flex items-center text-lg font-semibold text-gray-900 dark:text-white">
+                        <h3 className="mb-3 flex items-center text-lg font-semibold text-neutral-900 dark:text-white">
                           <Eye className="mr-2 h-5 w-5 text-green-500" />
                           What We Collect
                         </h3>
-                        <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-300">
                           <li>
                             • Anonymous usage analytics via Google Analytics
                           </li>
@@ -392,11 +392,11 @@ const SecurityPage = () => {
                       </div>
 
                       <div className="rounded-xl bg-gradient-to-r from-red-50 to-pink-50 p-6 dark:from-red-500/20 dark:to-pink-500/20">
-                        <h3 className="mb-3 flex items-center text-lg font-semibold text-gray-900 dark:text-white">
+                        <h3 className="mb-3 flex items-center text-lg font-semibold text-neutral-900 dark:text-white">
                           <Shield className="mr-2 h-5 w-5 text-red-500" />
                           What We Don&apos;t Collect
                         </h3>
-                        <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-300">
                           <li>• No personal identification information</li>
                           <li>• No email addresses or contact details</li>
                           <li>• No user accounts or authentication data</li>
@@ -408,18 +408,18 @@ const SecurityPage = () => {
                     </div>
                   </div>
 
-                  <div className="border-t border-gray-200 pt-6 dark:border-gray-700">
-                    <h3 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white">
+                  <div className="border-t border-neutral-200 pt-6 dark:border-neutral-700">
+                    <h3 className="mb-4 text-lg font-semibold text-neutral-900 dark:text-white">
                       Your Privacy Rights
                     </h3>
                     <div className="rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 p-6 dark:from-blue-500/20 dark:to-indigo-500/20">
                       <div className="flex items-start">
                         <CheckCircle className="mt-0.5 mr-3 h-5 w-5 text-blue-500" />
                         <div>
-                          <p className="mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                          <p className="mb-2 text-sm font-medium text-neutral-900 dark:text-white">
                             No Data Collection Means Maximum Privacy
                           </p>
-                          <p className="text-xs text-gray-600 dark:text-gray-300">
+                          <p className="text-xs text-neutral-600 dark:text-neutral-300">
                             Since we don&apos;t store personal data,
                             there&apos;s nothing to access, delete, or modify.
                             Your privacy is protected by design through our
@@ -439,10 +439,10 @@ const SecurityPage = () => {
                   className="space-y-8"
                 >
                   <div>
-                    <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+                    <h2 className="mb-4 text-2xl font-bold text-neutral-900 dark:text-white">
                       Compliance Through Trusted Providers
                     </h2>
-                    <p className="mb-6 text-gray-600 dark:text-gray-300">
+                    <p className="mb-6 text-neutral-600 dark:text-neutral-300">
                       We leverage the security standards and compliance
                       certifications of our trusted infrastructure providers to
                       ensure enterprise-grade protection.
@@ -452,7 +452,7 @@ const SecurityPage = () => {
                       {complianceStandards.map((standard, index) => (
                         <motion.div
                           key={index}
-                          className="rounded-xl bg-gradient-to-r from-gray-50 to-gray-100 p-6 dark:from-gray-800 dark:to-gray-700"
+                          className="rounded-xl bg-gradient-to-r from-neutral-50 to-neutral-100 p-6 dark:from-neutral-800 dark:to-neutral-700"
                           whileHover={{ scale: 1.02 }}
                         >
                           <div className="mb-4 flex items-center">
@@ -460,7 +460,7 @@ const SecurityPage = () => {
                               {standard.icon}
                             </div>
                             <div>
-                              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                              <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">
                                 {standard.name}
                               </h3>
                               <span className="rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-800 dark:bg-blue-500/20 dark:text-blue-300">
@@ -468,7 +468,7 @@ const SecurityPage = () => {
                               </span>
                             </div>
                           </div>
-                          <p className="text-sm text-gray-600 dark:text-gray-300">
+                          <p className="text-sm text-neutral-600 dark:text-neutral-300">
                             {standard.description}
                           </p>
                         </motion.div>
@@ -476,11 +476,11 @@ const SecurityPage = () => {
                     </div>
 
                     <div className="rounded-xl bg-gradient-to-r from-indigo-50 to-purple-50 p-6 dark:from-indigo-500/20 dark:to-purple-500/20">
-                      <h3 className="mb-4 flex items-center text-lg font-semibold text-gray-900 dark:text-white">
+                      <h3 className="mb-4 flex items-center text-lg font-semibold text-neutral-900 dark:text-white">
                         <Github className="mr-2 h-5 w-5 text-indigo-500" />
                         Open Source Documentation
                       </h3>
-                      <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">
+                      <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-300">
                         All our security practices are transparent through our
                         open source code and documentation.
                       </p>
@@ -512,7 +512,7 @@ const SecurityPage = () => {
                                 ? "noopener noreferrer"
                                 : undefined
                             }
-                            className="flex items-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+                            className="flex items-center rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                           >
@@ -542,7 +542,7 @@ const SecurityPage = () => {
           viewport={{ once: true, amount: 0.1 }}
         >
           <motion.div
-            className="rounded-2xl border border-gray-200 bg-white/80 p-8 shadow-2xl backdrop-blur-sm transition-colors duration-300 dark:border-gray-700/50 dark:bg-gray-900/70"
+            className="rounded-2xl border border-neutral-200 bg-white/80 p-8 shadow-2xl backdrop-blur-sm transition-colors duration-300 dark:border-neutral-700/50 dark:bg-neutral-900/70"
             variants={itemVariants}
             id="contact"
           >
@@ -550,10 +550,10 @@ const SecurityPage = () => {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-pink-600">
                 <AlertTriangle className="h-8 w-8 text-white" />
               </div>
-              <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
+              <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-white">
                 Security Issue Reporting
               </h2>
-              <p className="mx-auto max-w-3xl text-gray-600 dark:text-gray-300">
+              <p className="mx-auto max-w-3xl text-neutral-600 dark:text-neutral-300">
                 Found a security issue? We appreciate responsible disclosure.
                 Report security concerns directly to our development team.
               </p>
@@ -561,13 +561,13 @@ const SecurityPage = () => {
 
             <div className="mx-auto max-w-2xl">
               <div className="rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 p-6 dark:from-blue-500/20 dark:to-indigo-500/20">
-                <h3 className="mb-4 flex items-center text-lg font-semibold text-gray-900 dark:text-white">
+                <h3 className="mb-4 flex items-center text-lg font-semibold text-neutral-900 dark:text-white">
                   <Mail className="mr-2 h-5 w-5 text-blue-500" />
                   Contact Information
                 </h3>
                 <div className="space-y-3 text-sm">
                   <div className="flex items-center">
-                    <span className="mr-2 font-medium text-gray-900 dark:text-white">
+                    <span className="mr-2 font-medium text-neutral-900 dark:text-white">
                       Email:
                     </span>
                     <span className="text-blue-600 dark:text-blue-400">
@@ -575,7 +575,7 @@ const SecurityPage = () => {
                     </span>
                   </div>
                   <div className="flex items-center">
-                    <span className="mr-2 font-medium text-gray-900 dark:text-white">
+                    <span className="mr-2 font-medium text-neutral-900 dark:text-white">
                       GitHub Issues:
                     </span>
                     <span className="text-blue-600 dark:text-blue-400">
@@ -585,10 +585,10 @@ const SecurityPage = () => {
                     </span>
                   </div>
                   <div className="flex items-center">
-                    <span className="mr-2 font-medium text-gray-900 dark:text-white">
+                    <span className="mr-2 font-medium text-neutral-900 dark:text-white">
                       Response Time:
                     </span>
-                    <span className="text-gray-600 dark:text-gray-300">
+                    <span className="text-neutral-600 dark:text-neutral-300">
                       Within 48 hours
                     </span>
                   </div>
@@ -621,13 +621,13 @@ const SecurityPage = () => {
         >
           <div className="mb-12 text-center">
             <motion.h2
-              className="mb-4 text-3xl font-bold text-gray-900 dark:text-white"
+              className="mb-4 text-3xl font-bold text-neutral-900 dark:text-white"
               variants={titleVariants}
             >
               Transparency Center
             </motion.h2>
             <motion.p
-              className="mx-auto max-w-3xl text-gray-600 dark:text-gray-300"
+              className="mx-auto max-w-3xl text-neutral-600 dark:text-neutral-300"
               variants={itemVariants}
             >
               Access our open source code, uptime monitoring, and transparency
@@ -676,7 +676,7 @@ const SecurityPage = () => {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="rounded-xl border border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100 p-6 transition-colors duration-300 dark:border-gray-600 dark:from-gray-800 dark:to-gray-700"
+                className="rounded-xl border border-neutral-200 bg-gradient-to-r from-neutral-50 to-neutral-100 p-6 transition-colors duration-300 dark:border-neutral-600 dark:from-neutral-800 dark:to-neutral-700"
                 variants={itemVariants}
                 whileHover={{ y: -5, scale: 1.02 }}
               >
@@ -685,17 +685,17 @@ const SecurityPage = () => {
                 >
                   {item.icon}
                 </div>
-                <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="mb-3 text-xl font-semibold text-neutral-900 dark:text-white">
                   {item.title}
                 </h3>
-                <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">
+                <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-300">
                   {item.description}
                 </p>
                 <ul className="space-y-2">
                   {item.items.map((listItem, idx) => (
                     <li
                       key={idx}
-                      className="flex items-center text-sm text-gray-600 dark:text-gray-300"
+                      className="flex items-center text-sm text-neutral-600 dark:text-neutral-300"
                     >
                       <CheckCircle
                         className={`h-4 w-4 text-${item.color}-500 mr-2`}
@@ -748,7 +748,7 @@ const SecurityPage = () => {
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link href="#contact">
                 <motion.button
-                  className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-lg font-semibold text-indigo-600 shadow-lg transition-colors duration-200 hover:bg-gray-100"
+                  className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-lg font-semibold text-indigo-600 shadow-lg transition-colors duration-200 hover:bg-neutral-100"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
