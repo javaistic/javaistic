@@ -1,7 +1,7 @@
 // Export all home page components
 export { HeroSection } from "./hero-section";
 export { FeaturesSection } from "./features-section";
-export { CommunitySection } from "./community-section";
+export { VisionSection } from "./vision-section";
 export { BentoGridSection } from "./bento-grid-section";
 export { WhyLearnJavaSection } from "./why-learn-java-section";
 export { CTASection } from "./cta-section";
