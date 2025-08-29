@@ -1,5 +1,5 @@
 "use client";
-import { motion, easeOut } from "framer-motion";
+import { motion, easeOut } from "motion/react";
 import {
   Github,
   GitFork,
@@ -256,7 +256,7 @@ const OpenSourcePage = () => {
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ duration: 0.3 }}
           >
-            <Github className="mx-auto h-20 w-20 text-gray-800 dark:text-white" />
+            <Github className="mx-auto h-20 w-20 text-neutral-800 dark:text-white" />
           </motion.div>
 
           <motion.h1
@@ -287,7 +287,7 @@ const OpenSourcePage = () => {
               href="https://github.com/javaistic/javaistic"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-200 hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
+              className="inline-flex items-center justify-center rounded-xl bg-neutral-900 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-200 hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -300,7 +300,7 @@ const OpenSourcePage = () => {
               href="https://github.com/javaistic/javaistic/fork"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl border-2 border-gray-900 px-8 py-4 text-lg font-semibold text-gray-900 transition-all duration-200 hover:bg-gray-900 hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-gray-900"
+              className="inline-flex items-center justify-center rounded-xl border-2 border-neutral-900 px-8 py-4 text-lg font-semibold text-neutral-900 transition-all duration-200 hover:bg-neutral-900 hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-neutral-900"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -322,17 +322,17 @@ const OpenSourcePage = () => {
             {quickStats.map((stat, index) => (
               <motion.div
                 key={index}
-                className="rounded-2xl border border-gray-200 bg-white/80 p-6 text-center shadow-lg backdrop-blur-sm transition-colors duration-300 dark:border-gray-700/50 dark:bg-gray-900/70"
+                className="rounded-2xl border border-neutral-200 bg-white/80 p-6 text-center shadow-lg backdrop-blur-sm transition-colors duration-300 dark:border-neutral-700/50 dark:bg-neutral-900/70"
                 variants={itemVariants}
                 whileHover={cardHoverVariants.hover}
               >
                 <div className="mb-3 flex justify-center text-blue-500 dark:text-blue-400">
                   {stat.icon}
                 </div>
-                <div className="mb-1 text-3xl font-bold text-gray-900 dark:text-white">
+                <div className="mb-1 text-3xl font-bold text-neutral-900 dark:text-white">
                   {stat.value}
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-300">
+                <div className="text-sm text-neutral-600 dark:text-neutral-300">
                   {stat.label}
                 </div>
               </motion.div>
@@ -349,10 +349,10 @@ const OpenSourcePage = () => {
           viewport={{ once: true }}
         >
           <motion.div className="mb-12 text-center" variants={itemVariants}>
-            <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+            <h2 className="mb-4 text-4xl font-bold text-neutral-900 dark:text-white">
               Why Open Source?
             </h2>
-            <p className="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-300">
+            <p className="mx-auto max-w-3xl text-xl text-neutral-600 dark:text-neutral-300">
               We believe that education should be free, transparent, and
               collaborative. Open source enables us to build something truly
               special together.
@@ -363,7 +363,7 @@ const OpenSourcePage = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-lg backdrop-blur-sm transition-colors duration-300 dark:border-gray-700/50 dark:bg-gray-900/70"
+                className="rounded-2xl border border-neutral-200 bg-white/80 p-6 shadow-lg backdrop-blur-sm transition-colors duration-300 dark:border-neutral-700/50 dark:bg-neutral-900/70"
                 variants={itemVariants}
                 whileHover={cardHoverVariants.hover}
               >
@@ -372,10 +372,10 @@ const OpenSourcePage = () => {
                 >
                   {feature.icon}
                 </div>
-                <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="mb-3 text-xl font-semibold text-neutral-900 dark:text-white">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
+                <p className="text-sm text-neutral-600 dark:text-neutral-300">
                   {feature.description}
                 </p>
               </motion.div>
@@ -392,13 +392,13 @@ const OpenSourcePage = () => {
           viewport={{ once: true }}
         >
           <motion.div className="mb-12 text-center" variants={itemVariants}>
-            <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+            <h2 className="mb-4 text-4xl font-bold text-neutral-900 dark:text-white">
               How You Can Contribute
             </h2>
-            <p className="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-300">
-              Whether you&apos;re a developer, educator, designer, or enthusiast,
-              there&apos;s a place for you in our community. Here&apos;s how you can help
-              shape the future of Java education.
+            <p className="mx-auto max-w-3xl text-xl text-neutral-600 dark:text-neutral-300">
+              Whether you&apos;re a developer, educator, designer, or
+              enthusiast, there&apos;s a place for you in our community.
+              Here&apos;s how you can help shape the future of Java education.
             </p>
           </motion.div>
 
@@ -406,7 +406,7 @@ const OpenSourcePage = () => {
             {contributionAreas.map((area, index) => (
               <motion.div
                 key={index}
-                className="rounded-2xl border border-gray-200 bg-white/80 p-8 shadow-lg backdrop-blur-sm transition-colors duration-300 dark:border-gray-700/50 dark:bg-gray-900/70"
+                className="rounded-2xl border border-neutral-200 bg-white/80 p-8 shadow-lg backdrop-blur-sm transition-colors duration-300 dark:border-neutral-700/50 dark:bg-neutral-900/70"
                 variants={itemVariants}
                 whileHover={cardHoverVariants.hover}
               >
@@ -415,17 +415,17 @@ const OpenSourcePage = () => {
                 >
                   {area.icon}
                 </div>
-                <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+                <h3 className="mb-4 text-2xl font-bold text-neutral-900 dark:text-white">
                   {area.title}
                 </h3>
-                <p className="mb-6 text-gray-600 dark:text-gray-300">
+                <p className="mb-6 text-neutral-600 dark:text-neutral-300">
                   {area.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {area.skills.map((skill, skillIndex) => (
                     <span
                       key={skillIndex}
-                      className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300"
+                      className="rounded-full bg-neutral-100 px-3 py-1 text-sm font-medium text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
                     >
                       {skill}
                     </span>
@@ -445,38 +445,38 @@ const OpenSourcePage = () => {
           viewport={{ once: true }}
         >
           <motion.div className="mb-12 text-center" variants={itemVariants}>
-            <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+            <h2 className="mb-4 text-4xl font-bold text-neutral-900 dark:text-white">
               Getting Started
             </h2>
-            <p className="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-300">
-              Ready to contribute? Here&apos;s your quick start guide to joining the
-              Javaistic community.
+            <p className="mx-auto max-w-3xl text-xl text-neutral-600 dark:text-neutral-300">
+              Ready to contribute? Here&apos;s your quick start guide to joining
+              the Javaistic community.
             </p>
           </motion.div>
 
           <motion.div
-            className="rounded-2xl border border-gray-200 bg-white/80 p-8 shadow-lg backdrop-blur-sm transition-colors duration-300 dark:border-gray-700/50 dark:bg-gray-900/70"
+            className="rounded-2xl border border-neutral-200 bg-white/80 p-8 shadow-lg backdrop-blur-sm transition-colors duration-300 dark:border-neutral-700/50 dark:bg-neutral-900/70"
             variants={itemVariants}
           >
             <div className="grid gap-12 md:grid-cols-2">
               <div>
-                <h3 className="mb-6 flex items-center text-2xl font-bold text-gray-900 dark:text-white">
+                <h3 className="mb-6 flex items-center text-2xl font-bold text-neutral-900 dark:text-white">
                   <Terminal className="mr-3 h-6 w-6 text-green-500" />
                   Quick Setup
                 </h3>
                 <div className="space-y-4">
                   <motion.div
-                    className="flex items-start rounded-xl bg-gray-50 p-4 dark:bg-gray-800/50"
+                    className="flex items-start rounded-xl bg-neutral-50 p-4 dark:bg-neutral-800/50"
                     whileHover={{ x: 5 }}
                   >
                     <div className="mr-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 font-bold text-white">
                       1
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white">
+                      <h4 className="font-semibold text-neutral-900 dark:text-white">
                         Fork the Repository
                       </h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">
+                      <p className="text-sm text-neutral-600 dark:text-neutral-300">
                         Click the fork button on our GitHub repository to create
                         your own copy.
                       </p>
@@ -484,18 +484,18 @@ const OpenSourcePage = () => {
                   </motion.div>
 
                   <motion.div
-                    className="flex items-start rounded-xl bg-gray-50 p-4 dark:bg-gray-800/50"
+                    className="flex items-start rounded-xl bg-neutral-50 p-4 dark:bg-neutral-800/50"
                     whileHover={{ x: 5 }}
                   >
                     <div className="mr-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-green-500 font-bold text-white">
                       2
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white">
+                      <h4 className="font-semibold text-neutral-900 dark:text-white">
                         Clone Locally
                       </h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">
-                        <code className="rounded bg-gray-200 px-2 py-1 text-xs dark:bg-gray-700">
+                      <p className="text-sm text-neutral-600 dark:text-neutral-300">
+                        <code className="rounded bg-neutral-200 px-2 py-1 text-xs dark:bg-neutral-700">
                           git clone https://github.com/javaistic/javaistic.git
                         </code>
                       </p>
@@ -503,18 +503,18 @@ const OpenSourcePage = () => {
                   </motion.div>
 
                   <motion.div
-                    className="flex items-start rounded-xl bg-gray-50 p-4 dark:bg-gray-800/50"
+                    className="flex items-start rounded-xl bg-neutral-50 p-4 dark:bg-neutral-800/50"
                     whileHover={{ x: 5 }}
                   >
                     <div className="mr-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-purple-500 font-bold text-white">
                       3
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white">
+                      <h4 className="font-semibold text-neutral-900 dark:text-white">
                         Install Dependencies
                       </h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">
-                        <code className="rounded bg-gray-200 px-2 py-1 text-xs dark:bg-gray-700">
+                      <p className="text-sm text-neutral-600 dark:text-neutral-300">
+                        <code className="rounded bg-neutral-200 px-2 py-1 text-xs dark:bg-neutral-700">
                           npm install && npm run dev
                         </code>
                       </p>
@@ -524,38 +524,38 @@ const OpenSourcePage = () => {
               </div>
 
               <div>
-                <h3 className="mb-6 flex items-center text-2xl font-bold text-gray-900 dark:text-white">
+                <h3 className="mb-6 flex items-center text-2xl font-bold text-neutral-900 dark:text-white">
                   <Coffee className="mr-3 h-6 w-6 text-orange-500" />
                   Community Guidelines
                 </h3>
                 <div className="space-y-4">
                   <div className="rounded-xl border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/30 dark:bg-blue-500/20">
-                    <h4 className="mb-2 font-semibold text-gray-900 dark:text-white">
+                    <h4 className="mb-2 font-semibold text-neutral-900 dark:text-white">
                       📋 Read Our Contributing Guide
                     </h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">
                       Check our CONTRIBUTING.md for detailed guidelines on code
                       style, commit messages, and pull request process.
                     </p>
                   </div>
 
                   <div className="rounded-xl border border-green-200 bg-green-50 p-4 dark:border-green-500/30 dark:bg-green-500/20">
-                    <h4 className="mb-2 font-semibold text-gray-900 dark:text-white">
+                    <h4 className="mb-2 font-semibold text-neutral-900 dark:text-white">
                       🤝 Join Our Discord
                     </h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">
                       Connect with other contributors, ask questions, and
                       collaborate on new features.
                     </p>
                   </div>
 
                   <div className="rounded-xl border border-purple-200 bg-purple-50 p-4 dark:border-purple-500/30 dark:bg-purple-500/20">
-                    <h4 className="mb-2 font-semibold text-gray-900 dark:text-white">
+                    <h4 className="mb-2 font-semibold text-neutral-900 dark:text-white">
                       🎯 Pick Your First Issue
                     </h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Look for issues labeled &quot;good first issue&quot; or &quot;help
-                      wanted&quot; to get started.
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">
+                      Look for issues labeled &quot;good first issue&quot; or
+                      &quot;help wanted&quot; to get started.
                     </p>
                   </div>
                 </div>
@@ -605,7 +605,7 @@ const OpenSourcePage = () => {
                 href="https://github.com/javaistic/javaistic"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-lg font-semibold text-purple-600 shadow-lg transition-colors duration-200 hover:bg-gray-100"
+                className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-lg font-semibold text-purple-600 shadow-lg transition-colors duration-200 hover:bg-neutral-100"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

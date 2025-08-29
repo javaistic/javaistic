@@ -1,0 +1,43 @@
+{
+  "name": "javaistic",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbo",
+    "start": "next start",
+    "postinstall": "fumadocs-mdx"
+  },
+  "dependencies": {
+    "@codemirror/lang-java": "^6.0.2",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@uiw/codemirror-theme-github": "^4.24.1",
+    "@uiw/codemirror-theme-tokyo-night": "^4.24.1",
+    "@uiw/react-codemirror": "^4.24.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "fumadocs-core": "15.6.5",
+    "fumadocs-mdx": "11.7.0",
+    "fumadocs-ui": "15.6.5",
+    "latest": "^0.2.0",
+    "lucide-react": "^0.525.0",
+    "next": "15.4.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sharp": "^0.34.3",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "24.0.15",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "eslint": "^9.31.0",
+    "eslint-config-next": "15.4.2",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "tw-animate-css": "^1.3.5",
+    "typescript": "^5.8.3"
+  }
+}

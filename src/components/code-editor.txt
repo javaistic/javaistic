@@ -1,0 +1,1025 @@
+"use client";
+import React, { useState, useRef, useEffect } from "react";
+import {
+  Play,
+  Save,
+  FileText,
+  Folder,
+  FolderOpen,
+  Settings,
+  Search,
+  ChevronRight,
+  ChevronDown,
+  File,
+  Coffee,
+  XIcon,
+  Code2,
+} from "lucide-react";
+
+export default function JavaCodeEditor() {
+  // File system structure
+  const [fileSystem] = useState({
+    calculator_app: {
+      type: "folder",
+      expanded: true,
+      children: {
+        src: {
+          type: "folder",
+          expanded: true,
+          children: {
+            main: {
+              type: "folder",
+              expanded: true,
+              children: {
+                java: {
+                  type: "folder",
+                  expanded: true,
+                  children: {
+                    com: {
+                      type: "folder",
+                      expanded: true,
+                      children: {
+                        example: {
+                          type: "folder",
+                          expanded: true,
+                          children: {
+                            "Main.java": {
+                              type: "file",
+                              content: `package com.example;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    private static final String WELCOME_MESSAGE = "Welcome to Java Code Editor!";
+
+    public static void main(String[] args) {
+        System.out.println(WELCOME_MESSAGE);
+
+        // Create a new application instance
+        Main app = new Main();
+        app.runApplication();
+    }
+
+    private void runApplication() {
+        Scanner scanner = new Scanner(System.in);
+        List<String> tasks = new ArrayList<>();
+
+        System.out.println("Simple Task Manager");
+        System.out.println("Commands: add, list, quit");
+
+        while (true) {
+            System.out.print("> ");
+            String command = scanner.nextLine().trim().toLowerCase();
+
+            switch (command) {
+                case "add":
+                    System.out.print("Enter task: ");
+                    String task = scanner.nextLine();
+                    tasks.add(task);
+                    System.out.println("Task added: " + task);
+                    break;
+                case "list":
+                    listTasks(tasks);
+                    break;
+                case "quit":
+                    System.out.println("Goodbye!");
+                    return;
+                default:
+                    System.out.println("Unknown command: " + command);
+            }
+        }
+    }
+
+    private void listTasks(List<String> tasks) {
+        if (tasks.isEmpty()) {
+            System.out.println("No tasks found.");
+        } else {
+            System.out.println("Tasks:");
+            for (int i = 0; i < tasks.size(); i++) {
+                System.out.println((i + 1) + ". " + tasks.get(i));
+            }
+        }
+    }
+}`,
+                            },
+                            "Person.java": {
+                              type: "file",
+                              content: `package com.example;
+
+/**
+ * Represents a person with basic information
+ */
+public class Person {
+    private String firstName;
+    private String lastName;
+    private int age;
+    private String email;
+
+    // Constructor
+    public Person(String firstName, String lastName, int age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.email = "";
+    }
+
+    // Overloaded constructor
+    public Person(String firstName, String lastName, int age, String email) {
+        this(firstName, lastName, age);
+        this.email = email;
+    }
+
+    // Getter methods
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    // Setter methods
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAge(int age) {
+        if (age >= 0) {
+            this.age = age;
+        }
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    // Get full name
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
+    // Check if person is adult
+    public boolean isAdult() {
+        return age >= 18;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Person{name='%s', age=%d, email='%s'}",
+                           getFullName(), age, email);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Person person = (Person) obj;
+        return age == person.age &&
+               firstName.equals(person.firstName) &&
+               lastName.equals(person.lastName);
+    }
+}`,
+                            },
+                            "Calculator.java": {
+                              type: "file",
+                              content: `package com.example;
+
+/**
+ * A simple calculator class with basic arithmetic operations
+ */
+public class Calculator {
+
+    // Addition
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    // Subtraction
+    public double subtract(double a, double b) {
+        return a - b;
+    }
+
+    // Multiplication
+    public double multiply(double a, double b) {
+        return a * b;
+    }
+
+    // Division
+    public double divide(double a, double b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Cannot divide by zero");
+        }
+        return a / b;
+    }
+
+    // Power
+    public double power(double base, double exponent) {
+        return Math.pow(base, exponent);
+    }
+
+    // Square root
+    public double sqrt(double number) {
+        if (number < 0) {
+            throw new IllegalArgumentException("Cannot calculate square root of negative number");
+        }
+        return Math.sqrt(number);
+    }
+
+    // Percentage
+    public double percentage(double value, double percentage) {
+        return (value * percentage) / 100;
+    }
+
+    // Factorial (for integers)
+    public long factorial(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Factorial is not defined for negative numbers");
+        }
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+
+        long result = 1;
+        for (int i = 2; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+    // GCD using Euclidean algorithm
+    public int gcd(int a, int b) {
+        a = Math.abs(a);
+        b = Math.abs(b);
+
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    // LCM
+    public int lcm(int a, int b) {
+        return Math.abs(a * b) / gcd(a, b);
+    }
+}`,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            test: {
+              type: "folder",
+              expanded: false,
+              children: {
+                java: {
+                  type: "folder",
+                  expanded: false,
+                  children: {
+                    com: {
+                      type: "folder",
+                      expanded: false,
+                      children: {
+                        example: {
+                          type: "folder",
+                          expanded: false,
+                          children: {
+                            "MainTest.java": {
+                              type: "file",
+                              content: `package com.example;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class MainTest {
+    private Calculator calculator;
+    private Person person;
+
+    @BeforeEach
+    void setUp() {
+        calculator = new Calculator();
+        person = new Person("John", "Doe", 25, "john.doe@example.com");
+    }
+
+    @Test
+    void testCalculatorAddition() {
+        assertEquals(10.0, calculator.add(4.0, 6.0), 0.001);
+        assertEquals(-2.0, calculator.add(-5.0, 3.0), 0.001);
+    }
+
+    @Test
+    void testCalculatorDivision() {
+        assertEquals(2.0, calculator.divide(10.0, 5.0), 0.001);
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            calculator.divide(10.0, 0.0);
+        });
+    }
+
+    @Test
+    void testPersonCreation() {
+        assertEquals("John", person.getFirstName());
+        assertEquals("Doe", person.getLastName());
+        assertEquals(25, person.getAge());
+        assertEquals("john.doe@example.com", person.getEmail());
+    }
+
+    @Test
+    void testPersonFullName() {
+        assertEquals("John Doe", person.getFullName());
+    }
+
+    @Test
+    void testPersonIsAdult() {
+        assertTrue(person.isAdult());
+
+        Person child = new Person("Jane", "Smith", 15);
+        assertFalse(child.isAdult());
+    }
+
+    @Test
+    void testFactorial() {
+        assertEquals(1, calculator.factorial(0));
+        assertEquals(1, calculator.factorial(1));
+        assertEquals(24, calculator.factorial(4));
+        assertEquals(120, calculator.factorial(5));
+    }
+}`,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+        "pom.xml": {
+          type: "file",
+          content: `<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>java-code-editor</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Java Code Editor Project</name>
+    <description>A sample Java project for the code editor</description>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.version>5.8.2</junit.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>\${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>`,
+        },
+        "README.md": {
+          type: "file",
+          content: `# Java Code Editor Project
+
+A sample Java project demonstrating various programming concepts and best practices.
+
+## Project Structure
+
+\`\`\`
+src/
+├── main/java/com/example/
+│   ├── Main.java          # Main application entry point
+│   ├── Person.java        # Person class with encapsulation
+│   └── Calculator.java    # Calculator utility class
+└── test/java/com/example/
+    └── MainTest.java      # Unit tests
+\`\`\`
+
+## Features
+
+- **Main Application**: Interactive task manager with command-line interface
+- **Person Class**: Demonstrates OOP principles with proper encapsulation
+- **Calculator Class**: Utility class with various mathematical operations
+- **Unit Tests**: Comprehensive test coverage using JUnit 5
+
+## How to Run
+
+1. Compile the project:
+   \`\`\`bash
+   mvn compile
+   \`\`\`
+
+2. Run the main application:
+   \`\`\`bash
+   mvn exec:java -Dexec.mainClass="com.example.Main"
+   \`\`\`
+
+3. Run tests:
+   \`\`\`bash
+   mvn test
+   \`\`\`
+
+## Code Examples
+
+### Person Class Usage
+\`\`\`java
+Person person = new Person("John", "Doe", 25, "john@example.com");
+System.out.println(person.getFullName()); // Output: John Doe
+System.out.println(person.isAdult());     // Output: true
+\`\`\`
+
+### Calculator Usage
+\`\`\`java
+Calculator calc = new Calculator();
+double result = calc.add(10, 5);          // 15.0
+long factorial = calc.factorial(5);       // 120
+\`\`\`
+
+## Requirements
+
+- Java 11 or higher
+- Maven 3.6 or higher
+
+## Author
+
+Created with Java Code Editor`,
+        },
+      },
+    },
+  });
+
+  const [openTabs, setOpenTabs] = useState([
+    {
+      path: "calculator_app/src/main/java/com/example/Main.java",
+      fileName: "Main.java",
+      content: `package com.example;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    private static final String WELCOME_MESSAGE = "Welcome to Java Code Editor!";
+
+    public static void main(String[] args) {
+        System.out.println(WELCOME_MESSAGE);
+
+        // Create a new application instance
+        Main app = new Main();
+        app.runApplication();
+    }
+
+    private void runApplication() {
+        Scanner scanner = new Scanner(System.in);
+        List<String> tasks = new ArrayList<>();
+
+        System.out.println("Simple Task Manager");
+        System.out.println("Commands: add, list, quit");
+
+        while (true) {
+            System.out.print("> ");
+            String command = scanner.nextLine().trim().toLowerCase();
+
+            switch (command) {
+                case "add":
+                    System.out.print("Enter task: ");
+                    String task = scanner.nextLine();
+                    tasks.add(task);
+                    System.out.println("Task added: " + task);
+                    break;
+                case "list":
+                    listTasks(tasks);
+                    break;
+                case "quit":
+                    System.out.println("Goodbye!");
+                    return;
+                default:
+                    System.out.println("Unknown command: " + command);
+            }
+        }
+    }
+
+    private void listTasks(List<String> tasks) {
+        if (tasks.isEmpty()) {
+            System.out.println("No tasks found.");
+        } else {
+            System.out.println("Tasks:");
+            for (int i = 0; i < tasks.size(); i++) {
+                System.out.println((i + 1) + ". " + tasks.get(i));
+            }
+        }
+    }
+}`,
+    },
+  ]);
+  const [activeTab, setActiveTab] = useState(
+    "calculator_app/src/main/java/com/example/Main.java",
+  );
+  const [code, setCode] = useState(`package com.example;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    private static final String WELCOME_MESSAGE = "Welcome to Java Code Editor!";
+
+    public static void main(String[] args) {
+        System.out.println(WELCOME_MESSAGE);
+
+        // Create a new application instance
+        Main app = new Main();
+        app.runApplication();
+    }
+
+    private void runApplication() {
+        Scanner scanner = new Scanner(System.in);
+        List<String> tasks = new ArrayList<>();
+
+        System.out.println("Simple Task Manager");
+        System.out.println("Commands: add, list, quit");
+
+        while (true) {
+            System.out.print("> ");
+            String command = scanner.nextLine().trim().toLowerCase();
+
+            switch (command) {
+                case "add":
+                    System.out.print("Enter task: ");
+                    String task = scanner.nextLine();
+                    tasks.add(task);
+                    System.out.println("Task added: " + task);
+                    break;
+                case "list":
+                    listTasks(tasks);
+                    break;
+                case "quit":
+                    System.out.println("Goodbye!");
+                    return;
+                default:
+                    System.out.println("Unknown command: " + command);
+            }
+        }
+    }
+
+    private void listTasks(List<String> tasks) {
+        if (tasks.isEmpty()) {
+            System.out.println("No tasks found.");
+        } else {
+            System.out.println("Tasks:");
+            for (int i = 0; i < tasks.size(); i++) {
+                System.out.println((i + 1) + ". " + tasks.get(i));
+            }
+        }
+    }
+}`);
+  const [output, setOutput] = useState("");
+  const [expandedFolders, setExpandedFolders] = useState({
+    calculator_app: true,
+    "calculator_app/src": true,
+    "calculator_app/src/main": true,
+    "calculator_app/src/main/java": true,
+    "calculator_app/src/main/java/com": true,
+    "calculator_app/src/main/java/com/example": true,
+  });
+  const [searchTerm, setSearchTerm] = useState("");
+  const textareaRef = useRef(null);
+  const [lineCount, setLineCount] = useState(1);
+
+  useEffect(() => {
+    const lines = code.split("\n").length;
+    setLineCount(lines);
+  }, [code]);
+
+  // Get file content by path
+  const getFileContent = (path) => {
+    const parts = path.split("/");
+    let current = fileSystem;
+
+    for (const part of parts) {
+      if (current[part]) {
+        if (current[part].type === "folder") {
+          current = current[part].children;
+        } else {
+          current = current[part];
+        }
+      } else {
+        console.log("File not found:", path, "at part:", part);
+        return null;
+      }
+    }
+
+    return current && current.type === "file" ? current.content : null;
+  };
+
+  // Get file extension for icon
+  const getFileIcon = (fileName) => {
+    const ext = fileName.split(".").pop().toLowerCase();
+    switch (ext) {
+      case "java":
+        return <Coffee size={14} className="text-orange-400" />;
+      case "xml":
+        return <Code2 size={14} className="text-blue-400" />;
+      case "md":
+        return <FileText size={14} className="text-blue-300" />;
+      default:
+        return <File size={14} className="text-zinc-400" />;
+    }
+  };
+
+  // Open file
+  const openFile = (path) => {
+    console.log("Opening file:", path);
+    const content = getFileContent(path);
+    console.log("File content:", content ? "Found" : "Not found");
+
+    if (content !== null) {
+      // Check if tab is already open
+      const existingTab = openTabs.find((tab) => tab.path === path);
+      if (!existingTab) {
+        const fileName = path.split("/").pop();
+        const newTab = { path, fileName, content };
+        setOpenTabs((prev) => [...prev, newTab]);
+      }
+
+      setActiveTab(path);
+      setCode(content);
+    } else {
+      console.error("Could not open file:", path);
+    }
+  };
+
+  // Close tab
+  const closeTab = (path, e) => {
+    e.stopPropagation();
+    setOpenTabs((prev) => prev.filter((tab) => tab.path !== path));
+
+    if (activeTab === path) {
+      const remainingTabs = openTabs.filter((tab) => tab.path !== path);
+      if (remainingTabs.length > 0) {
+        const newActive = remainingTabs[remainingTabs.length - 1];
+        setActiveTab(newActive.path);
+        setCode(newActive.content);
+      } else {
+        setActiveTab(null);
+        setCode("");
+      }
+    }
+  };
+
+  // Switch tab
+  const switchTab = (path) => {
+    const tab = openTabs.find((tab) => tab.path === path);
+    if (tab) {
+      setActiveTab(path);
+      setCode(tab.content);
+    }
+  };
+
+  // Update code in current tab
+  const handleCodeChange = (e) => {
+    const newCode = e.target.value;
+    setCode(newCode);
+
+    // Update the tab content
+    if (activeTab) {
+      setOpenTabs((prev) =>
+        prev.map((tab) =>
+          tab.path === activeTab ? { ...tab, content: newCode } : tab,
+        ),
+      );
+    }
+  };
+
+  // Toggle folder expansion
+  const toggleFolder = (path) => {
+    setExpandedFolders((prev) => ({
+      ...prev,
+      [path]: !prev[path],
+    }));
+  };
+
+  // Render file tree
+  const renderFileTree = (items, basePath = "") => {
+    return Object.entries(items).map(([name, item]) => {
+      const currentPath = basePath ? `${basePath}/${name}` : name;
+
+      if (item.type === "folder") {
+        const isExpanded = expandedFolders[currentPath];
+        return (
+          <div key={currentPath}>
+            <div
+              className="flex items-center space-x-1 py-1 px-2 hover:bg-zinc-700 cursor-pointer text-sm"
+              onClick={() => toggleFolder(currentPath)}
+            >
+              {isExpanded ? (
+                <ChevronDown size={12} />
+              ) : (
+                <ChevronRight size={12} />
+              )}
+              {isExpanded ? (
+                <FolderOpen size={14} className="text-blue-400" />
+              ) : (
+                <Folder size={14} className="text-blue-400" />
+              )}
+              <span>{name}</span>
+            </div>
+            {isExpanded && (
+              <div className="ml-4">
+                {renderFileTree(item.children, currentPath)}
+              </div>
+            )}
+          </div>
+        );
+      } else {
+        // Filter based on search term
+        if (
+          searchTerm &&
+          !name.toLowerCase().includes(searchTerm.toLowerCase())
+        ) {
+          return null;
+        }
+
+        return (
+          <div
+            key={currentPath}
+            className="flex items-center space-x-2 py-1 px-2 hover:bg-zinc-700 cursor-pointer text-sm"
+            onClick={() => openFile(currentPath)}
+          >
+            {getFileIcon(name)}
+            <span>{name}</span>
+          </div>
+        );
+      }
+    });
+  };
+
+  const handleRun = () => {
+    if (activeTab && activeTab.includes("Main.java")) {
+      setOutput(`Running Main.java...
+
+Welcome to Java Code Editor!
+Simple Task Manager
+Commands: add, list, quit
+
+Compilation successful!
+Process started...
+`);
+    } else if (activeTab && activeTab.includes("Test.java")) {
+      setOutput(`Running tests...
+
+JUnit 5 Test Results:
+✓ testCalculatorAddition - PASSED
+✓ testCalculatorDivision - PASSED
+✓ testPersonCreation - PASSED
+✓ testPersonFullName - PASSED
+✓ testPersonIsAdult - PASSED
+✓ testFactorial - PASSED
+
+Tests run: 6, Failures: 0, Errors: 0
+All tests passed!
+`);
+    } else {
+      setOutput(`Compilation successful!
+No main method found in ${activeTab?.split("/").pop() || "current file"}.
+`);
+    }
+  };
+
+  const handleSave = () => {
+    setOutput(`File saved: ${activeTab?.split("/").pop() || "Untitled"}`);
+    setTimeout(() => setOutput(""), 2000);
+  };
+
+  return (
+    <div className="bg-zinc-900 w-full min-h-screen rounded-2xl text-white flex flex-col">
+      {/* Title Bar */}
+      <div className="bg-zinc-800 rounded-t-2xl px-4 py-2 flex items-center justify-between border-b border-zinc-700">
+        <div className="flex items-center space-x-2">
+          <div className="flex space-x-1">
+            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
+        </div>
+        <span className="text-sm font-medium">
+          {activeTab || "Javaistic Editor"}
+        </span>
+        <div className="flex items-center space-x-2">
+          <button className="p-1 hover:bg-zinc-700 rounded">
+            <Settings size={16} />
+          </button>
+        </div>
+      </div>
+
+      {/* Menu Bar */}
+      <div className="bg-zinc-800 px-4 py-1 flex items-center space-x-6 text-sm border-b border-zinc-700">
+        <span className="hover:text-white cursor-pointer">File</span>
+        <span className="hover:text-white cursor-pointer">Edit</span>
+        <span className="hover:text-white cursor-pointer">View</span>
+        <span className="hover:text-white cursor-pointer">Run</span>
+        <span className="hover:text-white cursor-pointer">Debug</span>
+        <span className="hover:text-white cursor-pointer">Help</span>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex flex-1 rounded-2xl">
+        {/* Sidebar */}
+        <div
+          className={`w-72 bg-zinc-800 border-r border-zinc-700 flex flex-col ${
+            output ? "" : "rounded-bl-2xl"
+          }`}
+        >
+          {/* Explorer */}
+          <div className="flex-1 overflow-auto">
+            <div className="p-3 border-b border-zinc-700">
+              <div className="flex items-center space-x-2 text-sm font-medium mb-3">
+                <Folder size={16} />
+                <span>EXPLORER</span>
+              </div>
+              <div className="space-y-1">{renderFileTree(fileSystem)}</div>
+            </div>
+
+            {/* Search */}
+            <div className="p-3">
+              <div className="flex items-center space-x-2 text-sm font-medium mb-2">
+                <Search size={16} />
+                <span>SEARCH</span>
+              </div>
+              <input
+                type="text"
+                placeholder="Search files..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full bg-zinc-700 border border-zinc-600 rounded px-2 py-1 text-sm focus:outline-none focus:border-blue-400"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Editor Area */}
+        <div className="flex-1 flex flex-col">
+          <div className="flex w-full justify-between items-stretch border-b border-zinc-700 bg-zinc-800">
+            {/* Tabs */}
+            <div className="flex-1 overflow-x-auto whitespace-nowrap flex">
+              {openTabs.map((tab) => (
+                <div
+                  key={tab.path}
+                  className={`flex items-center space-x-2 px-4 py-2 border-r border-zinc-700 cursor-pointer min-w-0 ${
+                    activeTab === tab.path
+                      ? "bg-zinc-900 text-white border-b-2 border-b-blue-500"
+                      : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"
+                  }`}
+                  onClick={() => switchTab(tab.path)}
+                >
+                  {getFileIcon(tab.fileName)}
+                  <span className="text-sm truncate">{tab.fileName}</span>
+                  <button
+                    onClick={(e) => closeTab(tab.path, e)}
+                    className="text-zinc-500 hover:text-white text-xs"
+                  >
+                    <XIcon size={12} />
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {/* Toolbar */}
+            <div className="flex items-center space-x-2 px-4 py-2 border-l border-zinc-700 bg-zinc-800 shrink-0">
+              <button
+                onClick={handleRun}
+                disabled={!activeTab}
+                className="flex items-center space-x-1 bg-green-600 hover:bg-green-700 disabled:bg-zinc-600 disabled:cursor-not-allowed px-3 py-1 rounded-md text-sm transition-colors"
+              >
+                <Play size={14} />
+                <span>Run</span>
+              </button>
+              <button
+                onClick={handleSave}
+                disabled={!activeTab}
+                className="flex items-center space-x-1 bg-blue-600 hover:bg-blue-700 disabled:bg-zinc-600 disabled:cursor-not-allowed px-3 py-1 rounded-md text-sm transition-colors"
+              >
+                <Save size={14} />
+                <span>Save</span>
+              </button>
+            </div>
+          </div>
+          {/* Code Editor */}
+          {activeTab ? (
+            <div className="flex-1 flex">
+              {/* Line Numbers */}
+              {/* <div className="bg-zinc-800 px-3 py-4 text-zinc-500 text-sm font-mono border-r border-zinc-700 min-w-12 select-none">
+                {Array.from({ length: lineCount }, (_, i) => (
+                  <div key={i + 1} className="leading-6 text-right">
+                    {i + 1}
+                  </div>
+                ))}
+              </div> */}
+
+              {/* Code Area */}
+              <div className="flex-1 relative">
+                {/* Syntax highlighted background */}
+                {/* <div
+                  className="absolute inset-0 p-4 overflow-hidden font-mono text-sm text-left leading-6 pointer-events-none whitespace-pre-wrap"
+                  dangerouslySetInnerHTML={{ __html: syntaxHighlight(code) }}
+                /> */}
+
+                {/* Actual textarea */}
+                <textarea
+                  ref={textareaRef}
+                  value={code}
+                  onChange={handleCodeChange}
+                  className="w-full h-full p-4 bg-transparent font-mono text-sm leading-6 resize-none focus:outline-none text-zinc-300 caret-white relative z-10"
+                  spellCheck="false"
+                  style={{ caretColor: "white" }}
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="flex-1 flex items-center justify-center text-zinc-500">
+              <div className="text-center">
+                <Coffee size={48} className="mx-auto mb-4 text-zinc-600" />
+                <p className="text-lg">Welcome to Javaistic Code Editor</p>
+                <p className="text-sm mt-2">
+                  Open a file from the explorer to start coding
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Output Panel */}
+      {output && (
+        <div className="bg-zinc-800 rounded-b-2xl border-t border-zinc-700 h-48 flex flex-col">
+          <div className="px-4 py-2 border-b border-zinc-700 text-sm font-medium flex items-center justify-between">
+            <span>OUTPUT</span>
+            <button
+              onClick={() => setOutput("")}
+              className="text-zinc-500 hover:text-white text-xs"
+            >
+              Clear
+            </button>
+          </div>
+          <div className="flex-1 text-left p-4 font-mono text-sm overflow-auto rounded-b-2xl">
+            <pre className="text-green-400 whitespace-pre-wrap">{output}</pre>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

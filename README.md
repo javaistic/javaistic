@@ -7,13 +7,18 @@
 
 <br>
 
-### [![Stars](https://badgen.net/github/stars/javaistic/javaistic)](https://github.com/javaistic/javaistic/stargazers) [![Release](https://badgen.net/github/release/javaistic/javaistic)](https://github.com/javaistic/javaistic/releases) [![CodeQL](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml) [![License](https://badgen.net/github/license/javaistic/javaistic)](LICENSE) [![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/8a3u.svg)](https://javaistic.betteruptime.com/?utm_source=status_badge)
+### [![Stars](https://badgen.net/github/stars/javaistic/javaistic?color=yellow)](https://github.com/javaistic/javaistic/stargazers) [![Forks](https://badgen.net/github/forks/javaistic/javaistic?color=blue)](https://github.com/javaistic/javaistic/network/members) [![Release](https://badgen.net/github/release/javaistic/javaistic?color=green)](https://github.com/javaistic/javaistic/releases) [![Issues](https://badgen.net/github/issues/javaistic/javaistic?color=red)](https://github.com/javaistic/javaistic/issues) [![PRs](https://badgen.net/github/prs/javaistic/javaistic?color=purple)](https://github.com/javaistic/javaistic/pulls) [![CodeQL](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/javaistic/javaistic/actions/workflows/codeql-analysis.yml) [![License](https://badgen.net/github/license/javaistic/javaistic?color=orange)](LICENSE.md) [![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/8a3u.svg)](https://javaistic.betteruptime.com/?utm_source=status_badge)![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=fff&style=flat)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
+![GitHub stars](https://img.shields.io/github/stars/javaistic/javaistic?style=flat&logo=github)
+![GitHub issues](https://img.shields.io/github/issues/javaistic/javaistic?style=flat&logo=github)
+![GitHub forks](https://img.shields.io/github/forks/javaistic/javaistic?style=flat&logo=github)
+![GitHub PRs](https://img.shields.io/github/issues-pr/javaistic/javaistic?style=flat&logo=github)
 
 </div>
 
 <div align="center">
 
-### [Visit Javaistic Site](https://javaistic.vercel.app/) • [View Changelog](https://javaistic.vercel.app/changelog) • [Check Status](https://javaistic.vercel.app/status)
+### [Visit Javaistic Site](https://javaistic.vercel.app/) ✦ [Blog](https://javaistic.vercel.app/blog) ✦ [Changelog](https://javaistic.vercel.app/changelog) ✦ [Status](https://javaistic.vercel.app/status)
 
 </div>
 
@@ -27,14 +32,43 @@
 
 ## 📄 Description
 
-Javaistic is a comprehensive website for learning Java programming, packed with detailed information and programs covering everything from basics to advanced topics, including arrays, strings, 2D arrays, recursion, matrices, and more.
+Javaistic is a modern, comprehensive platform for learning Java programming from scratch to advanced levels. Built with Next.js and powered by cutting-edge technologies, it offers an interactive and engaging learning experience with detailed documentation, practical programs, and real-world examples.
 
 ## 🔥 Features
 
-- **Beautiful Design:** Enjoy a visually appealing and optimized learning experience.
-- **Comprehensive Content:** Easily understandable Java docs and programs for learners at all levels.
-- **Open Source:** Everything is free and open source, encouraging a collaborative learning environment.
-- **Ad Free:** Study without distractions - Javaistic is ad-free for an uninterrupted learning experience.
+- **🎨 Beautiful Design:** Modern, responsive UI with dark/light mode support for an optimal learning experience
+- **🔍 Advanced Search:** Intelligent search functionality with filters for docs and programs, powered by custom search API
+- **📚 Comprehensive Content:**
+  - **Documentation:** Complete Java concepts from basics to advanced topics
+  - **Programs:** 17+ practical Java programs with step-by-step explanations
+  - **Examples:** Real-world code examples and best practices
+- **⚡ Fast Performance:** Built with Next.js 15, optimized for speed and SEO
+- **📱 Mobile-First:** Fully responsive design that works seamlessly on all devices
+- **🆓 Open Source & Ad-Free:** Study without distractions in a completely free environment
+- **🌐 Modern Tech Stack:** TypeScript, Tailwind CSS, Fumadocs, and more
+- **♿ Accessible:** Built with accessibility in mind following web standards
+
+## 📚 What You'll Learn
+
+### 📖 Core Documentation
+
+- **Fundamentals:** Variables, data types, operators, and expressions
+- **Control Structures:** If-else, switch, loops (for, while, do-while)
+- **Object-Oriented Programming:** Classes, objects, constructors, methods
+- **Advanced Concepts:** Arrays, multidimensional arrays, method overloading
+- **Keywords:** `static`, `final`, `this`, `break`, `continue`
+- **Best Practices:** Code organization, naming conventions, and more
+
+### 💻 Practical Programs
+
+Hands-on programming exercises including:
+
+- Basic I/O operations and mathematical calculations
+- Number manipulation (even/odd, factorial, Fibonacci)
+- Interest calculations (simple & compound)
+- Binary number operations and complex number arithmetic
+- Date and time operations (leap year calculation)
+- And many more practical examples!
 
 ## 🪴 Project Activity
 
@@ -42,53 +76,90 @@ Javaistic is a comprehensive website for learning Java programming, packed with 
 
 ## 🧑‍💻 Contributing
 
-Interested in contributing to Javaistic Documentation? Please read our [contributing guidelines](CONTRIBUTING.md) before submitting a pull request.
+We welcome contributions from developers of all skill levels! Whether you want to fix bugs, add new features, improve documentation, or suggest new Java programs, your contributions help make Javaistic better for everyone.
 
-### Running Locally
+### Ways to Contribute
 
-To develop locally, follow these steps:
+- 🐛 **Bug Reports:** Found an issue? [Open an issue](https://github.com/javaistic/javaistic/issues/new)
+- 💡 **Feature Requests:** Have an idea? [Start a discussion](https://github.com/javaistic/javaistic/discussions)
+- 📝 **Documentation:** Improve existing docs or add new Java concepts
+- 🔧 **Code Programs:** Add new Java programs with explanations
+- 🎨 **UI/UX:** Enhance the design and user experience
 
-1. **Clone this repo:**
+Please read our [contributing guidelines](CONTRIBUTING.md) before submitting a pull request.
 
-   ```sh
+### 🚀 Quick Start Guide
+
+Get your development environment running in minutes:
+
+1. **Prerequisites:**
+   - [Bun](https://bun.sh/) (recommended) or Node.js 18+
+   - Git
+
+2. **Clone and Setup:**
+
+   ```bash
+   # Clone the repository
    git clone https://github.com/javaistic/javaistic.git
-   ```
 
-2. **Navigate to the project root directory:**
-
-   ```sh
+   # Navigate to project directory
    cd javaistic
-   ```
 
-3. **Install dependencies:**
+   # Install dependencies (using Bun for faster installation)
+   bun install
 
-   ```sh
-   bun i
-   ```
-
-4. **Start the development server:**
-
-   ```sh
+   # Start development server with Turbo
    bun run dev
    ```
 
-## 🤝 Community
+3. **Open your browser:**
+   ```
+   http://localhost:3000
+   ```
 
-Join the Javaistic community on [GitHub Discussions](https://github.com/javaistic/javaistic/discussions) to ask questions, share ideas, and showcase your projects.
+### 🛠️ Tech Stack
+
+- **Framework:** Next.js 15 with App Router
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4.x
+- **Documentation:** Fumadocs (MDX-based)
+- **Fonts:** Inter, Funnel Display, JetBrains Mono
+- **Analytics:** Google Analytics
+- **Deployment:** Vercel
+- **Package Manager:** Bun
+
+## 🤝 Community & Support
+
+Join our growing community of Java learners and contributors:
+
+### 💬 Get Help & Connect
+
+- **[GitHub Discussions](https://github.com/javaistic/javaistic/discussions)** - Ask questions, share ideas, and get help
+- **[Issues](https://github.com/javaistic/javaistic/issues)** - Report bugs or request features
+- **[Changelog](https://javaistic.vercel.app/changelog)** - Stay updated with latest changes
+
+### 📋 Community Guidelines
+
+- Be respectful and inclusive to all community members
+- Follow our [Code of Conduct](CODE_OF_CONDUCT.md)
+- Help others learn and grow in their Java journey
+- Share your knowledge and experiences
 
 <!--
 For real-time communication, you can also join the [Javaistic Discord Server](https://javaistic.vercel.app/discord).
 -->
 
-Please review our [Code of Conduct](CODE_OF_CONDUCT.md) for all community interactions.
+## 👨‍💻 Author & Team
 
-## Author
+**Created and maintained by:**
 
-- Arghya Ghosh [(@uiuxarghya)](https://twitter.com/uiuxarghya)
+- **Arghya Ghosh** [(@uiuxarghya)](https://twitter.com/uiuxarghya) - Founder & Lead Developer
 
-## Contributors
+## 🌟 Contributors
 
-[![](https://contrib.rocks/image?repo=javaistic/javaistic)](https://github.com/javaistic/javaistic/graphs/contributors)
+We're grateful to all the amazing people who have contributed to making Javaistic better:
+
+[![Contributors](https://contrib.rocks/image?repo=javaistic/javaistic)](https://github.com/javaistic/javaistic/graphs/contributors)
 
 ## 📝 License
 
@@ -100,11 +171,22 @@ Please refer to the main [`LICENSE.md`](./LICENSE.md) file for complete details.
 
 ## 💖 Acknowledgements
 
-Special thanks to the following companies for their support in building Javaistic:
+We're proud to be supported by industry-leading companies that believe in open-source education:
+
+<div align="center">
 
 [![Powered by Vercel](.github/img/powered-by-vercel.svg)](https://vercel.com/?utm_source=javaistic&utm_campaign=oss)
-[![Search by Algolia](.github/img/search-by-algolia.svg)](https://algolia.com/?utm_source=javaistic&utm_campaign=oss)
 [![JetBrains](.github/img/jetbrains.svg)](https://jetbrains.com/?utm_source=javaistic&utm_campaign=oss)
 [![Forms by Formspree](.github/img/forms-by-formspree.svg)](https://formspree.io/?utm_source=javaistic&utm_campaign=oss)
 
+</div>
+
+---
+
+<div align="center">
+
 **Made with ❤️ in India by [Arghya Ghosh](https://github.com/uiuxarghya)**
+
+⭐ **Star this repo if Javaistic helps you learn Java!** ⭐
+
+</div>

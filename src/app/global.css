@@ -142,3 +142,43 @@ kbd {
 #nd-nav {
   @apply hover:bg-background border-none bg-black/10 backdrop-blur-md transition-all duration-300 ease-in-out sm:top-2 sm:mx-auto sm:max-w-5xl sm:rounded-2xl;
 }
+
+:root {
+  --deep: #061a3b; /* edge navy */
+  --mid: #0e4ea8; /* mid blue */
+  --core: #2eb4ff; /* bright cyan core */
+}
+
+.win11-like-blue {
+  /* fill space */
+  min-height: 100dvh;
+  margin: 0;
+
+  /* layered gradients for glow + vignette */
+  background:
+    radial-gradient(
+      120% 90% at 42% 78%,
+      var(--core) 0%,
+      #1a7fd4 38%,
+      #0f5cad 58%,
+      #0a3f84 72%,
+      transparent 76%
+    ),
+    /* soft top sheen */
+      radial-gradient(
+        120% 85% at 50% -10%,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.02) 40%,
+        transparent 60%
+      ),
+    /* edge vignette */
+      radial-gradient(
+        130% 100% at 50% 50%,
+        rgba(0, 0, 0, 0) 62%,
+        rgba(0, 0, 0, 0.18) 78%,
+        rgba(0, 0, 0, 0.45) 100%
+      ),
+    /* base */ linear-gradient(180deg, var(--mid), var(--deep));
+  background-color: var(--mid);
+  background-blend-mode: normal, screen, multiply, normal;
+}

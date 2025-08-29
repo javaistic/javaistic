@@ -1,0 +1,154 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import { useInView } from "react-intersection-observer";
+import { motion, useMotionValue, animate } from "motion/react";
+import Image from "next/image";
+import { gradients } from "@/lib/utils/gradients";
+
+const testimonials = [
+  {
+    content: "Talk is cheap. Show me the code.",
+    name: "Linus Torvalds",
+    role: "Creator of Linux",
+    avatar: "/img/avatars/linus-torvalds.webp",
+  },
+  {
+    content:
+      "The people who are crazy enough to think they can change the world are the ones who do.",
+    name: "Steve Jobs",
+    role: "Founder @ Apple Inc.",
+    avatar: "/img/avatars/steve-jobs.webp",
+  },
+  {
+    content: `I choose a lazy person to do a hard job. Because a lazy person will find an easy way to do it.`,
+    name: "Bill Gates",
+    role: "Founder @ Microsoft",
+    avatar: "/img/avatars/bill-gates.webp",
+  },
+  {
+    content:
+      "Everything that has not been hyperlinked will soon be hyperlinked.",
+    name: "Guillermo Rauch",
+    role: "Founder @ Vercel",
+    avatar: "/img/avatars/guillermo-rauch.webp",
+  },
+  {
+    content:
+      "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+    name: "Martin Fowler",
+    role: "Programmer",
+    avatar: "/img/avatars/martin-fowler.webp",
+  },
+  {
+    content: "Truth can only be found in one place: the code.",
+    name: "Robert C. Martin",
+    role: "Author, Clean Code",
+    avatar: "/img/avatars/robert-martin.webp",
+  },
+  {
+    content: "Java is to JavaScript what car is to Carpet.",
+    name: "Chris Heilmann",
+    role: "Programmer",
+    avatar: "/img/avatars/chris-heilmann.webp",
+  },
+  {
+    content: "Code is like humor. When you have to explain it, it’s bad.",
+    name: "Corey House",
+    role: "Founder @ ReactJS Consulting",
+    avatar: "/img/avatars/corey-house.webp",
+  },
+];
+
+const gradientKeys = Object.keys(gradients);
+const rotations = [-2, 1, -1, 2, -1, 1];
+
+export default function Testimonials() {
+  const x = useMotionValue(0);
+  const { ref, inView } = useInView({ threshold: 0.1 });
+  const [duration, setDuration] = useState(150);
+
+  useEffect(() => {
+    if (!inView) return;
+    const controls = animate(x, 100, {
+      type: "tween",
+      duration,
+      ease: "linear",
+      repeat: Infinity,
+    });
+    return () => controls.stop();
+  }, [inView, x, duration]);
+
+  return (
+    <section
+      ref={ref}
+      className="relative overflow-hidden"
+      onMouseEnter={() => setDuration(300)}
+      onMouseLeave={() => setDuration(150)}
+    >
+      <div className="absolute inset-x-0 bottom-1/2 h-[300px] bg-gradient-to-t from-neutral-100 dark:from-neutral-900 pointer-events-none z-10" />
+
+      <div className="flex -mx-4 py-10">
+        <motion.div
+          style={{ x }}
+          className="flex gap-6 will-change-transform px-4"
+        >
+          {testimonials.map((testimonial, index) => {
+            const colorKey = gradientKeys[index % gradientKeys.length];
+            const rotation = rotations[index % rotations.length];
+            const colors = {
+              gradient: gradients[colorKey][0],
+              text: `text-${colorKey}-100`,
+              badge: `bg-${colorKey}-100`,
+            };
+
+            return (
+              <motion.div
+                key={index}
+                className="w-[320px] md:w-[380px] lg:w-[420px] shrink-0"
+                whileHover={{ rotate: 0 }}
+                animate={{ rotate: rotation }}
+                transition={{ type: "spring", stiffness: 100 }}
+              >
+                <figure className="rounded-xl shadow-lg overflow-hidden">
+                  <blockquote className="bg-white dark:bg-neutral-800 p-6 md:p-8">
+                    <svg
+                      width="40"
+                      height="32"
+                      className={`mb-4 fill-current ${colors.text}`}
+                    >
+                      <path d="M13.415.001C6.07 5.185.887 13.681.887 23.041c0 7.632 4.608 12.096 9.936 12.096 5.04 0 8.784-4.032 8.784-8.784 0-4.752-3.312-8.208-7.632-8.208-.864 0-2.016.144-2.304.288.72-4.896 5.328-10.656 9.936-13.536L13.415.001zM38.183.001c-7.2 5.184-12.384 13.68-12.384 23.04 0 7.632 4.608 12.096 9.936 12.096 4.896 0 8.784-4.032 8.784-8.784 0-4.752-3.456-8.208-7.776-8.208-.864 0-1.872.144-2.16.288.72-4.896 5.184-10.656 9.792-13.536L38.183.001z" />
+                    </svg>
+                    <p className="text-neutral-900 dark:text-neutral-300 font-medium text-base md:text-lg">
+                      {testimonial.content}
+                    </p>
+                  </blockquote>
+                  <figcaption
+                    className={`flex items-center gap-4 p-5 text-white font-semibold ${colors.gradient}`}
+                  >
+                    <div className="bg-white rounded-full p-1">
+                      <Image
+                        src={testimonial.avatar}
+                        alt={testimonial.name}
+                        width={48}
+                        height={48}
+                        className={`rounded-full ${colors.badge}`}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div>
+                      <div>{testimonial.name}</div>
+                      <div className={`text-sm ${colors.text}`}>
+                        {testimonial.role}
+                      </div>
+                    </div>
+                  </figcaption>
+                </figure>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
