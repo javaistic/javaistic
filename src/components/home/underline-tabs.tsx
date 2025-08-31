@@ -150,7 +150,7 @@ export function UnderlineTabs({
             className="w-full pt-2"
           >
             <div
-              className="border-border/20 w-full rounded-3xl border-4 transition-all duration-300"
+              className="border-border/20 w-full rounded-xl border-4 transition-all duration-300 sm:rounded-3xl"
               style={{
                 maskImage:
                   "linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
