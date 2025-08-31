@@ -11,10 +11,11 @@
   },
   "dependencies": {
     "@next/third-parties": "^15.4.5",
+    "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-tabs": "^1.1.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "esbuild": "0.25.8",
     "fumadocs-core": "15.6.5",
     "fumadocs-mdx": "11.7.0",
     "fumadocs-ui": "15.6.5",
@@ -30,7 +31,8 @@
     "react-dom": "^19.1.0",
     "react-simple-code-editor": "^0.14.1",
     "sharp": "^0.34.3",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.3.1",
+    "use-debounce": "^10.0.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.11",
