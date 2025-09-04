@@ -261,7 +261,7 @@ export default function SponsorsPage() {
               <h3 className="text-lg font-semibold">Growing Platform</h3>
             </div>
             <p className="text-muted-foreground">
-              Support a platform that's helping developers learn and grow in the
+              Support a platform that&apos;s helping developers learn and grow in the
               Java ecosystem.
             </p>
             <div className="mt-3 text-xs font-medium text-purple-600 dark:text-purple-400">

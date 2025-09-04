@@ -14,7 +14,7 @@ import {
   GraduationCapIcon,
   HeartIcon,
   StarIcon,
-  UsersIcon
+  UsersIcon,
 } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -142,7 +142,7 @@ export default function AboutPage() {
             >
               Our platform bridges complex Java concepts with real-world
               application through interactive tutorials, hands-on exercises, and
-              structured learning paths. Whether you're a complete beginner or
+              structured learning paths. Whether you&apos;re a complete beginner or
               experienced developer, our community-driven approach ensures
               accessible, practical learning for everyone.
             </motion.p>
@@ -183,7 +183,7 @@ export default function AboutPage() {
         </motion.div>
 
         <motion.div
-          className="flex justify-center col-span-1"
+          className="col-span-1 flex justify-center"
           variants={ANIMATION_VARIANTS.imageFromLeft}
         >
           <motion.div
@@ -194,7 +194,7 @@ export default function AboutPage() {
             <img
               src="/mission.svg"
               alt="Javaistic Learning Platform - Free Java Programming Education"
-              className="relative z-10 h-80 w-80 aspect-square rounded-full border-2 border-white/20 bg-white object-cover shadow-2xl transition-transform duration-300 dark:border-neutral-800 dark:bg-neutral-900"
+              className="relative z-10 aspect-square h-80 w-80 rounded-full border-2 border-white/20 bg-white object-cover shadow-2xl transition-transform duration-300 dark:border-neutral-800 dark:bg-neutral-900"
             />
           </motion.div>
         </motion.div>

@@ -124,7 +124,6 @@ export const useGitHubStats = (): UseGitHubStatsReturn => {
 
       // Check rate limit headers proactively
       const remaining = response.headers.get("X-RateLimit-Remaining");
-      const resetTime = response.headers.get("X-RateLimit-Reset");
 
       if (remaining && parseInt(remaining) < 5) {
         console.warn(

@@ -137,7 +137,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
                     <ComponentIcon className="bg-fd-primary text-fd-primary-foreground mb-2 rounded-md p-1" />
                     <p className="font-medium">Data Types & Variables</p>
                     <p className="text-fd-muted-foreground text-sm">
-                      Understand Java's primitive data types and variable
+                      Understand Java&apos;s primitive data types and variable
                       declarations.
                     </p>
                   </NavbarMenuLink>
