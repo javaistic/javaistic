@@ -19,7 +19,7 @@ export function BackgroundSection({ children }: BackgroundSectionProps) {
 
       {/* Background */}
       <div
-        className="absolute z-10 w-full opacity-20 sm:h-[1000px] dark:opacity-100"
+        className="absolute z-10 h-[900px] w-full opacity-20 sm:h-[1000px] dark:opacity-100"
         style={{
           backgroundImage: "url('/bg.webp')",
           backgroundSize: "cover",

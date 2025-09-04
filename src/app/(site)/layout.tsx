@@ -1,6 +1,6 @@
 "use client";
 
-import { baseOptions } from "@/app/layout.config";
+import { baseOptions, linkItems } from "@/app/layout.config";
 import { Footer } from "@/components/footer";
 import { GitHubIcon } from "@/components/icons";
 import { useDarkMode } from "@/hooks/useDarkMode";
@@ -251,6 +251,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
               </NavbarMenu>
             ),
           },
+          ...linkItems,
         ]}
       >
         {children}

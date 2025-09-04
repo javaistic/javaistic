@@ -29,7 +29,7 @@ export default function HomeTabs() {
           alt="Java programming docs and tutorials interface preview"
           width={800}
           height={600}
-          className="h-auto w-full rounded-3xl shadow-lg"
+          className="h-auto w-full rounded-xl shadow-lg sm:rounded-3xl"
           priority
         />
       ),
@@ -50,7 +50,7 @@ export default function HomeTabs() {
           alt="Java programs interface preview"
           width={800}
           height={600}
-          className="h-auto w-full rounded-3xl shadow-lg"
+          className="h-auto w-full rounded-xl shadow-lg sm:rounded-3xl"
         />
       ),
     },

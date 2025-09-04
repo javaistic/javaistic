@@ -7,6 +7,7 @@ import {
   FeaturesSection,
   HeroSection,
   VisionSection,
+  FAQSection,
 } from "@/components/home";
 import HomeTabs from "@/components/home/home-tabs";
 
@@ -27,6 +28,9 @@ export default function HomePage() {
 
       {/* Bento Grid Section */}
       <BentoGridSection />
+
+      {/* FAQ Section */}
+      <FAQSection className="pt-16" />
 
       {/* CTA Section */}
       <CTASection />
