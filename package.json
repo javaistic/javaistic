@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev --turbo",
     "start": "next start",
-    "format": "prettier {src,content}/**/*.{ts,tsx,mdx,css} --write",
+    "format": "prettier \"src/**/*.{ts,tsx,js,jsx,json,css}\" \"content/**/*.{md,mdx}\" --write",
+    "format:check": "prettier \"src/**/*.{ts,tsx,js,jsx,json,css}\" \"content/**/*.{md,mdx}\" --check",
     "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
