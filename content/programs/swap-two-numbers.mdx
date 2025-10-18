@@ -1,0 +1,115 @@
+---
+title: Java Program to Swap Two Numbers
+shortTitle: Swap Two Numbers
+description: Learn different ways to swap two numbers in Java — using a temporary variable, arithmetic operations, and bitwise XOR — with clear examples and outputs.
+---
+
+Swapping two numbers is a common beginner-friendly exercise in Java. Below are three simple ways to do it:
+
+- Using a temporary variable (safest and most readable)
+- Using arithmetic operations (beware of overflow for very large numbers)
+- Using bitwise XOR (no temp variable; works for integers)
+
+Before you start, you may want to review:
+
+- [Java Variables and Literals](/docs/variables-and-literals)
+- [Java Operators](/docs/operators)
+- [Java Basic Input and Output](/docs/basic-input-output)
+
+## 1) Swap Using a Temporary Variable
+
+This is the most straightforward and recommended approach.
+
+### Example
+
+```java
+class Main {
+  public static void main(String[] args) {
+    int a = 10;
+    int b = 20;
+
+    System.out.println("Before swap: a = " + a + ", b = " + b);
+
+    int temp = a; // store a
+    a = b;        // put b into a
+    b = temp;     // put original a into b
+
+    System.out.println("After swap:  a = " + a + ", b = " + b);
+  }
+}
+```
+
+#### Output
+
+```plaintext
+Before swap: a = 10, b = 20
+After swap:  a = 20, b = 10
+```
+
+## 2) Swap Without Temp (Arithmetic)
+
+Uses addition and subtraction. Note: This can overflow if the numbers are near the integer limits.
+
+### Example
+
+```java
+class Main {
+  public static void main(String[] args) {
+    int a = 15;
+    int b = 27;
+
+    System.out.println("Before swap: a = " + a + ", b = " + b);
+
+    a = a + b; // a becomes sum
+    b = a - b; // b becomes original a
+    a = a - b; // a becomes original b
+
+    System.out.println("After swap:  a = " + a + ", b = " + b);
+  }
+}
+```
+
+#### Output
+
+```plaintext
+Before swap: a = 15, b = 27
+After swap:  a = 27, b = 15
+```
+
+## 3) Swap Using XOR (No Temp)
+
+Works for integers and avoids extra memory, but is less readable for beginners.
+
+### Example
+
+```java
+class Main {
+  public static void main(String[] args) {
+    int a = 5;
+    int b = 9;
+
+    System.out.println("Before swap: a = " + a + ", b = " + b);
+
+    a = a ^ b; // Step 1
+    b = a ^ b; // Step 2: now b is original a
+    a = a ^ b; // Step 3: now a is original b
+
+    System.out.println("After swap:  a = " + a + ", b = " + b);
+  }
+}
+```
+
+#### Output
+
+```plaintext
+Before swap: a = 5, b = 9
+After swap:  a = 9, b = 5
+```
+
+---
+
+### Which Method Should You Use?
+
+- Prefer the temporary variable method for clarity and safety.
+- The arithmetic method can be a neat trick, but avoid it when values may overflow.
+- XOR is an interesting technique; use it only when it adds real value and readability is not sacrificed.
