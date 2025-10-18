@@ -13,4 +13,3 @@ export { FeatureCard } from "./feature-card";
 
 // Export constants
 export { ANIMATION_VARIANTS, HOVER_ANIMATIONS } from "./animation-variants";
-

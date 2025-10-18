@@ -142,8 +142,8 @@ export default function AboutPage() {
             >
               Our platform bridges complex Java concepts with real-world
               application through interactive tutorials, hands-on exercises, and
-              structured learning paths. Whether you&apos;re a complete beginner or
-              experienced developer, our community-driven approach ensures
+              structured learning paths. Whether you&apos;re a complete beginner
+              or experienced developer, our community-driven approach ensures
               accessible, practical learning for everyone.
             </motion.p>
           </div>
