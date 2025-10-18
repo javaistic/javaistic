@@ -1,0 +1,306 @@
+---
+title: Java Program to Check Armstrong Number
+shortTitle: Check Armstrong Number
+description: Learn how to check if a number is an Armstrong number in Java using digit extraction and power calculation with multiple approaches and examples.
+---
+
+An Armstrong number (also called a narcissistic number) is a number that equals the sum of its digits each raised to the power of the number of digits. For example:
+
+- 153 = 1³ + 5³ + 3³ = 1 + 125 + 27 = 153 (3 digits)
+- 9474 = 9⁴ + 4⁴ + 7⁴ + 4⁴ = 6561 + 256 + 2401 + 256 = 9474 (4 digits)
+
+Before you start, you may want to review:
+
+- [Java Variables and Literals](/docs/variables-and-literals)
+- [Java Operators](/docs/operators)
+- [Java Basic Input and Output](/docs/basic-input-output)
+
+## 1) Basic Armstrong Check
+
+This method extracts digits and calculates the sum of powers.
+
+### Example
+
+```java
+class Main {
+  public static void main(String[] args) {
+    int num = 153; // change value to test
+
+    if (isArmstrong(num)) {
+      System.out.println(num + " is an Armstrong number.");
+    } else {
+      System.out.println(num + " is not an Armstrong number.");
+    }
+  }
+
+  static boolean isArmstrong(int num) {
+    int original = num;
+    int digits = countDigits(num);
+    int sum = 0;
+
+    while (num > 0) {
+      int digit = num % 10;
+      sum += Math.pow(digit, digits);
+      num /= 10;
+    }
+
+    return original == sum;
+  }
+
+  static int countDigits(int num) {
+    if (num == 0) return 1;
+    int count = 0;
+    while (num > 0) {
+      count++;
+      num /= 10;
+    }
+    return count;
+  }
+}
+```
+
+#### Output (for num = 153)
+
+```plaintext
+153 is an Armstrong number.
+```
+
+## 2) Optimized Version (Without Math.pow)
+
+Avoid floating-point operations by using integer multiplication.
+
+### Example
+
+```java
+class Main {
+  public static void main(String[] args) {
+    int num = 9474; // change value to test
+
+    if (isArmstrongOptimized(num)) {
+      System.out.println(num + " is an Armstrong number.");
+    } else {
+      System.out.println(num + " is not an Armstrong number.");
+    }
+  }
+
+  static boolean isArmstrongOptimized(int num) {
+    int original = num;
+    int digits = countDigits(num);
+    int sum = 0;
+
+    while (num > 0) {
+      int digit = num % 10;
+      sum += power(digit, digits);
+      num /= 10;
+    }
+
+    return original == sum;
+  }
+
+  static int power(int base, int exp) {
+    int result = 1;
+    for (int i = 0; i < exp; i++) {
+      result *= base;
+    }
+    return result;
+  }
+
+  static int countDigits(int num) {
+    if (num == 0) return 1;
+    int count = 0;
+    while (num > 0) {
+      count++;
+      num /= 10;
+    }
+    return count;
+  }
+}
+```
+
+#### Output (for num = 9474)
+
+```plaintext
+9474 is an Armstrong number.
+```
+
+## 3) Find Armstrong Numbers in Range
+
+Program to find all Armstrong numbers within a given range.
+
+### Example
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+class Main {
+  public static void main(String[] args) {
+    int start = 1;
+    int end = 10000;
+
+    System.out.println("Armstrong numbers between " + start + " and " + end + ":");
+    List<Integer> armstrongNumbers = findArmstrongInRange(start, end);
+
+    for (int num : armstrongNumbers) {
+      System.out.println(num + " (digits: " + countDigits(num) + ")");
+    }
+
+    System.out.println("\nTotal Armstrong numbers found: " + armstrongNumbers.size());
+  }
+
+  static List<Integer> findArmstrongInRange(int start, int end) {
+    List<Integer> result = new ArrayList<>();
+
+    for (int i = start; i <= end; i++) {
+      if (isArmstrong(i)) {
+        result.add(i);
+      }
+    }
+
+    return result;
+  }
+
+  static boolean isArmstrong(int num) {
+    int original = num;
+    int digits = countDigits(num);
+    int sum = 0;
+
+    while (num > 0) {
+      int digit = num % 10;
+      sum += power(digit, digits);
+      num /= 10;
+    }
+
+    return original == sum;
+  }
+
+  static int power(int base, int exp) {
+    int result = 1;
+    for (int i = 0; i < exp; i++) {
+      result *= base;
+    }
+    return result;
+  }
+
+  static int countDigits(int num) {
+    if (num == 0) return 1;
+    int count = 0;
+    while (num > 0) {
+      count++;
+      num /= 10;
+    }
+    return count;
+  }
+}
+```
+
+#### Sample Output
+
+```plaintext
+Armstrong numbers between 1 and 10000:
+1 (digits: 1)
+2 (digits: 1)
+3 (digits: 1)
+4 (digits: 1)
+5 (digits: 1)
+6 (digits: 1)
+7 (digits: 1)
+8 (digits: 1)
+9 (digits: 1)
+153 (digits: 3)
+371 (digits: 3)
+407 (digits: 3)
+1634 (digits: 4)
+8208 (digits: 4)
+9474 (digits: 4)
+
+Total Armstrong numbers found: 15
+```
+
+## 4) Interactive Program
+
+A complete program with user input and detailed output.
+
+### Example
+
+```java
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Enter a number to check: ");
+    int num = scanner.nextInt();
+
+    int digits = countDigits(num);
+    System.out.println("\nAnalyzing " + num + " (has " + digits + " digits):");
+
+    // Show step-by-step calculation
+    int original = num;
+    int sum = 0;
+    String calculation = "";
+
+    while (num > 0) {
+      int digit = num % 10;
+      int digitPower = power(digit, digits);
+      sum += digitPower;
+
+      if (!calculation.isEmpty()) {
+        calculation = " + " + calculation;
+      }
+      calculation = digit + "^" + digits + "(" + digitPower + ")" + calculation;
+
+      num /= 10;
+    }
+
+    System.out.println("Calculation: " + calculation + " = " + sum);
+
+    if (original == sum) {
+      System.out.println("Result: " + original + " is an Armstrong number! ✓");
+    } else {
+      System.out.println("Result: " + original + " is not an Armstrong number. ✗");
+    }
+
+    scanner.close();
+  }
+
+  static int power(int base, int exp) {
+    int result = 1;
+    for (int i = 0; i < exp; i++) {
+      result *= base;
+    }
+    return result;
+  }
+
+  static int countDigits(int num) {
+    if (num == 0) return 1;
+    int count = 0;
+    while (num > 0) {
+      count++;
+      num /= 10;
+    }
+    return count;
+  }
+}
+```
+
+#### Sample Output
+
+```plaintext
+Enter a number to check: 371
+
+Analyzing 371 (has 3 digits):
+Calculation: 3^3(27) + 7^3(343) + 1^3(1) = 371
+Result: 371 is an Armstrong number! ✓
+```
+
+---
+
+### Notes & Tips
+
+- **Common Armstrong numbers**: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 371, 407, 1634, 8208, 9474
+- **Performance**: The optimized version using integer multiplication is faster than Math.pow()
+- **Large numbers**: For numbers with many digits, consider using `long` or `BigInteger` to avoid overflow
+- **Time complexity**: O(d) where d is the number of digits
+- **Space complexity**: O(1) for the basic check, O(n) for range finding
