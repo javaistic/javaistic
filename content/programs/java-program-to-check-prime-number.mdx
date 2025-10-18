@@ -1,0 +1,99 @@
+---
+title: Java Program to Check Prime Number
+shortTitle: Check Prime Number
+description: Learn how to check whether a number is prime in Java using simple loop-based methods and an optimized square-root approach.
+---
+
+A prime number is a number greater than 1 that has no positive divisors other than 1 and itself. In this article, we’ll implement two approaches to check if a number is prime:
+
+- Basic divisor counting (loop up to n)
+- Optimized method (loop up to √n)
+
+Before you start, you may want to review:
+
+- [Java Variables and Literals](/docs/variables-and-literals)
+- [Java Operators](/docs/operators)
+- [Java Basic Input and Output](/docs/basic-input-output)
+
+## 1) Basic Approach (Loop up to n)
+
+This method is straightforward but less efficient for large n.
+
+### Example
+
+```java
+class Main {
+  public static void main(String[] args) {
+    int n = 29; // change value to test
+
+    if (isPrime(n)) {
+      System.out.println(n + " is a prime number.");
+    } else {
+      System.out.println(n + " is not a prime number.");
+    }
+  }
+
+  static boolean isPrime(int n) {
+    if (n <= 1) return false; // 0, 1, and negatives are not prime
+    int count = 0;
+    for (int i = 1; i <= n; i++) {
+      if (n % i == 0) count++;
+      if (count > 2) return false; // early exit if more than 2 divisors
+    }
+    return count == 2; // exactly two divisors: 1 and n
+  }
+}
+```
+
+#### Output (for n = 29)
+
+```plaintext
+29 is a prime number.
+```
+
+## 2) Optimized Approach (Loop up to √n)
+
+You only need to check divisors up to the square root of n.
+
+### Example
+
+```java
+class Main {
+  public static void main(String[] args) {
+    int n = 30; // change value to test
+
+    if (isPrimeSqrt(n)) {
+      System.out.println(n + " is a prime number.");
+    } else {
+      System.out.println(n + " is not a prime number.");
+    }
+  }
+
+  static boolean isPrimeSqrt(int n) {
+    if (n <= 1) return false;
+    if (n == 2) return true;
+    if (n % 2 == 0) return false; // even numbers > 2 are not prime
+
+    for (int i = 3; i * i <= n; i += 2) {
+      if (n % i == 0) return false;
+    }
+    return true;
+  }
+}
+```
+
+#### Output (for n = 30)
+
+```plaintext
+30 is not a prime number.
+```
+
+---
+
+### Notes & Tips
+
+- Time complexity:
+  - Basic method: O(n)
+  - Optimized method: O(√n)
+- Edge cases: n ≤ 1 (not prime), n = 2 (prime), even numbers > 2 (not prime)
+- For large ranges of numbers, consider the Sieve of Eratosthenes.
