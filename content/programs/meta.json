@@ -6,8 +6,9 @@
     "index",
     "contents",
     "---Basic I/O Programs---",
-    "print-an-integer",
-    "add-two-integers",
+  "print-an-integer",
+  "add-two-integers",
+  "swap-two-numbers",
     "multiply-two-numbers",
 
     "---Mathematical Calculations---",
