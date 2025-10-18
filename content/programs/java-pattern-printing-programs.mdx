@@ -1,0 +1,772 @@
+---
+title: Java Pattern Printing Programs
+description: Master nested loops and logical thinking with comprehensive pattern printing examples including stars, numbers, alphabets, and complex geometric designs.
+---
+
+## Introduction
+
+Pattern printing is a fundamental programming exercise that helps developers master:
+
+- **Nested loops** and loop control
+- **Logical thinking** and problem-solving
+- **Mathematical relationships** in programming
+- **Output formatting** and spacing
+
+This comprehensive guide covers various pattern types from basic to advanced, with detailed explanations of the logic behind each pattern.
+
+## Method 1: Basic Star Patterns
+
+### Right Triangle Star Pattern
+
+```java
+import java.util.Scanner;
+
+public class BasicStarPatterns {
+
+    // Right triangle pattern
+    public static void printRightTriangle(int n) {
+        System.out.println("Right Triangle Pattern:");
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Inverted right triangle
+    public static void printInvertedRightTriangle(int n) {
+        System.out.println("\nInverted Right Triangle Pattern:");
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Left triangle (right-aligned)
+    public static void printLeftTriangle(int n) {
+        System.out.println("\nLeft Triangle Pattern:");
+        for (int i = 1; i <= n; i++) {
+            // Print spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("  ");
+            }
+            // Print stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+
+        printRightTriangle(rows);
+        printInvertedRightTriangle(rows);
+        printLeftTriangle(rows);
+
+        scanner.close();
+    }
+}
+```
+
+**Sample Output (n=5):**
+
+```
+Right Triangle Pattern:
+*
+* *
+* * *
+* * * *
+* * * * *
+
+Inverted Right Triangle Pattern:
+* * * * *
+* * * *
+* * *
+* *
+*
+
+Left Triangle Pattern:
+        *
+      * *
+    * * *
+  * * * *
+* * * * *
+```
+
+## Method 2: Pyramid and Diamond Patterns
+
+```java
+import java.util.Scanner;
+
+public class PyramidPatterns {
+
+    // Full pyramid (triangle)
+    public static void printPyramid(int n) {
+        System.out.println("Pyramid Pattern:");
+        for (int i = 1; i <= n; i++) {
+            // Print spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    // Inverted pyramid
+    public static void printInvertedPyramid(int n) {
+        System.out.println("\nInverted Pyramid Pattern:");
+        for (int i = n; i >= 1; i--) {
+            // Print spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    // Diamond pattern
+    public static void printDiamond(int n) {
+        System.out.println("\nDiamond Pattern:");
+        // Upper half (including middle)
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        // Lower half
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    // Hollow diamond
+    public static void printHollowDiamond(int n) {
+        System.out.println("\nHollow Diamond Pattern:");
+        // Upper half
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                if (j == 1 || j == 2 * i - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+        // Lower half
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                if (j == 1 || j == 2 * i - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+
+        printPyramid(rows);
+        printInvertedPyramid(rows);
+        printDiamond(rows);
+        printHollowDiamond(rows);
+
+        scanner.close();
+    }
+}
+```
+
+## Method 3: Number Patterns
+
+```java
+import java.util.Scanner;
+
+public class NumberPatterns {
+
+    // Simple number triangle
+    public static void printNumberTriangle(int n) {
+        System.out.println("Number Triangle:");
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Pascal's triangle
+    public static void printPascalTriangle(int n) {
+        System.out.println("\nPascal's Triangle:");
+        for (int i = 0; i < n; i++) {
+            // Print spaces for formatting
+            for (int j = 0; j < n - i - 1; j++) {
+                System.out.print(" ");
+            }
+
+            int number = 1;
+            for (int j = 0; j <= i; j++) {
+                System.out.print(number + " ");
+                number = number * (i - j) / (j + 1);
+            }
+            System.out.println();
+        }
+    }
+
+    // Floyd's triangle
+    public static void printFloydTriangle(int n) {
+        System.out.println("\nFloyd's Triangle:");
+        int number = 1;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(number + " ");
+                number++;
+            }
+            System.out.println();
+        }
+    }
+
+    // Number pyramid
+    public static void printNumberPyramid(int n) {
+        System.out.println("\nNumber Pyramid:");
+        for (int i = 1; i <= n; i++) {
+            // Print spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            // Print ascending numbers
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            // Print descending numbers
+            for (int j = i - 1; j >= 1; j--) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+
+    // Binary pattern
+    public static void printBinaryPattern(int n) {
+        System.out.println("\nBinary Pattern:");
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print((i + j) % 2 + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+
+        printNumberTriangle(rows);
+        printPascalTriangle(rows);
+        printFloydTriangle(rows);
+        printNumberPyramid(rows);
+        printBinaryPattern(rows);
+
+        scanner.close();
+    }
+}
+```
+
+**Sample Output (n=5):**
+
+```
+Number Triangle:
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+
+Pascal's Triangle:
+    1
+   1 1
+  1 2 1
+ 1 3 3 1
+1 4 6 4 1
+
+Number Pyramid:
+    1
+   121
+  12321
+ 1234321
+123454321
+
+Binary Pattern:
+1
+0 1
+1 0 1
+0 1 0 1
+1 0 1 0 1
+```
+
+## Method 4: Alphabet Patterns
+
+```java
+import java.util.Scanner;
+
+public class AlphabetPatterns {
+
+    // Simple alphabet triangle
+    public static void printAlphabetTriangle(int n) {
+        System.out.println("Alphabet Triangle:");
+        for (int i = 1; i <= n; i++) {
+            char ch = 'A';
+            for (int j = 1; j <= i; j++) {
+                System.out.print(ch + " ");
+                ch++;
+            }
+            System.out.println();
+        }
+    }
+
+    // Alphabet pyramid
+    public static void printAlphabetPyramid(int n) {
+        System.out.println("\nAlphabet Pyramid:");
+        for (int i = 1; i <= n; i++) {
+            // Print spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+
+            // Print ascending letters
+            char ch = 'A';
+            for (int j = 1; j <= i; j++) {
+                System.out.print(ch);
+                ch++;
+            }
+
+            // Print descending letters
+            ch = (char)('A' + i - 2);
+            for (int j = 1; j <= i - 1; j++) {
+                System.out.print(ch);
+                ch--;
+            }
+
+            System.out.println();
+        }
+    }
+
+    // Repeating alphabet pattern
+    public static void printRepeatingAlphabet(int n) {
+        System.out.println("\nRepeating Alphabet Pattern:");
+        for (int i = 1; i <= n; i++) {
+            char ch = (char)('A' + i - 1);
+            for (int j = 1; j <= i; j++) {
+                System.out.print(ch + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Alphabet diamond
+    public static void printAlphabetDiamond(int n) {
+        System.out.println("\nAlphabet Diamond:");
+        // Upper half
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            char ch = 'A';
+            for (int j = 1; j <= i; j++) {
+                System.out.print(ch);
+                ch++;
+            }
+            ch = (char)(ch - 2);
+            for (int j = 1; j <= i - 1; j++) {
+                System.out.print(ch);
+                ch--;
+            }
+            System.out.println();
+        }
+
+        // Lower half
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            char ch = 'A';
+            for (int j = 1; j <= i; j++) {
+                System.out.print(ch);
+                ch++;
+            }
+            ch = (char)(ch - 2);
+            for (int j = 1; j <= i - 1; j++) {
+                System.out.print(ch);
+                ch--;
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+
+        printAlphabetTriangle(rows);
+        printAlphabetPyramid(rows);
+        printRepeatingAlphabet(rows);
+        printAlphabetDiamond(rows);
+
+        scanner.close();
+    }
+}
+```
+
+## Method 5: Advanced Geometric Patterns
+
+```java
+import java.util.Scanner;
+
+public class AdvancedPatterns {
+
+    // Butterfly pattern
+    public static void printButterfly(int n) {
+        System.out.println("Butterfly Pattern:");
+        // Upper half
+        for (int i = 1; i <= n; i++) {
+            // Left stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            // Spaces in middle
+            for (int j = 1; j <= 2 * (n - i); j++) {
+                System.out.print(" ");
+            }
+            // Right stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // Lower half
+        for (int i = n - 1; i >= 1; i--) {
+            // Left stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            // Spaces in middle
+            for (int j = 1; j <= 2 * (n - i); j++) {
+                System.out.print(" ");
+            }
+            // Right stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    // Hourglass pattern
+    public static void printHourglass(int n) {
+        System.out.println("\nHourglass Pattern:");
+        // Upper half
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // Lower half
+        for (int i = 2; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    // Zigzag pattern
+    public static void printZigzag(int rows, int cols) {
+        System.out.println("\nZigzag Pattern:");
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= cols; j++) {
+                if ((i + j) % 4 == 0 || (i == 2 && j % 4 == 0)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    // Spiral pattern
+    public static void printSpiral(int n) {
+        System.out.println("\nSpiral Pattern:");
+        int[][] matrix = new int[n][n];
+        int num = 1;
+        int top = 0, bottom = n - 1, left = 0, right = n - 1;
+
+        while (top <= bottom && left <= right) {
+            // Fill top row
+            for (int i = left; i <= right; i++) {
+                matrix[top][i] = num++;
+            }
+            top++;
+
+            // Fill right column
+            for (int i = top; i <= bottom; i++) {
+                matrix[i][right] = num++;
+            }
+            right--;
+
+            // Fill bottom row
+            if (top <= bottom) {
+                for (int i = right; i >= left; i--) {
+                    matrix[bottom][i] = num++;
+                }
+                bottom--;
+            }
+
+            // Fill left column
+            if (left <= right) {
+                for (int i = bottom; i >= top; i--) {
+                    matrix[i][left] = num++;
+                }
+                left++;
+            }
+        }
+
+        // Print the spiral
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.printf("%3d ", matrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the size for patterns: ");
+        int size = scanner.nextInt();
+
+        printButterfly(size);
+        printHourglass(size);
+        printZigzag(5, 15);
+        printSpiral(size);
+
+        scanner.close();
+    }
+}
+```
+
+## Method 6: Interactive Pattern Generator
+
+```java
+import java.util.Scanner;
+
+public class PatternGenerator {
+
+    public static void displayMenu() {
+        System.out.println("\n=== Pattern Generator ===");
+        System.out.println("1. Right Triangle");
+        System.out.println("2. Pyramid");
+        System.out.println("3. Diamond");
+        System.out.println("4. Butterfly");
+        System.out.println("5. Number Triangle");
+        System.out.println("6. Pascal's Triangle");
+        System.out.println("7. Alphabet Pattern");
+        System.out.println("8. Hollow Patterns");
+        System.out.println("9. All Basic Patterns");
+        System.out.println("10. Exit");
+        System.out.print("Choose a pattern: ");
+    }
+
+    public static void printHollowSquare(int n) {
+        System.out.println("Hollow Square:");
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (i == 1 || i == n || j == 1 || j == n) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void printHollowTriangle(int n) {
+        System.out.println("Hollow Triangle:");
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                if (j == 1 || j == 2 * i - 1 || i == n) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void printAllBasicPatterns(int n) {
+        System.out.println("\n=== All Basic Patterns (Size: " + n + ") ===");
+
+        // Right Triangle
+        System.out.println("\n1. Right Triangle:");
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        // Pyramid
+        System.out.println("\n2. Pyramid:");
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // Number Triangle
+        System.out.println("\n3. Number Triangle:");
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            displayMenu();
+            int choice = scanner.nextInt();
+
+            if (choice == 10) {
+                System.out.println("Thank you for using Pattern Generator!");
+                break;
+            }
+
+            System.out.print("Enter the size: ");
+            int size = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    // Right Triangle logic here
+                    System.out.println("Right Triangle selected");
+                    break;
+                case 2:
+                    // Pyramid logic here
+                    System.out.println("Pyramid selected");
+                    break;
+                case 8:
+                    printHollowSquare(size);
+                    printHollowTriangle(size);
+                    break;
+                case 9:
+                    printAllBasicPatterns(size);
+                    break;
+                default:
+                    System.out.println("Pattern not implemented in this demo");
+            }
+        }
+
+        scanner.close();
+    }
+}
+```
+
+## Pattern Logic Breakdown
+
+### **Key Concepts:**
+
+1. **Outer Loop**: Controls the number of rows
+2. **Inner Loops**: Control elements in each row
+   - Spaces for alignment
+   - Characters/numbers for the pattern
+3. **Mathematical Relationships**:
+   - Row `i`, print `i` elements (right triangle)
+   - Row `i`, print `2*i-1` elements (pyramid)
+   - Spaces = `n-i` for center alignment
+
+### **Common Formulas:**
+
+| Pattern Type     | Stars/Elements | Spaces |
+| ---------------- | -------------- | ------ |
+| Right Triangle   | `i`            | `0`    |
+| Left Triangle    | `i`            | `n-i`  |
+| Pyramid          | `2*i-1`        | `n-i`  |
+| Inverted Pyramid | `2*(n-i+1)-1`  | `i-1`  |
+
+## Practice Exercises
+
+1. **Modify existing patterns** to use different characters
+2. **Create custom patterns** combining multiple shapes
+3. **Add color patterns** using console colors
+4. **Implement user input** for pattern customization
+5. **Create animated patterns** that change over time
+
+## Time and Space Complexity
+
+- **Time Complexity**: O(n²) for most patterns
+- **Space Complexity**: O(1) for printing, O(n²) for matrix-based patterns
+
+Pattern printing is an excellent way to master nested loops, logical thinking, and understand the relationship between mathematics and programming!
