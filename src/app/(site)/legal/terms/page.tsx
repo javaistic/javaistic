@@ -21,11 +21,12 @@ export default function TermsPage(): React.ReactElement {
       <div className="prose prose-neutral dark:prose-invert max-w-none">
         <h2>1. Acceptance of Terms</h2>
         <p>
-          By accessing and using Javaistic (&quot;the Platform,&quot; &quot;we,&quot; &quot;our,&quot; or
-          &quot;us&quot;), an open source educational platform for learning Java
-          programming, you accept and agree to be bound by the terms and
-          provision of this agreement (&quot;Terms of Service&quot; or &quot;Terms&quot;). If you do
-          not agree to abide by these terms, please do not use this platform.
+          By accessing and using Javaistic (&quot;the Platform,&quot;
+          &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), an open source
+          educational platform for learning Java programming, you accept and
+          agree to be bound by the terms and provision of this agreement
+          (&quot;Terms of Service&quot; or &quot;Terms&quot;). If you do not
+          agree to abide by these terms, please do not use this platform.
         </p>
 
         <h2>2. Description of Service</h2>
@@ -86,8 +87,8 @@ export default function TermsPage(): React.ReactElement {
           <li>Upload viruses, malware, or other harmful code</li>
           <li>
             Post content that is unlawful, harmful, threatening, abusive,
-            harassing, defamatory, vulgar, obscene, or invasive of another&apos;s
-            privacy
+            harassing, defamatory, vulgar, obscene, or invasive of
+            another&apos;s privacy
           </li>
           <li>
             Impersonate any person or entity or misrepresent your affiliation
@@ -97,9 +98,10 @@ export default function TermsPage(): React.ReactElement {
         <h3>4.2 Educational Use</h3>
         <p>
           The Platform is intended for educational purposes. While we strive to
-          provide accurate information, all content is provided &quot;as is&quot; for
-          learning purposes. Users should verify information independently and
-          use proper judgment when applying concepts learned here.
+          provide accurate information, all content is provided &quot;as
+          is&quot; for learning purposes. Users should verify information
+          independently and use proper judgment when applying concepts learned
+          here.
         </p>
 
         <h2>5. Content and Contributions</h2>
@@ -197,9 +199,10 @@ export default function TermsPage(): React.ReactElement {
         <h2>8. Disclaimers</h2>
         <h3>8.1 Service Availability</h3>
         <p>
-          The Platform is provided on an &quot;as is&quot; and &quot;as available&quot; basis. As an
-          open source project maintained by volunteers, we do not guarantee that
-          the Platform will be uninterrupted, timely, secure, or error-free.
+          The Platform is provided on an &quot;as is&quot; and &quot;as
+          available&quot; basis. As an open source project maintained by
+          volunteers, we do not guarantee that the Platform will be
+          uninterrupted, timely, secure, or error-free.
         </p>
 
         <h3>8.2 Educational Content</h3>
