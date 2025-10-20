@@ -37,6 +37,8 @@ export const metadata: Metadata = {
     "Javaistic is a free platform to learn Java programming language with interactive tutorials and resources.",
   openGraph: {
     images: "https://javaistic.vercel.app/og.png",
+    siteName: "Javaistic",
+    url: "https://javaistic.vercel.app",
   },
   twitter: {
     card: "summary_large_image",
