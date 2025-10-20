@@ -9,11 +9,9 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: [
           "/api/", // Block API endpoints from crawling
-          "/_next/", // Block Next.js internal files
         ],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
   };
 }
