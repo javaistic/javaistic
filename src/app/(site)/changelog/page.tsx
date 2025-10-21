@@ -264,7 +264,7 @@ export default function ChangelogPage() {
                         loading="lazy"
                       />
                       <h4 className="text-card-foreground mb-3 text-lg font-bold">
-                        What's New
+                        What&apos;s New
                       </h4>
                       <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap">
                         {extractWhatsNew(entry.body)}
