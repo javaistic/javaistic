@@ -1,0 +1,297 @@
+---
+title: Java Program to Reverse a Number
+description: Learn different methods to reverse a number in Java with complete code examples and explanations.
+---
+
+## Introduction
+
+Reversing a number is a fundamental programming concept that involves extracting digits from right to left and reconstructing them in reverse order. For example, reversing 1234 gives us 4321.
+
+This program demonstrates multiple approaches to reverse a number in Java, from basic iterative methods to advanced techniques.
+
+## Method 1: Using While Loop (Most Common)
+
+This is the most straightforward approach using digit extraction and mathematical operations.
+
+```java
+import java.util.Scanner;
+
+public class ReverseNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number to reverse: ");
+        int number = scanner.nextInt();
+
+        int originalNumber = number;
+        int reversedNumber = 0;
+
+        // Handle negative numbers
+        boolean isNegative = number < 0;
+        number = Math.abs(number);
+
+        while (number != 0) {
+            int digit = number % 10;           // Extract last digit
+            reversedNumber = reversedNumber * 10 + digit;  // Build reversed number
+            number = number / 10;              // Remove last digit
+        }
+
+        // Apply sign if original was negative
+        if (isNegative) {
+            reversedNumber = -reversedNumber;
+        }
+
+        System.out.println("Original number: " + originalNumber);
+        System.out.println("Reversed number: " + reversedNumber);
+
+        scanner.close();
+    }
+}
+```
+
+**Output:**
+
+```
+Enter a number to reverse: 1234
+Original number: 1234
+Reversed number: 4321
+```
+
+## Method 2: Using For Loop
+
+The same logic can be implemented using a for loop, which is more compact but requires knowing the number of digits.
+
+```java
+import java.util.Scanner;
+
+public class ReverseNumberForLoop {
+
+    // Method to count digits in a number
+    public static int countDigits(int number) {
+        if (number == 0) return 1;
+        int count = 0;
+        number = Math.abs(number);
+        while (number > 0) {
+            count++;
+            number /= 10;
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number to reverse: ");
+        int number = scanner.nextInt();
+
+        int originalNumber = number;
+        int reversedNumber = 0;
+        boolean isNegative = number < 0;
+        number = Math.abs(number);
+
+        int digitCount = countDigits(number);
+
+        for (int i = 0; i < digitCount; i++) {
+            int digit = number % 10;
+            reversedNumber = reversedNumber * 10 + digit;
+            number = number / 10;
+        }
+
+        if (isNegative) {
+            reversedNumber = -reversedNumber;
+        }
+
+        System.out.println("Original number: " + originalNumber);
+        System.out.println("Reversed number: " + reversedNumber);
+
+        scanner.close();
+    }
+}
+```
+
+## Method 3: Using String Manipulation
+
+This approach converts the number to a string and uses built-in string methods.
+
+```java
+import java.util.Scanner;
+
+public class ReverseNumberString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number to reverse: ");
+        int number = scanner.nextInt();
+
+        // Convert to string and handle negative sign
+        String numberStr = String.valueOf(Math.abs(number));
+
+        // Reverse the string
+        String reversedStr = new StringBuilder(numberStr).reverse().toString();
+
+        // Convert back to integer
+        int reversedNumber = Integer.parseInt(reversedStr);
+
+        // Apply negative sign if original was negative
+        if (number < 0) {
+            reversedNumber = -reversedNumber;
+        }
+
+        System.out.println("Original number: " + number);
+        System.out.println("Reversed number: " + reversedNumber);
+
+        scanner.close();
+    }
+}
+```
+
+## Method 4: Using Recursion
+
+A recursive approach that demonstrates functional programming concepts.
+
+```java
+import java.util.Scanner;
+
+public class ReverseNumberRecursive {
+
+    // Recursive method to reverse a number
+    public static int reverseNumber(int number, int reversedNumber) {
+        if (number == 0) {
+            return reversedNumber;
+        }
+
+        int digit = number % 10;
+        reversedNumber = reversedNumber * 10 + digit;
+
+        return reverseNumber(number / 10, reversedNumber);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number to reverse: ");
+        int number = scanner.nextInt();
+
+        boolean isNegative = number < 0;
+        int absoluteNumber = Math.abs(number);
+
+        int reversedNumber = reverseNumber(absoluteNumber, 0);
+
+        if (isNegative) {
+            reversedNumber = -reversedNumber;
+        }
+
+        System.out.println("Original number: " + number);
+        System.out.println("Reversed number: " + reversedNumber);
+
+        scanner.close();
+    }
+}
+```
+
+## Method 5: Complete Program with Palindrome Check
+
+This enhanced version also checks if the number is a palindrome.
+
+```java
+import java.util.Scanner;
+
+public class CompleteReverseNumber {
+
+    public static int reverseNumber(int number) {
+        int reversedNumber = 0;
+        number = Math.abs(number);
+
+        while (number != 0) {
+            int digit = number % 10;
+            reversedNumber = reversedNumber * 10 + digit;
+            number = number / 10;
+        }
+
+        return reversedNumber;
+    }
+
+    public static boolean isPalindrome(int number) {
+        int absNumber = Math.abs(number);
+        return absNumber == reverseNumber(absNumber);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number to reverse: ");
+        int number = scanner.nextInt();
+
+        int reversedNumber = reverseNumber(number);
+
+        // Apply negative sign if original was negative
+        if (number < 0) {
+            reversedNumber = -reversedNumber;
+        }
+
+        System.out.println("Original number: " + number);
+        System.out.println("Reversed number: " + reversedNumber);
+
+        // Check if palindrome
+        if (isPalindrome(number)) {
+            System.out.println(Math.abs(number) + " is a palindrome!");
+        } else {
+            System.out.println(Math.abs(number) + " is not a palindrome.");
+        }
+
+        scanner.close();
+    }
+}
+```
+
+**Sample Output:**
+
+```
+Enter a number to reverse: 12321
+Original number: 12321
+Reversed number: 12321
+12321 is a palindrome!
+```
+
+## Key Concepts Explained
+
+### 1. **Digit Extraction**
+
+- `number % 10` extracts the last digit
+- `number / 10` removes the last digit
+
+### 2. **Building Reversed Number**
+
+- `reversedNumber * 10 + digit` adds the extracted digit to the left
+
+### 3. **Handling Negative Numbers**
+
+- Store the sign separately and apply it at the end
+- Work with absolute value during reversal
+
+### 4. **Edge Cases**
+
+- Single digit numbers (0-9)
+- Negative numbers
+- Numbers ending with zeros (e.g., 1200 becomes 21)
+
+## Time and Space Complexity
+
+- **Time Complexity**: O(log n) where n is the input number (number of digits)
+- **Space Complexity**: O(1) for iterative methods, O(log n) for recursive method
+
+## Common Applications
+
+1. **Palindrome Detection**: Checking if a number reads the same forwards and backwards
+2. **Mathematical Operations**: Various number theory problems
+3. **Data Processing**: Reversing sequences or patterns
+4. **Algorithm Practice**: Understanding digit manipulation techniques
+
+## Practice Exercises
+
+1. Modify the program to reverse only the digits, keeping the sign in the original position
+2. Create a version that reverses numbers in different bases (binary, octal, hexadecimal)
+3. Implement a method that reverses alternating digits (1st, 3rd, 5th, etc.)
+4. Write a program that finds all palindromic numbers in a given range
+
+This program provides a solid foundation for understanding digit manipulation in Java programming!
