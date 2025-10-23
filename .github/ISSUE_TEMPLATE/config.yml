@@ -4,7 +4,7 @@ contact_links:
     url: https://javaistic.vercel.app/
   - name: Blog
     about: Check out the Javaistic Official Blog.
-    url: https://blog-javaistic.vercel.app/
+    url: https://javaistic.vercel.app/blog
   - name: Changelog
     about: Check out the Javaistic detailed changelog.
     url: https://javaistic.vercel.app/changelog
