@@ -1,0 +1,459 @@
+---
+title: Java Program to Check Perfect Number
+description: Learn to identify perfect numbers in Java with multiple methods, optimizations, and comprehensive examples.
+---
+
+## Introduction
+
+A **Perfect Number** is a positive integer that is equal to the sum of its proper positive divisors (excluding the number itself). Perfect numbers are rare and have fascinated mathematicians for centuries.
+
+**Examples:**
+
+- **6** is perfect: divisors are 1, 2, 3 → 1 + 2 + 3 = 6
+- **28** is perfect: divisors are 1, 2, 4, 7, 14 → 1 + 2 + 4 + 7 + 14 = 28
+- **496** is perfect: sum of divisors equals 496
+
+This tutorial demonstrates multiple approaches to check perfect numbers in Java, from basic to optimized solutions.
+
+## Method 1: Basic Approach with Complete Divisor Check
+
+This straightforward method finds all divisors by checking every number from 1 to n-1.
+
+```java
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class PerfectNumberBasic {
+
+    public static boolean isPerfectNumber(int number) {
+        if (number <= 1) {
+            return false;  // Perfect numbers are positive and > 1
+        }
+
+        int sum = 0;
+        ArrayList<Integer> divisors = new ArrayList<>();
+
+        // Find all proper divisors (1 to number-1)
+        for (int i = 1; i < number; i++) {
+            if (number % i == 0) {
+                divisors.add(i);
+                sum += i;
+            }
+        }
+
+        // Display divisors for educational purposes
+        System.out.print("Divisors of " + number + ": ");
+        for (int divisor : divisors) {
+            System.out.print(divisor + " ");
+        }
+        System.out.println("\nSum of divisors: " + sum);
+
+        return sum == number;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number to check if it's perfect: ");
+        int number = scanner.nextInt();
+
+        if (isPerfectNumber(number)) {
+            System.out.println(number + " is a Perfect Number! ✓");
+        } else {
+            System.out.println(number + " is not a Perfect Number.");
+        }
+
+        scanner.close();
+    }
+}
+```
+
+**Sample Output:**
+
+```
+Enter a number to check if it's perfect: 28
+Divisors of 28: 1 2 4 7 14
+Sum of divisors: 28
+28 is a Perfect Number! ✓
+```
+
+## Method 2: Optimized Approach (Up to Square Root)
+
+This optimized version reduces time complexity by only checking divisors up to the square root.
+
+```java
+import java.util.Scanner;
+
+public class PerfectNumberOptimized {
+
+    public static boolean isPerfectNumber(int number) {
+        if (number <= 1) {
+            return false;
+        }
+
+        int sum = 1; // 1 is always a divisor (except for 1 itself)
+
+        // Check divisors up to square root
+        for (int i = 2; i * i <= number; i++) {
+            if (number % i == 0) {
+                sum += i; // Add the divisor
+
+                // Add the corresponding divisor (number/i)
+                // but avoid adding the square root twice
+                if (i * i != number) {
+                    sum += number / i;
+                }
+            }
+        }
+
+        return sum == number;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number to check: ");
+        int number = scanner.nextInt();
+
+        long startTime = System.nanoTime();
+        boolean result = isPerfectNumber(number);
+        long endTime = System.nanoTime();
+
+        if (result) {
+            System.out.println(number + " is a Perfect Number!");
+        } else {
+            System.out.println(number + " is not a Perfect Number.");
+        }
+
+        System.out.println("Execution time: " + (endTime - startTime) + " nanoseconds");
+
+        scanner.close();
+    }
+}
+```
+
+## Method 3: Find All Perfect Numbers in a Range
+
+This program finds all perfect numbers within a specified range.
+
+```java
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class FindPerfectNumbers {
+
+    public static boolean isPerfectNumber(int number) {
+        if (number <= 1) return false;
+
+        int sum = 1;
+        for (int i = 2; i * i <= number; i++) {
+            if (number % i == 0) {
+                sum += i;
+                if (i * i != number) {
+                    sum += number / i;
+                }
+            }
+        }
+        return sum == number;
+    }
+
+    public static ArrayList<Integer> findPerfectNumbersInRange(int start, int end) {
+        ArrayList<Integer> perfectNumbers = new ArrayList<>();
+
+        for (int i = start; i <= end; i++) {
+            if (isPerfectNumber(i)) {
+                perfectNumbers.add(i);
+            }
+        }
+
+        return perfectNumbers;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the start of range: ");
+        int start = scanner.nextInt();
+
+        System.out.print("Enter the end of range: ");
+        int end = scanner.nextInt();
+
+        System.out.println("\nSearching for perfect numbers from " + start + " to " + end + "...");
+
+        ArrayList<Integer> perfectNumbers = findPerfectNumbersInRange(start, end);
+
+        if (perfectNumbers.isEmpty()) {
+            System.out.println("No perfect numbers found in the given range.");
+        } else {
+            System.out.println("Perfect numbers found: " + perfectNumbers);
+            System.out.println("Total count: " + perfectNumbers.size());
+        }
+
+        scanner.close();
+    }
+}
+```
+
+**Sample Output:**
+
+```
+Enter the start of range: 1
+Enter the end of range: 1000
+
+Searching for perfect numbers from 1 to 1000...
+Perfect numbers found: [6, 28, 496]
+Total count: 3
+```
+
+## Method 4: Using Euclid's Formula for Even Perfect Numbers
+
+Euclid discovered that every even perfect number has the form 2^(p-1) × (2^p - 1), where 2^p - 1 is prime.
+
+```java
+import java.util.Scanner;
+
+public class EuclidPerfectNumbers {
+
+    // Check if a number is prime
+    public static boolean isPrime(long number) {
+        if (number < 2) return false;
+        if (number == 2) return true;
+        if (number % 2 == 0) return false;
+
+        for (long i = 3; i * i <= number; i += 2) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Generate perfect number using Euclid's formula
+    public static long generatePerfectNumber(int p) {
+        if (!isPrime(p)) {
+            return -1; // p must be prime
+        }
+
+        long mersennePrime = (1L << p) - 1; // 2^p - 1
+
+        if (!isPrime(mersennePrime)) {
+            return -1; // 2^p - 1 must also be prime (Mersenne prime)
+        }
+
+        return (1L << (p - 1)) * mersennePrime; // 2^(p-1) × (2^p - 1)
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Generate Perfect Numbers using Euclid's Formula");
+        System.out.println("Formula: 2^(p-1) × (2^p - 1), where p and (2^p - 1) are both prime");
+
+        System.out.print("\nEnter value of p (prime number): ");
+        int p = scanner.nextInt();
+
+        long perfectNumber = generatePerfectNumber(p);
+
+        if (perfectNumber == -1) {
+            System.out.println("Cannot generate perfect number with p = " + p);
+            System.out.println("Either " + p + " is not prime, or 2^" + p + " - 1 is not prime.");
+        } else {
+            System.out.println("Perfect number generated: " + perfectNumber);
+
+            // Verify it's actually perfect
+            System.out.println("Verification: " + (isPerfectNumberOptimized(perfectNumber) ? "✓ Confirmed" : "✗ Error"));
+        }
+
+        // Show first few perfect numbers using known Mersenne primes
+        System.out.println("\nFirst few perfect numbers:");
+        int[] mersennePrimes = {2, 3, 5, 7, 13, 17, 19}; // Known Mersenne prime exponents
+
+        for (int prime : mersennePrimes) {
+            long perfect = generatePerfectNumber(prime);
+            if (perfect != -1 && perfect < Long.MAX_VALUE / 2) {
+                System.out.println("p=" + prime + ": " + perfect);
+            }
+        }
+
+        scanner.close();
+    }
+
+    private static boolean isPerfectNumberOptimized(long number) {
+        if (number <= 1) return false;
+
+        long sum = 1;
+        for (long i = 2; i * i <= number; i++) {
+            if (number % i == 0) {
+                sum += i;
+                if (i * i != number) {
+                    sum += number / i;
+                }
+            }
+        }
+        return sum == number;
+    }
+}
+```
+
+## Method 5: Interactive Perfect Number Explorer
+
+A comprehensive program that combines all methods with a user-friendly menu.
+
+```java
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class PerfectNumberExplorer {
+
+    public static boolean isPerfectNumber(int number) {
+        if (number <= 1) return false;
+
+        int sum = 1;
+        for (int i = 2; i * i <= number; i++) {
+            if (number % i == 0) {
+                sum += i;
+                if (i * i != number) {
+                    sum += number / i;
+                }
+            }
+        }
+        return sum == number;
+    }
+
+    public static void displayDivisors(int number) {
+        System.out.print("Proper divisors of " + number + ": ");
+        ArrayList<Integer> divisors = new ArrayList<>();
+        int sum = 0;
+
+        for (int i = 1; i < number; i++) {
+            if (number % i == 0) {
+                divisors.add(i);
+                sum += i;
+            }
+        }
+
+        for (int divisor : divisors) {
+            System.out.print(divisor + " ");
+        }
+        System.out.println("\nSum: " + sum + " (Number: " + number + ")");
+    }
+
+    public static void findInRange(int start, int end) {
+        System.out.println("Perfect numbers from " + start + " to " + end + ":");
+        boolean found = false;
+
+        for (int i = start; i <= end; i++) {
+            if (isPerfectNumber(i)) {
+                System.out.print(i + " ");
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.print("None found");
+        }
+        System.out.println();
+    }
+
+    public static void showKnownPerfectNumbers() {
+        System.out.println("First few known perfect numbers:");
+        System.out.println("6 (2^1 × 3)");
+        System.out.println("28 (2^2 × 7)");
+        System.out.println("496 (2^4 × 31)");
+        System.out.println("8128 (2^6 × 127)");
+        System.out.println("33550336 (2^12 × 8191)");
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\n=== Perfect Number Explorer ===");
+            System.out.println("1. Check if a number is perfect");
+            System.out.println("2. Show divisors of a number");
+            System.out.println("3. Find perfect numbers in range");
+            System.out.println("4. Show known perfect numbers");
+            System.out.println("5. Exit");
+            System.out.print("Choose an option: ");
+
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter number to check: ");
+                    int num = scanner.nextInt();
+                    if (isPerfectNumber(num)) {
+                        System.out.println(num + " is a Perfect Number! ✓");
+                    } else {
+                        System.out.println(num + " is not a Perfect Number.");
+                    }
+                    break;
+
+                case 2:
+                    System.out.print("Enter number to show divisors: ");
+                    int divisorNum = scanner.nextInt();
+                    displayDivisors(divisorNum);
+                    break;
+
+                case 3:
+                    System.out.print("Enter start range: ");
+                    int start = scanner.nextInt();
+                    System.out.print("Enter end range: ");
+                    int end = scanner.nextInt();
+                    findInRange(start, end);
+                    break;
+
+                case 4:
+                    showKnownPerfectNumbers();
+                    break;
+
+                case 5:
+                    System.out.println("Thank you for exploring perfect numbers!");
+                    scanner.close();
+                    return;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+}
+```
+
+## Mathematical Background
+
+### **What Makes a Number Perfect?**
+
+A perfect number n satisfies: **σ(n) - n = n**, where σ(n) is the sum of all divisors including n itself.
+
+### **Known Facts:**
+
+1. **Even Perfect Numbers**: All known perfect numbers are even
+2. **Euclid's Theorem**: Every even perfect number has the form 2^(p-1) × (2^p - 1)
+3. **Mersenne Primes**: When 2^p - 1 is prime, it's called a Mersenne prime
+4. **Rarity**: Only 51 perfect numbers are known as of 2024
+
+### **First Few Perfect Numbers:**
+
+- 6 = 2^1 × (2^2 - 1) = 2 × 3
+- 28 = 2^2 × (2^3 - 1) = 4 × 7
+- 496 = 2^4 × (2^5 - 1) = 16 × 31
+- 8128 = 2^6 × (2^7 - 1) = 64 × 127
+
+## Time and Space Complexity
+
+| Method           | Time Complexity | Space Complexity             | Best For                  |
+| ---------------- | --------------- | ---------------------------- | ------------------------- |
+| Basic            | O(n)            | O(k) where k = divisor count | Learning/Small numbers    |
+| Optimized        | O(√n)           | O(1)                         | General use               |
+| Range Search     | O(m × √n)       | O(1)                         | Finding multiple          |
+| Euclid's Formula | O(√p)           | O(1)                         | Generating large perfects |
+
+## Practice Exercises
+
+1. **Abundant vs Perfect vs Deficient**: Classify numbers based on sum of proper divisors
+2. **Perfect Number Factorization**: Show the prime factorization of perfect numbers
+3. **Near-Perfect Numbers**: Find numbers where sum of proper divisors = n ± 1
+4. **Performance Comparison**: Benchmark different methods for large numbers
+
+Perfect numbers beautifully demonstrate the intersection of mathematics and programming, making them excellent for learning algorithmic thinking!
