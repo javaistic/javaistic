@@ -1,0 +1,650 @@
+---
+title: Java Program to Find GCD and LCM
+description: Learn to calculate Greatest Common Divisor (GCD) and Least Common Multiple (LCM) using various algorithms including Euclidean method, recursion, and array operations.
+---
+
+## Introduction
+
+The **Greatest Common Divisor (GCD)** and **Least Common Multiple (LCM)** are fundamental mathematical concepts with wide applications in programming, cryptography, and mathematics.
+
+- **GCD**: The largest positive integer that divides both numbers without a remainder
+- **LCM**: The smallest positive integer that is divisible by both numbers
+
+**Key Relationship**: `LCM(a, b) = (a × b) / GCD(a, b)`
+
+This tutorial covers multiple algorithms to calculate GCD and LCM in Java, from basic approaches to advanced mathematical methods.
+
+## Method 1: Basic GCD and LCM (Brute Force)
+
+This straightforward approach checks all possible divisors to find GCD.
+
+```java
+import java.util.Scanner;
+
+public class BasicGCDLCM {
+
+    public static int findGCD(int a, int b) {
+        int gcd = 1;
+        int min = Math.min(a, b);
+
+        for (int i = 1; i <= min; i++) {
+            if (a % i == 0 && b % i == 0) {
+                gcd = i;
+            }
+        }
+
+        return gcd;
+    }
+
+    public static long findLCM(int a, int b) {
+        int gcd = findGCD(a, b);
+        return (long) a * b / gcd;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+
+        int gcd = findGCD(Math.abs(num1), Math.abs(num2));
+        long lcm = findLCM(Math.abs(num1), Math.abs(num2));
+
+        System.out.println("GCD of " + num1 + " and " + num2 + " = " + gcd);
+        System.out.println("LCM of " + num1 + " and " + num2 + " = " + lcm);
+
+        scanner.close();
+    }
+}
+```
+
+**Sample Output:**
+
+```
+Enter first number: 12
+Enter second number: 18
+GCD of 12 and 18 = 6
+LCM of 12 and 18 = 36
+```
+
+## Method 2: Euclidean Algorithm (Most Efficient)
+
+The Euclidean algorithm is the most efficient method for finding GCD, based on the principle that GCD(a, b) = GCD(b, a % b).
+
+```java
+import java.util.Scanner;
+
+public class EuclideanGCDLCM {
+
+    // Iterative Euclidean Algorithm
+    public static int findGCD(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    // Recursive Euclidean Algorithm
+    public static int findGCDRecursive(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return findGCDRecursive(b, a % b);
+    }
+
+    public static long findLCM(int a, int b) {
+        return (long) a * b / findGCD(a, b);
+    }
+
+    // Method to show step-by-step calculation
+    public static int findGCDWithSteps(int a, int b) {
+        System.out.println("Finding GCD using Euclidean Algorithm:");
+        System.out.println("GCD(" + a + ", " + b + ")");
+
+        while (b != 0) {
+            int quotient = a / b;
+            int remainder = a % b;
+
+            System.out.println(a + " = " + b + " × " + quotient + " + " + remainder);
+
+            a = b;
+            b = remainder;
+        }
+
+        System.out.println("GCD = " + a);
+        return a;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+
+        int a = Math.abs(num1);
+        int b = Math.abs(num2);
+
+        // Show step-by-step calculation
+        int gcd = findGCDWithSteps(a, b);
+        long lcm = findLCM(a, b);
+
+        System.out.println("\nResults:");
+        System.out.println("GCD (Iterative): " + findGCD(a, b));
+        System.out.println("GCD (Recursive): " + findGCDRecursive(a, b));
+        System.out.println("LCM: " + lcm);
+
+        // Verification
+        System.out.println("\nVerification:");
+        System.out.println(a + " × " + b + " = " + ((long) a * b));
+        System.out.println("GCD × LCM = " + gcd + " × " + lcm + " = " + (gcd * lcm));
+
+        scanner.close();
+    }
+}
+```
+
+**Sample Output:**
+
+```
+Enter first number: 48
+Enter second number: 18
+
+Finding GCD using Euclidean Algorithm:
+GCD(48, 18)
+48 = 18 × 2 + 12
+18 = 12 × 1 + 6
+12 = 6 × 2 + 0
+GCD = 6
+
+Results:
+GCD (Iterative): 6
+GCD (Recursive): 6
+LCM: 144
+
+Verification:
+48 × 18 = 864
+GCD × LCM = 6 × 144 = 864
+```
+
+## Method 3: Extended Euclidean Algorithm
+
+The Extended Euclidean Algorithm finds GCD and also the coefficients x and y such that ax + by = GCD(a, b).
+
+```java
+import java.util.Scanner;
+
+public class ExtendedEuclideanAlgorithm {
+
+    static class ExtendedGCDResult {
+        int gcd;
+        int x;
+        int y;
+
+        ExtendedGCDResult(int gcd, int x, int y) {
+            this.gcd = gcd;
+            this.x = x;
+            this.y = y;
+        }
+    }
+
+    public static ExtendedGCDResult extendedGCD(int a, int b) {
+        if (b == 0) {
+            return new ExtendedGCDResult(a, 1, 0);
+        }
+
+        ExtendedGCDResult result = extendedGCD(b, a % b);
+
+        int x = result.y;
+        int y = result.x - (a / b) * result.y;
+
+        return new ExtendedGCDResult(result.gcd, x, y);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = scanner.nextInt();
+
+        ExtendedGCDResult result = extendedGCD(Math.abs(a), Math.abs(b));
+
+        System.out.println("\nExtended Euclidean Algorithm Results:");
+        System.out.println("GCD(" + a + ", " + b + ") = " + result.gcd);
+        System.out.println("Coefficients: x = " + result.x + ", y = " + result.y);
+        System.out.println("Verification: " + a + " × " + result.x + " + " + b + " × " + result.y + " = " +
+                          (a * result.x + b * result.y));
+
+        scanner.close();
+    }
+}
+```
+
+## Method 4: GCD and LCM for Multiple Numbers
+
+This program calculates GCD and LCM for arrays of numbers.
+
+```java
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class MultipleNumbersGCDLCM {
+
+    public static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    public static long lcm(long a, long b) {
+        return a * b / gcd((int)a, (int)b);
+    }
+
+    // GCD of multiple numbers
+    public static int findArrayGCD(int[] numbers) {
+        int result = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            result = gcd(result, numbers[i]);
+            if (result == 1) {
+                break; // Early termination for optimization
+            }
+        }
+        return result;
+    }
+
+    // LCM of multiple numbers
+    public static long findArrayLCM(int[] numbers) {
+        long result = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            result = lcm(result, numbers[i]);
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("How many numbers do you want to enter? ");
+        int n = scanner.nextInt();
+
+        int[] numbers = new int[n];
+        System.out.println("Enter " + n + " numbers:");
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Number " + (i + 1) + ": ");
+            numbers[i] = scanner.nextInt();
+        }
+
+        System.out.println("\nInput numbers: " + Arrays.toString(numbers));
+
+        int arrayGCD = findArrayGCD(numbers);
+        long arrayLCM = findArrayLCM(numbers);
+
+        System.out.println("GCD of all numbers: " + arrayGCD);
+        System.out.println("LCM of all numbers: " + arrayLCM);
+
+        // Show pairwise calculations for educational purposes
+        System.out.println("\nStep-by-step calculation:");
+        int tempGCD = numbers[0];
+        long tempLCM = numbers[0];
+
+        for (int i = 1; i < numbers.length; i++) {
+            int newGCD = gcd(tempGCD, numbers[i]);
+            long newLCM = lcm(tempLCM, numbers[i]);
+
+            System.out.println("After including " + numbers[i] + ":");
+            System.out.println("  GCD = " + newGCD);
+            System.out.println("  LCM = " + newLCM);
+
+            tempGCD = newGCD;
+            tempLCM = newLCM;
+        }
+
+        scanner.close();
+    }
+}
+```
+
+## Method 5: Prime Factorization Approach
+
+This method uses prime factorization to calculate GCD and LCM, which is educational for understanding the mathematical foundation.
+
+```java
+import java.util.*;
+
+public class PrimeFactorizationGCDLCM {
+
+    public static Map<Integer, Integer> primeFactorization(int n) {
+        Map<Integer, Integer> factors = new HashMap<>();
+
+        // Handle factor 2
+        while (n % 2 == 0) {
+            factors.put(2, factors.getOrDefault(2, 0) + 1);
+            n /= 2;
+        }
+
+        // Handle odd factors
+        for (int i = 3; i * i <= n; i += 2) {
+            while (n % i == 0) {
+                factors.put(i, factors.getOrDefault(i, 0) + 1);
+                n /= i;
+            }
+        }
+
+        // If n is still > 2, it's a prime
+        if (n > 2) {
+            factors.put(n, 1);
+        }
+
+        return factors;
+    }
+
+    public static int calculateGCDFromFactors(Map<Integer, Integer> factors1,
+                                            Map<Integer, Integer> factors2) {
+        int gcd = 1;
+
+        for (int prime : factors1.keySet()) {
+            if (factors2.containsKey(prime)) {
+                int minPower = Math.min(factors1.get(prime), factors2.get(prime));
+                gcd *= Math.pow(prime, minPower);
+            }
+        }
+
+        return gcd;
+    }
+
+    public static long calculateLCMFromFactors(Map<Integer, Integer> factors1,
+                                             Map<Integer, Integer> factors2) {
+        long lcm = 1;
+        Set<Integer> allPrimes = new HashSet<>(factors1.keySet());
+        allPrimes.addAll(factors2.keySet());
+
+        for (int prime : allPrimes) {
+            int maxPower = Math.max(factors1.getOrDefault(prime, 0),
+                                  factors2.getOrDefault(prime, 0));
+            lcm *= Math.pow(prime, maxPower);
+        }
+
+        return lcm;
+    }
+
+    public static void displayFactorization(int number, Map<Integer, Integer> factors) {
+        System.out.print(number + " = ");
+        List<String> factorStrings = new ArrayList<>();
+
+        for (Map.Entry<Integer, Integer> entry : factors.entrySet()) {
+            int prime = entry.getKey();
+            int power = entry.getValue();
+
+            if (power == 1) {
+                factorStrings.add(String.valueOf(prime));
+            } else {
+                factorStrings.add(prime + "^" + power);
+            }
+        }
+
+        System.out.println(String.join(" × ", factorStrings));
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+
+        // Get prime factorizations
+        Map<Integer, Integer> factors1 = primeFactorization(Math.abs(num1));
+        Map<Integer, Integer> factors2 = primeFactorization(Math.abs(num2));
+
+        // Display factorizations
+        System.out.println("\nPrime Factorizations:");
+        displayFactorization(Math.abs(num1), factors1);
+        displayFactorization(Math.abs(num2), factors2);
+
+        // Calculate GCD and LCM
+        int gcd = calculateGCDFromFactors(factors1, factors2);
+        long lcm = calculateLCMFromFactors(factors1, factors2);
+
+        System.out.println("\nResults using Prime Factorization:");
+        System.out.println("GCD = " + gcd);
+        System.out.println("LCM = " + lcm);
+
+        // Verify with Euclidean algorithm
+        int euclideanGCD = gcd(Math.abs(num1), Math.abs(num2));
+        System.out.println("\nVerification with Euclidean Algorithm:");
+        System.out.println("GCD = " + euclideanGCD + " " + (gcd == euclideanGCD ? "✓" : "✗"));
+
+        scanner.close();
+    }
+
+    private static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+}
+```
+
+## Method 6: Complete Interactive GCD/LCM Calculator
+
+A comprehensive program with all methods and additional features.
+
+```java
+import java.util.*;
+
+public class CompleteGCDLCMCalculator {
+
+    // Euclidean Algorithm
+    public static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    public static long lcm(int a, int b) {
+        return (long) a * b / gcd(a, b);
+    }
+
+    // Array operations
+    public static int arrayGCD(int[] arr) {
+        int result = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            result = gcd(result, arr[i]);
+        }
+        return result;
+    }
+
+    public static long arrayLCM(int[] arr) {
+        long result = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            result = lcm((int)result, arr[i]);
+        }
+        return result;
+    }
+
+    // Check if two numbers are coprime
+    public static boolean areCoprime(int a, int b) {
+        return gcd(a, b) == 1;
+    }
+
+    // Find all common divisors
+    public static List<Integer> findCommonDivisors(int a, int b) {
+        List<Integer> divisors = new ArrayList<>();
+        int gcdValue = gcd(a, b);
+
+        for (int i = 1; i <= gcdValue; i++) {
+            if (gcdValue % i == 0) {
+                divisors.add(i);
+            }
+        }
+
+        return divisors;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\n=== GCD & LCM Calculator ===");
+            System.out.println("1. GCD and LCM of two numbers");
+            System.out.println("2. GCD and LCM of multiple numbers");
+            System.out.println("3. Check if numbers are coprime");
+            System.out.println("4. Find all common divisors");
+            System.out.println("5. Euclidean algorithm with steps");
+            System.out.println("6. Exit");
+            System.out.print("Choose an option: ");
+
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter first number: ");
+                    int a = scanner.nextInt();
+                    System.out.print("Enter second number: ");
+                    int b = scanner.nextInt();
+
+                    int gcdValue = gcd(Math.abs(a), Math.abs(b));
+                    long lcmValue = lcm(Math.abs(a), Math.abs(b));
+
+                    System.out.println("GCD(" + a + ", " + b + ") = " + gcdValue);
+                    System.out.println("LCM(" + a + ", " + b + ") = " + lcmValue);
+                    break;
+
+                case 2:
+                    System.out.print("How many numbers? ");
+                    int n = scanner.nextInt();
+                    int[] numbers = new int[n];
+
+                    for (int i = 0; i < n; i++) {
+                        System.out.print("Number " + (i + 1) + ": ");
+                        numbers[i] = scanner.nextInt();
+                    }
+
+                    System.out.println("Numbers: " + Arrays.toString(numbers));
+                    System.out.println("GCD = " + arrayGCD(numbers));
+                    System.out.println("LCM = " + arrayLCM(numbers));
+                    break;
+
+                case 3:
+                    System.out.print("Enter first number: ");
+                    int num1 = scanner.nextInt();
+                    System.out.print("Enter second number: ");
+                    int num2 = scanner.nextInt();
+
+                    if (areCoprime(Math.abs(num1), Math.abs(num2))) {
+                        System.out.println(num1 + " and " + num2 + " are coprime (GCD = 1)");
+                    } else {
+                        System.out.println(num1 + " and " + num2 + " are not coprime (GCD = " +
+                                         gcd(Math.abs(num1), Math.abs(num2)) + ")");
+                    }
+                    break;
+
+                case 4:
+                    System.out.print("Enter first number: ");
+                    int x = scanner.nextInt();
+                    System.out.print("Enter second number: ");
+                    int y = scanner.nextInt();
+
+                    List<Integer> commonDivisors = findCommonDivisors(Math.abs(x), Math.abs(y));
+                    System.out.println("Common divisors of " + x + " and " + y + ": " + commonDivisors);
+                    break;
+
+                case 5:
+                    System.out.print("Enter first number: ");
+                    int p = scanner.nextInt();
+                    System.out.print("Enter second number: ");
+                    int q = scanner.nextInt();
+
+                    System.out.println("\nEuclidean Algorithm Steps:");
+                    int tempP = Math.abs(p), tempQ = Math.abs(q);
+
+                    while (tempQ != 0) {
+                        int quotient = tempP / tempQ;
+                        int remainder = tempP % tempQ;
+
+                        System.out.println(tempP + " = " + tempQ + " × " + quotient + " + " + remainder);
+
+                        tempP = tempQ;
+                        tempQ = remainder;
+                    }
+
+                    System.out.println("GCD = " + tempP);
+                    break;
+
+                case 6:
+                    System.out.println("Thank you for using the GCD & LCM Calculator!");
+                    scanner.close();
+                    return;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+}
+```
+
+## Key Concepts and Algorithms
+
+### **1. Euclidean Algorithm**
+
+- **Principle**: GCD(a, b) = GCD(b, a mod b)
+- **Time Complexity**: O(log(min(a, b)))
+- **Most efficient method**
+
+### **2. Extended Euclidean Algorithm**
+
+- Finds GCD and coefficients x, y such that ax + by = GCD(a, b)
+- Useful in modular arithmetic and cryptography
+
+### **3. Relationship Between GCD and LCM**
+
+- `LCM(a, b) × GCD(a, b) = a × b`
+- This identity allows efficient LCM calculation
+
+### **4. Properties**
+
+- **GCD(a, 0) = a**
+- **LCM(a, b) ≥ max(a, b)**
+- **GCD(a, b) ≤ min(a, b)**
+- **If GCD(a, b) = 1, then a and b are coprime**
+
+## Time and Space Complexity
+
+| Algorithm           | Time Complexity   | Space Complexity  | Use Case              |
+| ------------------- | ----------------- | ----------------- | --------------------- |
+| Brute Force         | O(min(a, b))      | O(1)              | Small numbers         |
+| Euclidean           | O(log(min(a, b))) | O(1)              | General use           |
+| Recursive Euclidean | O(log(min(a, b))) | O(log(min(a, b))) | Educational           |
+| Prime Factorization | O(√n)             | O(log n)          | Understanding factors |
+
+## Practice Exercises
+
+1. **Reduce Fractions**: Use GCD to simplify fractions to lowest terms
+2. **Scheduling Problems**: Find when events repeat using LCM
+3. **Array Operations**: Find GCD and LCM of arrays efficiently
+4. **Modular Arithmetic**: Use Extended Euclidean for inverse calculations
+
+Understanding GCD and LCM algorithms is essential for many advanced programming concepts and mathematical applications!
