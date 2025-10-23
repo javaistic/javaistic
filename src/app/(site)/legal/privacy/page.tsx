@@ -21,10 +21,11 @@ export default function PrivacyPolicyPage(): React.ReactElement {
       <div className="prose prose-neutral dark:prose-invert max-w-none">
         <h2>1. Introduction</h2>
         <p>
-          Welcome to Javaistic (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We are committed to
-          protecting your privacy and ensuring transparency. This Privacy Policy
-          explains our practices regarding information handling on our open
-          source educational platform for learning Java programming.
+          Welcome to Javaistic (&quot;we,&quot; &quot;our,&quot; or
+          &quot;us&quot;). We are committed to protecting your privacy and
+          ensuring transparency. This Privacy Policy explains our practices
+          regarding information handling on our open source educational platform
+          for learning Java programming.
         </p>
         <p>
           <strong>Important:</strong> Javaistic does not require user accounts
@@ -69,8 +70,8 @@ export default function PrivacyPolicyPage(): React.ReactElement {
           If you choose to contribute to the Javaistic project through our
           public GitHub repository, any information you provide (such as GitHub
           username, email for commits, or pull request content) will be handled
-          according to GitHub&apos;s privacy policies and our open source licensing
-          terms.
+          according to GitHub&apos;s privacy policies and our open source
+          licensing terms.
         </p>
 
         <h2>4. How We Use Information</h2>
@@ -129,9 +130,9 @@ export default function PrivacyPolicyPage(): React.ReactElement {
         <p>
           Javaistic is an educational platform intended for learners of all ages
           interested in Java programming. Since we do not collect personal
-          information, there are no special considerations for children&apos;s data.
-          However, we recommend that children under 13 have parental guidance
-          when accessing technical content.
+          information, there are no special considerations for children&apos;s
+          data. However, we recommend that children under 13 have parental
+          guidance when accessing technical content.
         </p>
 
         <h2>8. International Users</h2>
