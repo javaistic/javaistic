@@ -1,321 +1,178 @@
-------
+title: Java Program to Check Palindrome Number
 
-title: Java Program to Check Palindrome Numbertitle: Java Program to Check Palindrome Number
+shortTitle: Check Palindrome Number
 
-shortTitle: Check Palindrome NumbershortTitle: Check Palindrome Number
+description: Learn how to check if a number is a palindrome in Java using digit reversal and string comparison methods with clear examples.
 
-description: Learn how to check if a number is a palindrome in Java using digit reversal and string comparison methods with clear examples.description: Learn how to check if a number is a palindrome in Java using digit reversal and string comparison methods with clear examples.
+---
 
-------
+A palindrome number reads the same forwards and backwards (e.g., 121, 1331, 7). In this article, we'll implement two approaches to check if a number is a palindrome:
 
+- Reverse the number and compare with original
+- Convert to string and compare with its reverse
 
 
-A palindrome number reads the same forwards and backwards (e.g., 121, 1331, 7). In this article, we'll implement two approaches to check if a number is a palindrome:A palindrome number reads the same forwards and backwards (e.g., 121, 1331, 7). In this article, we'll implement two approaches to check if a number is a palindrome:
 
+Before you start, you may want to review:
 
+- [Java Variables and Literals](/docs/variables-and-literals)
+- [Java Operators](/docs/operators)
+- [Java Basic Input and Output](/docs/basic-input-output)
 
-- Reverse the number and compare with original- Reverse the number and compare with original
+## 1) Mathematical Approach (Reverse Number)
 
-- Convert to string and compare with its reverse- Convert to string and compare with its reverse
+This method reverses the number mathematically by extracting digits.
 
 
 
-Before you start, you may want to review:Before you start, you may want to review:
+### Example
 
+```java
+class Main {
+  public static void main(String[] args) {
+    int num = 121; // change value to test
 
+    if (isPalindrome(num)) {
+      System.out.println(num + " is a palindrome number.");
+    } else {
+      System.out.println(num + " is not a palindrome number.");
+    }
+  }
 
-- [Java Variables and Literals](/docs/variables-and-literals)- [Java Variables and Literals](/docs/variables-and-literals)
 
-- [Java Operators](/docs/operators)- [Java Operators](/docs/operators)
 
-- [Java Basic Input and Output](/docs/basic-input-output)- [Java Basic Input and Output](/docs/basic-input-output)
+  static boolean isPalindrome(int num) {
+    int original = num;
+    int reversed = 0;
 
+    // Handle negative numbers
+    if (num < 0) return false;
 
+    // Reverse the number
+    while (num > 0) {
+      int digit = num % 10;
+      reversed = reversed * 10 + digit;
+      num /= 10;
+    }
 
-## 1) Mathematical Approach (Reverse Number)## 1) Mathematical Approach (Reverse Number)
+    return original == reversed;
+  }
+}
 
+```
 
+#### Output (for num = 121)
+```plaintext
+121 is a palindrome number.
+```
 
-This method reverses the number mathematically by extracting digits.This method reverses the number mathematically by extracting digits.
+## 2) String Comparison Approach
 
+Convert the number to string and compare with its reverse.
 
 
-### Example### Example
 
+### Example
 
+```java
+class Main {
+  public static void main(String[] args) {
+    int num = 1234; // change value to test
 
-```java```java
+    if (isPalindromeString(num)) {
+      System.out.println(num + " is a palindrome number.");
+    } else {
+      System.out.println(num + " is not a palindrome number.");
+    }
+  }
 
-class Main {class Main {
 
-  public static void main(String[] args) {  public static void main(String[] args) {
 
-    int num = 121; // change value to test    int num = 121; // change value to test
+  static boolean isPalindromeString(int num) {
+    // Handle negative numbers
+    if (num < 0) return false;
 
-    
+    String original = String.valueOf(num);
+    String reversed = new StringBuilder(original).reverse().toString();
 
-    if (isPalindrome(num)) {    if (isPalindrome(num)) {
+    return original.equals(reversed);
+  }
+}
 
-      System.out.println(num + " is a palindrome number.");      System.out.println(num + " is a palindrome number.");
+```
 
-    } else {    } else {
+#### Output (for num = 1234)
+```plaintext
+1234 is not a palindrome number.
+```
 
-      System.out.println(num + " is not a palindrome number.");      System.out.println(num + " is not a palindrome number.");
+## 3) Interactive Program
 
-    }    }
+A complete program that takes user input and tests multiple numbers.
 
-  }  }
 
-  
 
-  static boolean isPalindrome(int num) {  static boolean isPalindrome(int num) {
+### Example
 
-    int original = num;    int original = num;
+```java
+import java.util.Scanner;
 
-    int reversed = 0;    int reversed = 0;
+class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
 
-    
+    System.out.print("Enter a number to check: ");
+    int num = scanner.nextInt();
 
-    // Handle negative numbers    // Handle negative numbers
+    System.out.println("\nChecking " + num + "...");
 
-    if (num < 0) return false;    if (num < 0) return false;
+    // Method 1: Mathematical approach
+    boolean result1 = isPalindromeMath(num);
+    System.out.println("Mathematical method: " + (result1 ? "Palindrome" : "Not palindrome"));
 
-    
+    // Method 2: String approach
+    boolean result2 = isPalindromeString(num);
+    System.out.println("String method: " + (result2 ? "Palindrome" : "Not palindrome"));
 
-    // Reverse the number    // Reverse the number
+    scanner.close();
+  }
 
-    while (num > 0) {    while (num > 0) {
 
-      int digit = num % 10;      int digit = num % 10;
 
-      reversed = reversed * 10 + digit;      reversed = reversed * 10 + digit;
+  static boolean isPalindromeMath(int num) {
+    if (num < 0) return false;
+    int original = num, reversed = 0;
+    while (num > 0) {
+      reversed = reversed * 10 + num % 10;
+      num /= 10;
+    }
+    return original == reversed;
+  }
 
-      num /= 10;      num /= 10;
+  static boolean isPalindromeString(int num) {
+    if (num < 0) return false;
+    String str = String.valueOf(num);
+    return str.equals(new StringBuilder(str).reverse().toString());
+  }
+}
 
-    }    }
+```
 
-    
+#### Sample Output
 
-    return original == reversed;    return original == reversed;
+```plaintext
+Enter a number to check: 12321
 
-  }  }
+Checking 12321...
+Mathematical method: Palindrome
+String method: Palindrome
+```
 
-}}
+---
 
-``````
+### Notes & Tips
 
-
-
-#### Output (for num = 121)#### Output (for num = 121)
-
-
-
-```plaintext```plaintext
-
-121 is a palindrome number.121 is a palindrome number.
-
-``````
-
-
-
-## 2) String Comparison Approach## 2) String Comparison Approach
-
-
-
-Convert the number to string and compare with its reverse.Convert the number to string and compare with its reverse.
-
-
-
-### Example### Example
-
-
-
-```java```java
-
-class Main {class Main {
-
-  public static void main(String[] args) {  public static void main(String[] args) {
-
-    int num = 1234; // change value to test    int num = 1234; // change value to test
-
-    
-
-    if (isPalindromeString(num)) {    if (isPalindromeString(num)) {
-
-      System.out.println(num + " is a palindrome number.");      System.out.println(num + " is a palindrome number.");
-
-    } else {    } else {
-
-      System.out.println(num + " is not a palindrome number.");      System.out.println(num + " is not a palindrome number.");
-
-    }    }
-
-  }  }
-
-  
-
-  static boolean isPalindromeString(int num) {  static boolean isPalindromeString(int num) {
-
-    // Handle negative numbers    // Handle negative numbers
-
-    if (num < 0) return false;    if (num < 0) return false;
-
-    
-
-    String original = String.valueOf(num);    String original = String.valueOf(num);
-
-    String reversed = new StringBuilder(original).reverse().toString();    String reversed = new StringBuilder(original).reverse().toString();
-
-    
-
-    return original.equals(reversed);    return original.equals(reversed);
-
-  }  }
-
-}}
-
-``````
-
-
-
-#### Output (for num = 1234)#### Output (for num = 1234)
-
-
-
-```plaintext```plaintext
-
-1234 is not a palindrome number.1234 is not a palindrome number.
-
-``````
-
-
-
-## 3) Interactive Program## 3) Interactive Program
-
-
-
-A complete program that takes user input and tests multiple numbers.A complete program that takes user input and tests multiple numbers.
-
-
-
-### Example### Example
-
-
-
-```java```java
-
-import java.util.Scanner;import java.util.Scanner;
-
-
-
-class Main {class Main {
-
-  public static void main(String[] args) {  public static void main(String[] args) {
-
-    Scanner scanner = new Scanner(System.in);    Scanner scanner = new Scanner(System.in);
-
-    
-
-    System.out.print("Enter a number to check: ");    System.out.print("Enter a number to check: ");
-
-    int num = scanner.nextInt();    int num = scanner.nextInt();
-
-    
-
-    System.out.println("\nChecking " + num + "...");    System.out.println("\nChecking " + num + "...");
-
-    
-
-    // Method 1: Mathematical approach    // Method 1: Mathematical approach
-
-    boolean result1 = isPalindromeMath(num);    boolean result1 = isPalindromeMath(num);
-
-    System.out.println("Mathematical method: " + (result1 ? "Palindrome" : "Not palindrome"));    System.out.println("Mathematical method: " + (result1 ? "Palindrome" : "Not palindrome"));
-
-    
-
-    // Method 2: String approach    // Method 2: String approach
-
-    boolean result2 = isPalindromeString(num);    boolean result2 = isPalindromeString(num);
-
-    System.out.println("String method: " + (result2 ? "Palindrome" : "Not palindrome"));    System.out.println("String method: " + (result2 ? "Palindrome" : "Not palindrome"));
-
-    
-
-    scanner.close();    scanner.close();
-
-  }  }
-
-  
-
-  static boolean isPalindromeMath(int num) {  static boolean isPalindromeMath(int num) {
-
-    if (num < 0) return false;    if (num < 0) return false;
-
-    int original = num, reversed = 0;    int original = num, reversed = 0;
-
-    while (num > 0) {    while (num > 0) {
-
-      reversed = reversed * 10 + num % 10;      reversed = reversed * 10 + num % 10;
-
-      num /= 10;      num /= 10;
-
-    }    }
-
-    return original == reversed;    return original == reversed;
-
-  }  }
-
-  
-
-  static boolean isPalindromeString(int num) {  static boolean isPalindromeString(int num) {
-
-    if (num < 0) return false;    if (num < 0) return false;
-
-    String str = String.valueOf(num);    String str = String.valueOf(num);
-
-    return str.equals(new StringBuilder(str).reverse().toString());    return str.equals(new StringBuilder(str).reverse().toString());
-
-  }  }
-
-}}
-
-``````
-
-
-
-#### Sample Output#### Sample Output
-
-
-
-```plaintext```plaintext
-
-Enter a number to check: 12321Enter a number to check: 12321
-
-
-
-Checking 12321...Checking 12321...
-
-Mathematical method: PalindromeMathematical method: Palindrome
-
-String method: PalindromeString method: Palindrome
-
-``````
-
-
-
-------
-
-
-
-### Notes & Tips### Notes & Tips
-
-
-
-- **Performance**: Mathematical approach is generally faster as it avoids string operations- **Performance**: Mathematical approach is generally faster as it avoids string operations
-
-- **Edge cases**: Negative numbers are typically not considered palindromes- **Edge cases**: Negative numbers are typically not considered palindromes
-
-- **Common palindromes**: 0, 1, 11, 22, 101, 121, 131, 1001, 1221, etc.- **Common palindromes**: 0, 1, 11, 22, 101, 121, 131, 1001, 1221, etc.
-
-- **Memory**: Mathematical approach uses O(1) space, string approach uses O(log n) space- **Memory**: Mathematical approach uses O(1) space, string approach uses O(log n) space
+- **Performance**: Mathematical approach is generally faster as it avoids string operations
+- **Edge cases**: Negative numbers are typically not considered palindromes
+- **Common palindromes**: 0, 1, 11, 22, 101, 121, 131, 1001, 1221, etc.
+- **Memory**: Mathematical approach uses O(1) space, string approach uses O(log n) space
