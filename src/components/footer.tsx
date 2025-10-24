@@ -30,7 +30,7 @@ const footerNav = {
   Legal: [
     { title: "Privacy Policy", href: "/legal/privacy" },
     { title: "Terms of Service", href: "/legal/terms" },
-    { title: "License", href: "/license" },
+    { title: "License", href: "/legal/license" },
     { title: "Security", href: "/security" },
   ],
 };
