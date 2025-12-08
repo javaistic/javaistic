@@ -571,7 +571,7 @@ const SecurityPage = () => {
                       Email:
                     </span>
                     <span className="text-blue-600 dark:text-blue-400">
-                      uiuxarghya@gmail.com
+                      arghyaxcodes@gmail.com
                     </span>
                   </div>
                   <div className="flex items-center">

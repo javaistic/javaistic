@@ -86,7 +86,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="font-bold text-neutral-800 dark:text-white"
               >
-                @uiuxarghya
+                @arghyaxcodes
               </Link>
             </div>
           </div>

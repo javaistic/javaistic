@@ -163,7 +163,7 @@ Please read our [Contributing Guidelines](CONTRIBUTING.md) and [Code of Conduct]
 
 **Founder & Lead Developer**
 
-- [Arghya Ghosh](https://twitter.com/uiuxarghya) ([@uiuxarghya](https://github.com/uiuxarghya))
+- [Arghya Ghosh](https://twitter.com/arghyaxcodes) ([@arghyaxcodes](https://github.com/arghyaxcodes))
 
 **Contributors**
 

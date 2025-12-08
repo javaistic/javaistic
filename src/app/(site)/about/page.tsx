@@ -470,7 +470,7 @@ export default function AboutPage() {
                 whileHover={{ scale: 1.05 }}
               >
                 <motion.img
-                  src="https://github.com/uiuxarghya.png"
+                  src="https://github.com/arghyaxcodes.png"
                   alt="Arghya Ghosh - Founder & Lead Developer"
                   className="h-full w-full rounded-full object-cover shadow-lg ring-4 ring-orange-500/20"
                   whileHover={{ rotate: 5 }}
@@ -490,7 +490,7 @@ export default function AboutPage() {
               </p>
               <div className="flex justify-center space-x-6">
                 <Link
-                  href="https://github.com/uiuxarghya"
+                  href="https://github.com/arghyaxcodes"
                   target="_blank"
                   className="text-muted-foreground hover:text-foreground group/link transition-colors"
                 >

@@ -18,4 +18,4 @@ See [`LICENSE-CC.md`](./licenses/LICENSE-CC.md) for full terms.
 
 Copyright © 2025 [Arghya Ghosh](https://arghya.dev)
 
-For inquiries, please [contact me directly](mailto:uiuxarghya@gmail.com).
+For inquiries, please [contact me directly](mailto:arghyaxcodes@gmail.com).

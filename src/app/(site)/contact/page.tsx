@@ -408,8 +408,8 @@ export default function ContactUsPage() {
                   <ContactInfoItem
                     icon={Mail}
                     title="Email"
-                    description="uiuxarghya@gmail.com"
-                    href="mailto:uiuxarghya@gmail.com"
+                    description="arghyaxcodes@gmail.com"
+                    href="mailto:arghyaxcodes@gmail.com"
                   />
                   <ContactInfoItem
                     icon={GitHubIcon}

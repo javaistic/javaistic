@@ -215,10 +215,10 @@ export default function LicensePage(): React.ReactElement {
           <li>
             <strong>Email:</strong>{" "}
             <a
-              href="mailto:uiuxarghya@gmail.com"
+              href="mailto:arghyaxcodes@gmail.com"
               className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
             >
-              uiuxarghya@gmail.com
+              arghyaxcodes@gmail.com
             </a>
           </li>
           <li>
