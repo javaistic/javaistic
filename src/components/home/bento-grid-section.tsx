@@ -1,26 +1,26 @@
 "use client";
 
-import { motion } from "motion/react";
-import Image from "next/image";
 import {
-  TargetIcon,
-  RocketIcon,
+  FlameIcon,
   HeartIcon,
-  ZapIcon,
+  RocketIcon,
   SearchIcon,
   SparklesIcon,
-  FlameIcon,
+  TargetIcon,
+  ZapIcon,
 } from "lucide-react";
+import { motion } from "motion/react";
+import Image from "next/image";
 import { useDarkMode } from "@/hooks/useDarkMode";
-import { Badge } from "./badge";
 import { ANIMATION_VARIANTS, HOVER_ANIMATIONS } from "./animation-variants";
+import { Badge } from "./badge";
 
 export function BentoGridSection() {
   const { isDarkMode, mounted } = useDarkMode();
 
   return (
     <motion.section
-      className="mx-auto my-16 grid w-full max-w-5xl grid-cols-1 gap-4 sm:h-[700px] sm:grid-cols-8"
+      className="mx-auto my-16 grid w-full max-w-5xl grid-cols-1 gap-4 sm:h-175 sm:grid-cols-8"
       variants={ANIMATION_VARIANTS.container}
       initial="hidden"
       animate="visible"
@@ -36,7 +36,7 @@ export function BentoGridSection() {
         }}
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
-        <motion.div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-500/5 to-purple-500/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-active:opacity-100" />
+        <motion.div className="absolute inset-0 rounded-2xl bg-linear-to-br from-violet-500/5 to-purple-500/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-active:opacity-100" />
 
         <motion.div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start">
           <motion.div className="col-span-2 flex flex-col gap-4 text-left sm:flex-1">
@@ -55,7 +55,7 @@ export function BentoGridSection() {
           </motion.div>
 
           <motion.div
-            className="col-span-3 flex-shrink-0"
+            className="col-span-3 shrink-0"
             whileHover={{ scale: 1.02, rotate: 1 }}
             whileTap={{ scale: 1.05, rotate: 2 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
@@ -64,13 +64,13 @@ export function BentoGridSection() {
               <Image
                 src={isDarkMode ? "/img/ui-dark.png" : "/img/ui-light.png"}
                 alt="Community-Driven Learning Platform"
-                className="h-[200px] w-full rounded-lg border object-contain transition-all duration-300 group-hover:shadow-lg group-active:shadow-lg sm:h-[250px]"
+                className="h-50 w-full rounded-lg border object-contain transition-all duration-300 group-hover:shadow-lg group-active:shadow-lg sm:h-62.5"
                 loading="lazy"
                 width={400}
                 height={250}
               />
             ) : (
-              <div className="bg-muted/50 h-[180px] w-[220px] animate-pulse rounded-lg sm:h-[220px] sm:w-[260px]" />
+              <div className="bg-muted/50 h-45 w-55 animate-pulse rounded-lg sm:h-[220px] sm:w-[260px]" />
             )}
           </motion.div>
         </motion.div>
@@ -202,7 +202,7 @@ export function BentoGridSection() {
         }}
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
-        <motion.div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-500/10 via-transparent to-yellow-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-active:opacity-100" />
+        <motion.div className="absolute inset-0 rounded-2xl bg-linear-to-br from-amber-500/10 via-transparent to-yellow-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-active:opacity-100" />
         <motion.div className="relative z-10 flex h-full flex-col justify-between">
           <motion.div
             className="flex flex-1 items-center justify-center"
@@ -247,7 +247,7 @@ export function BentoGridSection() {
         }}
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
-        <motion.div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-500/10 via-transparent to-emerald-500/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-active:opacity-100" />
+        <motion.div className="absolute inset-0 rounded-2xl bg-linear-to-br from-green-500/10 via-transparent to-emerald-500/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-active:opacity-100" />
         <motion.div className="relative z-10 flex flex-col gap-4 text-left sm:flex-1">
           <motion.h2
             className="font-funnel-display text-foreground text-3xl leading-tight font-bold transition-colors duration-300 select-none group-hover:text-green-600 group-active:text-green-600"
@@ -305,7 +305,7 @@ export function BentoGridSection() {
                 isDarkMode ? "/img/search-dark.png" : "/img/search-light.png"
               }
               alt="Advanced Search Interface"
-              className="h-[200px] w-full max-w-[280px] rounded-lg object-contain transition-all duration-300 group-hover:shadow-xl group-active:shadow-xl sm:h-[250px] sm:max-w-none"
+              className="aspect-auto h-[200px] w-full max-w-[280px] rounded-lg object-contain transition-all duration-300 group-hover:shadow-xl group-active:shadow-xl sm:h-[250px] sm:max-w-none"
               loading="lazy"
               width={280}
               height={250}

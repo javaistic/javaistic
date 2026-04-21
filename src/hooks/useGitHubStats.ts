@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface GitHubStats {
   stars: number;
@@ -15,6 +15,18 @@ interface UseGitHubStatsReturn {
   lastUpdated: Date | null;
 }
 
+const PRODUCTION_FALLBACK: GitHubStats = {
+  stars: 40,
+  forks: 19,
+  issues: 4,
+  contributors: 15,
+};
+
+// Production configuration
+const CACHE_KEY = "github-stats-javaistic";
+const CACHE_DURATION = 2 * 60 * 60 * 1000; // 2 hours - conservative for production
+const STALE_WHILE_REVALIDATE = 24 * 60 * 60 * 1000; // 24 hours - serve stale data if needed
+
 // Production-ready GitHub Stats Hook with Smart Rate Limiting
 export const useGitHubStats = (): UseGitHubStatsReturn => {
   const [stats, setStats] = useState<GitHubStats>({
@@ -27,21 +39,8 @@ export const useGitHubStats = (): UseGitHubStatsReturn => {
   const [error, setError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
-  // Production configuration
-  const CACHE_KEY = "github-stats-javaistic";
-  const CACHE_DURATION = 2 * 60 * 60 * 1000; // 2 hours - conservative for production
-  const STALE_WHILE_REVALIDATE = 24 * 60 * 60 * 1000; // 24 hours - serve stale data if needed
-
-  // Conservative fallback data based on current repo stats
-  const PRODUCTION_FALLBACK: GitHubStats = {
-    stars: 40,
-    forks: 19,
-    issues: 4,
-    contributors: 15,
-  };
-
   // Enhanced cache management with versioning
-  const getCachedData = () => {
+  const getCachedData = useCallback(() => {
     try {
       const cached = localStorage.getItem(CACHE_KEY);
       if (!cached) return null;
@@ -63,32 +62,35 @@ export const useGitHubStats = (): UseGitHubStatsReturn => {
       console.warn("Cache read error:", err);
       return null;
     }
-  };
+  }, []);
 
-  const setCachedData = (
-    data: GitHubStats,
-    metadata: { rateLimited?: boolean; source?: string } = {},
-  ) => {
-    try {
-      const cacheData = {
-        data,
-        timestamp: Date.now(),
-        version: "1.0",
-        metadata: {
-          rateLimited: metadata.rateLimited || false,
-          source: metadata.source || "github-api",
-          userAgent: "javaistic-website",
-        },
-      };
+  const setCachedData = useCallback(
+    (
+      data: GitHubStats,
+      metadata: { rateLimited?: boolean; source?: string } = {},
+    ) => {
+      try {
+        const cacheData = {
+          data,
+          timestamp: Date.now(),
+          version: "1.0",
+          metadata: {
+            rateLimited: metadata.rateLimited || false,
+            source: metadata.source || "github-api",
+            userAgent: "javaistic-website",
+          },
+        };
 
-      localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData));
-      setLastUpdated(new Date());
-    } catch (err) {
-      console.warn("Cache write error:", err);
-    }
-  };
+        localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData));
+        setLastUpdated(new Date());
+      } catch (err) {
+        console.warn("Cache write error:", err);
+      }
+    },
+    [],
+  );
 
-  const fetchWithRateLimitHandling = async () => {
+  const fetchWithRateLimitHandling = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -114,7 +116,7 @@ export const useGitHubStats = (): UseGitHubStatsReturn => {
         {
           headers: {
             Accept: "application/vnd.github.v3+json",
-            "X-GitHub-Api-Version": "2022-11-28",
+            "X-GitHub-Api-Version": "2026-03-10",
           },
           signal: controller.signal,
         },
@@ -125,7 +127,7 @@ export const useGitHubStats = (): UseGitHubStatsReturn => {
       // Check rate limit headers proactively
       const remaining = response.headers.get("X-RateLimit-Remaining");
 
-      if (remaining && parseInt(remaining) < 5) {
+      if (remaining && parseInt(remaining, 10) < 5) {
         console.warn(
           `GitHub API rate limit low: ${remaining} requests remaining`,
         );
@@ -189,7 +191,7 @@ export const useGitHubStats = (): UseGitHubStatsReturn => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [getCachedData, setCachedData]);
 
   useEffect(() => {
     // Initial load
@@ -200,7 +202,7 @@ export const useGitHubStats = (): UseGitHubStatsReturn => {
     const interval = setInterval(fetchWithRateLimitHandling, refreshInterval);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchWithRateLimitHandling]);
 
   return {
     stats,

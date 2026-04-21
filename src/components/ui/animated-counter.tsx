@@ -22,7 +22,7 @@ export const useAnimatedCounter = ({
       const progress = Math.min(elapsed / duration, 1);
 
       // Easing function for smooth animation
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const easeOutQuart = 1 - (1 - progress) ** 4;
       const currentValue = Math.round(
         startValue + (value - startValue) * easeOutQuart,
       );

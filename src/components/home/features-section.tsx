@@ -2,8 +2,8 @@
 import { motion } from "motion/react";
 import { useMemo } from "react";
 import { useDarkMode } from "@/hooks/useDarkMode";
-import { FeatureCard } from "./feature-card";
 import { ANIMATION_VARIANTS } from "./animation-variants";
+import { FeatureCard } from "./feature-card";
 
 export function FeaturesSection() {
   const { isDarkMode, mounted } = useDarkMode();
@@ -86,7 +86,7 @@ export function FeaturesSection() {
         inspiring.
       </motion.p>
       <motion.div
-        className="grid w-full max-w-5xl grid-cols-1 gap-6 sm:h-[370px] sm:grid-cols-3"
+        className="grid w-full max-w-5xl grid-cols-1 gap-6 sm:h-92.5 sm:grid-cols-3"
         variants={ANIMATION_VARIANTS.container}
         initial="hidden"
         animate="visible"

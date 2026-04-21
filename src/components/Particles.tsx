@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import { Renderer, Camera, Geometry, Program, Mesh } from "ogl";
+import { Camera, Geometry, Mesh, Program, Renderer } from "ogl";
+import type React from "react";
+import { useEffect, useRef } from "react";
 
 interface ParticlesProps {
   particleCount?: number;
