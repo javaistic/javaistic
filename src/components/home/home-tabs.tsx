@@ -1,13 +1,13 @@
 "use client";
 
-import {
-  UnderlineTabs,
-  type UnderlineTab,
-} from "@/components/home/underline-tabs";
-import { useDarkMode } from "@/hooks/useDarkMode";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
+import {
+  type UnderlineTab,
+  UnderlineTabs,
+} from "@/components/home/underline-tabs";
+import { useDarkMode } from "@/hooks/useDarkMode";
 
 export default function HomeTabs() {
   const { isDarkMode, mounted } = useDarkMode();

@@ -1,5 +1,5 @@
+import { type NextRequest, NextResponse } from "next/server";
 import { fetchGitHubReleases } from "@/lib/github";
-import { NextResponse, NextRequest } from "next/server";
 
 export const revalidate = 86400; // Revalidate every 24 hours
 

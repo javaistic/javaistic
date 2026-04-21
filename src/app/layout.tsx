@@ -1,9 +1,10 @@
-import SearchDialog from "@/components/search";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { RootProvider } from "fumadocs-ui/provider";
 import type { Metadata } from "next";
 import { Funnel_Display, Inter, JetBrains_Mono } from "next/font/google";
 import type { ReactNode } from "react";
+import SearchDialog from "@/components/search";
+import { baseUrl } from "@/lib/metadata";
 import "./global.css";
 
 const inter = Inter({
@@ -31,19 +32,25 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://javaistic.vercel.app"),
+  metadataBase: new URL(baseUrl),
   title: "Javaistic - Learn Java for Free",
   description:
     "Javaistic is a free platform to learn Java programming language with interactive tutorials and resources.",
   openGraph: {
-    images: "https://javaistic.vercel.app/og.png",
+    images: ["/og.png"],
     siteName: "Javaistic",
-    url: "https://javaistic.vercel.app",
+    url: baseUrl,
+    type: "website",
   },
+  // ...
   twitter: {
     card: "summary_large_image",
+    title: "Javaistic - Learn Java for Free",
+    description:
+      "Javaistic is a free platform to learn Java programming language with interactive tutorials and resources.",
     site: "@javaistic",
     creator: "@arghyaxcodes",
+    images: ["/og.png"],
   },
 };
 
@@ -61,7 +68,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </RootProvider>
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS!} />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || ""} />
     </html>
   );
 }

@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
 import {
   DiscordIcon,
   GitHubIcon,
@@ -6,8 +8,6 @@ import {
   TwitterIcon,
 } from "@/components/icons";
 import Logo from "@/components/logo";
-import Link from "next/link";
-import Image from "next/image";
 
 const footerNav = {
   "Getting Started": [

@@ -1,13 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import {
-  Calendar,
   AlertCircle,
-  RotateCcw,
-  ExternalLink,
   AlertTriangle,
+  Calendar,
+  ExternalLink,
+  RotateCcw,
 } from "lucide-react";
+import Image from "next/image";
+import { useCallback, useEffect, useState } from "react";
 import { extractWhatsNew } from "@/lib/github";
 
 interface ChangelogEntry {
@@ -28,7 +29,7 @@ export default function ChangelogPage() {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [filter, setFilter] = useState<"all" | "stable" | "prerelease">("all");
 
-  const fetchReleases = async (skipCache = false) => {
+  const fetchReleases = useCallback(async (skipCache = false) => {
     try {
       setLoading(true);
       const url = skipCache ? `/api/releases?t=${Date.now()}` : "/api/releases";
@@ -55,7 +56,7 @@ export default function ChangelogPage() {
       setLoading(false);
       setIsRefreshing(false);
     }
-  };
+  }, []);
 
   const handleRefresh = async () => {
     setIsRefreshing(true);
@@ -64,18 +65,19 @@ export default function ChangelogPage() {
 
   useEffect(() => {
     fetchReleases();
-  }, []);
+  }, [fetchReleases]);
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-36 pb-14">
       <div className="mb-12 text-center">
-        <h1 className="font-funnel-display bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-700 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl dark:from-neutral-100 dark:via-neutral-200 dark:to-neutral-300">
+        <h1 className="font-funnel-display bg-linear-to-br from-neutral-900 via-neutral-800 to-neutral-700 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl dark:from-neutral-100 dark:via-neutral-200 dark:to-neutral-300">
           Changelog
         </h1>
         <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
           Latest releases and updates from Javaistic
         </p>
         <button
+          type="button"
           onClick={handleRefresh}
           disabled={isRefreshing}
           className="border-primary/20 bg-primary/10 text-primary hover:border-primary/40 hover:bg-primary/20 mt-6 inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium transition-all disabled:cursor-not-allowed disabled:opacity-50"
@@ -89,6 +91,7 @@ export default function ChangelogPage() {
 
       <div className="mb-12 flex justify-center gap-4">
         <button
+          type="button"
           onClick={() => setFilter("all")}
           className={`rounded-lg border px-4 py-2 text-sm font-medium transition-all ${
             filter === "all"
@@ -99,6 +102,7 @@ export default function ChangelogPage() {
           All Releases
         </button>
         <button
+          type="button"
           onClick={() => setFilter("stable")}
           className={`rounded-lg border px-4 py-2 text-sm font-medium transition-all ${
             filter === "stable"
@@ -109,6 +113,7 @@ export default function ChangelogPage() {
           Stable
         </button>
         <button
+          type="button"
           onClick={() => setFilter("prerelease")}
           className={`rounded-lg border px-4 py-2 text-sm font-medium transition-all ${
             filter === "prerelease"
@@ -139,10 +144,10 @@ export default function ChangelogPage() {
       {loading && (
         <div className="relative">
           <div className="bg-muted absolute top-0 bottom-0 left-4 w-px sm:left-6 sm:w-0.5"></div>
-          {Array.from({ length: 3 }).map((_, i) => (
-            <div key={i} className="relative mb-12">
+          {[1, 2, 3].map((id) => (
+            <div key={`skeleton-${id}`} className="relative mb-12">
               <div className="flex items-start">
-                <div className="mr-4 flex-shrink-0">
+                <div className="mr-4 shrink-0">
                   <div className="bg-muted-foreground mt-2 h-4 w-4 animate-pulse rounded-full"></div>
                 </div>
                 <div className="flex-1">
@@ -176,6 +181,7 @@ export default function ChangelogPage() {
               <p className="text-destructive/80 text-sm">{error}</p>
             </div>
             <button
+              type="button"
               onClick={() => fetchReleases()}
               className="border-destructive/20 bg-destructive/10 text-destructive hover:border-destructive/40 hover:bg-destructive/20 inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm font-medium transition-all"
             >
@@ -194,7 +200,7 @@ export default function ChangelogPage() {
       )}
 
       <div className="relative">
-        <div className="absolute top-0 bottom-0 left-4 w-px bg-gradient-to-b from-sky-400 to-sky-600 sm:left-6 sm:w-0.5 dark:from-sky-500 dark:to-sky-700"></div>
+        <div className="absolute top-0 bottom-0 left-4 w-px bg-linear-to-b from-sky-400 to-sky-600 sm:left-6 sm:w-0.5 dark:from-sky-500 dark:to-sky-700"></div>
         {(() => {
           const filteredEntries = entries.filter(
             (entry) =>
@@ -208,14 +214,14 @@ export default function ChangelogPage() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-start">
-                <div className="mr-6 flex-shrink-0 sm:mr-10">
+                <div className="mr-6 shrink-0 sm:mr-10">
                   <div
                     className={`mt-2 h-4 w-4 cursor-pointer rounded-full border-4 border-white shadow-sm transition-colors duration-200 hover:bg-sky-600 dark:border-neutral-900 ${index === 0 ? "bg-green-500" : "bg-sky-500"}`}
                   ></div>
                 </div>
                 <div className="flex-1">
                   <div className="mb-2 flex items-center gap-3">
-                    <h3 className="bg-gradient-to-r from-neutral-900 to-neutral-700 bg-clip-text text-xl font-bold text-transparent dark:from-neutral-100 dark:to-neutral-300">
+                    <h3 className="bg-linear-to-r from-neutral-900 to-neutral-700 bg-clip-text text-xl font-bold text-transparent dark:from-neutral-100 dark:to-neutral-300">
                       {entry.version}
                     </h3>
                     {entry.prerelease && (
@@ -236,10 +242,12 @@ export default function ChangelogPage() {
                     </div>
                     {entry.author && (
                       <div className="flex items-center gap-2">
-                        <img
+                        <Image
                           src={entry.author.avatar}
                           alt={entry.author.name}
                           className="h-5 w-5 rounded-full"
+                          width={20}
+                          height={20}
                         />
                         <span>
                           by <strong>{entry.author.name}</strong>
@@ -257,11 +265,12 @@ export default function ChangelogPage() {
                   </div>
                   <div className="prose prose-sm dark:prose-invert max-w-none">
                     <div className="bg-card border-border hover:border-border/80 rounded-xl border p-6 transition-all duration-200 hover:shadow-lg">
-                      <img
+                      <Image
                         src={`https://og-javaistic.vercel.app/og?title=${entry.version} Release`}
                         alt="Javaistic Badge"
                         className="border-border mt-0 mb-4 w-full rounded-xl border"
-                        loading="lazy"
+                        width={800}
+                        height={420}
                       />
                       <h4 className="text-card-foreground mb-3 text-lg font-bold">
                         What&apos;s New

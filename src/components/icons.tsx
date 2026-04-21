@@ -1,4 +1,4 @@
-import { JSX, SVGProps } from "react";
+import type { JSX, SVGProps } from "react";
 
 export function GitHubIcon(
   props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>,

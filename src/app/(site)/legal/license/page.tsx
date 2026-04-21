@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function LicensePage(): React.ReactElement {
   return (
     <main className="container max-w-4xl pt-20 max-sm:px-0 md:pb-12">
@@ -30,10 +32,13 @@ export default function LicensePage(): React.ReactElement {
             1. Platform Code (Source Code)
           </h3>
           <div className="mb-4 flex items-center gap-4">
-            <img
+            <Image
               src="https://img.shields.io/badge/License-AGPL%20v3-blue.svg"
               alt="AGPL v3 License"
-              className="h-6"
+              className="h-6 w-auto"
+              width={100}
+              height={24}
+              unoptimized
             />
             <span className="text-lg font-medium">
               GNU Affero General Public License v3.0 (AGPL-3.0)
@@ -71,6 +76,7 @@ export default function LicensePage(): React.ReactElement {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
+              <title>External Link</title>
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -86,10 +92,13 @@ export default function LicensePage(): React.ReactElement {
             2. Content (Documentation, Blog, Articles)
           </h3>
           <div className="mb-4 flex items-center gap-4">
-            <img
+            <Image
               src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"
               alt="CC BY-NC-SA 4.0"
-              className="h-6"
+              className="h-6 w-auto"
+              width={88}
+              height={31}
+              unoptimized
             />
             <span className="text-lg font-medium">
               Creative Commons Attribution-NonCommercial-ShareAlike 4.0
@@ -140,6 +149,7 @@ export default function LicensePage(): React.ReactElement {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
+              <title>External Link</title>
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"

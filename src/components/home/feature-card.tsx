@@ -1,6 +1,6 @@
 "use client";
-import Image from "next/image";
 import { motion } from "motion/react";
+import Image from "next/image";
 import { HOVER_ANIMATIONS } from "./animation-variants";
 
 // Feature Card Component for better reusability

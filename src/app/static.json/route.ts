@@ -1,7 +1,7 @@
-import { programsSource, source } from "@/lib/source";
-import { StructuredData } from "fumadocs-core/mdx-plugins";
-import { type DocumentRecord } from "fumadocs-core/search/algolia";
+import type { StructuredData } from "fumadocs-core/mdx-plugins";
+import type { DocumentRecord } from "fumadocs-core/search/algolia";
 import { NextResponse } from "next/server";
+import { programsSource, source } from "@/lib/source";
 
 export const revalidate = false;
 

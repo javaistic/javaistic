@@ -1,6 +1,6 @@
-import Logo from "@/components/logo";
 import type { BaseLayoutProps, LinkItemType } from "fumadocs-ui/layouts/shared";
 import { AlbumIcon, HeartIcon } from "lucide-react";
+import Logo from "@/components/logo";
 
 /**
  * Shared layout configurations
@@ -14,6 +14,7 @@ export const baseOptions: BaseLayoutProps = {
     title: (
       <>
         <Logo className="h-7 w-auto" />
+        <span className="sr-only">Javaistic</span>
       </>
     ),
   },

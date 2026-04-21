@@ -1,8 +1,8 @@
 "use client";
 
+import { motion } from "motion/react";
 import { GitHubIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import { motion } from "motion/react";
 import { ANIMATION_VARIANTS } from "./animation-variants";
 
 export function HeroSection() {
@@ -59,7 +59,7 @@ export function HeroSection() {
             className="dark:text-foreground border-blue cursor-pointer rounded-lg py-6 text-lg font-semibold"
             aria-label="View Javaistic project on GitHub"
           >
-            <GitHubIcon className="!size-5" aria-hidden="true" />
+            <GitHubIcon className="size-5!" aria-hidden="true" />
             Star on GitHub
           </Button>
         </motion.a>

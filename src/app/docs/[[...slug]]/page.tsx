@@ -1,5 +1,3 @@
-import { source } from "@/lib/source";
-import { getMDXComponents } from "@/mdx-components";
 import { createRelativeLink } from "fumadocs-ui/mdx";
 import {
   DocsBody,
@@ -9,15 +7,19 @@ import {
 } from "fumadocs-ui/page";
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
-import { Article, WithContext } from "schema-dts";
+import Script from "next/script";
+import type { Article, BreadcrumbList, WithContext } from "schema-dts";
+import { baseUrl } from "@/lib/metadata";
+import { source } from "@/lib/source";
+import { getMDXComponents } from "@/mdx-components";
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
   const page = source.getPage(params.slug);
-  const owner = "javaistic";
-  const repo = "javaistic";
+  const _owner = "javaistic";
+  const _repo = "javaistic";
 
   if (!page) notFound();
 
@@ -28,49 +30,92 @@ export default async function Page(props: {
     "@type": "Article",
     headline: page.data.title,
     description: page.data.description,
+    image: `${baseUrl}/og.png`,
     author: {
       "@type": "Organization",
       name: "Javaistic",
+      url: baseUrl,
     },
     publisher: {
       "@type": "Organization",
       name: "Javaistic",
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/favicon.ico`,
+      },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://javaistic.vercel.app${page.url}`,
+      "@id": `${baseUrl}${page.url}`,
     },
   };
 
-  return (
-    <DocsPage
-      toc={page.data.toc}
-      tableOfContent={{
-        style: "clerk",
-        single: false,
-      }}
-      full={page.data.full}
-    >
-      <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription className="mb-3">
-        {page.data.description}
-      </DocsDescription>
+  const breadcrumbsJsonLd: WithContext<BreadcrumbList> = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: baseUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Docs",
+        item: `${baseUrl}/docs`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: page.data.title,
+        item: `${baseUrl}${page.url}`,
+      },
+    ],
+  };
 
-      <DocsBody>
-        <MDXContent
-          components={getMDXComponents({
-            // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(source, page),
-          })}
-        />
-      </DocsBody>
-      <script
+  return (
+    <>
+      <DocsPage
+        toc={page.data.toc}
+        tableOfContent={{
+          style: "clerk",
+          single: false,
+        }}
+        full={page.data.full}
+      >
+        <DocsTitle>{page.data.title}</DocsTitle>
+        <DocsDescription className="mb-3">
+          {page.data.description}
+        </DocsDescription>
+
+        <DocsBody>
+          <MDXContent
+            components={getMDXComponents({
+              // this allows you to link to other pages with relative file paths
+              a: createRelativeLink(source, page),
+            })}
+          />
+        </DocsBody>
+      </DocsPage>
+      <Script
+        id="json-ld-docs"
         type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-    </DocsPage>
+      <Script
+        id="json-ld-breadcrumbs"
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbsJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+    </>
   );
 }
 
@@ -84,8 +129,8 @@ type Props = {
 };
 
 export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent: ResolvingMetadata,
+  { params, searchParams: _searchParams }: Props,
+  _parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const { slug } = await params;
 
@@ -94,13 +139,16 @@ export async function generateMetadata(
   if (!page) notFound();
 
   return {
-    title: `${page.data.title} - Javaistic`,
+    title: `${page.data.title} | Java Tutorial - Javaistic`,
     description: page.data.description,
+    alternates: {
+      canonical: page.url,
+    },
     openGraph: {
-      title: `${page.data.title} - Javaistic`,
+      title: `${page.data.title} | Java Tutorial - Javaistic`,
       description: page.data.description,
       siteName: "Javaistic",
-      url: `https://javaistic.vercel.app${page.url}`,
+      url: `${baseUrl}${page.url}`,
       images: `https://og-javaistic.vercel.app/og?title=${page.data.title}`,
     },
     twitter: {
