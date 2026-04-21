@@ -20,10 +20,10 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return new Proxy(merged, {
     get: (target, prop: string) => {
       if (typeof prop !== "string") return undefined;
-      if (prop in target) return target[prop];
+      if (prop in target) return (target as any)[prop];
       if (prop.endsWith("Icon")) {
         const baseName = prop.slice(0, -4);
-        return target[baseName];
+        return (target as any)[baseName];
       }
       return undefined;
     },
