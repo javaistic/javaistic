@@ -1,10 +1,5 @@
 "use client";
 
-import { baseOptions, linkItems } from "@/app/layout.config";
-import { Footer } from "@/components/footer";
-import { GitHubIcon } from "@/components/icons";
-import LenisProvider from "@/components/providers/lenis-provider";
-import { useDarkMode } from "@/hooks/useDarkMode";
 import Link from "fumadocs-core/link";
 import { HomeLayout } from "fumadocs-ui/layouts/home";
 import {
@@ -23,8 +18,13 @@ import {
   Users,
 } from "lucide-react";
 import Image from "next/image";
+import type React from "react";
 import type { ReactNode } from "react";
-import React from "react";
+import { baseOptions, linkItems } from "@/app/layout.config";
+import { Footer } from "@/components/footer";
+import { GitHubIcon } from "@/components/icons";
+import LenisProvider from "@/components/providers/lenis-provider";
+import { useDarkMode } from "@/hooks/useDarkMode";
 
 export default function SiteLayout({ children }: { children: ReactNode }) {
   const { isDarkMode, mounted } = useDarkMode();
@@ -80,6 +80,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
                         className="rounded-t-lg object-cover"
                         style={{
                           height: "300px",
+                          width: "auto",
                           maskImage:
                             "linear-gradient(to bottom,white 70%,transparent)",
                         }}
@@ -107,6 +108,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
                         className="rounded-t-lg object-cover"
                         style={{
                           height: "300px",
+                          width: "auto",
                           maskImage:
                             "linear-gradient(to bottom,white 70%,transparent)",
                         }}
@@ -189,7 +191,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
                           maskImage:
                             "linear-gradient(to bottom,white 60%,transparent)",
                           height: "200px",
-                          width: "320px",
+                          width: "auto",
                         }}
                         width={400}
                         height={100}

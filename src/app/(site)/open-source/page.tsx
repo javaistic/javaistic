@@ -1,10 +1,4 @@
 "use client";
-import { ANIMATION_VARIANTS } from "@/components/home/animation-variants";
-import { GitHubIcon } from "@/components/icons";
-import { AnimatedCounter } from "@/components/ui/animated-counter";
-import { Button } from "@/components/ui/button";
-import { useDarkMode } from "@/hooks/useDarkMode";
-import { useGitHubStats } from "@/hooks/useGitHubStats";
 import {
   BookOpen,
   Bug,
@@ -27,9 +21,13 @@ import {
   Zap,
 } from "lucide-react";
 import { easeOut, motion } from "motion/react";
+import { ANIMATION_VARIANTS } from "@/components/home/animation-variants";
+import { GitHubIcon } from "@/components/icons";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
+import { Button } from "@/components/ui/button";
+import { useGitHubStats } from "@/hooks/useGitHubStats";
 
 const OpenSourcePage = () => {
-  const { isDarkMode, mounted } = useDarkMode();
   const { stats, loading, error, lastUpdated } = useGitHubStats();
 
   const features = [
@@ -151,13 +149,6 @@ const OpenSourcePage = () => {
 
   return (
     <div className="bg-background min-h-screen">
-      {/* Development theme indicator */}
-      {process.env.NODE_ENV === "development" && mounted && (
-        <div className="fixed top-4 right-4 z-50 rounded-lg bg-black/80 px-3 py-2 text-xs text-white">
-          Theme: {isDarkMode ? "Dark" : "Light"}
-        </div>
-      )}
-
       <main className="relative mx-auto flex max-w-5xl flex-col">
         {/* Hero Section */}
         <motion.div
@@ -288,13 +279,13 @@ const OpenSourcePage = () => {
                 text: "Dual Licensed (AGPL & CC)",
                 link: "https://github.com/javaistic/javaistic/blob/main/LICENSE.md",
               },
-            ].map((indicator, index) => (
+            ].map((indicator) => (
               <motion.div
-                key={index}
+                key={indicator.text}
                 className="flex items-center gap-2"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
                 whileHover={{ scale: 1.05 }}
               >
                 <span className="text-green-500">{indicator.icon}</span>
@@ -335,7 +326,7 @@ const OpenSourcePage = () => {
           <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
             {quickStats.map((stat, index) => (
               <motion.div
-                key={index}
+                key={stat.label}
                 className="group bg-card border-border flex h-48 flex-col items-center justify-center rounded-2xl border p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
                 whileHover={{
                   y: -4,
@@ -441,14 +432,14 @@ const OpenSourcePage = () => {
           </motion.div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <motion.div
-                key={index}
+                key={feature.title}
                 className="bg-card group border-border relative overflow-hidden rounded-2xl border p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6 }}
                 whileHover={{
                   scale: 1.02,
                 }}
@@ -464,7 +455,7 @@ const OpenSourcePage = () => {
                   className="font-funnel-display text-foreground mb-3 text-lg font-semibold"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   {feature.title}
                 </motion.h3>
@@ -472,7 +463,7 @@ const OpenSourcePage = () => {
                   className="text-muted-foreground text-sm"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
                 >
                   {feature.description}
                 </motion.p>
@@ -506,14 +497,14 @@ const OpenSourcePage = () => {
           </motion.div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            {contributionAreas.map((area, index) => (
+            {contributionAreas.map((area) => (
               <motion.div
-                key={index}
+                key={area.title}
                 className="group border-border bg-card rounded-2xl border p-6 shadow-sm"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
+                transition={{ duration: 0.6 }}
                 whileHover={{
                   y: -8,
                   scale: 1.03,
@@ -531,7 +522,7 @@ const OpenSourcePage = () => {
                   className="font-funnel-display text-foreground mb-3 text-lg font-semibold"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.15 + 0.2 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   {area.title}
                 </motion.h3>
@@ -539,7 +530,7 @@ const OpenSourcePage = () => {
                   className="text-muted-foreground mb-4 text-sm font-medium"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.15 + 0.3 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
                 >
                   {area.description}
                 </motion.p>
@@ -547,11 +538,11 @@ const OpenSourcePage = () => {
                   className="flex flex-wrap gap-2"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.15 + 0.4 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                  {area.skills.map((skill, skillIndex) => (
+                  {area.skills.map((skill) => (
                     <motion.span
-                      key={skillIndex}
+                      key={skill}
                       className="bg-muted text-muted-foreground rounded-md px-2 py-1 text-xs font-medium"
                       whileHover={{
                         scale: 1.05,
@@ -602,7 +593,7 @@ const OpenSourcePage = () => {
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <div className="bg-primary text-primary-foreground flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold">
+                    <div className="bg-primary text-primary-foreground flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold">
                       1
                     </div>
                     <div>
@@ -616,7 +607,7 @@ const OpenSourcePage = () => {
                   </div>
 
                   <div className="flex items-start space-x-3">
-                    <div className="bg-primary text-primary-foreground flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold">
+                    <div className="bg-primary text-primary-foreground flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold">
                       2
                     </div>
                     <div>
@@ -630,7 +621,7 @@ const OpenSourcePage = () => {
                   </div>
 
                   <div className="flex items-start space-x-3">
-                    <div className="bg-primary text-primary-foreground flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold">
+                    <div className="bg-primary text-primary-foreground flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold">
                       3
                     </div>
                     <div>

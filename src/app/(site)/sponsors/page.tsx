@@ -1,9 +1,5 @@
 "use client";
 
-import { Badge, CTASection } from "@/components/home";
-import { ANIMATION_VARIANTS } from "@/components/home/animation-variants";
-import { GitHubIcon } from "@/components/icons";
-import { Button } from "@/components/ui/button";
 import {
   Coffee,
   CreditCard,
@@ -19,6 +15,10 @@ import {
 } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { Badge, CTASection } from "@/components/home";
+import { ANIMATION_VARIANTS } from "@/components/home/animation-variants";
+import { GitHubIcon } from "@/components/icons";
+import { Button } from "@/components/ui/button";
 
 export default function SponsorsPage() {
   return (

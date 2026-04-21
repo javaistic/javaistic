@@ -1,6 +1,18 @@
 "use client";
 
 import {
+  BookOpen,
+  Bug,
+  Heart,
+  Lightbulb,
+  Mail,
+  MessageSquare,
+  Send,
+} from "lucide-react";
+import { motion } from "motion/react";
+import Link from "next/link";
+import { useState } from "react";
+import {
   ANIMATION_VARIANTS,
   HOVER_ANIMATIONS,
 } from "@/components/home/animation-variants";
@@ -17,18 +29,6 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  BookOpen,
-  Bug,
-  Heart,
-  Lightbulb,
-  Mail,
-  MessageSquare,
-  Send,
-} from "lucide-react";
-import { motion } from "motion/react";
-import Link from "next/link";
-import { useState } from "react";
 
 interface FormData {
   name: string;
@@ -83,7 +83,7 @@ const ContactInfoItem = ({
     whileHover={{ x: 5 }}
     transition={{ duration: 0.2 }}
   >
-    <Icon className="text-primary h-5 w-5 flex-shrink-0" />
+    <Icon className="text-primary h-5 w-5 shrink-0" />
     <div className="min-w-0 flex-1">
       <p className="truncate font-medium">{title}</p>
       <p className="text-muted-foreground truncate text-sm">{description}</p>
@@ -191,11 +191,11 @@ export default function ContactUsPage() {
           variants={ANIMATION_VARIANTS.container}
         >
           <motion.h1
-            className="font-funnel-display bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-700 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl lg:text-6xl dark:from-neutral-100 dark:via-neutral-200 dark:to-neutral-300"
+            className="font-funnel-display bg-linear-to-br from-neutral-900 via-neutral-800 to-neutral-700 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl lg:text-6xl dark:from-neutral-100 dark:via-neutral-200 dark:to-neutral-300"
             variants={ANIMATION_VARIANTS.title}
           >
             Contact{" "}
-            <span className="bg-gradient-to-br from-sky-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-br from-sky-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
               Us
             </span>
           </motion.h1>
@@ -235,8 +235,8 @@ export default function ContactUsPage() {
         {/* Contact Methods */}
         <motion.section variants={ANIMATION_VARIANTS.item}>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {contactMethods.map((method, index) => (
-              <ContactMethodCard key={index} method={method} />
+            {contactMethods.map((method) => (
+              <ContactMethodCard key={method.title} method={method} />
             ))}
           </div>
         </motion.section>
@@ -437,7 +437,7 @@ export default function ContactUsPage() {
           variants={ANIMATION_VARIANTS.item}
           className="text-center"
         >
-          <Card className="from-primary/5 to-primary/10 border-primary/20 bg-gradient-to-br">
+          <Card className="from-primary/5 to-primary/10 border-primary/20 bg-linear-to-br">
             <CardContent className="p-8">
               <Mail className="text-primary mx-auto mb-4 h-12 w-12" />
               <h3 className="mb-2 text-2xl font-bold">Join Our Community</h3>

@@ -1,24 +1,24 @@
 "use client";
-import { motion, easeOut } from "motion/react";
 import {
-  Shield,
-  Lock,
-  Eye,
-  Server,
+  Activity,
   AlertTriangle,
   CheckCircle,
+  Code,
+  ExternalLink,
+  Eye,
   FileText,
   Globe,
-  ShieldCheck,
-  Github,
-  ExternalLink,
+  Lock,
   Mail,
-  Activity,
-  Code,
+  Server,
+  Shield,
+  ShieldCheck,
 } from "lucide-react";
-import { useState, useEffect } from "react";
-import Particles from "@/components/Particles";
+import { easeOut, motion } from "motion/react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { GitHubIcon as Github } from "@/components/icons";
+import Particles from "@/components/Particles";
 
 const SecurityPage = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -231,7 +231,7 @@ const SecurityPage = () => {
             variants={titleVariants}
           >
             Security &{" "}
-            <span className="bg-gradient-to-br from-sky-400 to-indigo-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-br from-sky-400 to-indigo-500 bg-clip-text text-transparent">
               Privacy
             </span>
           </motion.h1>
@@ -275,6 +275,7 @@ const SecurityPage = () => {
               {tabsData.map((tab) => (
                 <motion.button
                   key={tab.id}
+                  type="button"
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center rounded-t-lg px-4 py-3 font-medium transition-all duration-200 ${
                     activeTab === tab.id
@@ -449,9 +450,9 @@ const SecurityPage = () => {
                     </p>
 
                     <div className="mb-8 grid gap-6 md:grid-cols-2">
-                      {complianceStandards.map((standard, index) => (
+                      {complianceStandards.map((standard) => (
                         <motion.div
-                          key={index}
+                          key={standard.name}
                           className="rounded-xl bg-gradient-to-r from-neutral-50 to-neutral-100 p-6 dark:from-neutral-800 dark:to-neutral-700"
                           whileHover={{ scale: 1.02 }}
                         >
@@ -502,9 +503,9 @@ const SecurityPage = () => {
                             type: "Web",
                             url: "/legal/terms",
                           },
-                        ].map((doc, index) => (
+                        ].map((doc) => (
                           <motion.a
-                            key={index}
+                            key={doc.name}
                             href={doc.url}
                             target={doc.type === "GitHub" ? "_blank" : "_self"}
                             rel={
@@ -568,14 +569,6 @@ const SecurityPage = () => {
                 <div className="space-y-3 text-sm">
                   <div className="flex items-center">
                     <span className="mr-2 font-medium text-neutral-900 dark:text-white">
-                      Email:
-                    </span>
-                    <span className="text-blue-600 dark:text-blue-400">
-                      arghyaxcodes@gmail.com
-                    </span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="mr-2 font-medium text-neutral-900 dark:text-white">
                       GitHub Issues:
                     </span>
                     <span className="text-blue-600 dark:text-blue-400">
@@ -599,6 +592,7 @@ const SecurityPage = () => {
             <motion.div className="mt-8 text-center" variants={itemVariants}>
               <Link href="https://github.com/javaistic/javaistic/issues">
                 <motion.button
+                  type="button"
                   className="inline-flex items-center rounded-xl bg-gradient-to-r from-red-500 to-pink-600 px-8 py-4 font-semibold text-white transition-all duration-200 hover:from-red-600 hover:to-pink-700"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -673,9 +667,9 @@ const SecurityPage = () => {
                   "Vulnerability disclosures",
                 ],
               },
-            ].map((item, index) => (
+            ].map((item) => (
               <motion.div
-                key={index}
+                key={item.title}
                 className="rounded-xl border border-neutral-200 bg-gradient-to-r from-neutral-50 to-neutral-100 p-6 transition-colors duration-300 dark:border-neutral-600 dark:from-neutral-800 dark:to-neutral-700"
                 variants={itemVariants}
                 whileHover={{ y: -5, scale: 1.02 }}
@@ -692,9 +686,9 @@ const SecurityPage = () => {
                   {item.description}
                 </p>
                 <ul className="space-y-2">
-                  {item.items.map((listItem, idx) => (
+                  {item.items.map((listItem) => (
                     <li
-                      key={idx}
+                      key={listItem}
                       className="flex items-center text-sm text-neutral-600 dark:text-neutral-300"
                     >
                       <CheckCircle
@@ -748,6 +742,7 @@ const SecurityPage = () => {
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link href="#contact">
                 <motion.button
+                  type="button"
                   className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-lg font-semibold text-indigo-600 shadow-lg transition-colors duration-200 hover:bg-neutral-100"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -758,6 +753,7 @@ const SecurityPage = () => {
               </Link>
               <Link href="https://github.com/javaistic/javaistic">
                 <motion.button
+                  type="button"
                   className="inline-flex items-center justify-center rounded-xl border-2 border-white px-8 py-4 text-lg font-semibold text-white transition-all duration-200 hover:bg-white hover:text-indigo-600"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
